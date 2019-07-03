@@ -177,7 +177,7 @@ if (${DERPLIB_BUILD_DOCS})
                 "${PROJECT_BINARY_DIR}"
                 "${PROJECT_SOURCE_DIR}/cmake-build-*"
                 "${PROJECT_SOURCE_DIR}/tests")
-        set(DOXYGEN_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/docs")
+        set(DOXYGEN_HTML_OUTPUT "${PROJECT_SOURCE_DIR}/docs")
 
         set(DOXYGEN_EXCLUDE_SYMBOLS
                 derplib::internal)
