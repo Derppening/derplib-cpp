@@ -10,6 +10,7 @@ var searchData=
   ['derplib',['derplib',['../namespacederplib.html',1,'']]],
   ['div_5fline',['div_line',['../classderplib_1_1experimental_1_1basic__cli.html#ac56d69cc29a9f32a08c8b1c32be0a13f',1,'derplib::experimental::basic_cli']]],
   ['experimental',['experimental',['../namespacederplib_1_1experimental.html',1,'derplib']]],
+  ['derplib',['derplib',['../md_README.html',1,'']]],
   ['newlib',['newlib',['../namespacederplib_1_1newlib.html',1,'derplib']]],
   ['stdext',['stdext',['../namespacederplib_1_1stdext.html',1,'derplib']]],
   ['util',['util',['../namespacederplib_1_1util.html',1,'derplib']]]

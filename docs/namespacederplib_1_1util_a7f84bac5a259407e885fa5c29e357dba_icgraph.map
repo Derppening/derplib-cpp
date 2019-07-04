@@ -2,9 +2,9 @@
 <area shape="rect" id="node1" title=" " alt="" coords="272,239,403,265"/>
 <area shape="rect" id="node2" href="$classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#a11fc7002a33349152c9b30fa6298c9de" title="Adds an element to the back." alt="" coords="18,5,211,61"/>
 <area shape="rect" id="node3" href="$classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#a049ceb0eed1f90db1acc98e3858129f2" title="Constructs an element in&#45;place at the back." alt="" coords="5,85,224,141"/>
-<area shape="rect" id="node4" href="$classderplib_1_1container_1_1circular__queue.html#af8ec3ce5120e1263aa6e9da5dc93119e" title="Pushes the given element value to the end of the queue." alt="" coords="33,166,197,207"/>
-<area shape="rect" id="node5" href="$classderplib_1_1container_1_1circular__queue.html#a2c5079d4dbefdb90d2ec0372a0292f15" title="Pushes a new element to the end of the queue, which will be constructed in&#45;place." alt="" coords="20,231,209,273"/>
+<area shape="rect" id="node4" href="$classderplib_1_1container_1_1circular__queue.html#af8ec3ce5120e1263aa6e9da5dc93119e" title=" " alt="" coords="33,166,197,207"/>
+<area shape="rect" id="node5" href="$classderplib_1_1container_1_1circular__queue.html#a2c5079d4dbefdb90d2ec0372a0292f15" title=" " alt="" coords="20,231,209,273"/>
 <area shape="rect" id="node6" href="$namespacederplib_1_1stdext.html#ab2f5385caa026f657333f5ecf7311607" title=" " alt="" coords="34,297,195,338"/>
 <area shape="rect" id="node7" href="$namespacederplib_1_1util.html#a1a46c1e72ff6b59da3d508e05dcca1b3" title="Wrapper for new[] operator in C++, logging the pointer information." alt="" coords="53,362,176,403"/>
-<area shape="rect" id="node8" href="$namespacederplib_1_1util.html#a168ee03794c256de146d2286d96d4d3a" title="Generates a sequence with sequentially increasing values starting with value." alt="" coords="33,427,196,469"/>
+<area shape="rect" id="node8" href="$namespacederplib_1_1util.html#a168ee03794c256de146d2286d96d4d3a" title=" " alt="" coords="33,427,196,469"/>
 </map>

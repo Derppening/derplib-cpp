@@ -1,7 +1,7 @@
 <map id="derplib::config_file::field" name="derplib::config_file::field">
 <area shape="rect" id="node1" title=" " alt="" coords="416,64,559,105"/>
-<area shape="rect" id="node2" href="$classderplib_1_1config__file.html#a8a70a4a32897ce20c88250a77afe099b" title="Adds a field and its data to this configuration." alt="" coords="196,13,368,39"/>
-<area shape="rect" id="node4" href="$classderplib_1_1config__file.html#aade05e3cf25df9be99b2ff6770f97f46" title="Erases a field from this configuration." alt="" coords="211,64,353,105"/>
-<area shape="rect" id="node5" href="$classderplib_1_1config__file.html#aa091e7322a7fde6cd39bd797ecfe1bc5" title="Serializes and exports this configuration into a file." alt="" coords="211,129,353,171"/>
-<area shape="rect" id="node3" href="$classderplib_1_1config__file.html#a0dcec1f624844317cab92d9605068518" title="Parses configuration from a file." alt="" coords="5,5,148,47"/>
+<area shape="rect" id="node2" href="$classderplib_1_1config__file.html#a8a70a4a32897ce20c88250a77afe099b" title=" " alt="" coords="196,13,368,39"/>
+<area shape="rect" id="node4" href="$classderplib_1_1config__file.html#aade05e3cf25df9be99b2ff6770f97f46" title=" " alt="" coords="211,64,353,105"/>
+<area shape="rect" id="node5" href="$classderplib_1_1config__file.html#aa091e7322a7fde6cd39bd797ecfe1bc5" title=" " alt="" coords="211,129,353,171"/>
+<area shape="rect" id="node3" href="$classderplib_1_1config__file.html#a0dcec1f624844317cab92d9605068518" title=" " alt="" coords="5,5,148,47"/>
 </map>

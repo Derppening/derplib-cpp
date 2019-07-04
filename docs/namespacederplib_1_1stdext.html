@@ -105,11 +105,9 @@ Functions</h2></td></tr>
 <tr class="separator:a6d79e269bbef8e16125300f0e02761b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a186d16c8de709ff4fca28b8776b7f619"><td class="memTemplParams" colspan="2">template&lt;class T , class Compare &gt; </td></tr>
 <tr class="memitem:a186d16c8de709ff4fca28b8776b7f619"><td class="memTemplItemLeft" align="right" valign="top">DERPLIB_CPP14_CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a186d16c8de709ff4fca28b8776b7f619">in_range</a> (const T &amp;v, const T &amp;lo, const T &amp;hi, Compare comp)</td></tr>
-<tr class="memdesc:a186d16c8de709ff4fca28b8776b7f619"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a value is in range.  <a href="#a186d16c8de709ff4fca28b8776b7f619">More...</a><br /></td></tr>
 <tr class="separator:a186d16c8de709ff4fca28b8776b7f619"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a992df97f00e8ccbf4248e96791b38d"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a8a992df97f00e8ccbf4248e96791b38d"><td class="memTemplItemLeft" align="right" valign="top">DERPLIB_CPP14_CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a8a992df97f00e8ccbf4248e96791b38d">in_range</a> (const T &amp;v, const T &amp;lo, const T &amp;hi)</td></tr>
-<tr class="memdesc:a8a992df97f00e8ccbf4248e96791b38d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether a value has been clamped.  <a href="#a8a992df97f00e8ccbf4248e96791b38d">More...</a><br /></td></tr>
 <tr class="separator:a8a992df97f00e8ccbf4248e96791b38d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a169f65e44f513b5004ff166d620660f3"><td class="memTemplParams" colspan="2">template&lt;typename T , typename R  = T&gt; </td></tr>
 <tr class="memitem:a169f65e44f513b5004ff166d620660f3"><td class="memTemplItemLeft" align="right" valign="top">DERPLIB_CPP14_CONSTEXPR std::enable_if&lt; std::is_floating_point&lt; R &gt;::value, R &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a169f65e44f513b5004ff166d620660f3">to_radians</a> (const T &amp;degrees)</td></tr>
@@ -117,7 +115,6 @@ Functions</h2></td></tr>
 <tr class="separator:a169f65e44f513b5004ff166d620660f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add31fa6f7c0d563b2391e4d9e5db18fc"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:add31fa6f7c0d563b2391e4d9e5db18fc"><td class="memTemplItemLeft" align="right" valign="top">DERPLIB_CPP14_CONSTEXPR std::enable_if&lt; std::is_floating_point&lt; T &gt;::value, T &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#add31fa6f7c0d563b2391e4d9e5db18fc">to_degrees</a> (const T &amp;radians)</td></tr>
-<tr class="memdesc:add31fa6f7c0d563b2391e4d9e5db18fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a radian value to degrees.  <a href="#add31fa6f7c0d563b2391e4d9e5db18fc">More...</a><br /></td></tr>
 <tr class="separator:add31fa6f7c0d563b2391e4d9e5db18fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fcb7cb0ccc0c321280ccfe5708bcc25"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
 <tr class="memitem:a6fcb7cb0ccc0c321280ccfe5708bcc25"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a6fcb7cb0ccc0c321280ccfe5708bcc25">make_unique</a> (Args &amp;&amp;... args)</td></tr>
@@ -317,32 +314,15 @@ template&lt;class T , class Compare &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Checks whether a value is in range. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>value type </td></tr>
-    <tr><td class="paramname">Compare</td><td>Comparator. Should return true if arg0 &lt; arg1. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">v</td><td>Value to check. </td></tr>
-    <tr><td class="paramname">lo</td><td>Lower bound of clamp. </td></tr>
-    <tr><td class="paramname">hi</td><td>Upper bound of clamp. </td></tr>
-    <tr><td class="paramname">comp</td><td>Comparator function. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Whether v is clamped between lo and hi. </dd></dl>
+<p>\brief Checks whether a value is in range.</p>
+<p>\tparam T value type \tparam Compare Comparator. Should return true if arg0 &lt; arg1. \param v Value to check. \param lo Lower bound of clamp. \param hi Upper bound of clamp. \param comp Comparator function. \return Whether v is clamped between lo and hi. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacederplib_1_1stdext_a186d16c8de709ff4fca28b8776b7f619_icgraph.png" border="0" usemap="#namespacederplib_1_1stdext_a186d16c8de709ff4fca28b8776b7f619_icgraph" alt=""/></div>
 <map name="namespacederplib_1_1stdext_a186d16c8de709ff4fca28b8776b7f619_icgraph" id="namespacederplib_1_1stdext_a186d16c8de709ff4fca28b8776b7f619_icgraph">
-<area shape="rect"  title="Checks whether a value is in range." alt="" coords="189,5,325,47"/>
-<area shape="rect"  href="namespacederplib_1_1stdext.html#a8a992df97f00e8ccbf4248e96791b38d" title="Returns whether a value has been clamped." alt="" coords="5,5,141,47"/>
+<area shape="rect"  title=" " alt="" coords="189,5,325,47"/>
+<area shape="rect"  href="namespacederplib_1_1stdext.html#a8a992df97f00e8ccbf4248e96791b38d" title=" " alt="" coords="5,5,141,47"/>
 </map>
 </div>
 
@@ -381,30 +361,15 @@ template&lt;class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Returns whether a value has been clamped. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>value type </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">v</td><td>Value to check. </td></tr>
-    <tr><td class="paramname">lo</td><td>Lower bound of clamp. </td></tr>
-    <tr><td class="paramname">hi</td><td>Upper bound of clamp. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Whether v is clamped between lo and hi. </dd></dl>
+<p>\brief Returns whether a value has been clamped.</p>
+<p>\tparam T value type \param v Value to check. \param lo Lower bound of clamp. \param hi Upper bound of clamp. \return Whether v is clamped between lo and hi. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacederplib_1_1stdext_a8a992df97f00e8ccbf4248e96791b38d_cgraph.png" border="0" usemap="#namespacederplib_1_1stdext_a8a992df97f00e8ccbf4248e96791b38d_cgraph" alt=""/></div>
 <map name="namespacederplib_1_1stdext_a8a992df97f00e8ccbf4248e96791b38d_cgraph" id="namespacederplib_1_1stdext_a8a992df97f00e8ccbf4248e96791b38d_cgraph">
-<area shape="rect"  title="Returns whether a value has been clamped." alt="" coords="5,5,141,47"/>
-<area shape="rect"  href="namespacederplib_1_1stdext.html#a186d16c8de709ff4fca28b8776b7f619" title="Checks whether a value is in range." alt="" coords="189,5,325,47"/>
+<area shape="rect"  title=" " alt="" coords="5,5,141,47"/>
+<area shape="rect"  href="namespacederplib_1_1stdext.html#a186d16c8de709ff4fca28b8776b7f619" title=" " alt="" coords="189,5,325,47"/>
 </map>
 </div>
 
@@ -520,21 +485,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Converts a radian value to degrees. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>data type </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">radians</td><td>original value in radians </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Degree value. </dd></dl>
+<p>\brief Converts a radian value to degrees.</p>
+<p>\tparam T data type \param radians original value in radians \return Degree value. </p>
 
 </div>
 </div>

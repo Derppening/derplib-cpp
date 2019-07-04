@@ -128,13 +128,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a02326f7358900f172ce13139f3569943"><td class="memItemLeft" align="right" valign="top">const container_type &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1config__file.html#a02326f7358900f172ce13139f3569943">get</a> () const</td></tr>
 <tr class="separator:a02326f7358900f172ce13139f3569943"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a70a4a32897ce20c88250a77afe099b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1config__file.html#a8a70a4a32897ce20c88250a77afe099b">put</a> (const std::string &amp;<a class="el" href="classderplib_1_1config__file.html#ab30c3d525e91676f315a94a4cf44a383">section</a>, const std::string &amp;<a class="el" href="classderplib_1_1config__file.html#adc905fb4e1f5367759cc008831377e30">field</a>, const std::string &amp;data)</td></tr>
-<tr class="memdesc:a8a70a4a32897ce20c88250a77afe099b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a field and its data to this configuration.  <a href="#a8a70a4a32897ce20c88250a77afe099b">More...</a><br /></td></tr>
 <tr class="separator:a8a70a4a32897ce20c88250a77afe099b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aade05e3cf25df9be99b2ff6770f97f46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1config__file.html#aade05e3cf25df9be99b2ff6770f97f46">erase</a> (const std::string &amp;<a class="el" href="classderplib_1_1config__file.html#ab30c3d525e91676f315a94a4cf44a383">section</a>, const std::string &amp;<a class="el" href="classderplib_1_1config__file.html#adc905fb4e1f5367759cc008831377e30">field</a>)</td></tr>
-<tr class="memdesc:aade05e3cf25df9be99b2ff6770f97f46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases a field from this configuration.  <a href="#aade05e3cf25df9be99b2ff6770f97f46">More...</a><br /></td></tr>
 <tr class="separator:aade05e3cf25df9be99b2ff6770f97f46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa091e7322a7fde6cd39bd797ecfe1bc5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1config__file.html#aa091e7322a7fde6cd39bd797ecfe1bc5">to_file</a> (const std::string &amp;filename, bool skip_empty=true) const</td></tr>
-<tr class="memdesc:aa091e7322a7fde6cd39bd797ecfe1bc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes and exports this configuration into a file.  <a href="#aa091e7322a7fde6cd39bd797ecfe1bc5">More...</a><br /></td></tr>
 <tr class="separator:aa091e7322a7fde6cd39bd797ecfe1bc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9da78d1e21d49fcbdc3754f60a2aaeec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1config__file.html#a9da78d1e21d49fcbdc3754f60a2aaeec">clear</a> ()</td></tr>
 <tr class="separator:a9da78d1e21d49fcbdc3754f60a2aaeec"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,7 +141,6 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a0dcec1f624844317cab92d9605068518"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classderplib_1_1config__file.html">config_file</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1config__file.html#a0dcec1f624844317cab92d9605068518">from_file</a> (const std::string &amp;filename, bool dispose_empty=true)</td></tr>
-<tr class="memdesc:a0dcec1f624844317cab92d9605068518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses configuration from a file.  <a href="#a0dcec1f624844317cab92d9605068518">More...</a><br /></td></tr>
 <tr class="separator:a0dcec1f624844317cab92d9605068518"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -200,12 +196,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Move constructor.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">c</td><td>Existing ConfigFile class </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>\param c Existing ConfigFile class </p>
 
 </div>
 </div>
@@ -233,12 +224,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Copy constructor.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">c</td><td>Existing ConfigFile class </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>\param c Existing ConfigFile class </p>
 
 </div>
 </div>
@@ -376,21 +362,14 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Erases a field from this configuration. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">section</td><td>Section of the field to erase. </td></tr>
-    <tr><td class="paramname">field</td><td>Field to erase. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>\brief Erases a field from this configuration.</p>
+<p>\param section Section of the field to erase. \param field Field to erase. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classderplib_1_1config__file_aade05e3cf25df9be99b2ff6770f97f46_cgraph.png" border="0" usemap="#classderplib_1_1config__file_aade05e3cf25df9be99b2ff6770f97f46_cgraph" alt=""/></div>
 <map name="classderplib_1_1config__file_aade05e3cf25df9be99b2ff6770f97f46_cgraph" id="classderplib_1_1config__file_aade05e3cf25df9be99b2ff6770f97f46_cgraph">
-<area shape="rect"  title="Erases a field from this configuration." alt="" coords="5,39,148,80"/>
+<area shape="rect"  title=" " alt="" coords="5,39,148,80"/>
 <area shape="rect"  href="classderplib_1_1config__file.html#ab30c3d525e91676f315a94a4cf44a383" title=" " alt="" coords="196,5,339,47"/>
 <area shape="rect"  href="classderplib_1_1config__file.html#adc905fb4e1f5367759cc008831377e30" title=" " alt="" coords="196,71,339,112"/>
 </map>
@@ -437,10 +416,10 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classderplib_1_1config__file_adc905fb4e1f5367759cc008831377e30_icgraph.png" border="0" usemap="#classderplib_1_1config__file_adc905fb4e1f5367759cc008831377e30_icgraph" alt=""/></div>
 <map name="classderplib_1_1config__file_adc905fb4e1f5367759cc008831377e30_icgraph" id="classderplib_1_1config__file_adc905fb4e1f5367759cc008831377e30_icgraph">
 <area shape="rect"  title=" " alt="" coords="416,64,559,105"/>
-<area shape="rect"  href="classderplib_1_1config__file.html#a8a70a4a32897ce20c88250a77afe099b" title="Adds a field and its data to this configuration." alt="" coords="196,13,368,39"/>
-<area shape="rect"  href="classderplib_1_1config__file.html#aade05e3cf25df9be99b2ff6770f97f46" title="Erases a field from this configuration." alt="" coords="211,64,353,105"/>
-<area shape="rect"  href="classderplib_1_1config__file.html#aa091e7322a7fde6cd39bd797ecfe1bc5" title="Serializes and exports this configuration into a file." alt="" coords="211,129,353,171"/>
-<area shape="rect"  href="classderplib_1_1config__file.html#a0dcec1f624844317cab92d9605068518" title="Parses configuration from a file." alt="" coords="5,5,148,47"/>
+<area shape="rect"  href="classderplib_1_1config__file.html#a8a70a4a32897ce20c88250a77afe099b" title=" " alt="" coords="196,13,368,39"/>
+<area shape="rect"  href="classderplib_1_1config__file.html#aade05e3cf25df9be99b2ff6770f97f46" title=" " alt="" coords="211,64,353,105"/>
+<area shape="rect"  href="classderplib_1_1config__file.html#aa091e7322a7fde6cd39bd797ecfe1bc5" title=" " alt="" coords="211,129,353,171"/>
+<area shape="rect"  href="classderplib_1_1config__file.html#a0dcec1f624844317cab92d9605068518" title=" " alt="" coords="5,5,148,47"/>
 </map>
 </div>
 
@@ -507,24 +486,16 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Parses configuration from a file. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">filename</td><td>Filename of the configuration file. </td></tr>
-    <tr><td class="paramname">dispose_empty</td><td>Whether to dispose sections without a section name. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="classderplib_1_1config__file.html">config_file</a></code> representing the configuration as read from the file. </dd></dl>
+<p>\brief Parses configuration from a file.</p>
+<p>\param filename Filename of the configuration file. \param dispose_empty Whether to dispose sections without a section name. \return A <code><a class="el" href="classderplib_1_1config__file.html">config_file</a></code> representing the configuration as read from the file. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classderplib_1_1config__file_a0dcec1f624844317cab92d9605068518_cgraph.png" border="0" usemap="#classderplib_1_1config__file_a0dcec1f624844317cab92d9605068518_cgraph" alt=""/></div>
 <map name="classderplib_1_1config__file_a0dcec1f624844317cab92d9605068518_cgraph" id="classderplib_1_1config__file_a0dcec1f624844317cab92d9605068518_cgraph">
-<area shape="rect"  title="Parses configuration from a file." alt="" coords="5,31,148,72"/>
+<area shape="rect"  title=" " alt="" coords="5,31,148,72"/>
 <area shape="rect"  href="classderplib_1_1config__file.html#ab30c3d525e91676f315a94a4cf44a383" title=" " alt="" coords="416,5,559,47"/>
-<area shape="rect"  href="classderplib_1_1config__file.html#a8a70a4a32897ce20c88250a77afe099b" title="Adds a field and its data to this configuration." alt="" coords="196,63,368,90"/>
+<area shape="rect"  href="classderplib_1_1config__file.html#a8a70a4a32897ce20c88250a77afe099b" title=" " alt="" coords="196,63,368,90"/>
 <area shape="rect"  href="classderplib_1_1config__file.html#adc905fb4e1f5367759cc008831377e30" title=" " alt="" coords="416,71,559,112"/>
 </map>
 </div>
@@ -607,7 +578,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <p>Move assignment operator.</p>
-<dl class="section return"><dt>Returns</dt><dd>Newly created object from existing <code>ConfigFile</code>. </dd></dl>
+<p>\return Newly created object from existing \c ConfigFile. </p>
 
 </div>
 </div>
@@ -635,7 +606,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <p>Copy assignment operator.</p>
-<dl class="section return"><dt>Returns</dt><dd>Newly created object from existing <code>ConfigFile</code>. </dd></dl>
+<p>\return Newly created object from existing \c ConfigFile. </p>
 
 </div>
 </div>
@@ -670,22 +641,14 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Adds a field and its data to this configuration. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">section</td><td>Section of the field to add into. </td></tr>
-    <tr><td class="paramname">field</td><td>Field name to add. </td></tr>
-    <tr><td class="paramname">data</td><td>Data to attach to the field. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>\brief Adds a field and its data to this configuration.</p>
+<p>\param section Section of the field to add into. \param field Field name to add. \param data Data to attach to the field. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classderplib_1_1config__file_a8a70a4a32897ce20c88250a77afe099b_cgraph.png" border="0" usemap="#classderplib_1_1config__file_a8a70a4a32897ce20c88250a77afe099b_cgraph" alt=""/></div>
 <map name="classderplib_1_1config__file_a8a70a4a32897ce20c88250a77afe099b_cgraph" id="classderplib_1_1config__file_a8a70a4a32897ce20c88250a77afe099b_cgraph">
-<area shape="rect"  title="Adds a field and its data to this configuration." alt="" coords="5,46,177,73"/>
+<area shape="rect"  title=" " alt="" coords="5,46,177,73"/>
 <area shape="rect"  href="classderplib_1_1config__file.html#ab30c3d525e91676f315a94a4cf44a383" title=" " alt="" coords="225,5,368,47"/>
 <area shape="rect"  href="classderplib_1_1config__file.html#adc905fb4e1f5367759cc008831377e30" title=" " alt="" coords="225,71,368,112"/>
 </map>
@@ -695,8 +658,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classderplib_1_1config__file_a8a70a4a32897ce20c88250a77afe099b_icgraph.png" border="0" usemap="#classderplib_1_1config__file_a8a70a4a32897ce20c88250a77afe099b_icgraph" alt=""/></div>
 <map name="classderplib_1_1config__file_a8a70a4a32897ce20c88250a77afe099b_icgraph" id="classderplib_1_1config__file_a8a70a4a32897ce20c88250a77afe099b_icgraph">
-<area shape="rect"  title="Adds a field and its data to this configuration." alt="" coords="196,13,368,39"/>
-<area shape="rect"  href="classderplib_1_1config__file.html#a0dcec1f624844317cab92d9605068518" title="Parses configuration from a file." alt="" coords="5,5,148,47"/>
+<area shape="rect"  title=" " alt="" coords="196,13,368,39"/>
+<area shape="rect"  href="classderplib_1_1config__file.html#a0dcec1f624844317cab92d9605068518" title=" " alt="" coords="5,5,148,47"/>
 </map>
 </div>
 
@@ -723,11 +686,11 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classderplib_1_1config__file_ab30c3d525e91676f315a94a4cf44a383_icgraph.png" border="0" usemap="#classderplib_1_1config__file_ab30c3d525e91676f315a94a4cf44a383_icgraph" alt=""/></div>
 <map name="classderplib_1_1config__file_ab30c3d525e91676f315a94a4cf44a383_icgraph" id="classderplib_1_1config__file_ab30c3d525e91676f315a94a4cf44a383_icgraph">
 <area shape="rect"  title=" " alt="" coords="416,107,559,149"/>
-<area shape="rect"  href="classderplib_1_1config__file.html#a8a70a4a32897ce20c88250a77afe099b" title="Adds a field and its data to this configuration." alt="" coords="196,5,368,32"/>
-<area shape="rect"  href="classderplib_1_1config__file.html#a0dcec1f624844317cab92d9605068518" title="Parses configuration from a file." alt="" coords="5,23,148,65"/>
-<area shape="rect"  href="classderplib_1_1config__file.html#aade05e3cf25df9be99b2ff6770f97f46" title="Erases a field from this configuration." alt="" coords="211,107,353,149"/>
+<area shape="rect"  href="classderplib_1_1config__file.html#a8a70a4a32897ce20c88250a77afe099b" title=" " alt="" coords="196,5,368,32"/>
+<area shape="rect"  href="classderplib_1_1config__file.html#a0dcec1f624844317cab92d9605068518" title=" " alt="" coords="5,23,148,65"/>
+<area shape="rect"  href="classderplib_1_1config__file.html#aade05e3cf25df9be99b2ff6770f97f46" title=" " alt="" coords="211,107,353,149"/>
 <area shape="rect"  href="classderplib_1_1config__file.html#a26b2eaa316e2fb98abbd3a96dd5fbd90" title=" " alt="" coords="211,173,353,214"/>
-<area shape="rect"  href="classderplib_1_1config__file.html#aa091e7322a7fde6cd39bd797ecfe1bc5" title="Serializes and exports this configuration into a file." alt="" coords="211,238,353,279"/>
+<area shape="rect"  href="classderplib_1_1config__file.html#aa091e7322a7fde6cd39bd797ecfe1bc5" title=" " alt="" coords="211,238,353,279"/>
 </map>
 </div>
 
@@ -776,21 +739,14 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Serializes and exports this configuration into a file. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">filename</td><td>Filename to export to. </td></tr>
-    <tr><td class="paramname">skip_empty</td><td>Whether to skip empty sections. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>\brief Serializes and exports this configuration into a file.</p>
+<p>\param filename Filename to export to. \param skip_empty Whether to skip empty sections. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classderplib_1_1config__file_aa091e7322a7fde6cd39bd797ecfe1bc5_cgraph.png" border="0" usemap="#classderplib_1_1config__file_aa091e7322a7fde6cd39bd797ecfe1bc5_cgraph" alt=""/></div>
 <map name="classderplib_1_1config__file_aa091e7322a7fde6cd39bd797ecfe1bc5_cgraph" id="classderplib_1_1config__file_aa091e7322a7fde6cd39bd797ecfe1bc5_cgraph">
-<area shape="rect"  title="Serializes and exports this configuration into a file." alt="" coords="5,39,148,80"/>
+<area shape="rect"  title=" " alt="" coords="5,39,148,80"/>
 <area shape="rect"  href="classderplib_1_1config__file.html#ab30c3d525e91676f315a94a4cf44a383" title=" " alt="" coords="196,5,339,47"/>
 <area shape="rect"  href="classderplib_1_1config__file.html#adc905fb4e1f5367759cc008831377e30" title=" " alt="" coords="196,71,339,112"/>
 </map>
