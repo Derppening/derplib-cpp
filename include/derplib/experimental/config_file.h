@@ -34,13 +34,13 @@ class config_file {
   /**
    * Move constructor.
    *
-   * \\param c Existing ConfigFile class
+   * \param c Existing ConfigFile class
    */
   config_file(config_file&& c) noexcept = default;
   /**
    * Copy constructor.
    *
-   * \\param c Existing ConfigFile class
+   * \param c Existing ConfigFile class
    */
   config_file(const config_file& c) = default;
 
@@ -49,13 +49,13 @@ class config_file {
   /**
    * Move assignment operator.
    *
-   * \\return Newly created object from existing \\c ConfigFile.
+   * \return Newly created object from existing \c ConfigFile.
    */
   config_file& operator=(config_file&&) noexcept = default;
   /**
    * Copy assignment operator.
    *
-   * \\return Newly created object from existing \\c ConfigFile.
+   * \return Newly created object from existing \c ConfigFile.
    */
   config_file& operator=(const config_file&) = default;
 
@@ -72,35 +72,35 @@ class config_file {
   const container_type& get() const;
 
   /**
-   * \\brief Adds a field and its data to this configuration.
+   * \brief Adds a field and its data to this configuration.
    *
-   * \\param section Section of the field to add into.
-   * \\param field Field name to add.
-   * \\param data Data to attach to the field.
+   * \param section Section of the field to add into.
+   * \param field Field name to add.
+   * \param data Data to attach to the field.
    */
   void put(const std::string& section, const std::string& field, const std::string& data);
   /**
-   * \\brief Erases a field from this configuration.
+   * \brief Erases a field from this configuration.
    *
-   * \\param section Section of the field to erase.
-   * \\param field Field to erase.
+   * \param section Section of the field to erase.
+   * \param field Field to erase.
    */
   void erase(const std::string& section, const std::string& field);
 
   /**
-   * \\brief Serializes and exports this configuration into a file.
+   * \brief Serializes and exports this configuration into a file.
    *
-   * \\param filename Filename to export to.
-   * \\param skip_empty Whether to skip empty sections.
+   * \param filename Filename to export to.
+   * \param skip_empty Whether to skip empty sections.
    */
   void to_file(const std::string& filename, bool skip_empty = true) const;
 
   /**
-   * \\brief Parses configuration from a file.
+   * \brief Parses configuration from a file.
    *
-   * \\param filename Filename of the configuration file.
-   * \\param dispose_empty Whether to dispose sections without a section name.
-   * \\return A `config_file` representing the configuration as read from the file.
+   * \param filename Filename of the configuration file.
+   * \param dispose_empty Whether to dispose sections without a section name.
+   * \return A `config_file` representing the configuration as read from the file.
    */
   static config_file from_file(const std::string& filename, bool dispose_empty = true);
 

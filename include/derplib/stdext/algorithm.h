@@ -32,27 +32,27 @@ template<class T>
 inline DERPLIB_CPP14_CONSTEXPR const T& clamp(const T& v, const T& lo, const T& hi);
 
 /**
- * \\brief Checks whether a value is in range.
+ * \brief Checks whether a value is in range.
  *
- * \\tparam T value type
- * \\tparam Compare Comparator. Should return true if arg0 < arg1.
- * \\param v Value to check.
- * \\param lo Lower bound of clamp.
- * \\param hi Upper bound of clamp.
- * \\param comp Comparator function.
- * \\return Whether v is clamped between lo and hi.
+ * \tparam T value type
+ * \tparam Compare Comparator. Should return true if arg0 < arg1.
+ * \param v Value to check.
+ * \param lo Lower bound of clamp.
+ * \param hi Upper bound of clamp.
+ * \param comp Comparator function.
+ * \return Whether v is clamped between lo and hi.
  */
 template<class T, class Compare>
 DERPLIB_CPP14_CONSTEXPR bool in_range(const T& v, const T& lo, const T& hi, Compare comp);
 
 /**
- * \\brief Returns whether a value has been clamped.
+ * \brief Returns whether a value has been clamped.
  *
- * \\tparam T value type
- * \\param v Value to check.
- * \\param lo Lower bound of clamp.
- * \\param hi Upper bound of clamp.
- * \\return Whether v is clamped between lo and hi.
+ * \tparam T value type
+ * \param v Value to check.
+ * \param lo Lower bound of clamp.
+ * \param hi Upper bound of clamp.
+ * \return Whether v is clamped between lo and hi.
  */
 template<class T>
 DERPLIB_CPP14_CONSTEXPR bool in_range(const T& v, const T& lo, const T& hi);

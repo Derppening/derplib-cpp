@@ -1,7 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"container_8ipp.html#add9e242f0b2adbcb392041a015377427":[3,0,0,0,4,1,4],
-"demangle_8h.html":[3,0,0,0,6,2],
 "demangle_8h.html#a677710251d773964486a99f221877faa":[3,0,0,0,6,2,0],
 "demangle_8h.html#ac7c0ac709b192ef897522348722e3435":[3,0,0,0,6,2,1],
 "demangle_8h_source.html":[3,0,0,0,6,2],

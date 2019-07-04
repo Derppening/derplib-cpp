@@ -1,8 +1,4 @@
-// Interactive command line displayer.
-
 #pragma once
-
-#if __cplusplus > 199711L
 
 #include <algorithm>
 #include <functional>
@@ -304,7 +300,3 @@ class cli : public basic_cli<char> {
 
 }  // namespace experimental
 }  // namespace derplib
-
-#else
-#error "This library requires C++11-supported compiler"
-#endif  // __cplusplus > 199711L

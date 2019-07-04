@@ -1,4 +1,4 @@
 <map id="derplib::config_file::put" name="derplib::config_file::put">
-<area shape="rect" id="node1" title=" " alt="" coords="196,13,368,39"/>
-<area shape="rect" id="node2" href="$classderplib_1_1config__file.html#a0dcec1f624844317cab92d9605068518" title=" " alt="" coords="5,5,148,47"/>
+<area shape="rect" id="node1" title="Adds a field and its data to this configuration." alt="" coords="196,13,368,39"/>
+<area shape="rect" id="node2" href="$classderplib_1_1config__file.html#a0dcec1f624844317cab92d9605068518" title="Parses configuration from a file." alt="" coords="5,5,148,47"/>
 </map>

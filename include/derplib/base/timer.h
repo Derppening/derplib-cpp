@@ -1,5 +1,3 @@
-// Implements a basic timer.
-
 #pragma once
 
 #include <atomic>
@@ -14,9 +12,9 @@
 namespace derplib {
 
 /**
- * \\brief A simple timer that invokes a callback after a fixed amount of time.
+ * \brief A simple timer that invokes a callback after a fixed amount of time.
  *
- * \\tparam Func function type. Must be `void f()`.
+ * \tparam Func function type. Must be `void f()`.
  */
 template<typename Func = std::function<void()>, typename = internal::enable_if_invocable<Func>>
 class timer;
@@ -76,6 +74,9 @@ class timer<Func> {
     expired
   };
 
+  /**
+   * \brief Daemon function for polling the timer.
+   */
   void countdown_daemon();
 
   std::atomic<state> _state;

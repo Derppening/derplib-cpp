@@ -1,6 +1,6 @@
 <map id="derplib::config_file::from_file" name="derplib::config_file::from_file">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,148,72"/>
+<area shape="rect" id="node1" title="Parses configuration from a file." alt="" coords="5,31,148,72"/>
 <area shape="rect" id="node2" href="$classderplib_1_1config__file.html#ab30c3d525e91676f315a94a4cf44a383" title=" " alt="" coords="416,5,559,47"/>
-<area shape="rect" id="node3" href="$classderplib_1_1config__file.html#a8a70a4a32897ce20c88250a77afe099b" title=" " alt="" coords="196,63,368,90"/>
+<area shape="rect" id="node3" href="$classderplib_1_1config__file.html#a8a70a4a32897ce20c88250a77afe099b" title="Adds a field and its data to this configuration." alt="" coords="196,63,368,90"/>
 <area shape="rect" id="node4" href="$classderplib_1_1config__file.html#adc905fb4e1f5367759cc008831377e30" title=" " alt="" coords="416,71,559,112"/>
 </map>

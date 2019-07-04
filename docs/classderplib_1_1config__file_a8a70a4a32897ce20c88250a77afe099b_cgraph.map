@@ -1,5 +1,5 @@
 <map id="derplib::config_file::put" name="derplib::config_file::put">
-<area shape="rect" id="node1" title=" " alt="" coords="5,46,177,73"/>
+<area shape="rect" id="node1" title="Adds a field and its data to this configuration." alt="" coords="5,46,177,73"/>
 <area shape="rect" id="node2" href="$classderplib_1_1config__file.html#ab30c3d525e91676f315a94a4cf44a383" title=" " alt="" coords="225,5,368,47"/>
 <area shape="rect" id="node3" href="$classderplib_1_1config__file.html#adc905fb4e1f5367759cc008831377e30" title=" " alt="" coords="225,71,368,112"/>
 </map>

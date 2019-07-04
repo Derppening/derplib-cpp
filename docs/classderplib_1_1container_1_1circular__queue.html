@@ -101,14 +101,19 @@ $(document).ready(function(){initNavTree('classderplib_1_1container_1_1circular_
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:ac0c21a66200ab816e220a2d146fe42c0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#ac0c21a66200ab816e220a2d146fe42c0">container_type</a> = std::array&lt; T, N &gt;</td></tr>
+<tr class="memdesc:ac0c21a66200ab816e220a2d146fe42c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of the underlying container.  <a href="#ac0c21a66200ab816e220a2d146fe42c0">More...</a><br /></td></tr>
 <tr class="separator:ac0c21a66200ab816e220a2d146fe42c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a116ec7e5f3004552b27b2935cc11c5ff"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#a116ec7e5f3004552b27b2935cc11c5ff">value_type</a> = typename container_type::value_type</td></tr>
+<tr class="memdesc:a116ec7e5f3004552b27b2935cc11c5ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of the stored elements. Equivalent to <code>T</code>.  <a href="#a116ec7e5f3004552b27b2935cc11c5ff">More...</a><br /></td></tr>
 <tr class="separator:a116ec7e5f3004552b27b2935cc11c5ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab30285ea276bfd9925d68ed8199d4984"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#ab30285ea276bfd9925d68ed8199d4984">size_type</a> = typename container_type::size_type</td></tr>
+<tr class="memdesc:ab30285ea276bfd9925d68ed8199d4984"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type used to represent sizes and indices.  <a href="#ab30285ea276bfd9925d68ed8199d4984">More...</a><br /></td></tr>
 <tr class="separator:ab30285ea276bfd9925d68ed8199d4984"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affbc0f8166bcfd0fb2c2c434844757a3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#affbc0f8166bcfd0fb2c2c434844757a3">reference</a> = typename container_type::reference</td></tr>
+<tr class="memdesc:affbc0f8166bcfd0fb2c2c434844757a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference type for the stored elements. Equivalent to <code>T&amp;</code>.  <a href="#affbc0f8166bcfd0fb2c2c434844757a3">More...</a><br /></td></tr>
 <tr class="separator:affbc0f8166bcfd0fb2c2c434844757a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa66f75aaae8e08ddc05721e7075f187e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#aa66f75aaae8e08ddc05721e7075f187e">const_reference</a> = typename container_type::const_reference</td></tr>
+<tr class="memdesc:aa66f75aaae8e08ddc05721e7075f187e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant reference type for the stored elements. Equivalent to <code>const T&amp;</code>.  <a href="#aa66f75aaae8e08ddc05721e7075f187e">More...</a><br /></td></tr>
 <tr class="separator:aa66f75aaae8e08ddc05721e7075f187e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -117,57 +122,83 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a87a07acd2319cc20df9aa8ef569c3627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1358846e0e057229002107c5178d22b"><td class="memTemplParams" colspan="2">template&lt;std::size_t SIZE&gt; </td></tr>
 <tr class="memitem:ab1358846e0e057229002107c5178d22b"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#ab1358846e0e057229002107c5178d22b">circular_queue</a> (const std::array&lt; T, SIZE &gt; &amp;cont) noexcept(std::is_nothrow_copy_assignable&lt; T &gt;::value &amp;&amp;std::is_nothrow_default_constructible&lt; T &gt;::value)</td></tr>
+<tr class="memdesc:ab1358846e0e057229002107c5178d22b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion constructor from <code>std::array</code>.  <a href="#ab1358846e0e057229002107c5178d22b">More...</a><br /></td></tr>
 <tr class="separator:ab1358846e0e057229002107c5178d22b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b416b53bfafa14d4dae814e4af3eba0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#a9b416b53bfafa14d4dae814e4af3eba0">circular_queue</a> (<a class="el" href="classderplib_1_1container_1_1circular__queue.html#ac0c21a66200ab816e220a2d146fe42c0">container_type</a> &amp;&amp;cont) noexcept(std::is_nothrow_move_assignable&lt; <a class="el" href="classderplib_1_1container_1_1circular__queue.html#ac0c21a66200ab816e220a2d146fe42c0">container_type</a> &gt;::value)</td></tr>
+<tr class="memdesc:a9b416b53bfafa14d4dae814e4af3eba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move conversion constructor from <code>std::array</code>.  <a href="#a9b416b53bfafa14d4dae814e4af3eba0">More...</a><br /></td></tr>
 <tr class="separator:a9b416b53bfafa14d4dae814e4af3eba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41a14dde5a54ff969de3aeea2437912b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#a41a14dde5a54ff969de3aeea2437912b">circular_queue</a> (const <a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a> &amp;other) noexcept(std::is_nothrow_copy_constructible&lt; <a class="el" href="classderplib_1_1container_1_1circular__queue.html#ac0c21a66200ab816e220a2d146fe42c0">container_type</a> &gt;::value)</td></tr>
+<tr class="memdesc:a41a14dde5a54ff969de3aeea2437912b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <a href="#a41a14dde5a54ff969de3aeea2437912b">More...</a><br /></td></tr>
 <tr class="separator:a41a14dde5a54ff969de3aeea2437912b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1413dab7aab96c326adcf1db0d19040b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#a1413dab7aab96c326adcf1db0d19040b">circular_queue</a> (<a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a> &amp;&amp;other) noexcept(std::is_nothrow_move_constructible&lt; <a class="el" href="classderplib_1_1container_1_1circular__queue.html#ac0c21a66200ab816e220a2d146fe42c0">container_type</a> &gt;::value)</td></tr>
+<tr class="memdesc:a1413dab7aab96c326adcf1db0d19040b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor.  <a href="#a1413dab7aab96c326adcf1db0d19040b">More...</a><br /></td></tr>
 <tr class="separator:a1413dab7aab96c326adcf1db0d19040b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2439f4f6d1d7e4681d78cf842a5c0e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#ac2439f4f6d1d7e4681d78cf842a5c0e4">~circular_queue</a> ()=default</td></tr>
+<tr class="memdesc:ac2439f4f6d1d7e4681d78cf842a5c0e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="#ac2439f4f6d1d7e4681d78cf842a5c0e4">More...</a><br /></td></tr>
 <tr class="separator:ac2439f4f6d1d7e4681d78cf842a5c0e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2010db6a8ca428fc9e470740ec5bfff5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#a2010db6a8ca428fc9e470740ec5bfff5">operator=</a> (const <a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a> &amp;other) noexcept(std::is_nothrow_copy_assignable&lt; <a class="el" href="classderplib_1_1container_1_1circular__queue.html#ac0c21a66200ab816e220a2d146fe42c0">container_type</a> &gt;::value)</td></tr>
+<tr class="memdesc:a2010db6a8ca428fc9e470740ec5bfff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator.  <a href="#a2010db6a8ca428fc9e470740ec5bfff5">More...</a><br /></td></tr>
 <tr class="separator:a2010db6a8ca428fc9e470740ec5bfff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa59c601cd232a42153fd09a6d9477b14"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#aa59c601cd232a42153fd09a6d9477b14">operator=</a> (<a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a> &amp;&amp;other) noexcept(std::is_nothrow_move_assignable&lt; <a class="el" href="classderplib_1_1container_1_1circular__queue.html#ac0c21a66200ab816e220a2d146fe42c0">container_type</a> &gt;::value)</td></tr>
+<tr class="memdesc:aa59c601cd232a42153fd09a6d9477b14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator.  <a href="#aa59c601cd232a42153fd09a6d9477b14">More...</a><br /></td></tr>
 <tr class="separator:aa59c601cd232a42153fd09a6d9477b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f42808d50e43658c7e6d7506e072144"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#affbc0f8166bcfd0fb2c2c434844757a3">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#a5f42808d50e43658c7e6d7506e072144">front</a> ()</td></tr>
+<tr class="memdesc:a5f42808d50e43658c7e6d7506e072144"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the first element.  <a href="#a5f42808d50e43658c7e6d7506e072144">More...</a><br /></td></tr>
 <tr class="separator:a5f42808d50e43658c7e6d7506e072144"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c04366f2ba199903d8c6c42739495b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#aa66f75aaae8e08ddc05721e7075f187e">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#a4c04366f2ba199903d8c6c42739495b0">front</a> () const</td></tr>
+<tr class="memdesc:a4c04366f2ba199903d8c6c42739495b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a constant reference to the first element.  <a href="#a4c04366f2ba199903d8c6c42739495b0">More...</a><br /></td></tr>
 <tr class="separator:a4c04366f2ba199903d8c6c42739495b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59860888c3f6704b7b5544c2ccabaece"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#affbc0f8166bcfd0fb2c2c434844757a3">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#a59860888c3f6704b7b5544c2ccabaece">back</a> ()</td></tr>
+<tr class="memdesc:a59860888c3f6704b7b5544c2ccabaece"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the last element.  <a href="#a59860888c3f6704b7b5544c2ccabaece">More...</a><br /></td></tr>
 <tr class="separator:a59860888c3f6704b7b5544c2ccabaece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3acf3f28e7aed466a54feafdf56f285d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#aa66f75aaae8e08ddc05721e7075f187e">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#a3acf3f28e7aed466a54feafdf56f285d">back</a> () const</td></tr>
+<tr class="memdesc:a3acf3f28e7aed466a54feafdf56f285d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a constant reference to the last element.  <a href="#a3acf3f28e7aed466a54feafdf56f285d">More...</a><br /></td></tr>
 <tr class="separator:a3acf3f28e7aed466a54feafdf56f285d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a72f0630f14b5fecb3a24f3657da911"><td class="memItemLeft" align="right" valign="top">DERPLIB_NODISCARD bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">empty</a> () const noexcept</td></tr>
+<tr class="memdesc:a8a72f0630f14b5fecb3a24f3657da911"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the underlying container has no elements.  <a href="#a8a72f0630f14b5fecb3a24f3657da911">More...</a><br /></td></tr>
 <tr class="separator:a8a72f0630f14b5fecb3a24f3657da911"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64bdcb959789492324dcc92699a2af72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#ab30285ea276bfd9925d68ed8199d4984">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#a64bdcb959789492324dcc92699a2af72">size</a> () const noexcept</td></tr>
+<tr class="memdesc:a64bdcb959789492324dcc92699a2af72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements.  <a href="#a64bdcb959789492324dcc92699a2af72">More...</a><br /></td></tr>
 <tr class="separator:a64bdcb959789492324dcc92699a2af72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8ec3ce5120e1263aa6e9da5dc93119e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#af8ec3ce5120e1263aa6e9da5dc93119e">push</a> (const <a class="el" href="classderplib_1_1container_1_1circular__queue.html#a116ec7e5f3004552b27b2935cc11c5ff">value_type</a> &amp;value)</td></tr>
+<tr class="memdesc:af8ec3ce5120e1263aa6e9da5dc93119e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes the given element <code>value</code> to the end of the queue.  <a href="#af8ec3ce5120e1263aa6e9da5dc93119e">More...</a><br /></td></tr>
 <tr class="separator:af8ec3ce5120e1263aa6e9da5dc93119e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cd0e96e0582ac5e17fa3a737e6fe8d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#a1cd0e96e0582ac5e17fa3a737e6fe8d2">push</a> (<a class="el" href="classderplib_1_1container_1_1circular__queue.html#a116ec7e5f3004552b27b2935cc11c5ff">value_type</a> &amp;&amp;value)</td></tr>
+<tr class="memdesc:a1cd0e96e0582ac5e17fa3a737e6fe8d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes the given element <code>value</code> to the end of the queue.  <a href="#a1cd0e96e0582ac5e17fa3a737e6fe8d2">More...</a><br /></td></tr>
 <tr class="separator:a1cd0e96e0582ac5e17fa3a737e6fe8d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a049d812d06bf4e44695b64419b4f16e4"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
 <tr class="memitem:a049d812d06bf4e44695b64419b4f16e4"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#a049d812d06bf4e44695b64419b4f16e4">emplace</a> (Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a049d812d06bf4e44695b64419b4f16e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes a new element to the end of the queue, which will be constructed in-place.  <a href="#a049d812d06bf4e44695b64419b4f16e4">More...</a><br /></td></tr>
 <tr class="separator:a049d812d06bf4e44695b64419b4f16e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c5079d4dbefdb90d2ec0372a0292f15"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
 <tr class="memitem:a2c5079d4dbefdb90d2ec0372a0292f15"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#a2c5079d4dbefdb90d2ec0372a0292f15">emplace</a> (Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a2c5079d4dbefdb90d2ec0372a0292f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes a new element to the end of the queue, which will be constructed in-place.  <a href="#a2c5079d4dbefdb90d2ec0372a0292f15">More...</a><br /></td></tr>
 <tr class="separator:a2c5079d4dbefdb90d2ec0372a0292f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7947df4c9959f0a75e270b3f80706a47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#a7947df4c9959f0a75e270b3f80706a47">pop</a> () noexcept(std::is_nothrow_default_constructible&lt; T &gt;::value)</td></tr>
+<tr class="memdesc:a7947df4c9959f0a75e270b3f80706a47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an element from the top of the queue.  <a href="#a7947df4c9959f0a75e270b3f80706a47">More...</a><br /></td></tr>
 <tr class="separator:a7947df4c9959f0a75e270b3f80706a47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ea0deacf0da71705d90232028b2b46d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#a9ea0deacf0da71705d90232028b2b46d">swap</a> (<a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a> &amp;other) noexcept(derplib::internal::is_nothrow_swappable&lt; <a class="el" href="classderplib_1_1container_1_1circular__queue.html#ac0c21a66200ab816e220a2d146fe42c0">container_type</a> &gt;::value)</td></tr>
+<tr class="memdesc:a9ea0deacf0da71705d90232028b2b46d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exchanges the contents of this object with <code>other</code>.  <a href="#a9ea0deacf0da71705d90232028b2b46d">More...</a><br /></td></tr>
 <tr class="separator:a9ea0deacf0da71705d90232028b2b46d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:aaaed34b06a31527a81419529f82c116e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#aaaed34b06a31527a81419529f82c116e">swap</a> (<a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a> &amp;lhs, <a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a> &amp;rhs) noexcept(derplib::internal::is_nothrow_swappable&lt; <a class="el" href="classderplib_1_1container_1_1circular__queue.html#ac0c21a66200ab816e220a2d146fe42c0">container_type</a> &gt;::value)</td></tr>
+<tr class="memdesc:aaaed34b06a31527a81419529f82c116e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <code>std::swap</code> algorithm.  <a href="#aaaed34b06a31527a81419529f82c116e">More...</a><br /></td></tr>
 <tr class="separator:aaaed34b06a31527a81419529f82c116e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T, std::size_t N&gt;<br />
 class derplib::container::circular_queue&lt; T, N &gt;</h3>
 
-<p>A queue implementation using an \c std::array, implemented in a circular manner.</p>
-<p>\tparam T Type of the stored elements. \tparam N Maximum elements that can be stored. </p>
+<p>A queue implementation using an <code>std::array</code>, implemented in a circular manner.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type of the stored elements. </td></tr>
+    <tr><td class="paramname">N</td><td>Maximum elements that can be stored. </td></tr>
+  </table>
+  </dd>
+</dl>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aa66f75aaae8e08ddc05721e7075f187e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa66f75aaae8e08ddc05721e7075f187e">&#9670;&nbsp;</a></span>const_reference</h2>
@@ -182,7 +213,8 @@ template&lt;typename T, std::size_t N&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>\brief Constant reference type for the stored elements. Equivalent to <code>const T&amp;</code>. </p>
+
+<p>Constant reference type for the stored elements. Equivalent to <code>const T&amp;</code>. </p>
 
 </div>
 </div>
@@ -199,7 +231,8 @@ template&lt;typename T, std::size_t N&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>\brief Type of the underlying container. </p>
+
+<p>Type of the underlying container. </p>
 
 </div>
 </div>
@@ -216,7 +249,8 @@ template&lt;typename T, std::size_t N&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>\brief Reference type for the stored elements. Equivalent to <code>T&amp;</code>. </p>
+
+<p>Reference type for the stored elements. Equivalent to <code>T&amp;</code>. </p>
 
 </div>
 </div>
@@ -233,7 +267,8 @@ template&lt;typename T, std::size_t N&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>\brief Type used to represent sizes and indices. </p>
+
+<p>Type used to represent sizes and indices. </p>
 
 </div>
 </div>
@@ -250,7 +285,8 @@ template&lt;typename T, std::size_t N&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>\brief Type of the stored elements. Equivalent to <code>T</code>. </p>
+
+<p>Type of the stored elements. Equivalent to <code>T</code>. </p>
 
 </div>
 </div>
@@ -310,10 +346,22 @@ template&lt;std::size_t SIZE&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>\brief Conversion constructor from \c std::array.</p>
-<p>Converts an \c std::array to a <a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a>. If the buffer of this object is smaller than the array, the first \c N elements will be copied. Otherwise, the elements from the array will be copied, and the remaining elements will be default-constructed.</p>
-<p>The \c <a class="el" href="classderplib_1_1container_1_1circular__queue.html#a64bdcb959789492324dcc92699a2af72">size()</a> after initialization will be the equivalent of <code>std::min(SIZE, N)</code>.</p>
-<p>\tparam SIZE Size of the \c std::array. \param[in] cont Data to copy from. </p>
+
+<p>Conversion constructor from <code>std::array</code>. </p>
+<p>Converts an <code>std::array</code> to a <a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a>. If the buffer of this object is smaller than the array, the first <code>N</code> elements will be copied. Otherwise, the elements from the array will be copied, and the remaining elements will be default-constructed.</p>
+<p>The <code><a class="el" href="classderplib_1_1container_1_1circular__queue.html#a64bdcb959789492324dcc92699a2af72" title="Returns the number of elements.">size()</a></code> after initialization will be the equivalent of <code>std::min(SIZE, N)</code>.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">SIZE</td><td>Size of the <code>std::array</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cont</td><td>Data to copy from. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -342,10 +390,16 @@ template&lt;typename T , std::size_t N&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>\brief Move conversion constructor from \c std::array.</p>
-<p>Move-constructs the underlying \c std::array with <code>std::move(cont)</code>.</p>
-<p>The \c <a class="el" href="classderplib_1_1container_1_1circular__queue.html#a64bdcb959789492324dcc92699a2af72">size()</a> after initialization will be <code>N</code>.</p>
-<p>\param[in] cont Container to initialize from. </p>
+
+<p>Move conversion constructor from <code>std::array</code>. </p>
+<p>Move-constructs the underlying <code>std::array</code> with <code>std::move(cont)</code>.</p>
+<p>The <code><a class="el" href="classderplib_1_1container_1_1circular__queue.html#a64bdcb959789492324dcc92699a2af72" title="Returns the number of elements.">size()</a></code> after initialization will be <code>N</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cont</td><td>Container to initialize from. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -374,9 +428,15 @@ template&lt;typename T , std::size_t N&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>\brief Copy constructor.</p>
+
+<p>Copy constructor. </p>
 <p>Copy-constructs this <a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a> with another one.</p>
-<p>\param[in] other The source circular queue to copy from. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">other</td><td>The source circular queue to copy from. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -405,9 +465,15 @@ template&lt;typename T , std::size_t N&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>\brief Move constructor.</p>
+
+<p>Move constructor. </p>
 <p>Move-constructs this circular queue with another one.</p>
-<p>\param[in] other The source circular queue to move from. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">other</td><td>The source circular queue to move from. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -435,7 +501,8 @@ template&lt;typename T, std::size_t N&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>\brief Default destructor. </p>
+
+<p>Default destructor. </p>
 
 </div>
 </div>
@@ -456,9 +523,16 @@ template&lt;typename T , std::size_t N&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>\brief Returns a reference to the last element.</p>
+
+<p>Returns a reference to the last element. </p>
 <p>The behavior is undefined if there is no element in the <a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a> and <code>NOEXCEPT</code> is true.</p>
-<p>\return Reference to the last element. \throw std::runtime_error when there is no element in the circular queue. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the last element. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>when there is no element in the circular queue. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -478,9 +552,16 @@ template&lt;typename T , std::size_t N&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>\brief Returns a constant reference to the last element.</p>
+
+<p>Returns a constant reference to the last element. </p>
 <p>If there is no element in the <a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a> and <code>NOEXCEPT</code> is true, a default-constructed <code>T</code> will be returned.</p>
-<p>\return Constant reference to the last element. \throw std::runtime_error when there is no element in the <a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>Constant reference to the last element. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>when there is no element in the <a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -503,9 +584,27 @@ template&lt;typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>\brief Pushes a new element to the end of the queue, which will be constructed in-place.</p>
-<p>If <code>NOEXCEPT</code> is set to true, pushing an element into a full queue will silently fail.</p>
-<p>\tparam Args Types as supplied to the element's constructor. \param args Arguments to forward to the constructor of the element. \return A reference to the pushed element. If the action fails, a reference to the last element will be returned. \throw std::length_error when the queue is full. </p>
+
+<p>Pushes a new element to the end of the queue, which will be constructed in-place. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Args</td><td>Types as supplied to the element's constructor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>Arguments to forward to the constructor of the element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the pushed element. If the action fails, a reference to the last element will be returned. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::length_error</td><td>when the queue is full. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -528,15 +627,32 @@ template&lt;typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>\brief Pushes a new element to the end of the queue, which will be constructed in-place.</p>
-<p>If <code>NOEXCEPT</code> is set to true, pushing an element into a full queue will silently fail.</p>
-<p>\tparam Args Types as supplied to the element's constructor. \param args Arguments to forward to the constructor of the element. \throw std::length_error when the queue is full. </p>
+
+<p>Pushes a new element to the end of the queue, which will be constructed in-place. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Args</td><td>Types as supplied to the element's constructor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>Arguments to forward to the constructor of the element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::length_error</td><td>when the queue is full. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classderplib_1_1container_1_1circular__queue_a2c5079d4dbefdb90d2ec0372a0292f15_cgraph.png" border="0" usemap="#classderplib_1_1container_1_1circular__queue_a2c5079d4dbefdb90d2ec0372a0292f15_cgraph" alt=""/></div>
 <map name="classderplib_1_1container_1_1circular__queue_a2c5079d4dbefdb90d2ec0372a0292f15_cgraph" id="classderplib_1_1container_1_1circular__queue_a2c5079d4dbefdb90d2ec0372a0292f15_cgraph">
-<area shape="rect"  title=" " alt="" coords="5,5,195,47"/>
+<area shape="rect"  title="Pushes a new element to the end of the queue, which will be constructed in&#45;place." alt="" coords="5,5,195,47"/>
 <area shape="rect"  href="namespacederplib_1_1util.html#a7f84bac5a259407e885fa5c29e357dba" title=" " alt="" coords="243,13,373,39"/>
 </map>
 </div>
@@ -567,8 +683,9 @@ template&lt;typename T , std::size_t N&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>\brief Checks if the underlying container has no elements.</p>
-<p>\return <code>true</code> if there are no elements in the queue, <code>false</code> otherwise. </p>
+
+<p>Checks if the underlying container has no elements. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if there are no elements in the queue, <code>false</code> otherwise. </dd></dl>
 
 </div>
 </div>
@@ -588,9 +705,16 @@ template&lt;typename T , std::size_t N&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>\brief Returns a reference to the first element.</p>
+
+<p>Returns a reference to the first element. </p>
 <p>The behavior is undefined when there is no element in the <a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a>, and <code>NOEXCEPT</code> is true.</p>
-<p>\return Reference to the first element. \throw std::runtime_error when there is no element in the <a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the first element. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>when there is no element in the <a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -610,9 +734,16 @@ template&lt;typename T , std::size_t N&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>\brief Returns a constant reference to the first element.</p>
+
+<p>Returns a constant reference to the first element. </p>
 <p>If there is no element in the <a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a> and <code>NOEXCEPT</code> is true, a default-constructed <code>T</code> will be returned.</p>
-<p>\return Constant reference to the first element. \throw std::runtime_error when there is no element in the <a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>Constant reference to the first element. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>when there is no element in the <a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -641,9 +772,16 @@ template&lt;typename T , std::size_t N&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>\brief Copy assignment operator.</p>
-<p>Replaces the contents with a copy of \p other.</p>
-<p>\param other The <a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a> to copy from. \return <code>*this</code>. </p>
+
+<p>Copy assignment operator. </p>
+<p>Replaces the contents with a copy of <code>other</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The <a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a> to copy from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>*this</code>. </dd></dl>
 
 </div>
 </div>
@@ -672,9 +810,16 @@ template&lt;typename T , std::size_t N&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>\brief Move assignment operator.</p>
-<p>Replaces the contents with \p other using move semantics.</p>
-<p>\param other The <a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a> to move from. \return <code>*this</code>. </p>
+
+<p>Move assignment operator. </p>
+<p>Replaces the contents with <code>other</code> using move semantics.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The <a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a> to move from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>*this</code>. </dd></dl>
 
 </div>
 </div>
@@ -702,7 +847,8 @@ template&lt;typename T , std::size_t N&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>\brief Removes an element from the top of the queue. </p>
+
+<p>Removes an element from the top of the queue. </p>
 
 </div>
 </div>
@@ -723,15 +869,26 @@ template&lt;typename T , std::size_t N&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>\brief Pushes the given element \p value to the end of the queue.</p>
-<p>If <code>NOEXCEPT</code> is set to true, pushing an element into a full queue will silently fail.</p>
-<p>\param[in] value Value of the element to push. \throw std::length_error when the queue is full. </p>
+
+<p>Pushes the given element <code>value</code> to the end of the queue. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Value of the element to push. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::length_error</td><td>when the queue is full. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classderplib_1_1container_1_1circular__queue_af8ec3ce5120e1263aa6e9da5dc93119e_cgraph.png" border="0" usemap="#classderplib_1_1container_1_1circular__queue_af8ec3ce5120e1263aa6e9da5dc93119e_cgraph" alt=""/></div>
 <map name="classderplib_1_1container_1_1circular__queue_af8ec3ce5120e1263aa6e9da5dc93119e_cgraph" id="classderplib_1_1container_1_1circular__queue_af8ec3ce5120e1263aa6e9da5dc93119e_cgraph">
-<area shape="rect"  title=" " alt="" coords="5,5,169,47"/>
+<area shape="rect"  title="Pushes the given element value to the end of the queue." alt="" coords="5,5,169,47"/>
 <area shape="rect"  href="namespacederplib_1_1util.html#a7f84bac5a259407e885fa5c29e357dba" title=" " alt="" coords="217,13,348,39"/>
 </map>
 </div>
@@ -755,15 +912,26 @@ template&lt;typename T , std::size_t N&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>\brief Pushes the given element \p value to the end of the queue.</p>
-<p>If <code>NOEXCEPT</code> is set to true, pushing an element into a full queue will silently fail.</p>
-<p>\param[in] value Value of the element to push. \throw std::length_error when the queue is full. </p>
+
+<p>Pushes the given element <code>value</code> to the end of the queue. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Value of the element to push. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::length_error</td><td>when the queue is full. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classderplib_1_1container_1_1circular__queue_a1cd0e96e0582ac5e17fa3a737e6fe8d2_cgraph.png" border="0" usemap="#classderplib_1_1container_1_1circular__queue_a1cd0e96e0582ac5e17fa3a737e6fe8d2_cgraph" alt=""/></div>
 <map name="classderplib_1_1container_1_1circular__queue_a1cd0e96e0582ac5e17fa3a737e6fe8d2_cgraph" id="classderplib_1_1container_1_1circular__queue_a1cd0e96e0582ac5e17fa3a737e6fe8d2_cgraph">
-<area shape="rect"  title=" " alt="" coords="5,5,169,47"/>
+<area shape="rect"  title="Pushes the given element value to the end of the queue." alt="" coords="5,5,169,47"/>
 <area shape="rect"  href="namespacederplib_1_1util.html#a7f84bac5a259407e885fa5c29e357dba" title=" " alt="" coords="217,13,348,39"/>
 </map>
 </div>
@@ -794,8 +962,9 @@ template&lt;typename T , std::size_t N&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>\brief Returns the number of elements.</p>
-<p>\return The number of elements in the <a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a>. </p>
+
+<p>Returns the number of elements. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of elements in the <a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a>. </dd></dl>
 
 </div>
 </div>
@@ -824,13 +993,14 @@ template&lt;typename T , std::size_t N&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>\brief Exchanges the contents of this object with <code>other</code>. </p>
+
+<p>Exchanges the contents of this object with <code>other</code>. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classderplib_1_1container_1_1circular__queue_a9ea0deacf0da71705d90232028b2b46d_cgraph.png" border="0" usemap="#classderplib_1_1container_1_1circular__queue_a9ea0deacf0da71705d90232028b2b46d_cgraph" alt=""/></div>
 <map name="classderplib_1_1container_1_1circular__queue_a9ea0deacf0da71705d90232028b2b46d_cgraph" id="classderplib_1_1container_1_1circular__queue_a9ea0deacf0da71705d90232028b2b46d_cgraph">
-<area shape="rect"  title=" " alt="" coords="5,5,172,47"/>
+<area shape="rect"  title="Exchanges the contents of this object with other." alt="" coords="5,5,172,47"/>
 <area shape="rect"  href="namespacederplib_1_1container.html#a60dee47495e2b61ddb2ef90372ea7aa2" title=" " alt="" coords="220,5,356,47"/>
 </map>
 </div>
@@ -873,8 +1043,15 @@ template&lt;typename T, std::size_t N&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>\brief Specialization of <code>std::swap</code> algorithm.</p>
-<p>\param lhs Containers to swap. \param rhs Containers to swap. </p>
+
+<p>Specialization of <code>std::swap</code> algorithm. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>Containers to swap. </td></tr>
+    <tr><td class="paramname">rhs</td><td>Containers to swap. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

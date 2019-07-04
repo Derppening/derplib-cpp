@@ -1,5 +1,5 @@
 <map id="derplib::util::begin" name="derplib::util::begin">
 <area shape="rect" id="node1" title=" " alt="" coords="357,13,497,39"/>
-<area shape="rect" id="node2" href="$namespacederplib_1_1util.html#abae597cbb70b04747c865989093fdb56" title=" " alt="" coords="181,5,309,47"/>
+<area shape="rect" id="node2" href="$namespacederplib_1_1util.html#abae597cbb70b04747c865989093fdb56" title="Joins a string from a std::vector using a given separator." alt="" coords="181,5,309,47"/>
 <area shape="rect" id="node3" href="$namespacederplib_1_1util.html#af58dd72c74452d028445672811ec3e3b" title=" " alt="" coords="5,5,133,47"/>
 </map>

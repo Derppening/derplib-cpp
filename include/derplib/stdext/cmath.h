@@ -22,11 +22,11 @@ template<typename T, typename R = T>
 inline DERPLIB_CPP14_CONSTEXPR typename std::enable_if<std::is_floating_point<R>::value, R>::type to_radians(const T& degrees);
 
 /**
- * \\brief Converts a radian value to degrees.
+ * \brief Converts a radian value to degrees.
  *
- * \\tparam T data type
- * \\param radians original value in radians
- * \\return Degree value.
+ * \tparam T data type
+ * \param radians original value in radians
+ * \return Degree value.
  */
 template<typename T>
 inline DERPLIB_CPP14_CONSTEXPR typename std::enable_if<std::is_floating_point<T>::value, T>::type to_degrees(const T& radians);

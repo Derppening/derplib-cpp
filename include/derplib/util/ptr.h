@@ -15,7 +15,7 @@ namespace derplib {
 namespace util {
 
 /**
- * \\brief Type definition for pointers.
+ * \brief Type definition for pointers.
  */
 template<typename T>
 using raw_ptr = T*;

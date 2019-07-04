@@ -160,13 +160,7 @@ class basic_logger {
    */
   void print_helper(const string& message, level p_level);
 
-  /**
-   * \brief Minimum level of messages that will be logged.
-   */
   level _min_level;
-  /**
-   * \brief Reference to the output stream.
-   */
   ostream& _ostream;
 };
 

@@ -1,8 +1,8 @@
 <map id="derplib::util::end" name="derplib::util::end">
 <area shape="rect" id="node1" title=" " alt="" coords="396,78,524,105"/>
-<area shape="rect" id="node2" href="$namespacederplib_1_1util.html#a7722e1b2828cd8da655d2b4ae8bae197" title=" " alt="" coords="221,5,343,47"/>
+<area shape="rect" id="node2" href="$namespacederplib_1_1util.html#a7722e1b2828cd8da655d2b4ae8bae197" title="Generates a int range for [start,end)." alt="" coords="221,5,343,47"/>
 <area shape="rect" id="node3" href="$namespacederplib_1_1util.html#afb6dd9bd350d7d29ecb7cb21b137c04c" title="Splits a string by a given delimiter." alt="" coords="216,71,348,112"/>
-<area shape="rect" id="node5" href="$namespacederplib_1_1util.html#abae597cbb70b04747c865989093fdb56" title=" " alt="" coords="218,136,346,177"/>
+<area shape="rect" id="node5" href="$namespacederplib_1_1util.html#abae597cbb70b04747c865989093fdb56" title="Joins a string from a std::vector using a given separator." alt="" coords="218,136,346,177"/>
 <area shape="rect" id="node4" href="$classderplib_1_1semver.html#abdf5c8f237636f5f9ef993caf469b488" title="Constructs a semver object from a version string." alt="" coords="5,71,168,112"/>
 <area shape="rect" id="node6" href="$namespacederplib_1_1util.html#af58dd72c74452d028445672811ec3e3b" title=" " alt="" coords="23,136,151,177"/>
 </map>

@@ -8,24 +8,10 @@
 #include <thread>
 #include <vector>
 
+#include "derplib/internal/common_type_traits.h"
+
 namespace derplib {
 namespace container {
-
-#if defined(__cpp_lib_is_invocable) || __cplusplus > 201402L
-template<typename Fn, typename... ArgTypes>
-using enable_if_invocable = typename std::enable_if<std::is_invocable<Fn, ArgTypes...>::value>;
-#else
-template<typename Fn, typename... ArgTypes>
-using enable_if_invocable = std::true_type;
-#endif  // defined(__cpp_lib_is_invocable) || __cplusplus > 201402L
-
-#if __cplusplus > 201103L
-template<typename T>
-using decay_t = std::decay_t<T>;
-#else
-template<typename T>
-using decay_t = typename std::decay<T>::type;
-#endif  // __cplusplus > 201103L
 
 /**
  * \brief A buffered consumer with parallel execution support.
@@ -36,7 +22,7 @@ using decay_t = typename std::decay<T>::type;
  * \tparam ConsumerT The type of the functor to process the elements. Must have a prototype of
  * `void f(InT)`.
  */
-template<typename InT, typename ConsumerT = void (*)(InT), typename = enable_if_invocable<ConsumerT>>
+template<typename InT, typename ConsumerT = void (*)(InT), typename = internal::enable_if_invocable<ConsumerT>>
 class cfq_parallel_consumer;
 
 template<typename InT, typename ConsumerT>
@@ -72,7 +58,7 @@ class cfq_parallel_consumer<InT, ConsumerT> {
    *
    * \param value The value of the element to append.
    */
-  void push(const decay_t<InT>& value);
+  void push(const internal::decay_t<InT>& value);
 
   /**
    * \brief Adds an element to the back.
@@ -81,7 +67,7 @@ class cfq_parallel_consumer<InT, ConsumerT> {
    *
    * \param value The value of the element to append.
    */
-  void push(decay_t<InT>&& value);
+  void push(internal::decay_t<InT>&& value);
 
   /**
    * \brief Constructs an element in-place at the back.
@@ -106,7 +92,7 @@ class cfq_parallel_consumer<InT, ConsumerT> {
 
   std::atomic_bool _keep_alive;
 
-  std::vector<std::deque<decay_t<InT>>> _buffers;
+  std::vector<std::deque<internal::decay_t<InT>>> _buffers;
   std::vector<std::thread> _threads;
   std::vector<std::mutex> _mutexes;
   std::vector<std::condition_variable> _cvs;

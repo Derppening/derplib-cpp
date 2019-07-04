@@ -1,5 +1,3 @@
-// Utilities for displaying memory usage for STL containers.
-
 #pragma once
 
 #include <deque>

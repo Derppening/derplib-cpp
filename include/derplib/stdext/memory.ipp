@@ -20,5 +20,5 @@ std::unique_ptr<T> make_unique(std::size_t size) {
 
 #endif
 
-}
-}
+}  // namespace stdext
+}  // namespace derplib

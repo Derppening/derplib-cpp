@@ -1,5 +1,3 @@
-// Utilities for std::string.
-
 #pragma once
 
 #include <iterator>
@@ -9,6 +7,8 @@
 
 namespace derplib {
 namespace util {
+
+// TODO(Derppening): Move to stdext
 
 /**
  * \brief Splits a string by a given delimiter.
@@ -38,15 +38,17 @@ std::vector<std::basic_string<CharT>> split_string(const std::basic_string<CharT
                                                    CharT delimiter,
                                                    unsigned limit = 0);
 
+// TODO(Derppening): Add overloads for split_string(iterator, iterator, delimiter, limit)
+
 /**
- * \\brief Joins a string from a `std::vector` using a given separator.
+ * \brief Joins a string from a `std::vector` using a given separator.
  *
- * \\tparam T `std::basic_string`, or any character sequence container which implements `value_type`
+ * \tparam T `std::basic_string`, or any character sequence container which implements `value_type`
  * typedef and `std::ostream& operator<<(std::ostream&, T)`.
- * \\param begin iterator to the first element to join
- * \\param end iterator to the past-the-last element to join
- * \\param separator separator between two string elements
- * \\return A string with all elements joint together.
+ * \param begin iterator to the first element to join
+ * \param end iterator to the past-the-last element to join
+ * \param separator separator between two string elements
+ * \return A string with all elements joint together.
  */
 template<typename T>
 T join_to_string(typename std::vector<T>::const_iterator begin, typename std::vector<T>::const_iterator end, const T& separator);

@@ -1,5 +1,3 @@
-// Implements a basic stopwatch.
-
 #pragma once
 
 #include <chrono>
