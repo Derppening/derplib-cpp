@@ -4,7 +4,6 @@
 #include <memory>
 #include <vector>
 
-#if __cplusplus > 199711L
 namespace derplib {
 template<class T, class Deleter = std::default_delete<T>>
 class ref_count_pointer {
@@ -108,6 +107,3 @@ class ref_count_pointer {
   std::vector<observer*> _v;
 };
 }  // namespace derplib
-#else
-#error "This library requires C++11 or above."
-#endif  // __cplusplus > 199711L

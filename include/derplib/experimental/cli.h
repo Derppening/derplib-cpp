@@ -17,121 +17,121 @@ namespace derplib {
 namespace experimental {
 
 /**
- * @brief Abstraction for interactive command-line interface.
+ * \brief Abstraction for interactive command-line interface.
  *
- * @tparam CharT character type for input
- * @tparam Func function type for invoking callbacks. Must be `void(const std::basic_string<CharT>&)`.
+ * \tparam CharT character type for input
+ * \tparam Func function type for invoking callbacks. Must be `void(const std::basic_string<CharT>&)`.
  */
 template<typename CharT, typename Func = void (*)(const std::basic_string<CharT>&), typename = internal::enable_if_invocable<
     Func>>
 class basic_cli {
  public:
   /**
-   * @brief `std::basic_string<CharT>`
+   * \brief `std::basic_string<CharT>`
    */
   using string_type = std::basic_string<CharT>;
   /**
-   * @brief `Func`
+   * \brief `Func`
    */
   using function_type = Func;
 
   /**
-   * @brief Level of hints to provide to the user.
+   * \brief Level of hints to provide to the user.
    */
   enum struct hint_level {
     /**
-     * @brief Do not display any available options to the user.
+     * \brief Do not display any available options to the user.
      */
         none,
     /**
-     * @brief Only display the primary input alias to the user.
+     * \brief Only display the primary input alias to the user.
      */
         simple,
     /**
-     * @brief Display all input aliases to the user.
+     * \brief Display all input aliases to the user.
      */
         full
   };
 
   /**
-   * @brief Result from parsing the command-line arguments.
+   * \brief Result from parsing the command-line arguments.
    */
   enum struct parse_result {
     /**
-     * @brief Command not found.
+     * \brief Command not found.
      */
         cmd_not_found = -1,
     /**
-     * @brief No operation, i.e. the control is still managed by this class.
+     * \brief No operation, i.e. the control is still managed by this class.
      */
         no_op,
     /**
-     * @brief Exit, i.e. the control continues by the rest of the application.
+     * \brief Exit, i.e. the control continues by the rest of the application.
      */
         exit
   };
 
   /**
-   * @brief Representation of an entry.
+   * \brief Representation of an entry.
    */
   struct entry {
     /**
-     * @brief Description of the entry.
+     * \brief Description of the entry.
      */
     string_type text;
     /**
-     * @brief List of all inputs that triggers this option.
+     * \brief List of all inputs that triggers this option.
      */
     std::vector<string_type> alias;
     /**
-     * @brief Callback of this option.
+     * \brief Callback of this option.
      */
     Func fptr = nullptr;
     /**
-     * @brief Whether the interactive prompt should terminate after processing the callback.
+     * \brief Whether the interactive prompt should terminate after processing the callback.
      */
     bool is_terminate = false;
   };
 
   /**
-   * @brief Default constructor.
+   * \brief Default constructor.
    *
    * Defaults to use hint level `hint_level::simple`.
    */
   basic_cli() = default;
 
   /**
-   * @brief Constructs an instance with overridden hint level.
+   * \brief Constructs an instance with overridden hint level.
    *
-   * @param level overridden hint level
+   * \param level overridden hint level
    */
   explicit basic_cli(hint_level level) : _hint_level(level) {}
 
   virtual ~basic_cli() = default;
 
   /**
-   * @brief Inserts an empty line.
-   * @return `*this`.
+   * \brief Inserts an empty line.
+   * \return `*this`.
    */
   basic_cli& div_line() {
     return header("");
   }
 
   /**
-   * @brief Adds a header.
+   * \brief Adds a header.
    *
-   * @param header header text
-   * @return `*this`.
+   * \param header header text
+   * \return `*this`.
    */
   basic_cli& header(const string_type& header) {
     return item(header, std::vector<string_type>());
   }
 
   /**
-   * @brief Adds an option item.
+   * \brief Adds an option item.
    *
-   * @param e entry to add
-   * @return `*this`.
+   * \param e entry to add
+   * \return `*this`.
    */
   basic_cli& item(const entry& e) {
     _options.emplace_back(e);
@@ -140,13 +140,13 @@ class basic_cli {
   }
 
   /**
-   * @brief Adds an option item.
+   * \brief Adds an option item.
    *
-   * @param text description of the item
-   * @param input input which triggers this option
-   * @param fptr callback to execute when this option is triggered
-   * @param is_term if true, leaves the interactive prompt after processing the callback
-   * @return `*this`
+   * \param text description of the item
+   * \param input input which triggers this option
+   * \param fptr callback to execute when this option is triggered
+   * \param is_term if true, leaves the interactive prompt after processing the callback
+   * \return `*this`
    */
   basic_cli& item(const string_type& text,
                   const string_type& input,
@@ -156,14 +156,14 @@ class basic_cli {
   }
 
   /**
-   * @brief Adds an option item.
+   * \brief Adds an option item.
    *
-   * @param text text description of the item
-   * @param input inputs when trigger this option. If multiple are provided and hint level is set to
+   * \param text text description of the item
+   * \param input inputs when trigger this option. If multiple are provided and hint level is set to
    * `hint_level::simple`, only the first alias will be shown
-   * @param fptr callback to execute when this option is triggered
-   * @param is_term if true, leaves the interactive prompt after prcessing the callback
-   * @return `*this`.
+   * \param fptr callback to execute when this option is triggered
+   * \param is_term if true, leaves the interactive prompt after prcessing the callback
+   * \return `*this`.
    */
   basic_cli& item(const string_type& text,
                   const std::vector<string_type>& input,

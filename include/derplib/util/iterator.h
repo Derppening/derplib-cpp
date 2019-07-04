@@ -9,16 +9,16 @@ namespace derplib {
 namespace util {
 
 /**
- * Indexed specialization for @c std::for_each.
+ * Indexed specialization for \\c std::for_each.
  *
- * The signature of the function should be equivalent to @code void f(IntegralType, const Type&); @endcode
+ * The signature of the function should be equivalent to \\code void f(IntegralType, const Type&); \\endcode
  *
- * @tparam InputIt InputIterator
- * @tparam BinaryFunction Operand function type.
- * @param first Iterator to first element
- * @param last Iterator to last element
- * @param f Function to be applied to [first,last)
- * @return @c f
+ * \\tparam InputIt InputIterator
+ * \\tparam BinaryFunction Operand function type.
+ * \\param first Iterator to first element
+ * \\param last Iterator to last element
+ * \\param f Function to be applied to [first,last)
+ * \\return \\c f
  */
 // TODO: std::enable_if<...>
 template<class InputIt, class BinaryFunction>
