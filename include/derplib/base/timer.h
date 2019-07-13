@@ -61,9 +61,21 @@ class timer<Func> {
 
   ~timer();
 
+  /**
+   * \brief Starts the timer.
+   */
   void start();
+  /**
+   * \brief Stops the timer.
+   */
   void stop();
+  /**
+   * \return Whether the timer is active.
+   */
   bool active() const;
+  /**
+   * \return Whether the timer has expired.
+   */
   bool expired() const;
 
  private:

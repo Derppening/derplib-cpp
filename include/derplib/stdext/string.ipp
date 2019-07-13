@@ -50,6 +50,33 @@ std::vector<std::basic_string<CharT>> split_string(const std::basic_string<CharT
   return vs;
 }
 
+template<typename CharT>
+std::vector<std::basic_string<CharT>> split_string(typename std::basic_string<CharT>::const_iterator begin,
+                                                   typename std::basic_string<CharT>::const_iterator end,
+                                                   CharT delimiter,
+                                                   unsigned limit) {
+  using string_type = typename std::basic_string<CharT>;
+  std::vector<string_type> vs;
+
+  std::string buffer;
+  for (auto it = begin; it != end; ++it) {
+    if (*it == delimiter) {
+      vs.emplace_back(std::move(buffer));
+      buffer = std::string();
+
+      if (limit != 0 && vs.size() >= limit) { return vs; }
+    } else {
+      buffer.append(*it);
+    }
+  }
+
+  if (!buffer.empty()) {
+    vs.emplace_back(std::move(buffer));
+  }
+
+  return vs;
+}
+
 template<typename T>
 T join_to_string(typename std::vector<T>::const_iterator begin,
                  typename std::vector<T>::const_iterator end,

@@ -13,6 +13,9 @@ namespace derplib {
 
 class semver {
  public:
+  /**
+   * \brief Reports errors that are caused by parsing a malformed version string.
+   */
   class format_error final : public std::runtime_error {
    public:
     explicit format_error(const char* what_arg);
@@ -33,8 +36,8 @@ class semver {
    * \param major major version number.
    * \param minor minor version number.
    * \param patch patch version number.
-   * \param prerelease prerelease string.
-   * \param build build tag.
+   * \param prerelease prerelease string. Empty string represents this field does not exist.
+   * \param build build tag. Empty string represents this field does not exist.
    */
   explicit semver(int major, int minor = 0, int patch = 0, std::string prerelease = "", std::string build = "");
 

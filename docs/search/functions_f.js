@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['time',['time',['../classderplib_1_1stopwatch.html#a0591c264718b009e5d70eab0f421f572',1,'derplib::stopwatch']]],
-  ['time_5fraw',['time_raw',['../classderplib_1_1stopwatch.html#ae6b999a9802d45fb3869328d47b2dd52',1,'derplib::stopwatch']]],
   ['timer',['timer',['../classderplib_1_1timer_3_01Func_01_4.html#a50d2c45fe3a5b1519d5b366271715f47',1,'derplib::timer&lt; Func &gt;::timer(std::chrono::duration&lt; Rep, Period &gt; duration, const Func &amp;callback)'],['../classderplib_1_1timer_3_01Func_01_4.html#a8bd90be84faf05e022def73b6d62ea35',1,'derplib::timer&lt; Func &gt;::timer(std::chrono::duration&lt; Rep, Period &gt; duration, const Func &amp;callback, std::chrono::duration&lt; Rep, Period &gt; poll_rate)'],['../classderplib_1_1timer_3_01Func_01_4.html#a68a0d582d8b000864435dd560e4503c6',1,'derplib::timer&lt; Func &gt;::timer(const timer &amp;other)'],['../classderplib_1_1timer_3_01Func_01_4.html#aeecd6e2191b884ad8b2291c59daedb04',1,'derplib::timer&lt; Func &gt;::timer(timer &amp;&amp;other) noexcept=default'],['../classderplib_1_1timer_3_01Func_01_4.html#ace8be78d49defc5530b8a9e9b06cb5e1',1,'derplib::timer&lt; Func &gt;::timer(const timer&lt; Func &gt; &amp;other)']]],
   ['to_5farray',['to_array',['../namespacederplib_1_1util.html#a267ed67d12b174587f58b3c2965cbc30',1,'derplib::util']]],
   ['to_5fdegrees',['to_degrees',['../namespacederplib_1_1stdext.html#add31fa6f7c0d563b2391e4d9e5db18fc',1,'derplib::stdext']]],

@@ -117,14 +117,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0e1fe0974647dc6282ade1d2dc95dbca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1stopwatch.html#a0e1fe0974647dc6282ade1d2dc95dbca">stop</a> ()</td></tr>
 <tr class="memdesc:a0e1fe0974647dc6282ade1d2dc95dbca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the stopwatch.  <a href="#a0e1fe0974647dc6282ade1d2dc95dbca">More...</a><br /></td></tr>
 <tr class="separator:a0e1fe0974647dc6282ade1d2dc95dbca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0591c264718b009e5d70eab0f421f572"><td class="memTemplParams" colspan="2">template&lt;typename ToDuration  = std::chrono::nanoseconds&gt; </td></tr>
-<tr class="memitem:a0591c264718b009e5d70eab0f421f572"><td class="memTemplItemLeft" align="right" valign="top">ToDuration::rep&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classderplib_1_1stopwatch.html#a0591c264718b009e5d70eab0f421f572">time</a> () const</td></tr>
-<tr class="memdesc:a0591c264718b009e5d70eab0f421f572"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves either the time elapsed since the stopwatch started, or the duration of the stopwatch if the stopwatch is stopped.  <a href="#a0591c264718b009e5d70eab0f421f572">More...</a><br /></td></tr>
-<tr class="separator:a0591c264718b009e5d70eab0f421f572"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6b999a9802d45fb3869328d47b2dd52"><td class="memTemplParams" colspan="2">template&lt;typename ToDuration  = std::chrono::nanoseconds&gt; </td></tr>
-<tr class="memitem:ae6b999a9802d45fb3869328d47b2dd52"><td class="memTemplItemLeft" align="right" valign="top">ToDuration&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classderplib_1_1stopwatch.html#ae6b999a9802d45fb3869328d47b2dd52">time_raw</a> () const</td></tr>
-<tr class="memdesc:ae6b999a9802d45fb3869328d47b2dd52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves either the time elapsed since the stopwatch started, or the duration of the stopwatch if the stopwatch is stopped.  <a href="#ae6b999a9802d45fb3869328d47b2dd52">More...</a><br /></td></tr>
-<tr class="separator:ae6b999a9802d45fb3869328d47b2dd52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5af64bc116d34c4dcf6fd4af2780ae1"><td class="memTemplParams" colspan="2">template&lt;typename ToDuration  = std::chrono::nanoseconds&gt; </td></tr>
+<tr class="memitem:ab5af64bc116d34c4dcf6fd4af2780ae1"><td class="memTemplItemLeft" align="right" valign="top">ToDuration::rep&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classderplib_1_1stopwatch.html#ab5af64bc116d34c4dcf6fd4af2780ae1">count</a> () const</td></tr>
+<tr class="memdesc:ab5af64bc116d34c4dcf6fd4af2780ae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves either the time elapsed since the stopwatch started, or the duration of the stopwatch if the stopwatch is stopped.  <a href="#ab5af64bc116d34c4dcf6fd4af2780ae1">More...</a><br /></td></tr>
+<tr class="separator:ab5af64bc116d34c4dcf6fd4af2780ae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a456befb51a24e28e90e6b4c6e9292ef8"><td class="memTemplParams" colspan="2">template&lt;typename ToDuration  = std::chrono::nanoseconds&gt; </td></tr>
+<tr class="memitem:a456befb51a24e28e90e6b4c6e9292ef8"><td class="memTemplItemLeft" align="right" valign="top">ToDuration&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classderplib_1_1stopwatch.html#a456befb51a24e28e90e6b4c6e9292ef8">duration</a> () const</td></tr>
+<tr class="memdesc:a456befb51a24e28e90e6b4c6e9292ef8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves either the time elapsed since the stopwatch started, or the duration of the stopwatch if the stopwatch is stopped.  <a href="#a456befb51a24e28e90e6b4c6e9292ef8">More...</a><br /></td></tr>
+<tr class="separator:a456befb51a24e28e90e6b4c6e9292ef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A basic stopwatch, utilizing <code>std::chrono::steady_clock</code>. </p>
@@ -207,6 +207,78 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab5af64bc116d34c4dcf6fd4af2780ae1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5af64bc116d34c4dcf6fd4af2780ae1">&#9670;&nbsp;</a></span>count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ToDuration  = std::chrono::nanoseconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ToDuration::rep derplib::stopwatch::count </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves either the time elapsed since the stopwatch started, or the duration of the stopwatch if the stopwatch is stopped. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">ToDuration</td><td>Target type of <code>std::chrono::duration</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Time elapsed in terms of <code>ToDuration</code>, in numeric form. </dd></dl>
+
+</div>
+</div>
+<a id="a456befb51a24e28e90e6b4c6e9292ef8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a456befb51a24e28e90e6b4c6e9292ef8">&#9670;&nbsp;</a></span>duration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ToDuration  = std::chrono::nanoseconds&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ToDuration derplib::stopwatch::duration </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves either the time elapsed since the stopwatch started, or the duration of the stopwatch if the stopwatch is stopped. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">ToDuration</td><td>Target type of <code>std::chrono::duration</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Time elapsed in terms of <code>ToDuration</code>. </dd></dl>
+
+</div>
+</div>
 <a id="a5f9c63ef4c61dbe704af7cf52edf0196"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5f9c63ef4c61dbe704af7cf52edf0196">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/2]</span></h2>
 
@@ -294,78 +366,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Stops the stopwatch. </p>
-
-</div>
-</div>
-<a id="a0591c264718b009e5d70eab0f421f572"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0591c264718b009e5d70eab0f421f572">&#9670;&nbsp;</a></span>time()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename ToDuration  = std::chrono::nanoseconds&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToDuration::rep derplib::stopwatch::time </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Retrieves either the time elapsed since the stopwatch started, or the duration of the stopwatch if the stopwatch is stopped. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">ToDuration</td><td>Target type of <code>std::chrono::duration</code>. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Time elapsed in terms of <code>ToDuration</code>, in numeric form. </dd></dl>
-
-</div>
-</div>
-<a id="ae6b999a9802d45fb3869328d47b2dd52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6b999a9802d45fb3869328d47b2dd52">&#9670;&nbsp;</a></span>time_raw()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename ToDuration  = std::chrono::nanoseconds&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToDuration derplib::stopwatch::time_raw </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Retrieves either the time elapsed since the stopwatch started, or the duration of the stopwatch if the stopwatch is stopped. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">ToDuration</td><td>Target type of <code>std::chrono::duration</code>. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Time elapsed in terms of <code>ToDuration</code>. </dd></dl>
 
 </div>
 </div>

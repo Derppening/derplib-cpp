@@ -8,7 +8,7 @@
 namespace derplib {
 namespace util {
 
-// TODO(Derppening): Move to stdet, implementations to iterator.ipp
+// TODO(Derppening): Move to stdext, implementations to iterator.ipp
 
 /**
  * Indexed specialization for \c std::for_each.

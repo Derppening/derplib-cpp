@@ -36,7 +36,21 @@ std::vector<std::basic_string<CharT>> split_string(const std::basic_string<CharT
                                                    CharT delimiter,
                                                    unsigned limit = 0);
 
-// TODO(Derppening): Add overloads for split_string(iterator, iterator, delimiter, limit)
+/**
+ * \brief Splits a string by a given delimiter.
+ *
+ * \tparam CharT character type
+ * \param begin iterator to the first character to consider
+ * \param end iterator to the past-the-end character to consider
+ * \param delimiter delimiter character
+ * \param limit maximum number of substrings to return. 0 implies no limit
+ * \return `std::vector` of substrings.
+ */
+template<typename CharT>
+std::vector<std::basic_string<CharT>> split_string(typename std::basic_string<CharT>::const_iterator begin,
+                                                   typename std::basic_string<CharT>::const_iterator end,
+                                                   CharT delimiter,
+                                                   unsigned limit = 0);
 
 /**
  * \brief Joins a string from a `std::vector` using a given separator.
@@ -65,7 +79,19 @@ std::basic_string<T> join_to_string(const std::vector<std::basic_string<T>>& inp
 template<typename T>
 std::basic_string<T> join_to_string(const std::vector<std::basic_string<T>>& input, T separator);
 
+/**
+ * \brief Converts the given string to upper case.
+ *
+ * \param[in,out] str string to process
+ * \return Reference to `str`.
+ */
 std::string& toupper(std::string& str);
+/**
+ * \brief Converts the given string to lower case.
+ *
+ * \param[in,out] str string to process
+ * \return Reference to `str`.
+ */
 std::string& tolower(std::string& str);
 
 }  // namespace util

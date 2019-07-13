@@ -31,6 +31,7 @@ DERPLIB_CPP14_CONSTEXPR std::array<T, N> to_array(T (& arr)[N]);
  * \param arr A C-style array
  * \return Size of the C-style array
  */
+// TODO(Derppening): Move to stdext as drop-in backport for std::size
 template<typename T, std::size_t N>
 constexpr std::size_t size(DERPLIB_MAYBE_UNUSED T (& arr)[N]);
 

@@ -16,7 +16,7 @@ namespace util {
  * Code based on https://gcc.gnu.org/onlinedocs/libstdc++/manual/ext_demangling.html
  *
  * \tparam T Type to retrieve demangled name. For C++11 or above, you may use \c decltype(v) to retrieve the type of a
- * variable \c v.
+ * variable.
  * \param legacy_naming return name as specified by C++98 standard, i.e. templates with ">>" tokens are displayed as
  * "> >".
  * \return Demangled name

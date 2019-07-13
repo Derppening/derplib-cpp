@@ -121,12 +121,15 @@ Functions</h2></td></tr>
 <tr class="separator:add31fa6f7c0d563b2391e4d9e5db18fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fcb7cb0ccc0c321280ccfe5708bcc25"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
 <tr class="memitem:a6fcb7cb0ccc0c321280ccfe5708bcc25"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a6fcb7cb0ccc0c321280ccfe5708bcc25">make_unique</a> (Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a6fcb7cb0ccc0c321280ccfe5708bcc25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop-in backport for <code>std::make_unique</code>.  <a href="#a6fcb7cb0ccc0c321280ccfe5708bcc25">More...</a><br /></td></tr>
 <tr class="separator:a6fcb7cb0ccc0c321280ccfe5708bcc25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2f5385caa026f657333f5ecf7311607"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ab2f5385caa026f657333f5ecf7311607"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#ab2f5385caa026f657333f5ecf7311607">make_unique</a> (std::size_t size)</td></tr>
+<tr class="memdesc:ab2f5385caa026f657333f5ecf7311607"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop-in backport for <code>std::make_unique</code>.  <a href="#ab2f5385caa026f657333f5ecf7311607">More...</a><br /></td></tr>
 <tr class="separator:ab2f5385caa026f657333f5ecf7311607"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f2a770e89bdf9e678ca39ac43bcdb98"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
 <tr class="memitem:a0f2a770e89bdf9e678ca39ac43bcdb98"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_array&lt; T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a0f2a770e89bdf9e678ca39ac43bcdb98">make_unique</a> (Args &amp;&amp;... args)=delete</td></tr>
+<tr class="memdesc:a0f2a770e89bdf9e678ca39ac43bcdb98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop-in backport for <code>std::make_unique</code>.  <a href="#a0f2a770e89bdf9e678ca39ac43bcdb98">More...</a><br /></td></tr>
 <tr class="separator:a0f2a770e89bdf9e678ca39ac43bcdb98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -436,6 +439,22 @@ template&lt;typename T , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Drop-in backport for <code>std::make_unique</code>. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>type of object in <code>std::unique_ptr</code> </td></tr>
+    <tr><td class="paramname">Args</td><td>argument types </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>list of arguments to be passed to the constructor of <code>T</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>std::unique_ptr&lt;T&gt;</code>. </dd></dl>
+
 </div>
 </div>
 <a id="ab2f5385caa026f657333f5ecf7311607"></a>
@@ -455,12 +474,27 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Drop-in backport for <code>std::make_unique</code>. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>type of object in <code>std::unique_ptr</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>size of array </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>std::unique_ptr&lt;T&gt;</code> </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacederplib_1_1stdext_ab2f5385caa026f657333f5ecf7311607_cgraph.png" border="0" usemap="#namespacederplib_1_1stdext_ab2f5385caa026f657333f5ecf7311607_cgraph" alt=""/></div>
 <map name="namespacederplib_1_1stdext_ab2f5385caa026f657333f5ecf7311607_cgraph" id="namespacederplib_1_1stdext_ab2f5385caa026f657333f5ecf7311607_cgraph">
-<area shape="rect"  title=" " alt="" coords="5,5,167,47"/>
+<area shape="rect"  title="Drop&#45;in backport for std::make_unique." alt="" coords="5,5,167,47"/>
 <area shape="rect"  href="namespacederplib_1_1util.html#a7f84bac5a259407e885fa5c29e357dba" title=" " alt="" coords="215,13,345,39"/>
 </map>
 </div>
@@ -492,6 +526,22 @@ template&lt;typename T , typename... Args&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Drop-in backport for <code>std::make_unique</code>. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>type of object in <code>std::unique_ptr</code> </td></tr>
+    <tr><td class="paramname">Args</td><td>argument types </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>list of arguments to be passed to the constructor of <code>T</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>std::unique_ptr&lt;T&gt;</code>. </dd></dl>
 
 </div>
 </div>

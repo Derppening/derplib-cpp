@@ -15,7 +15,6 @@ DERPLIB_CPP14_CONSTEXPR std::array<T, N> to_array(T (& arr)[N]) {
 
 template<typename T, std::size_t N>
 constexpr std::size_t size(DERPLIB_MAYBE_UNUSED T (& arr)[N]) {
-  // TODO(Derppening): Move to stdext, add overloads
   return N;
 }
 

@@ -16,9 +16,9 @@ T* element_at(std::array<T, N>& a, typename std::array<T, N>::size_type pos) noe
 }
 
 template<typename T, std::size_t N>
-const T* element_at(const std::array<T, N>& v, typename std::array<T, N>::size_type pos) noexcept {
-  if (pos < v.size()) {
-    return &v[pos];
+const T* element_at(const std::array<T, N>& a, typename std::array<T, N>::size_type pos) noexcept {
+  if (pos < a.size()) {
+    return &a[pos];
   }
 
   return nullptr;

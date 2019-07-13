@@ -8,6 +8,7 @@ var searchData=
   ['demangle_2eipp',['demangle.ipp',['../demangle_8ipp.html',1,'']]],
   ['derplib',['derplib',['../namespacederplib.html',1,'']]],
   ['div_5fline',['div_line',['../classderplib_1_1experimental_1_1basic__cli.html#ac56d69cc29a9f32a08c8b1c32be0a13f',1,'derplib::experimental::basic_cli']]],
+  ['duration',['duration',['../classderplib_1_1stopwatch.html#a456befb51a24e28e90e6b4c6e9292ef8',1,'derplib::stopwatch']]],
   ['experimental',['experimental',['../namespacederplib_1_1experimental.html',1,'derplib']]],
   ['derplib',['derplib',['../md_README.html',1,'']]],
   ['newlib',['newlib',['../namespacederplib_1_1newlib.html',1,'derplib']]],
