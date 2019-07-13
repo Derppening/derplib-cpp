@@ -10,7 +10,5 @@ var dir_19ff97f3f0da8c769bae9c222b5febc9 =
     [ "ranges.h", "ranges_8h.html", "ranges_8h" ],
     [ "ranges.ipp", "ranges_8ipp.html", "ranges_8ipp" ],
     [ "stats.h", "stats_8h.html", "stats_8h" ],
-    [ "stats.ipp", "stats_8ipp.html", "stats_8ipp" ],
-    [ "string.h", "string_8h.html", "string_8h" ],
-    [ "string.ipp", "string_8ipp.html", "string_8ipp" ]
+    [ "stats.ipp", "stats_8ipp.html", "stats_8ipp" ]
 ];

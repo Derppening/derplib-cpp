@@ -120,11 +120,15 @@ derplib_add_headers(DERPLIB_stdext_HEADERS
         stdext/algorithm.h
         stdext/cmath.h
         stdext/memory.h
+        stdext/string.h
         stdext/version.h)
 derplib_add_headers(DERPLIB_stdext_IMPLS
         stdext/algorithm.ipp
         stdext/cmath.ipp
-        stdext/memory.ipp)
+        stdext/memory.ipp
+        stdext/string.ipp)
+derplib_add_sources(DERPLIB_stdext_SOURCES
+        stdext/string.cpp)
 derplib_add_library(stdext)
 
 # derplib::util
@@ -134,17 +138,13 @@ derplib_add_headers(DERPLIB_util_HEADERS
         util/iterator.h
         util/ptr.h
         util/ranges.h
-        util/stats.h
-        util/string.h)
+        util/stats.h)
 derplib_add_headers(DERPLIB_util_IMPLS
         util/array.ipp
         util/demangle.ipp
         util/ptr.ipp
         util/ranges.ipp
-        util/stats.ipp
-        util/string.ipp)
-derplib_add_sources(DERPLIB_util_SOURCES
-        util/string.cpp)
+        util/stats.ipp)
 derplib_add_library(util)
 
 # Doxygen Target

@@ -78,6 +78,7 @@ derplib_add_test(stdext
         stdext/algorithm-test.cpp
         stdext/cmath-test.cpp
         stdext/memory-test.cpp
+        stdext/string-test.cpp
         stdext/version-test.cpp)
 
 # derplib::util
@@ -87,5 +88,4 @@ derplib_add_test(util
         util/iterator-test.cpp
         util/ptr-test.cpp
         util/ranges-test.cpp
-        util/stats-test.cpp
-        util/string-test.cpp)
+        util/stats-test.cpp)

@@ -8,8 +8,6 @@
 namespace derplib {
 namespace util {
 
-// TODO(Derppening): Move to stdext
-
 /**
  * \brief Splits a string by a given delimiter.
  *
@@ -51,7 +49,9 @@ std::vector<std::basic_string<CharT>> split_string(const std::basic_string<CharT
  * \return A string with all elements joint together.
  */
 template<typename T>
-T join_to_string(typename std::vector<T>::const_iterator begin, typename std::vector<T>::const_iterator end, const T& separator);
+T join_to_string(typename std::vector<T>::const_iterator begin,
+                 typename std::vector<T>::const_iterator end,
+                 const T& separator);
 
 template<typename T>
 T join_to_string(typename std::vector<T>::const_iterator begin,
@@ -71,4 +71,4 @@ std::string& tolower(std::string& str);
 }  // namespace util
 }  // namespace derplib
 
-#include "derplib/util/string.ipp"
+#include "string.ipp"

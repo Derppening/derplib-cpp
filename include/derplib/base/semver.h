@@ -5,7 +5,7 @@
 #include <utility>
 #include <vector>
 
-#include "derplib/util/string.h"
+#include "derplib/stdext/string.h"
 
 namespace derplib {
 
