@@ -223,15 +223,6 @@ class circular_queue {
    */
   void swap(circular_queue& other) noexcept(derplib::internal::is_nothrow_swappable<container_type>::value);
 
-  /**
-   * \brief Specialization of `std::swap` algorithm.
-   *
-   * \param lhs Containers to swap.
-   * \param rhs Containers to swap.
-   */
-  friend void swap(circular_queue& lhs, circular_queue& rhs)
-  noexcept(derplib::internal::is_nothrow_swappable<container_type>::value);
-
  private:
   /**
    * \brief Pointer type for the stored elements. Equivalent to `T*`.
@@ -245,6 +236,16 @@ class circular_queue {
 
   size_type _size = 0;
 };
+
+/**
+ * \brief Specialization of `std::swap` algorithm.
+ *
+ * \param lhs Containers to swap.
+ * \param rhs Containers to swap.
+ */
+template<typename T, std::size_t N>
+inline void swap(circular_queue<T, N>& lhs, circular_queue<T, N>& rhs)
+noexcept(internal::is_nothrow_swappable<typename circular_queue<T, N>::container_type>::value);
 
 #include "derplib/internal/common_macros_end.h"
 
