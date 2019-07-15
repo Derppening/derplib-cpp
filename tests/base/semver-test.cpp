@@ -23,7 +23,6 @@ TEST(SemVerTest, ObjEquality) {
   EXPECT_EQ(semver(1, 0, 0, "rc01"), semver::from_string("1.0.0-rc01"));
 
   // build labels
-
-  // non-trivial differences
+  EXPECT_EQ(semver(1, 0, 0, "", "abc"), semver::from_string("1.0.0+abc"));
 }
 }  // namespace
