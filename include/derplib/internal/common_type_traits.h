@@ -13,7 +13,7 @@ using is_nothrow_swappable = typename std::is_nothrow_swappable<T>;
 #else
 template<typename T>
 using is_nothrow_swappable = std::false_type;
-#endif  // defined(DERPLIB_HAS_LIB_IS_SWAPPABLE
+#endif  // defined(DERPLIB_HAS_LIB_IS_SWAPPABLE)
 
 #if defined(DERPLIB_HAS_LIB_TYPE_TRAIT_VARIABLE_TEMPLATES)
 #define DERPLIB_IS_ARITHMETIC_V(T) std::is_arithmetic_v<T>
@@ -21,7 +21,7 @@ using is_nothrow_swappable = std::false_type;
 #define DERPLIB_IS_ARITHMETIC_V(T) std::is_arithmetic<T>::value
 #endif  // __cplusplus > 201402L
 
-#if defined(DERPLIB_HAS_CPP14_SUPPORT)
+#if defined(DERPLIB_HAS_LIB_TYPE_TRAIT_VARIABLE_TEMPLATES)
 template<typename T>
 using decay_t = std::decay_t<T>;
 using std::enable_if_t;
@@ -30,7 +30,7 @@ template<typename T>
 using decay_t = typename std::decay<T>::type;
 template<bool B, class T = void>
 using enable_if_t = typename std::enable_if<B, T>::type;
-#endif  // defined(DERPLIB_HAS_CPP14_SUPPORT)
+#endif  // defined(DERPLIB_HAS_LIB_TYPE_TRAIT_VARIABLE_TEMPLATES)
 
 #if defined(DERPLIB_HAS_LIB_IS_INVOCABLE)
 template<typename Fn, typename... ArgTypes>

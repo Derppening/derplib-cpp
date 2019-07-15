@@ -46,14 +46,6 @@
 #define DERPLIB_HAS_CONSTEXPR_CPP14 1
 #endif
 
-#if __cpp_constexpr >= 201603L || defined(DERPLIB_HAS_CPP17_SUPPORT)
-#define DERPLIB_HAS_CONSTEXPR_CPP17 1
-#endif
-
-#if defined(__cpp_inline_variables) || defined(DERPLIB_HAS_CPP17_SUPPORT)
-#define DERPLIB_HAS_INLINE_VARIABLES 1
-#endif
-
 #if defined(__cpp_lib_is_invocable) || defined(DERPLIB_HAS_CPP17_SUPPORT)
 #define DERPLIB_HAS_LIB_IS_INVOCABLE 1
 #endif
@@ -64,10 +56,6 @@
 
 #if defined(__cpp_lib_optional) || defined(DERPLIB_HAS_CPP17_SUPPORT)
 #define DERPLIB_HAS_LIB_OPTIONAL 1
-#endif
-
-#if defined(__cpp_lib_make_unique) || defined(DERPLIB_HAS_CPP14_SUPPORT)
-#define DERPLIB_HAS_LIB_MAKE_UNIQUE 1
 #endif
 
 #if defined(__cpp_lib_type_trait_variable_templates) || defined(DERPLIB_HAS_CPP17_SUPPORT)
