@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['size_5ftype',['size_type',['../classderplib_1_1container_1_1circular__queue.html#ab30285ea276bfd9925d68ed8199d4984',1,'derplib::container::circular_queue']]],
-  ['string',['string',['../classderplib_1_1basic__logger.html#ab5e83b11bf6617d9969ff091534f5dca',1,'derplib::basic_logger']]],
-  ['string_5ftype',['string_type',['../classderplib_1_1experimental_1_1basic__cli.html#a72ef83c2349b08db65c39da5626ed4b9',1,'derplib::experimental::basic_cli']]]
+  ['raw_5fptr',['raw_ptr',['../namespacederplib_1_1util.html#abdf9912ef50ef8359de63fa9319a4808',1,'derplib::util']]],
+  ['reference',['reference',['../classderplib_1_1container_1_1circular__queue.html#affbc0f8166bcfd0fb2c2c434844757a3',1,'derplib::container::circular_queue']]]
 ];

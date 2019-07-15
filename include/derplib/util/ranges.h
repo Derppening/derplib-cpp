@@ -10,7 +10,7 @@
 #include <type_traits>
 #include <vector>
 
-#include "derplib/internal/common_type_traits.h"
+#include <derplib/stdext/type_traits.h>
 
 namespace derplib {
 namespace util {

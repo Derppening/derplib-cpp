@@ -3,6 +3,7 @@ var searchData=
   ['container',['container',['../namespacederplib_1_1container.html',1,'derplib']]],
   ['d',['d',['../classderplib_1_1basic__logger.html#a5b65a10688cfa378ad2165e72c49e57c',1,'derplib::basic_logger']]],
   ['debug',['debug',['../classderplib_1_1basic__logger.html#ab9f8c712ed9bc81314c87693bd46d038aad42f6697b035b7580e4fef93be20b4d',1,'derplib::basic_logger']]],
+  ['decay_5ft',['decay_t',['../namespacederplib_1_1stdext.html#a4493c5a7a4f22a2791dcd1c7ef84c0b1',1,'derplib::stdext']]],
   ['deleter_5ftype',['deleter_type',['../classderplib_1_1ref__count__pointer.html#a345597199b69b38cc49e3a723b9c42d4',1,'derplib::ref_count_pointer']]],
   ['demangle_2eh',['demangle.h',['../demangle_8h.html',1,'']]],
   ['demangle_2eipp',['demangle.ipp',['../demangle_8ipp.html',1,'']]],

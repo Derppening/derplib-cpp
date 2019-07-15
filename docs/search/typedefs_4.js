@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logger',['logger',['../namespacederplib.html#a2df71fa0e37b84a619bd0161cb141826',1,'derplib']]]
+  ['is_5fnothrow_5fswappable',['is_nothrow_swappable',['../namespacederplib_1_1stdext.html#a73de9673fed509ce3779f40ca8f85fd7',1,'derplib::stdext']]]
 ];

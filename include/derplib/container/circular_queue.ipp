@@ -189,7 +189,7 @@ void circular_queue<T, N>::pop() noexcept(std::is_nothrow_default_constructible<
 }
 
 template<typename T, std::size_t N>
-void circular_queue<T, N>::swap(circular_queue& other) noexcept(internal::is_nothrow_swappable<container_type>::value) {
+void circular_queue<T, N>::swap(circular_queue& other) noexcept(stdext::is_nothrow_swappable<container_type>::value) {
   std::swap(this->_data, other._data);
   std::swap(this->_begin, other._begin);
   std::swap(this->_end, other._end);
@@ -197,7 +197,8 @@ void circular_queue<T, N>::swap(circular_queue& other) noexcept(internal::is_not
 }
 
 template<typename T, std::size_t N>
-void swap(circular_queue<T, N>& lhs, circular_queue<T, N>& rhs) noexcept(internal::is_nothrow_swappable<typename circular_queue<T, N>::container_type>::value) {
+void swap(circular_queue<T, N>& lhs, circular_queue<T, N>& rhs)
+noexcept(stdext::is_nothrow_swappable<typename circular_queue<T, N>::container_type>::value) {
   lhs.swap(rhs);
 }
 

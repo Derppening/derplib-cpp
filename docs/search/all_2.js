@@ -18,7 +18,6 @@ var searchData=
   ['cmd_5fnot_5ffound',['cmd_not_found',['../classderplib_1_1experimental_1_1basic__cli.html#a2f632a0a4bfc5d0a8849d3ab893d35f4aaca20b057f73fca9fb98fd4f473d8ffb',1,'derplib::experimental::basic_cli']]],
   ['common_5fmacros_5fbegin_2eh',['common_macros_begin.h',['../common__macros__begin_8h.html',1,'']]],
   ['common_5fmacros_5fend_2eh',['common_macros_end.h',['../common__macros__end_8h.html',1,'']]],
-  ['common_5ftype_5ftraits_2eh',['common_type_traits.h',['../common__type__traits_8h.html',1,'']]],
   ['config_5ffile',['config_file',['../classderplib_1_1config__file.html',1,'derplib::config_file'],['../classderplib_1_1config__file.html#ae0ef45ce5eda848d58e84a0238896cab',1,'derplib::config_file::config_file()=default'],['../classderplib_1_1config__file.html#af22f45456bb376da8e70fb16f49e7094',1,'derplib::config_file::config_file(config_file &amp;&amp;c) noexcept=default'],['../classderplib_1_1config__file.html#a1f7fb6e3f77e384b7b8a0926c74c15e5',1,'derplib::config_file::config_file(const config_file &amp;c)=default']]],
   ['config_5ffile_2ecpp',['config_file.cpp',['../config__file_8cpp.html',1,'']]],
   ['config_5ffile_2eh',['config_file.h',['../config__file_8h.html',1,'']]],

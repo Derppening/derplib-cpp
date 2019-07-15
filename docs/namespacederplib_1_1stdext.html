@@ -87,12 +87,28 @@ $(document).ready(function(){initNavTree('namespacederplib_1_1stdext.html','');}
 
 <div class="header">
   <div class="summary">
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">derplib::stdext Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a73de9673fed509ce3779f40ca8f85fd7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a73de9673fed509ce3779f40ca8f85fd7"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a73de9673fed509ce3779f40ca8f85fd7">is_nothrow_swappable</a> = typename std::is_nothrow_swappable&lt; T &gt;</td></tr>
+<tr class="separator:a73de9673fed509ce3779f40ca8f85fd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4493c5a7a4f22a2791dcd1c7ef84c0b1"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a4493c5a7a4f22a2791dcd1c7ef84c0b1"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a4493c5a7a4f22a2791dcd1c7ef84c0b1">decay_t</a> = std::decay_t&lt; T &gt;</td></tr>
+<tr class="separator:a4493c5a7a4f22a2791dcd1c7ef84c0b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c2d32700c32d10b916b09ab1f83aa17"><td class="memTemplParams" colspan="2">template&lt;bool B, class T  = void&gt; </td></tr>
+<tr class="memitem:a9c2d32700c32d10b916b09ab1f83aa17"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a9c2d32700c32d10b916b09ab1f83aa17">enable_if_t</a> = typename std::enable_if&lt; B, T &gt;::type</td></tr>
+<tr class="separator:a9c2d32700c32d10b916b09ab1f83aa17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8f23c1309a31e22591a5f0dbf4534bb"><td class="memTemplParams" colspan="2">template&lt;typename Fn , typename... ArgTypes&gt; </td></tr>
+<tr class="memitem:ad8f23c1309a31e22591a5f0dbf4534bb"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#ad8f23c1309a31e22591a5f0dbf4534bb">enable_if_invocable</a> = typename std::enable_if&lt; std::is_invocable&lt; Fn, ArgTypes... &gt;::value &gt;</td></tr>
+<tr class="separator:ad8f23c1309a31e22591a5f0dbf4534bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a507724b6cda1fad4b7444609e5dac44b"><td class="memTemplParams" colspan="2">template&lt;class T , class Compare &gt; </td></tr>
@@ -132,6 +148,71 @@ Functions</h2></td></tr>
 <tr class="memdesc:a0f2a770e89bdf9e678ca39ac43bcdb98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop-in backport for <code>std::make_unique</code>.  <a href="#a0f2a770e89bdf9e678ca39ac43bcdb98">More...</a><br /></td></tr>
 <tr class="separator:a0f2a770e89bdf9e678ca39ac43bcdb98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a4493c5a7a4f22a2791dcd1c7ef84c0b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4493c5a7a4f22a2791dcd1c7ef84c0b1">&#9670;&nbsp;</a></span>decay_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacederplib_1_1stdext.html#a4493c5a7a4f22a2791dcd1c7ef84c0b1">derplib::stdext::decay_t</a> = typedef typename std::decay&lt;T&gt;::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad8f23c1309a31e22591a5f0dbf4534bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8f23c1309a31e22591a5f0dbf4534bb">&#9670;&nbsp;</a></span>enable_if_invocable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Fn , typename... ArgTypes&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacederplib_1_1stdext.html#ad8f23c1309a31e22591a5f0dbf4534bb">derplib::stdext::enable_if_invocable</a> = typedef std::true_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9c2d32700c32d10b916b09ab1f83aa17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c2d32700c32d10b916b09ab1f83aa17">&#9670;&nbsp;</a></span>enable_if_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool B, class T  = void&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacederplib_1_1stdext.html#a9c2d32700c32d10b916b09ab1f83aa17">derplib::stdext::enable_if_t</a> = typedef typename std::enable_if&lt;B, T&gt;::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a73de9673fed509ce3779f40ca8f85fd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73de9673fed509ce3779f40ca8f85fd7">&#9670;&nbsp;</a></span>is_nothrow_swappable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacederplib_1_1stdext.html#a73de9673fed509ce3779f40ca8f85fd7">derplib::stdext::is_nothrow_swappable</a> = typedef std::false_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a507724b6cda1fad4b7444609e5dac44b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a507724b6cda1fad4b7444609e5dac44b">&#9670;&nbsp;</a></span>clamp() <span class="overload">[1/2]</span></h2>

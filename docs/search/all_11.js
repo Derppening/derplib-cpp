@@ -11,5 +11,6 @@ var searchData=
   ['to_5fradians',['to_radians',['../namespacederplib_1_1stdext.html#a169f65e44f513b5004ff166d620660f3',1,'derplib::stdext']]],
   ['tolower',['tolower',['../namespacederplib_1_1util.html#a11215b211aa71c65a9f6dbe1e893eff0',1,'derplib::util']]],
   ['toupper',['toupper',['../namespacederplib_1_1util.html#af53362a3d69313e2cf77dc22d4da73e3',1,'derplib::util']]],
-  ['type_5fname',['type_name',['../namespacederplib_1_1util.html#a677710251d773964486a99f221877faa',1,'derplib::util::type_name(bool legacy_naming=false)'],['../namespacederplib_1_1util.html#ac7c0ac709b192ef897522348722e3435',1,'derplib::util::type_name(const T &amp;var, bool legacy_naming=false)'],['../namespacederplib_1_1util.html#ae697a29974baa7f63148640d1aaa2ab5',1,'derplib::util::type_name(DERPLIB_MAYBE_UNUSED const T &amp;var, bool legacy_naming)']]]
+  ['type_5fname',['type_name',['../namespacederplib_1_1util.html#a677710251d773964486a99f221877faa',1,'derplib::util::type_name(bool legacy_naming=false)'],['../namespacederplib_1_1util.html#ac7c0ac709b192ef897522348722e3435',1,'derplib::util::type_name(const T &amp;var, bool legacy_naming=false)'],['../namespacederplib_1_1util.html#ae697a29974baa7f63148640d1aaa2ab5',1,'derplib::util::type_name(DERPLIB_MAYBE_UNUSED const T &amp;var, bool legacy_naming)']]],
+  ['type_5ftraits_2eh',['type_traits.h',['../type__traits_8h.html',1,'']]]
 ];

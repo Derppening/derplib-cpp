@@ -55,7 +55,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "algorithm_8h.html",
-"demangle_8h.html#a677710251d773964486a99f221877faa"
+"demangle_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

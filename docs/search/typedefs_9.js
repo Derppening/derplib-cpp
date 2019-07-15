@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['value_5ftype',['value_type',['../classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#acb0662d1c2c1ff75bcd4cdc01eeddbd7',1,'derplib::container::cfq_parallel_consumer&lt; InT, ConsumerT &gt;::value_type()'],['../classderplib_1_1container_1_1circular__queue.html#a116ec7e5f3004552b27b2935cc11c5ff',1,'derplib::container::circular_queue::value_type()']]]
+  ['size_5ftype',['size_type',['../classderplib_1_1container_1_1circular__queue.html#ab30285ea276bfd9925d68ed8199d4984',1,'derplib::container::circular_queue']]],
+  ['string',['string',['../classderplib_1_1basic__logger.html#ab5e83b11bf6617d9969ff091534f5dca',1,'derplib::basic_logger']]],
+  ['string_5ftype',['string_type',['../classderplib_1_1experimental_1_1basic__cli.html#a72ef83c2349b08db65c39da5626ed4b9',1,'derplib::experimental::basic_cli']]]
 ];

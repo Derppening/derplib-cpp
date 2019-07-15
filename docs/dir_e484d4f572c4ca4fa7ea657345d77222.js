@@ -8,5 +8,6 @@ var dir_e484d4f572c4ca4fa7ea657345d77222 =
     [ "memory.ipp", "stdext_2memory_8ipp.html", "stdext_2memory_8ipp" ],
     [ "string.h", "string_8h.html", "string_8h" ],
     [ "string.ipp", "string_8ipp.html", "string_8ipp" ],
+    [ "type_traits.h", "type__traits_8h.html", "type__traits_8h" ],
     [ "version.h", "version_8h.html", null ]
 ];

@@ -1,11 +1,9 @@
 #pragma once
 
-// TODO(Derppening): Move to derplib::stdext library as type_traits.h
-
 #include <derplib/stdext/version.h>
 
 namespace derplib {
-namespace internal {
+namespace stdext {
 
 #if defined(DERPLIB_HAS_LIB_IS_SWAPPABLE)
 template<typename T>
@@ -40,5 +38,6 @@ template<typename Fn, typename... ArgTypes>
 using enable_if_invocable = std::true_type;
 #endif  // defined(DERPLIB_HAS_LIB_IS_INVOCABLE)
 
-}  // namespace internal
+}  // namespace stdext
 }  // namespace derplib
+

@@ -4,8 +4,8 @@
 #include <array>
 #include <utility>
 
-#include "derplib/internal/common_type_traits.h"
-#include "derplib/stdext/version.h"
+#include <derplib/stdext/type_traits.h>
+#include <derplib/stdext/version.h>
 
 namespace derplib {
 namespace container {
@@ -221,7 +221,7 @@ class circular_queue {
   /**
    * \brief Exchanges the contents of this object with `other`.
    */
-  void swap(circular_queue& other) noexcept(derplib::internal::is_nothrow_swappable<container_type>::value);
+  void swap(circular_queue& other) noexcept(stdext::is_nothrow_swappable<container_type>::value);
 
  private:
   /**
@@ -245,7 +245,7 @@ class circular_queue {
  */
 template<typename T, std::size_t N>
 inline void swap(circular_queue<T, N>& lhs, circular_queue<T, N>& rhs)
-noexcept(internal::is_nothrow_swappable<typename circular_queue<T, N>::container_type>::value);
+noexcept(stdext::is_nothrow_swappable<typename circular_queue<T, N>::container_type>::value);
 
 #include "derplib/internal/common_macros_end.h"
 

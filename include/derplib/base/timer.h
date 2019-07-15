@@ -7,7 +7,7 @@
 #include <memory>
 #include <thread>
 
-#include "derplib/internal/common_type_traits.h"
+#include <derplib/stdext/type_traits.h>
 
 namespace derplib {
 
@@ -16,7 +16,7 @@ namespace derplib {
  *
  * \tparam Func function type. Must be `void f()`.
  */
-template<typename Func = std::function<void()>, typename = internal::enable_if_invocable<Func>>
+template<typename Func = std::function<void()>, typename = stdext::enable_if_invocable<Func>>
 class timer;
 
 template<typename Func>

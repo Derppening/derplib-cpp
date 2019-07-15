@@ -24,6 +24,5 @@ var classderplib_1_1container_1_1circular__queue =
     [ "push", "classderplib_1_1container_1_1circular__queue.html#af8ec3ce5120e1263aa6e9da5dc93119e", null ],
     [ "push", "classderplib_1_1container_1_1circular__queue.html#a1cd0e96e0582ac5e17fa3a737e6fe8d2", null ],
     [ "size", "classderplib_1_1container_1_1circular__queue.html#a64bdcb959789492324dcc92699a2af72", null ],
-    [ "swap", "classderplib_1_1container_1_1circular__queue.html#a9ea0deacf0da71705d90232028b2b46d", null ],
-    [ "swap", "classderplib_1_1container_1_1circular__queue.html#aaaed34b06a31527a81419529f82c116e", null ]
+    [ "swap", "classderplib_1_1container_1_1circular__queue.html#a7f10cac6853f999cd8c903a3e56d0586", null ]
 ];

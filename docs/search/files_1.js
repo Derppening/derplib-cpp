@@ -10,7 +10,6 @@ var searchData=
   ['cmath_2eipp',['cmath.ipp',['../cmath_8ipp.html',1,'']]],
   ['common_5fmacros_5fbegin_2eh',['common_macros_begin.h',['../common__macros__begin_8h.html',1,'']]],
   ['common_5fmacros_5fend_2eh',['common_macros_end.h',['../common__macros__end_8h.html',1,'']]],
-  ['common_5ftype_5ftraits_2eh',['common_type_traits.h',['../common__type__traits_8h.html',1,'']]],
   ['config_5ffile_2ecpp',['config_file.cpp',['../config__file_8cpp.html',1,'']]],
   ['config_5ffile_2eh',['config_file.h',['../config__file_8h.html',1,'']]],
   ['container_2eh',['container.h',['../container_8h.html',1,'']]],

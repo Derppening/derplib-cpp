@@ -89,7 +89,6 @@ $(document).ready(function(){initNavTree('classderplib_1_1container_1_1circular_
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#friends">Friends</a> &#124;
 <a href="classderplib_1_1container_1_1circular__queue-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">derplib::container::circular_queue&lt; T, N &gt; Class Template Reference</div>  </div>
@@ -177,15 +176,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7947df4c9959f0a75e270b3f80706a47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#a7947df4c9959f0a75e270b3f80706a47">pop</a> () noexcept(std::is_nothrow_default_constructible&lt; T &gt;::value)</td></tr>
 <tr class="memdesc:a7947df4c9959f0a75e270b3f80706a47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an element from the top of the queue.  <a href="#a7947df4c9959f0a75e270b3f80706a47">More...</a><br /></td></tr>
 <tr class="separator:a7947df4c9959f0a75e270b3f80706a47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ea0deacf0da71705d90232028b2b46d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#a9ea0deacf0da71705d90232028b2b46d">swap</a> (<a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a> &amp;other) noexcept(derplib::internal::is_nothrow_swappable&lt; <a class="el" href="classderplib_1_1container_1_1circular__queue.html#ac0c21a66200ab816e220a2d146fe42c0">container_type</a> &gt;::value)</td></tr>
-<tr class="memdesc:a9ea0deacf0da71705d90232028b2b46d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exchanges the contents of this object with <code>other</code>.  <a href="#a9ea0deacf0da71705d90232028b2b46d">More...</a><br /></td></tr>
-<tr class="separator:a9ea0deacf0da71705d90232028b2b46d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:aaaed34b06a31527a81419529f82c116e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#aaaed34b06a31527a81419529f82c116e">swap</a> (<a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a> &amp;lhs, <a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a> &amp;rhs) noexcept(derplib::internal::is_nothrow_swappable&lt; <a class="el" href="classderplib_1_1container_1_1circular__queue.html#ac0c21a66200ab816e220a2d146fe42c0">container_type</a> &gt;::value)</td></tr>
-<tr class="memdesc:aaaed34b06a31527a81419529f82c116e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <code>std::swap</code> algorithm.  <a href="#aaaed34b06a31527a81419529f82c116e">More...</a><br /></td></tr>
-<tr class="separator:aaaed34b06a31527a81419529f82c116e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f10cac6853f999cd8c903a3e56d0586"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1container_1_1circular__queue.html#a7f10cac6853f999cd8c903a3e56d0586">swap</a> (<a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a> &amp;other) noexcept(<a class="el" href="namespacederplib_1_1stdext.html#a73de9673fed509ce3779f40ca8f85fd7">stdext::is_nothrow_swappable</a>&lt; <a class="el" href="classderplib_1_1container_1_1circular__queue.html#ac0c21a66200ab816e220a2d146fe42c0">container_type</a> &gt;::value)</td></tr>
+<tr class="memdesc:a7f10cac6853f999cd8c903a3e56d0586"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exchanges the contents of this object with <code>other</code>.  <a href="#a7f10cac6853f999cd8c903a3e56d0586">More...</a><br /></td></tr>
+<tr class="separator:a7f10cac6853f999cd8c903a3e56d0586"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T, std::size_t N&gt;<br />
@@ -968,8 +961,8 @@ template&lt;typename T , std::size_t N&gt; </div>
 
 </div>
 </div>
-<a id="a9ea0deacf0da71705d90232028b2b46d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ea0deacf0da71705d90232028b2b46d">&#9670;&nbsp;</a></span>swap()</h2>
+<a id="a7f10cac6853f999cd8c903a3e56d0586"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f10cac6853f999cd8c903a3e56d0586">&#9670;&nbsp;</a></span>swap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -998,60 +991,12 @@ template&lt;typename T , std::size_t N&gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classderplib_1_1container_1_1circular__queue_a9ea0deacf0da71705d90232028b2b46d_cgraph.png" border="0" usemap="#classderplib_1_1container_1_1circular__queue_a9ea0deacf0da71705d90232028b2b46d_cgraph" alt=""/></div>
-<map name="classderplib_1_1container_1_1circular__queue_a9ea0deacf0da71705d90232028b2b46d_cgraph" id="classderplib_1_1container_1_1circular__queue_a9ea0deacf0da71705d90232028b2b46d_cgraph">
+<div class="center"><img src="classderplib_1_1container_1_1circular__queue_a7f10cac6853f999cd8c903a3e56d0586_cgraph.png" border="0" usemap="#classderplib_1_1container_1_1circular__queue_a7f10cac6853f999cd8c903a3e56d0586_cgraph" alt=""/></div>
+<map name="classderplib_1_1container_1_1circular__queue_a7f10cac6853f999cd8c903a3e56d0586_cgraph" id="classderplib_1_1container_1_1circular__queue_a7f10cac6853f999cd8c903a3e56d0586_cgraph">
 <area shape="rect"  title="Exchanges the contents of this object with other." alt="" coords="5,5,172,47"/>
-<area shape="rect"  href="namespacederplib_1_1container.html#a60dee47495e2b61ddb2ef90372ea7aa2" title=" " alt="" coords="220,5,356,47"/>
+<area shape="rect"  href="namespacederplib_1_1container.html#a2c14266bc30ba0f4b155bf13c7ff73be" title="Specialization of std::swap algorithm." alt="" coords="220,5,356,47"/>
 </map>
 </div>
-
-</div>
-</div>
-<h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="aaaed34b06a31527a81419529f82c116e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaaed34b06a31527a81419529f82c116e">&#9670;&nbsp;</a></span>swap</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T, std::size_t N&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void swap </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a>&lt; T, N &gt; &amp;&#160;</td>
-          <td class="paramname"><em>lhs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a>&lt; T, N &gt; &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Specialization of <code>std::swap</code> algorithm. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lhs</td><td>Containers to swap. </td></tr>
-    <tr><td class="paramname">rhs</td><td>Containers to swap. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>

@@ -8,7 +8,7 @@
 #include <thread>
 #include <vector>
 
-#include "derplib/internal/common_type_traits.h"
+#include <derplib/stdext/type_traits.h>
 
 namespace derplib {
 namespace container {
@@ -22,7 +22,7 @@ namespace container {
  * \tparam ConsumerT The type of the functor to process the elements. Must have a prototype of
  * `void f(InT)`.
  */
-template<typename InT, typename ConsumerT = void (*)(InT), typename = internal::enable_if_invocable<ConsumerT>>
+template<typename InT, typename ConsumerT = void (*)(InT), typename = stdext::enable_if_invocable<ConsumerT>>
 class cfq_parallel_consumer;
 
 template<typename InT, typename ConsumerT>
@@ -58,7 +58,7 @@ class cfq_parallel_consumer<InT, ConsumerT> {
    *
    * \param value The value of the element to append.
    */
-  void push(const internal::decay_t<InT>& value);
+  void push(const stdext::decay_t<InT>& value);
 
   /**
    * \brief Adds an element to the back.
@@ -67,7 +67,7 @@ class cfq_parallel_consumer<InT, ConsumerT> {
    *
    * \param value The value of the element to append.
    */
-  void push(internal::decay_t<InT>&& value);
+  void push(stdext::decay_t<InT>&& value);
 
   /**
    * \brief Constructs an element in-place at the back.
@@ -92,7 +92,7 @@ class cfq_parallel_consumer<InT, ConsumerT> {
 
   std::atomic_bool _keep_alive;
 
-  std::vector<std::deque<internal::decay_t<InT>>> _buffers;
+  std::vector<std::deque<stdext::decay_t<InT>>> _buffers;
   std::vector<std::thread> _threads;
   std::vector<std::mutex> _mutexes;
   std::vector<std::condition_variable> _cvs;

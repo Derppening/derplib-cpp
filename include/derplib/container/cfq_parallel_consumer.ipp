@@ -44,7 +44,7 @@ cfq_parallel_consumer<InT, ConsumerT>::~cfq_parallel_consumer() {
 }
 
 template<typename InT, typename ConsumerT>
-void cfq_parallel_consumer<InT, ConsumerT>::push(const internal::decay_t<InT>& value) {
+void cfq_parallel_consumer<InT, ConsumerT>::push(const stdext::decay_t<InT>& value) {
   std::size_t n = std::numeric_limits<std::size_t>::max();
   std::size_t it = std::numeric_limits<std::size_t>::max();
 
@@ -61,7 +61,7 @@ void cfq_parallel_consumer<InT, ConsumerT>::push(const internal::decay_t<InT>& v
 }
 
 template<typename InT, typename ConsumerT>
-void cfq_parallel_consumer<InT, ConsumerT>::push(internal::decay_t<InT>&& value) {
+void cfq_parallel_consumer<InT, ConsumerT>::push(stdext::decay_t<InT>&& value) {
   std::size_t it = std::numeric_limits<std::size_t>::max();
 
   for (std::size_t i = 0, n = std::numeric_limits<std::size_t>::max(); i < _buffers.size(); ++i) {

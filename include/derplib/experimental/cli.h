@@ -7,7 +7,7 @@
 #include <string>
 #include <vector>
 
-#include <derplib/internal/common_type_traits.h>
+#include <derplib/stdext/type_traits.h>
 
 namespace derplib {
 namespace experimental {
@@ -18,7 +18,7 @@ namespace experimental {
  * \tparam CharT character type for input
  * \tparam Func function type for invoking callbacks. Must be `void(const std::basic_string<CharT>&)`.
  */
-template<typename CharT, typename Func = void (*)(const std::basic_string<CharT>&), typename = internal::enable_if_invocable<
+template<typename CharT, typename Func = void (*)(const std::basic_string<CharT>&), typename = stdext::enable_if_invocable<
     Func>>
 class basic_cli {
  public:

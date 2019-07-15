@@ -94,7 +94,7 @@ derplib_add_library(base derplib_stdext derplib_util)
 derplib_add_headers(DERPLIB_container_HEADERS
         container/cfq_parallel_consumer.h
         container/circular_queue.h)
-derplib_add_library(container)
+derplib_add_library(container derplib_stdext)
 
 # derplib::experimental
 derplib_add_headers(DERPLIB_experimental_HEADERS
@@ -104,7 +104,7 @@ derplib_add_headers(DERPLIB_experimental_HEADERS
 derplib_add_sources(DERPLIB_experimental_SOURCES
         experimental/config_file.cpp
         experimental/cli.cpp)
-derplib_add_library(experimental)
+derplib_add_library(experimental derplib_stdext)
 
 # derplib::newlib
 derplib_add_headers(DERPLIB_newlib_HEADERS
@@ -145,7 +145,7 @@ derplib_add_headers(DERPLIB_util_IMPLS
         util/ptr.ipp
         util/ranges.ipp
         util/stats.ipp)
-derplib_add_library(util)
+derplib_add_library(util derplib_stdext)
 
 # Doxygen Target
 if (${DERPLIB_BUILD_DOCS})
