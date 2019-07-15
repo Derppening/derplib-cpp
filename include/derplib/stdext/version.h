@@ -34,11 +34,11 @@
 #define DERPLIB_HAS_CPP2A_SUPPORT 1
 #endif
 
-#if __has_cpp_attribute(maybe_unused) || defined(DERPLIB_HAS_CPP17_SUPPORT)
+#if (defined(DERPLIB_HAS_CPP2A_SUPPORT) && __has_cpp_attribute(maybe_unused)) || defined(DERPLIB_HAS_CPP17_SUPPORT)
 #define DERPLIB_HAS_ATTRIBUTE_MAYBE_UNUSED 1
 #endif
 
-#if __has_cpp_attribute(nodiscard) || defined(DERPLIB_HAS_CPP17_SUPPORT)
+#if (defined(DERPLIB_HAS_CPP2A_SUPPORT) && __has_cpp_attribute(nodiscard)) || defined(DERPLIB_HAS_CPP17_SUPPORT)
 #define DERPLIB_HAS_ATTRIBUTE_NODISCARD 1
 #endif
 
@@ -46,18 +46,18 @@
 #define DERPLIB_HAS_CONSTEXPR_CPP14 1
 #endif
 
-#if defined(__cpp_lib_is_invocable) || defined(DERPLIB_HAS_CPP17_SUPPORT)
+#if (defined(DERPLIB_HAS_CPP2A_SUPPORT) && defined(__cpp_lib_is_invocable)) || defined(DERPLIB_HAS_CPP17_SUPPORT)
 #define DERPLIB_HAS_LIB_IS_INVOCABLE 1
 #endif
 
-#if defined(__cpp_lib_is_swappable) || defined(DERPLIB_HAS_CPP17_SUPPORT)
+#if (defined(DERPLIB_HAS_CPP2A_SUPPORT) && defined(__cpp_lib_is_swappable)) || defined(DERPLIB_HAS_CPP17_SUPPORT)
 #define DERPLIB_HAS_LIB_IS_SWAPPABLE 1
 #endif
 
-#if defined(__cpp_lib_optional) || defined(DERPLIB_HAS_CPP17_SUPPORT)
+#if (defined(DERPLIB_HAS_CPP2A_SUPPORT) && defined(__cpp_lib_optional)) || defined(DERPLIB_HAS_CPP17_SUPPORT)
 #define DERPLIB_HAS_LIB_OPTIONAL 1
 #endif
 
-#if defined(__cpp_lib_type_trait_variable_templates) || defined(DERPLIB_HAS_CPP17_SUPPORT)
+#if (defined(DERPLIB_HAS_CPP2A_SUPPORT) && defined(__cpp_lib_type_trait_variable_templates)) || defined(DERPLIB_HAS_CPP17_SUPPORT)
 #define DERPLIB_HAS_LIB_TYPE_TRAIT_VARIABLE_TEMPLATES 1
 #endif
