@@ -1,5 +1,8 @@
 var hierarchy =
 [
+    [ "bad_alloc", null, [
+      [ "derplib::experimental::mem_alloc::bad_alloc", "classderplib_1_1experimental_1_1mem__alloc_1_1bad__alloc.html", null ]
+    ] ],
     [ "derplib::experimental::basic_cli< CharT, Func, typename >", "classderplib_1_1experimental_1_1basic__cli.html", null ],
     [ "derplib::experimental::basic_cli< char >", "classderplib_1_1experimental_1_1basic__cli.html", [
       [ "derplib::experimental::cli", "classderplib_1_1experimental_1_1cli.html", null ]
@@ -13,6 +16,7 @@ var hierarchy =
     [ "logic_error", null, [
       [ "derplib::basic_logger< CharT >::invalid_state", "classderplib_1_1basic__logger_1_1invalid__state.html", null ]
     ] ],
+    [ "derplib::experimental::mem_alloc", "classderplib_1_1experimental_1_1mem__alloc.html", null ],
     [ "derplib::ref_count_pointer< T, Deleter >::observer", "classderplib_1_1ref__count__pointer_1_1observer.html", null ],
     [ "derplib::ref_count_pointer< T, Deleter >", "classderplib_1_1ref__count__pointer.html", null ],
     [ "derplib::ref_count_pointer< T >", "classderplib_1_1ref__count__pointer.html", null ],

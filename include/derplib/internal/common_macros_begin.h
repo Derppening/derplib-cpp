@@ -9,6 +9,12 @@
 #define DERPLIB_CPP14_CONSTEXPR
 #endif  // DERPLIB_CPP14_CONSTEXPR
 
+#if defined(DERPLIB_HAS_CONSTEXPR_CPP17)
+#define DERPLIB_CPP17_CONSTEXPR constexpr
+#else
+#define DERPLIB_CPP17_CONSTEXPR
+#endif  // DERPLIB_CPP17_CONSTEXPR
+
 #if defined(DERPLIB_HAS_ATTRIBUTE_MAYBE_UNUSED)
 #define DERPLIB_MAYBE_UNUSED [[maybe_unused]]
 #elif defined(__clang__) || defined(__GNUG__)

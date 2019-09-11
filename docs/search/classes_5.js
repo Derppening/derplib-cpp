@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['observer',['observer',['../classderplib_1_1ref__count__pointer_1_1observer.html',1,'derplib::ref_count_pointer']]]
+  ['mem_5falloc_225',['mem_alloc',['../classderplib_1_1experimental_1_1mem__alloc.html',1,'derplib::experimental']]]
 ];

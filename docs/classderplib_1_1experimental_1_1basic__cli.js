@@ -21,8 +21,8 @@ var classderplib_1_1experimental_1_1basic__cli =
     [ "hint", "classderplib_1_1experimental_1_1basic__cli.html#afc625c6a4aa42b8cdeb52cfccb9838fe", null ],
     [ "inflate", "classderplib_1_1experimental_1_1basic__cli.html#a7adf3a9c733b09ac65c562a63891d3ca", null ],
     [ "item", "classderplib_1_1experimental_1_1basic__cli.html#a754dcda9f8ee681c946ff1800c02b513", null ],
-    [ "item", "classderplib_1_1experimental_1_1basic__cli.html#a7e1267f013597b3d1fe56185bfbf66c8", null ],
     [ "item", "classderplib_1_1experimental_1_1basic__cli.html#abc692676e52786a7ef977bf4fcdab9ca", null ],
+    [ "item", "classderplib_1_1experimental_1_1basic__cli.html#a7e1267f013597b3d1fe56185bfbf66c8", null ],
     [ "output_options", "classderplib_1_1experimental_1_1basic__cli.html#a9783617be69681750f80bce50a0a48fb", null ],
     [ "parse", "classderplib_1_1experimental_1_1basic__cli.html#a3ed606e3ec3c87243eb6e9e4cc3b7b66", null ]
 ];

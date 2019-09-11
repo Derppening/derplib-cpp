@@ -46,6 +46,10 @@
 #define DERPLIB_HAS_CONSTEXPR_CPP14 1
 #endif
 
+#if __cpp_constexpr >= 201603L || defined(DERPLIB_HAS_CPP17_SUPPORT)
+#define DERPLIB_HAS_CONSTEXPR_CPP14 1
+#endif
+
 #if (defined(DERPLIB_HAS_CPP2A_SUPPORT) && defined(__cpp_lib_is_invocable)) || defined(DERPLIB_HAS_CPP17_SUPPORT)
 #define DERPLIB_HAS_LIB_IS_INVOCABLE 1
 #endif

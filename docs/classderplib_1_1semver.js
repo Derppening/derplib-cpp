@@ -4,7 +4,7 @@ var classderplib_1_1semver =
     [ "semver", "classderplib_1_1semver.html#a6a39cff6593e0c5087729eec7e11a060", null ],
     [ "semver", "classderplib_1_1semver.html#a3db16a329da7d5f5823333529633bacd", null ],
     [ "semver", "classderplib_1_1semver.html#a3e82168d3ddda9418e9c7654d41dc8dc", null ],
-    [ "build", "classderplib_1_1semver.html#ac4f8e41aa527286198c0142c2470e513", null ],
+    [ "build", "classderplib_1_1semver.html#a3be5b3def40bf7a93261916c50232143", null ],
     [ "major", "classderplib_1_1semver.html#abd8d622c0bfc076d728a947d265a6b24", null ],
     [ "minor", "classderplib_1_1semver.html#af6dba2894af7b5404a5f86dda9fa1758", null ],
     [ "operator std::string", "classderplib_1_1semver.html#a07b08ffba2ff825d0df6823a5b3be72a", null ],
@@ -17,5 +17,5 @@ var classderplib_1_1semver =
     [ "operator>", "classderplib_1_1semver.html#a71a70f489fbda1befee80b82c53d1ec2", null ],
     [ "operator>=", "classderplib_1_1semver.html#a4c4fea23e465168b48132b132612f41d", null ],
     [ "patch", "classderplib_1_1semver.html#aa0c572b0316eddcbedbac93178e0ed40", null ],
-    [ "prerelease", "classderplib_1_1semver.html#a00af67ae0f8b8f56780dc9ca37e8255d", null ]
+    [ "prerelease", "classderplib_1_1semver.html#af9a3a97a9dcf40d65908876008673e98", null ]
 ];
