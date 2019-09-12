@@ -132,7 +132,13 @@ class mem_alloc {
   class heap_walk_iterator {
    public:
     using container_type = std::set<entry, entry_set_comparator>;
-    using iterator_type = container_type::iterator;
+    using base_iterator_type = container_type::iterator;
+
+    using value_type = base_iterator_type::value_type;
+    using difference_type = base_iterator_type::difference_type;
+    using pointer = base_iterator_type::pointer;
+    using reference = base_iterator_type::reference;
+    using iterator_category = std::forward_iterator_tag;
 
     heap_walk_iterator() = default;
 
@@ -148,17 +154,17 @@ class mem_alloc {
      * \param container backing container of the iterator
      * \param iterator current iterator position
      */
-    heap_walk_iterator(const container_type& container, iterator_type iterator) noexcept;
+    heap_walk_iterator(const container_type& container, base_iterator_type iterator) noexcept;
 
     /**
      * \return Iterator to the previous entry, or `current()` if `current()` is equal to the backing container's first
      * iterator.
      */
-    iterator_type prev() const noexcept { return _prev; }
+    base_iterator_type prev() const noexcept { return _prev; }
     /**
      * \return Iterator to the current entry.
      */
-    iterator_type current() const noexcept { return _curr; }
+    base_iterator_type current() const noexcept { return _curr; }
 
     const container_type::key_type& operator*() const noexcept { return *_curr; }
     const container_type::key_type* operator->() const noexcept { return std::addressof(*_curr); }
@@ -175,8 +181,8 @@ class mem_alloc {
     }
 
    private:
-    iterator_type _prev;
-    iterator_type _curr;
+    base_iterator_type _prev;
+    base_iterator_type _curr;
   };
 
   /**
@@ -190,26 +196,9 @@ class mem_alloc {
   const std::size_t _size;
   std::unique_ptr<unsigned char[]> _heap_pool;
   std::set<entry, entry_set_comparator> _entries;
-
-//  friend class std::iterator_traits<heap_walk_iterator>;
 };
 
 }  // namespace experimental
 }  // namespace derplib
-
-/*namespace std {
-template<>
-class iterator_traits<derplib::experimental::mem_alloc::heap_walk_iterator> {
- private:
-  using base_type = derplib::experimental::mem_alloc::heap_walk_iterator;
-
- public:
-  using value_type = base_type::iterator_type::value_type;
-  using difference_type = base_type::iterator_type::difference_type;
-  using pointer = base_type::iterator_type::pointer;
-  using reference = base_type::iterator_type::reference;
-  using iterator_category = forward_iterator_tag;
-};
-}  // namespace std*/
 
 #include "mem_alloc.ipp"
