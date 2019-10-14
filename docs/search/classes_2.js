@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['entry_222',['entry',['../structderplib_1_1experimental_1_1basic__cli_1_1entry.html',1,'derplib::experimental::basic_cli']]]
+  ['entry_223',['entry',['../structderplib_1_1experimental_1_1basic__cli_1_1entry.html',1,'derplib::experimental::basic_cli']]]
 ];

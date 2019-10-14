@@ -14,11 +14,9 @@ namespace derplib {
 namespace experimental {
 
 /**
- * \brief A memory allocator.
+ * \brief A heap memory allocator written from scratch.
  *
  * TODO: Support for resizing, compacting, automatic garbage collection, etc.
- *
- * I don't know why I wanted to write this.
  */
 class mem_alloc {
  public:
@@ -47,6 +45,11 @@ class mem_alloc {
    * \param size size of the heap
    */
   explicit mem_alloc(std::size_t size);
+
+  /**
+   * Destructs all allocated objects and frees the allocated memory.
+   */
+  ~mem_alloc();
 
   /**
    * \brief Allocates an object onto the heap using this allocator.
@@ -105,14 +108,30 @@ class mem_alloc {
    * \brief Entry of an object in the heap.
    */
   struct entry {
+    using destructor_type = void(*)(const void*);
+
     /**
      * \brief Pointer to the first byte in the heap.
      */
     unsigned char* ptr;
     /**
+     * \brief Destruction method.
+     */
+    const destructor_type destructor;
+    /**
      * \brief Extent of the allocation in bytes.
      */
-    std::size_t extent;
+    const std::size_t extent;
+    /**
+     * \brief Padding of the allocation in bytes.
+     */
+    const std::size_t padding;
+#if !defined(NDEBUG)
+    /**
+     * \brief Demangled name of type.
+     */
+    const std::string type_name;
+#endif  // !defined(NDEBUG)
   };
 
   /**
@@ -189,9 +208,10 @@ class mem_alloc {
    * \brief Finds a memory segment which can fit a given size allocation.
    *
    * \param size size of allocation to fit
+   * \param alignment alignment of the allocation
    * \return Pointer to the heap if a segment is available, otherwise `nullptr`.
    */
-  unsigned char* find_first_fit(std::size_t size);
+  unsigned char* find_first_fit(std::size_t size, std::size_t alignment);
 
   const std::size_t _size;
   std::unique_ptr<unsigned char[]> _heap_pool;

@@ -135,11 +135,12 @@ var NAVTREEINDEX0 =
 "classderplib_1_1experimental_1_1cli.html#a4f3409f9e38c153733412fa7c0fe048f":[2,0,0,1,1,2],
 "classderplib_1_1experimental_1_1cli.html#a9c59596cc77f72ba0f8fd4b4947b6295":[2,0,0,1,1,1],
 "classderplib_1_1experimental_1_1mem__alloc.html":[2,0,0,1,2],
-"classderplib_1_1experimental_1_1mem__alloc.html#a317db97f291b776d41e46664a8189665":[2,0,0,1,2,2],
-"classderplib_1_1experimental_1_1mem__alloc.html#a45eeb7c68f2e9abbd9939e60aa34b286":[2,0,0,1,2,6],
-"classderplib_1_1experimental_1_1mem__alloc.html#a67b13c9b05c88b32d23e1f83b1a7f7d3":[2,0,0,1,2,5],
-"classderplib_1_1experimental_1_1mem__alloc.html#a7505887dbca242738db6d496a1ff4ff1":[2,0,0,1,2,3],
-"classderplib_1_1experimental_1_1mem__alloc.html#ac4a0e7cd3cd91fc33660dc8855dcc6c0":[2,0,0,1,2,4],
+"classderplib_1_1experimental_1_1mem__alloc.html#a317db97f291b776d41e46664a8189665":[2,0,0,1,2,3],
+"classderplib_1_1experimental_1_1mem__alloc.html#a45eeb7c68f2e9abbd9939e60aa34b286":[2,0,0,1,2,7],
+"classderplib_1_1experimental_1_1mem__alloc.html#a67b13c9b05c88b32d23e1f83b1a7f7d3":[2,0,0,1,2,6],
+"classderplib_1_1experimental_1_1mem__alloc.html#a7505887dbca242738db6d496a1ff4ff1":[2,0,0,1,2,4],
+"classderplib_1_1experimental_1_1mem__alloc.html#a8af45f5499b3e3dd3c6c746b19be99a4":[2,0,0,1,2,2],
+"classderplib_1_1experimental_1_1mem__alloc.html#ac4a0e7cd3cd91fc33660dc8855dcc6c0":[2,0,0,1,2,5],
 "classderplib_1_1experimental_1_1mem__alloc.html#ae2d77040783302d32f59694be1626558":[2,0,0,1,2,1],
 "classderplib_1_1experimental_1_1mem__alloc_1_1bad__alloc.html":[2,0,0,1,2,0],
 "classderplib_1_1experimental_1_1mem__alloc_1_1bad__alloc.html#a599b3c2e6f8936ce09232b12cab7504e":[2,0,0,1,2,0,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "container_8h.html#a77a4c29e95ac6bcc1e9bf019b01735ff":[3,0,0,0,4,0,6],
 "container_8h.html#ab8bdc88a633a17c99480671b0b57081b":[3,0,0,0,4,0,4],
 "container_8h.html#ac6f959cfe1e7e2ab7fbee6f7caddeace":[3,0,0,0,4,0,3],
-"container_8h.html#ad14f00646e7108e9447c885adac7fc2f":[3,0,0,0,4,0,2],
-"container_8h.html#add9e242f0b2adbcb392041a015377427":[3,0,0,0,4,0,5]
+"container_8h.html#ad14f00646e7108e9447c885adac7fc2f":[3,0,0,0,4,0,2]
 };

@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('classderplib_1_1experimental_1_1mem__a
 </div><!--header-->
 <div class="contents">
 
-<p>A memory allocator.  
+<p>A heap memory allocator written from scratch.  
  <a href="classderplib_1_1experimental_1_1mem__alloc.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="mem__alloc_8h_source.html">mem_alloc.h</a>&gt;</code></p>
@@ -111,6 +111,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae2d77040783302d32f59694be1626558"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1experimental_1_1mem__alloc.html#ae2d77040783302d32f59694be1626558">mem_alloc</a> (std::size_t size)</td></tr>
 <tr class="memdesc:ae2d77040783302d32f59694be1626558"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an allocator.  <a href="classderplib_1_1experimental_1_1mem__alloc.html#ae2d77040783302d32f59694be1626558">More...</a><br /></td></tr>
 <tr class="separator:ae2d77040783302d32f59694be1626558"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8af45f5499b3e3dd3c6c746b19be99a4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1experimental_1_1mem__alloc.html#a8af45f5499b3e3dd3c6c746b19be99a4">~mem_alloc</a> ()</td></tr>
+<tr class="separator:a8af45f5499b3e3dd3c6c746b19be99a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a317db97f291b776d41e46664a8189665"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
 <tr class="memitem:a317db97f291b776d41e46664a8189665"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classderplib_1_1experimental_1_1mem__alloc.html#a317db97f291b776d41e46664a8189665">allocate</a> (Args &amp;&amp;... args)</td></tr>
 <tr class="memdesc:a317db97f291b776d41e46664a8189665"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates an object onto the heap using this allocator.  <a href="classderplib_1_1experimental_1_1mem__alloc.html#a317db97f291b776d41e46664a8189665">More...</a><br /></td></tr>
@@ -132,9 +134,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a45eeb7c68f2e9abbd9939e60aa34b286"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A memory allocator. </p>
-<p>TODO: Support for resizing, compacting, automatic garbage collection, etc.</p>
-<p>I don't know why I wanted to write this. </p>
+<div class="textblock"><p>A heap memory allocator written from scratch. </p>
+<p>TODO: Support for resizing, compacting, automatic garbage collection, etc. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae2d77040783302d32f59694be1626558"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae2d77040783302d32f59694be1626558">&#9670;&nbsp;</a></span>mem_alloc()</h2>
@@ -167,6 +168,24 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a8af45f5499b3e3dd3c6c746b19be99a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8af45f5499b3e3dd3c6c746b19be99a4">&#9670;&nbsp;</a></span>~mem_alloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">derplib::experimental::mem_alloc::~mem_alloc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Destructs all allocated objects and frees the allocated memory. </p>
 
 </div>
 </div>
@@ -215,8 +234,9 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classderplib_1_1experimental_1_1mem__alloc_a317db97f291b776d41e46664a8189665_cgraph.png" border="0" usemap="#classderplib_1_1experimental_1_1mem__alloc_a317db97f291b776d41e46664a8189665_cgraph" alt=""/></div>
 <map name="classderplib_1_1experimental_1_1mem__alloc_a317db97f291b776d41e46664a8189665_cgraph" id="classderplib_1_1experimental_1_1mem__alloc_a317db97f291b776d41e46664a8189665_cgraph">
-<area shape="rect" title="Allocates an object onto the heap using this allocator." alt="" coords="5,5,168,47"/>
+<area shape="rect" title="Allocates an object onto the heap using this allocator." alt="" coords="5,35,168,76"/>
 <area shape="rect" href="classderplib_1_1experimental_1_1mem__alloc.html#a45eeb7c68f2e9abbd9939e60aa34b286" title="Dumps the memory allocation information to a stream." alt="" coords="216,5,403,47"/>
+<area shape="rect" href="namespacederplib_1_1util.html#a677710251d773964486a99f221877faa" title=" " alt="" coords="221,71,398,98"/>
 </map>
 </div>
 

@@ -1,4 +1,5 @@
 <map id="derplib::experimental::mem_alloc::allocate" name="derplib::experimental::mem_alloc::allocate">
-<area shape="rect" id="node1" title="Allocates an object onto the heap using this allocator." alt="" coords="5,5,168,47"/>
+<area shape="rect" id="node1" title="Allocates an object onto the heap using this allocator." alt="" coords="5,35,168,76"/>
 <area shape="rect" id="node2" href="$classderplib_1_1experimental_1_1mem__alloc.html#a45eeb7c68f2e9abbd9939e60aa34b286" title="Dumps the memory allocation information to a stream." alt="" coords="216,5,403,47"/>
+<area shape="rect" id="node3" href="$namespacederplib_1_1util.html#a677710251d773964486a99f221877faa" title=" " alt="" coords="221,71,398,98"/>
 </map>

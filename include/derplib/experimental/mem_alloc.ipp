@@ -5,14 +5,23 @@ namespace experimental {
 
 template<typename T, typename... Args>
 T* mem_alloc::allocate(Args&& ... args) {
-  unsigned char* const ptr = find_first_fit(sizeof(T));
+  constexpr std::size_t type_size = sizeof(T);
+  constexpr std::size_t align_size = alignof(T);
+  const std::string type_name = derplib::util::type_name<T>();
+
+  unsigned char* const ptr = find_first_fit(type_size, align_size);
   if (ptr == nullptr) {
     heap_dump();
-    throw bad_alloc("Cannot allocate requested " + std::to_string(sizeof(T)) + " bytes for data type "
-                        + derplib::util::type_name<T>());
+    throw bad_alloc("Cannot allocate requested " + std::to_string(type_size) + " bytes for data type "+ type_name);
   }
 
-  entry e = {ptr, sizeof(T)};
+  entry e = {
+      ptr,
+      [](const void* pobj) { static_cast<const T*>(pobj)->~T(); },
+      type_size,
+      align_size,
+      type_name
+  };
   _entries.insert(e);
 
   new(ptr) T(args...);
@@ -58,12 +67,11 @@ T* mem_alloc::get(const std::ptrdiff_t offset) {
 
 template<typename T>
 void mem_alloc::deallocate(T*& ptr) {
-  ptr->~T();
-
   const auto it = std::find_if(_entries.begin(),
                                _entries.end(),
                                [ptr](const entry& e) { return reinterpret_cast<unsigned char*>(ptr) == e.ptr; });
   if (it != _entries.end()) {
+    it->destructor(ptr);
     _entries.erase(it);
   }
 }

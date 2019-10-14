@@ -6,7 +6,8 @@ var searchData=
   ['_7ecli_207',['~cli',['../classderplib_1_1experimental_1_1cli.html#a09887904b8eb2bfca1cbd782a51b356a',1,'derplib::experimental::cli']]],
   ['_7econfig_5ffile_208',['~config_file',['../classderplib_1_1config__file.html#a5ee24e8d08664b36fdabb6e7691eed71',1,'derplib::config_file']]],
   ['_7eformat_5ferror_209',['~format_error',['../classderplib_1_1semver_1_1format__error.html#aa7de2564b3c8e22ebc7ea07fd968e9ef',1,'derplib::semver::format_error']]],
-  ['_7eobserver_210',['~observer',['../classderplib_1_1ref__count__pointer_1_1observer.html#ae020c6fea156f281f96de290380cae63',1,'derplib::ref_count_pointer::observer']]],
-  ['_7eref_5fcount_5fpointer_211',['~ref_count_pointer',['../classderplib_1_1ref__count__pointer.html#aa0ca5a17df8a6c37299fa7e876edaf06',1,'derplib::ref_count_pointer']]],
-  ['_7etimer_212',['~timer',['../classderplib_1_1timer_3_01Func_01_4.html#aa8f163d50d976d64108154b786983f5e',1,'derplib::timer&lt; Func &gt;']]]
+  ['_7emem_5falloc_210',['~mem_alloc',['../classderplib_1_1experimental_1_1mem__alloc.html#a8af45f5499b3e3dd3c6c746b19be99a4',1,'derplib::experimental::mem_alloc']]],
+  ['_7eobserver_211',['~observer',['../classderplib_1_1ref__count__pointer_1_1observer.html#ae020c6fea156f281f96de290380cae63',1,'derplib::ref_count_pointer::observer']]],
+  ['_7eref_5fcount_5fpointer_212',['~ref_count_pointer',['../classderplib_1_1ref__count__pointer.html#aa0ca5a17df8a6c37299fa7e876edaf06',1,'derplib::ref_count_pointer']]],
+  ['_7etimer_213',['~timer',['../classderplib_1_1timer_3_01Func_01_4.html#aa8f163d50d976d64108154b786983f5e',1,'derplib::timer&lt; Func &gt;']]]
 ];
