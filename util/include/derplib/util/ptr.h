@@ -14,7 +14,7 @@
 #define DERPLIB_PTR_ARRAY_DELETE(ptr) derplib::util::ptr_array_delete((ptr), __FILE__, __func__, __LINE__, #ptr)
 
 namespace derplib {
-namespace util {
+inline namespace util {
 
 /**
  * \brief Type definition for pointers.

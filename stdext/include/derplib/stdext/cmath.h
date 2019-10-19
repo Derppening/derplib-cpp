@@ -4,7 +4,7 @@
 #include <type_traits>
 
 namespace derplib {
-namespace stdext {
+inline namespace stdext {
 
 #include <derplib/internal/common_macros_begin.h>
 

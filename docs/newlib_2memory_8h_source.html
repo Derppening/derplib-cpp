@@ -97,33 +97,35 @@ $(document).ready(function(){initNavTree('newlib_2memory_8h_source.html','');});
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="memory_8h.html">derplib/stdext/memory.h</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacederplib.html">derplib</a> {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>newlib {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Deleter&gt;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;T* <a class="code" href="namespacederplib_1_1newlib.html#ad13ffd229ab72ce199a54fcc5faafd8b">element_at</a>(<span class="keyword">const</span> std::unique_ptr&lt;T[], Deleter&gt;&amp; uptr, std::size_t index) noexcept;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// TODO(Derppening): Do the std::enable_if&lt;std::is_invocable&gt;&gt; thing</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Deleter, <span class="keyword">typename</span> R, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="namespacederplib_1_1newlib.html#a7417e185d7e88d5853a00bf330677128">   35</a></span>&#160;std::unique_ptr&lt;R&gt; <a class="code" href="namespacederplib_1_1newlib.html#a7417e185d7e88d5853a00bf330677128">invoke</a>(<span class="keyword">const</span> std::unique_ptr&lt;T, Deleter&gt;&amp; uptr, R (T::*func)(Args...), Args&amp;&amp;... args) noexcept {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordflow">return</span> (uptr &amp;&amp; func) ? derplib::stdext::make_unique&lt;R&gt;(uptr-&gt;func(std::forward&lt;Args&gt;(args)...)) : <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Deleter&gt;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="namespacederplib_1_1newlib.html#a314590ef48a87ad810be1a749d374660">   40</a></span>&#160;T* <a class="code" href="namespacederplib_1_1newlib.html#ad13ffd229ab72ce199a54fcc5faafd8b">element_at</a>(<span class="keyword">const</span> std::unique_ptr&lt;T[], Deleter&gt;&amp; uptr, std::size_t index) noexcept {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  T* <span class="keyword">const</span> p = uptr.get();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">if</span> (p == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">return</span> &amp;p[index];</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}  <span class="comment">// namespace newlib</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}  <span class="comment">// namespace derplib</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">inline</span> <span class="keyword">namespace </span>stdext {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">inline</span> <span class="keyword">namespace </span>newlib {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Deleter&gt;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;T* <a class="code" href="namespacederplib_1_1stdext_1_1newlib.html#a515cad1f17b3b09b7da767c8962eb025">element_at</a>(<span class="keyword">const</span> std::unique_ptr&lt;T[], Deleter&gt;&amp; uptr, std::size_t index) noexcept;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// TODO(Derppening): Do the std::enable_if&lt;std::is_invocable&gt;&gt; thing</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Deleter, <span class="keyword">typename</span> R, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="namespacederplib_1_1stdext_1_1newlib.html#a20016eb7f0723e493d6ffe82d121496b">   36</a></span>&#160;std::unique_ptr&lt;R&gt; <a class="code" href="namespacederplib_1_1stdext_1_1newlib.html#a20016eb7f0723e493d6ffe82d121496b">invoke</a>(<span class="keyword">const</span> std::unique_ptr&lt;T, Deleter&gt;&amp; uptr, R (T::*func)(Args...), Args&amp;&amp;... args) noexcept {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordflow">return</span> (uptr &amp;&amp; func) ? derplib::stdext::make_unique&lt;R&gt;(uptr-&gt;func(std::forward&lt;Args&gt;(args)...)) : <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Deleter&gt;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="namespacederplib_1_1stdext_1_1newlib.html#a6e293a64ce54225d59a347b980b8d960">   41</a></span>&#160;T* <a class="code" href="namespacederplib_1_1stdext_1_1newlib.html#a515cad1f17b3b09b7da767c8962eb025">element_at</a>(<span class="keyword">const</span> std::unique_ptr&lt;T[], Deleter&gt;&amp; uptr, std::size_t index) noexcept {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  T* <span class="keyword">const</span> p = uptr.get();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">if</span> (p == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">return</span> &amp;p[index];</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}  <span class="comment">// namespace newlib</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}  <span class="comment">// namespace stdext</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}  <span class="comment">// namespace derplib</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="anamespacederplib_1_1newlib_html_ad13ffd229ab72ce199a54fcc5faafd8b"><div class="ttname"><a href="namespacederplib_1_1newlib.html#ad13ffd229ab72ce199a54fcc5faafd8b">derplib::newlib::element_at</a></div><div class="ttdeci">T * element_at(std::array&lt; T, N &gt; &amp;a, typename std::array&lt; T, N &gt;::size_type pos) noexcept</div><div class="ttdoc">Exception-safe replacement for std::array::at.</div><div class="ttdef"><b>Definition:</b> container.h:21</div></div>
-<div class="ttc" id="anamespacederplib_1_1newlib_html_a7417e185d7e88d5853a00bf330677128"><div class="ttname"><a href="namespacederplib_1_1newlib.html#a7417e185d7e88d5853a00bf330677128">derplib::newlib::invoke</a></div><div class="ttdeci">std::unique_ptr&lt; R &gt; invoke(const std::unique_ptr&lt; T, Deleter &gt; &amp;uptr, R(T::*func)(Args...), Args &amp;&amp;... args) noexcept</div><div class="ttdoc">Exception-safe replacement for std::unique_ptr::operator-&gt;.</div><div class="ttdef"><b>Definition:</b> memory.h:35</div></div>
+<div class="ttc" id="anamespacederplib_1_1stdext_1_1newlib_html_a20016eb7f0723e493d6ffe82d121496b"><div class="ttname"><a href="namespacederplib_1_1stdext_1_1newlib.html#a20016eb7f0723e493d6ffe82d121496b">derplib::stdext::newlib::invoke</a></div><div class="ttdeci">std::unique_ptr&lt; R &gt; invoke(const std::unique_ptr&lt; T, Deleter &gt; &amp;uptr, R(T::*func)(Args...), Args &amp;&amp;... args) noexcept</div><div class="ttdoc">Exception-safe replacement for std::unique_ptr::operator-&gt;.</div><div class="ttdef"><b>Definition:</b> memory.h:36</div></div>
 <div class="ttc" id="anamespacederplib_html"><div class="ttname"><a href="namespacederplib.html">derplib</a></div><div class="ttdef"><b>Definition:</b> log.h:14</div></div>
+<div class="ttc" id="anamespacederplib_1_1stdext_1_1newlib_html_a515cad1f17b3b09b7da767c8962eb025"><div class="ttname"><a href="namespacederplib_1_1stdext_1_1newlib.html#a515cad1f17b3b09b7da767c8962eb025">derplib::stdext::newlib::element_at</a></div><div class="ttdeci">T * element_at(std::array&lt; T, N &gt; &amp;a, typename std::array&lt; T, N &gt;::size_type pos) noexcept</div><div class="ttdoc">Exception-safe replacement for std::array::at.</div><div class="ttdef"><b>Definition:</b> container.h:22</div></div>
 <div class="ttc" id="amemory_8h_html"><div class="ttname"><a href="memory_8h.html">memory.h</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

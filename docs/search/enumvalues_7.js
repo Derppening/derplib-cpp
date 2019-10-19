@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['verbose_422',['verbose',['../classderplib_1_1basic__logger.html#ab9f8c712ed9bc81314c87693bd46d038a2c7aea4237e25b4f8ee3b0bf77d6fed0',1,'derplib::basic_logger']]]
+  ['verbose_424',['verbose',['../classderplib_1_1base_1_1basic__logger.html#ae403f82c113c5d37353af61578b75f33a2c7aea4237e25b4f8ee3b0bf77d6fed0',1,'derplib::base::basic_logger']]]
 ];

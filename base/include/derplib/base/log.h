@@ -12,6 +12,7 @@
 #include <derplib/stdext/memory.h>
 
 namespace derplib {
+inline namespace base {
 
 /**
  * \brief Simple logger for logging information.
@@ -238,4 +239,5 @@ void basic_logger<CharT>::print_helper(const basic_logger::string& message, basi
 using logger = basic_logger<char>;
 using wlogger = basic_logger<wchar_t>;
 
+}  // namespace base
 }  // namespace derplib

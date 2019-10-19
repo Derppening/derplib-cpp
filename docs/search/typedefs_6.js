@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logger_400',['logger',['../namespacederplib.html#a2df71fa0e37b84a619bd0161cb141826',1,'derplib']]]
+  ['logger_402',['logger',['../namespacederplib_1_1base.html#ac419b0d7caa186d629e992282b65cd74',1,'derplib::logger()'],['../namespacederplib_1_1base.html#ac419b0d7caa186d629e992282b65cd74',1,'derplib::base::logger()']]]
 ];

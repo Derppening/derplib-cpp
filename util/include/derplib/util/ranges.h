@@ -13,7 +13,7 @@
 #include <derplib/stdext/type_traits.h>
 
 namespace derplib {
-namespace util {
+inline namespace util {
 
 #include <derplib/internal/common_macros_begin.h>
 

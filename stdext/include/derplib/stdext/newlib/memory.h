@@ -5,7 +5,8 @@
 #include "derplib/stdext/memory.h"
 
 namespace derplib {
-namespace newlib {
+inline namespace stdext {
+inline namespace newlib {
 /**
  * \brief Exception-safe replacement for `std::unique_ptr::operator[]`
  *
@@ -47,4 +48,5 @@ T* element_at(const std::unique_ptr<T[], Deleter>& uptr, std::size_t index) noex
 }
 
 }  // namespace newlib
+}  // namespace stdext
 }  // namespace derplib

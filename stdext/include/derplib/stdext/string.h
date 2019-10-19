@@ -6,7 +6,7 @@
 #include <vector>
 
 namespace derplib {
-namespace stdext {
+inline namespace stdext {
 
 /**
  * \brief Splits a string by a given delimiter.

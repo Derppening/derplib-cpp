@@ -8,6 +8,7 @@
 #include <derplib/stdext/string.h>
 
 namespace derplib {
+inline namespace base {
 
 #include <derplib/internal/common_macros_begin.h>
 
@@ -84,4 +85,5 @@ class semver {
 
 #include <derplib/internal/common_macros_end.h>
 
+}  // namespace base
 }  // namespace derplib

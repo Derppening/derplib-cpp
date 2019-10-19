@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['level_411',['level',['../classderplib_1_1basic__logger.html#ab9f8c712ed9bc81314c87693bd46d038',1,'derplib::basic_logger']]]
+  ['level_413',['level',['../classderplib_1_1base_1_1basic__logger.html#ae403f82c113c5d37353af61578b75f33',1,'derplib::base::basic_logger']]]
 ];

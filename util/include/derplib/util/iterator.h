@@ -6,9 +6,9 @@
 #include <utility>
 
 namespace derplib {
-namespace util {
+inline namespace util {
 
-// TODO(Derppening): Move to stdext, implementations to iterator.ipp
+// TODO(Derppening): Move to stdext
 
 /**
  * Indexed specialization for \c std::for_each.

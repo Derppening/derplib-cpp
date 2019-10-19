@@ -87,6 +87,7 @@ $(document).ready(function(){initNavTree('namespacederplib_1_1stdext.html','');}
 
 <div class="header">
   <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -94,6 +95,11 @@ $(document).ready(function(){initNavTree('namespacederplib_1_1stdext.html','');}
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacederplib_1_1stdext_1_1newlib"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext_1_1newlib.html">newlib</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a73de9673fed509ce3779f40ca8f85fd7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
@@ -140,13 +146,53 @@ Functions</h2></td></tr>
 <tr class="memdesc:a12a3c0a78cd88e3b55a6cededf89998d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop-in backport for <code>std::make_unique</code>.  <a href="namespacederplib_1_1stdext.html#a12a3c0a78cd88e3b55a6cededf89998d">More...</a><br /></td></tr>
 <tr class="separator:a12a3c0a78cd88e3b55a6cededf89998d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6d38d043225c1388f335dae2c00d168"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:aa6d38d043225c1388f335dae2c00d168"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#aa6d38d043225c1388f335dae2c00d168">make_unique</a> (std::size_t size)</td></tr>
+<tr class="memitem:aa6d38d043225c1388f335dae2c00d168"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#aa6d38d043225c1388f335dae2c00d168">make_unique</a> (std::size_t <a class="el" href="namespacederplib_1_1util.html#a7f84bac5a259407e885fa5c29e357dba">size</a>)</td></tr>
 <tr class="memdesc:aa6d38d043225c1388f335dae2c00d168"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop-in backport for <code>std::make_unique</code>.  <a href="namespacederplib_1_1stdext.html#aa6d38d043225c1388f335dae2c00d168">More...</a><br /></td></tr>
 <tr class="separator:aa6d38d043225c1388f335dae2c00d168"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f2a770e89bdf9e678ca39ac43bcdb98"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
 <tr class="memitem:a0f2a770e89bdf9e678ca39ac43bcdb98"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_array&lt; T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a0f2a770e89bdf9e678ca39ac43bcdb98">make_unique</a> (Args &amp;&amp;... args)=delete</td></tr>
 <tr class="memdesc:a0f2a770e89bdf9e678ca39ac43bcdb98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop-in backport for <code>std::make_unique</code>.  <a href="namespacederplib_1_1stdext.html#a0f2a770e89bdf9e678ca39ac43bcdb98">More...</a><br /></td></tr>
 <tr class="separator:a0f2a770e89bdf9e678ca39ac43bcdb98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a515cad1f17b3b09b7da767c8962eb025"><td class="memTemplParams" colspan="2">template&lt;typename T , std::size_t N&gt; </td></tr>
+<tr class="memitem:a515cad1f17b3b09b7da767c8962eb025"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext_1_1newlib.html#a515cad1f17b3b09b7da767c8962eb025">element_at</a> (std::array&lt; T, N &gt; &amp;a, typename std::array&lt; T, N &gt;::size_type pos) noexcept</td></tr>
+<tr class="memdesc:a515cad1f17b3b09b7da767c8962eb025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception-safe replacement for <code>std::array::at</code>.  <a href="namespacederplib_1_1stdext_1_1newlib.html#a515cad1f17b3b09b7da767c8962eb025">More...</a><br /></td></tr>
+<tr class="separator:a515cad1f17b3b09b7da767c8962eb025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a94ea7ef1eb1e1d723abeb6d883f625"><td class="memTemplParams" colspan="2">template&lt;typename T , std::size_t N&gt; </td></tr>
+<tr class="memitem:a8a94ea7ef1eb1e1d723abeb6d883f625"><td class="memTemplItemLeft" align="right" valign="top">const T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext_1_1newlib.html#a8a94ea7ef1eb1e1d723abeb6d883f625">element_at</a> (const std::array&lt; T, N &gt; &amp;a, typename std::array&lt; T, N &gt;::size_type pos) noexcept</td></tr>
+<tr class="memdesc:a8a94ea7ef1eb1e1d723abeb6d883f625"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception-safe replacement for <code>std::array::at</code>.  <a href="namespacederplib_1_1stdext_1_1newlib.html#a8a94ea7ef1eb1e1d723abeb6d883f625">More...</a><br /></td></tr>
+<tr class="separator:a8a94ea7ef1eb1e1d723abeb6d883f625"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b3ecb53c075f437c4c7991bffae3d3d"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Allocator &gt; </td></tr>
+<tr class="memitem:a9b3ecb53c075f437c4c7991bffae3d3d"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext_1_1newlib.html#a9b3ecb53c075f437c4c7991bffae3d3d">element_at</a> (std::vector&lt; T, Allocator &gt; &amp;v, typename std::vector&lt; T, Allocator &gt;::size_type pos) noexcept</td></tr>
+<tr class="memdesc:a9b3ecb53c075f437c4c7991bffae3d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception-safe replacement for <code>std::vector::at</code>.  <a href="namespacederplib_1_1stdext_1_1newlib.html#a9b3ecb53c075f437c4c7991bffae3d3d">More...</a><br /></td></tr>
+<tr class="separator:a9b3ecb53c075f437c4c7991bffae3d3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb50a7318fb5449dc98dd85764e047ab"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Allocator &gt; </td></tr>
+<tr class="memitem:aeb50a7318fb5449dc98dd85764e047ab"><td class="memTemplItemLeft" align="right" valign="top">const T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext_1_1newlib.html#aeb50a7318fb5449dc98dd85764e047ab">element_at</a> (const std::vector&lt; T, Allocator &gt; &amp;v, typename std::vector&lt; T, Allocator &gt;::size_type pos) noexcept</td></tr>
+<tr class="memdesc:aeb50a7318fb5449dc98dd85764e047ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception-safe replacement for <code>std::vector::at</code>.  <a href="namespacederplib_1_1stdext_1_1newlib.html#aeb50a7318fb5449dc98dd85764e047ab">More...</a><br /></td></tr>
+<tr class="separator:aeb50a7318fb5449dc98dd85764e047ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bdd4570d30c6c355dec29b5414509bc"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Allocator &gt; </td></tr>
+<tr class="memitem:a5bdd4570d30c6c355dec29b5414509bc"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext_1_1newlib.html#a5bdd4570d30c6c355dec29b5414509bc">element_at</a> (std::deque&lt; T, Allocator &gt; &amp;v, typename std::deque&lt; T, Allocator &gt;::size_type pos) noexcept</td></tr>
+<tr class="memdesc:a5bdd4570d30c6c355dec29b5414509bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception-safe replacement for <code>std::deque::at</code>.  <a href="namespacederplib_1_1stdext_1_1newlib.html#a5bdd4570d30c6c355dec29b5414509bc">More...</a><br /></td></tr>
+<tr class="separator:a5bdd4570d30c6c355dec29b5414509bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd6af547b63065b4d05808df17b44e2c"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Allocator &gt; </td></tr>
+<tr class="memitem:afd6af547b63065b4d05808df17b44e2c"><td class="memTemplItemLeft" align="right" valign="top">const T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext_1_1newlib.html#afd6af547b63065b4d05808df17b44e2c">element_at</a> (const std::deque&lt; T, Allocator &gt; &amp;v, typename std::deque&lt; T, Allocator &gt;::size_type pos) noexcept</td></tr>
+<tr class="memdesc:afd6af547b63065b4d05808df17b44e2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception-safe replacement for <code>std::deque::at</code>.  <a href="namespacederplib_1_1stdext_1_1newlib.html#afd6af547b63065b4d05808df17b44e2c">More...</a><br /></td></tr>
+<tr class="separator:afd6af547b63065b4d05808df17b44e2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86f7cb763c83bd66aec70b72787e8e9f"><td class="memTemplParams" colspan="2">template&lt;typename Key , typename T , typename Compare , typename Allocator &gt; </td></tr>
+<tr class="memitem:a86f7cb763c83bd66aec70b72787e8e9f"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext_1_1newlib.html#a86f7cb763c83bd66aec70b72787e8e9f">element_at</a> (std::map&lt; Key, T, Compare, Allocator &gt; &amp;m, const Key &amp;key) noexcept</td></tr>
+<tr class="memdesc:a86f7cb763c83bd66aec70b72787e8e9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception-safe replacement for <code>std::map::at</code>.  <a href="namespacederplib_1_1stdext_1_1newlib.html#a86f7cb763c83bd66aec70b72787e8e9f">More...</a><br /></td></tr>
+<tr class="separator:a86f7cb763c83bd66aec70b72787e8e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac4068e3d988c6ba24df0878b10a8072"><td class="memTemplParams" colspan="2">template&lt;typename Key , typename T , typename Compare , typename Allocator &gt; </td></tr>
+<tr class="memitem:aac4068e3d988c6ba24df0878b10a8072"><td class="memTemplItemLeft" align="right" valign="top">const T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext_1_1newlib.html#aac4068e3d988c6ba24df0878b10a8072">element_at</a> (const std::map&lt; Key, T, Compare, Allocator &gt; &amp;m, const Key &amp;key) noexcept</td></tr>
+<tr class="memdesc:aac4068e3d988c6ba24df0878b10a8072"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception-safe replacement for <code>std::map::at</code>.  <a href="namespacederplib_1_1stdext_1_1newlib.html#aac4068e3d988c6ba24df0878b10a8072">More...</a><br /></td></tr>
+<tr class="separator:aac4068e3d988c6ba24df0878b10a8072"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e293a64ce54225d59a347b980b8d960"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Deleter &gt; </td></tr>
+<tr class="memitem:a6e293a64ce54225d59a347b980b8d960"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext_1_1newlib.html#a6e293a64ce54225d59a347b980b8d960">element_at</a> (const std::unique_ptr&lt; T[], Deleter &gt; &amp;uptr, std::size_t index) noexcept</td></tr>
+<tr class="memdesc:a6e293a64ce54225d59a347b980b8d960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception-safe replacement for <code>std::unique_ptr::operator[]</code>  <a href="namespacederplib_1_1stdext_1_1newlib.html#a6e293a64ce54225d59a347b980b8d960">More...</a><br /></td></tr>
+<tr class="separator:a6e293a64ce54225d59a347b980b8d960"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20016eb7f0723e493d6ffe82d121496b"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Deleter , typename R , typename... Args&gt; </td></tr>
+<tr class="memitem:a20016eb7f0723e493d6ffe82d121496b"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; R &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext_1_1newlib.html#a20016eb7f0723e493d6ffe82d121496b">invoke</a> (const std::unique_ptr&lt; T, Deleter &gt; &amp;uptr, R(T::*func)(Args...), Args &amp;&amp;... args) noexcept</td></tr>
+<tr class="memdesc:a20016eb7f0723e493d6ffe82d121496b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception-safe replacement for <code>std::unique_ptr::operator-&gt;</code>.  <a href="namespacederplib_1_1stdext_1_1newlib.html#a20016eb7f0723e493d6ffe82d121496b">More...</a><br /></td></tr>
+<tr class="separator:a20016eb7f0723e493d6ffe82d121496b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad61a33bae3b59c2e717e909e4787ec04"><td class="memTemplParams" colspan="2">template&lt;typename CharT &gt; </td></tr>
 <tr class="memitem:ad61a33bae3b59c2e717e909e4787ec04"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::basic_string&lt; CharT &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#ad61a33bae3b59c2e717e909e4787ec04">split_string</a> (const std::basic_string&lt; CharT &gt; &amp;input, const std::basic_string&lt; CharT &gt; &amp;delimiter, unsigned limit=0)</td></tr>
 <tr class="memdesc:ad61a33bae3b59c2e717e909e4787ec04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a string by a given delimiter.  <a href="namespacederplib_1_1stdext.html#ad61a33bae3b59c2e717e909e4787ec04">More...</a><br /></td></tr>
@@ -156,15 +202,15 @@ Functions</h2></td></tr>
 <tr class="memdesc:ae3e23f266716bc0df7a84aecef8a6f0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a string by a given delimiter.  <a href="namespacederplib_1_1stdext.html#ae3e23f266716bc0df7a84aecef8a6f0d">More...</a><br /></td></tr>
 <tr class="separator:ae3e23f266716bc0df7a84aecef8a6f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa46524e891accbc59f0d1d3a5a7436c3"><td class="memTemplParams" colspan="2">template&lt;typename CharT &gt; </td></tr>
-<tr class="memitem:aa46524e891accbc59f0d1d3a5a7436c3"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::basic_string&lt; CharT &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#aa46524e891accbc59f0d1d3a5a7436c3">split_string</a> (typename std::basic_string&lt; CharT &gt;::const_iterator begin, typename std::basic_string&lt; CharT &gt;::const_iterator end, CharT delimiter, unsigned limit=0)</td></tr>
+<tr class="memitem:aa46524e891accbc59f0d1d3a5a7436c3"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::basic_string&lt; CharT &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#aa46524e891accbc59f0d1d3a5a7436c3">split_string</a> (typename std::basic_string&lt; CharT &gt;::const_iterator <a class="el" href="namespacederplib_1_1util.html#ad2c9d87f31dc9bf2f162892897b5f7ef">begin</a>, typename std::basic_string&lt; CharT &gt;::const_iterator <a class="el" href="namespacederplib_1_1util.html#adcf8ed65bdd16ad4d9b1a7b1a3bd3b76">end</a>, CharT delimiter, unsigned limit=0)</td></tr>
 <tr class="memdesc:aa46524e891accbc59f0d1d3a5a7436c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a string by a given delimiter.  <a href="namespacederplib_1_1stdext.html#aa46524e891accbc59f0d1d3a5a7436c3">More...</a><br /></td></tr>
 <tr class="separator:aa46524e891accbc59f0d1d3a5a7436c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afba7109dbdc40156a348deb2cd14a5c8"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:afba7109dbdc40156a348deb2cd14a5c8"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#afba7109dbdc40156a348deb2cd14a5c8">join_to_string</a> (typename std::vector&lt; T &gt;::const_iterator begin, typename std::vector&lt; T &gt;::const_iterator end, const T &amp;separator)</td></tr>
+<tr class="memitem:afba7109dbdc40156a348deb2cd14a5c8"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#afba7109dbdc40156a348deb2cd14a5c8">join_to_string</a> (typename std::vector&lt; T &gt;::const_iterator <a class="el" href="namespacederplib_1_1util.html#ad2c9d87f31dc9bf2f162892897b5f7ef">begin</a>, typename std::vector&lt; T &gt;::const_iterator <a class="el" href="namespacederplib_1_1util.html#adcf8ed65bdd16ad4d9b1a7b1a3bd3b76">end</a>, const T &amp;separator)</td></tr>
 <tr class="memdesc:afba7109dbdc40156a348deb2cd14a5c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joins a string from a <code>std::vector</code> using a given separator.  <a href="namespacederplib_1_1stdext.html#afba7109dbdc40156a348deb2cd14a5c8">More...</a><br /></td></tr>
 <tr class="separator:afba7109dbdc40156a348deb2cd14a5c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09cdb11434cb1e8aa23d6d3e1baee50c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a09cdb11434cb1e8aa23d6d3e1baee50c"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a09cdb11434cb1e8aa23d6d3e1baee50c">join_to_string</a> (typename std::vector&lt; T &gt;::const_iterator begin, typename std::vector&lt; T &gt;::const_iterator end, typename T::value_type separator)</td></tr>
+<tr class="memitem:a09cdb11434cb1e8aa23d6d3e1baee50c"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a09cdb11434cb1e8aa23d6d3e1baee50c">join_to_string</a> (typename std::vector&lt; T &gt;::const_iterator <a class="el" href="namespacederplib_1_1util.html#ad2c9d87f31dc9bf2f162892897b5f7ef">begin</a>, typename std::vector&lt; T &gt;::const_iterator <a class="el" href="namespacederplib_1_1util.html#adcf8ed65bdd16ad4d9b1a7b1a3bd3b76">end</a>, typename T::value_type separator)</td></tr>
 <tr class="separator:a09cdb11434cb1e8aa23d6d3e1baee50c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2665dfd6b3b50554918e2bea71e9006"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ab2665dfd6b3b50554918e2bea71e9006"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#ab2665dfd6b3b50554918e2bea71e9006">join_to_string</a> (const std::vector&lt; std::basic_string&lt; T &gt;&gt; &amp;input, const std::basic_string&lt; T &gt; &amp;separator)</td></tr>
@@ -172,12 +218,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a6bfb53f9fd1c44a348d64b07948c1a1b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a6bfb53f9fd1c44a348d64b07948c1a1b"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a6bfb53f9fd1c44a348d64b07948c1a1b">join_to_string</a> (const std::vector&lt; std::basic_string&lt; T &gt;&gt; &amp;input, T separator)</td></tr>
 <tr class="separator:a6bfb53f9fd1c44a348d64b07948c1a1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b53f54643aa126ce5cfa116f8389a25"><td class="memItemLeft" align="right" valign="top">std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a1b53f54643aa126ce5cfa116f8389a25">toupper</a> (std::string &amp;str)</td></tr>
-<tr class="memdesc:a1b53f54643aa126ce5cfa116f8389a25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the given string to upper case.  <a href="namespacederplib_1_1stdext.html#a1b53f54643aa126ce5cfa116f8389a25">More...</a><br /></td></tr>
-<tr class="separator:a1b53f54643aa126ce5cfa116f8389a25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a654257e61123f6e0fbbf028eaa171969"><td class="memItemLeft" align="right" valign="top">std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a654257e61123f6e0fbbf028eaa171969">tolower</a> (std::string &amp;str)</td></tr>
-<tr class="memdesc:a654257e61123f6e0fbbf028eaa171969"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the given string to lower case.  <a href="namespacederplib_1_1stdext.html#a654257e61123f6e0fbbf028eaa171969">More...</a><br /></td></tr>
-<tr class="separator:a654257e61123f6e0fbbf028eaa171969"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6b2c7d9ac71724547b474da227e9a09"><td class="memItemLeft" align="right" valign="top">std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#ab6b2c7d9ac71724547b474da227e9a09">toupper</a> (std::string &amp;str)</td></tr>
+<tr class="memdesc:ab6b2c7d9ac71724547b474da227e9a09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the given string to upper case.  <a href="namespacederplib_1_1stdext.html#ab6b2c7d9ac71724547b474da227e9a09">More...</a><br /></td></tr>
+<tr class="separator:ab6b2c7d9ac71724547b474da227e9a09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a800a13e34d9c73c8294a8cf95137205d"><td class="memItemLeft" align="right" valign="top">std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a800a13e34d9c73c8294a8cf95137205d">tolower</a> (std::string &amp;str)</td></tr>
+<tr class="memdesc:a800a13e34d9c73c8294a8cf95137205d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the given string to lower case.  <a href="namespacederplib_1_1stdext.html#a800a13e34d9c73c8294a8cf95137205d">More...</a><br /></td></tr>
+<tr class="separator:a800a13e34d9c73c8294a8cf95137205d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a4493c5a7a4f22a2791dcd1c7ef84c0b1"></a>
@@ -963,7 +1009,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="namespacederplib_1_1stdext_ad61a33bae3b59c2e717e909e4787ec04_icgraph.png" border="0" usemap="#namespacederplib_1_1stdext_ad61a33bae3b59c2e717e909e4787ec04_icgraph" alt=""/></div>
 <map name="namespacederplib_1_1stdext_ad61a33bae3b59c2e717e909e4787ec04_icgraph" id="namespacederplib_1_1stdext_ad61a33bae3b59c2e717e909e4787ec04_icgraph">
 <area shape="rect" title="Splits a string by a given delimiter." alt="" coords="216,5,368,47"/>
-<area shape="rect" href="classderplib_1_1semver.html#abdf5c8f237636f5f9ef993caf469b488" title="Constructs a semver object from a version string." alt="" coords="5,5,168,47"/>
+<area shape="rect" href="classderplib_1_1base_1_1semver.html#acba56351ddaa44b7e2c33ef4545679e6" title="Constructs a semver object from a version string." alt="" coords="5,5,168,47"/>
 </map>
 </div>
 
@@ -1127,14 +1173,14 @@ template&lt;typename T , typename R  = T&gt; </div>
 
 </div>
 </div>
-<a id="a654257e61123f6e0fbbf028eaa171969"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a654257e61123f6e0fbbf028eaa171969">&#9670;&nbsp;</a></span>tolower()</h2>
+<a id="a800a13e34d9c73c8294a8cf95137205d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a800a13e34d9c73c8294a8cf95137205d">&#9670;&nbsp;</a></span>tolower()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string&amp; derplib::stdext::tolower </td>
+          <td class="memname">std::string &amp; derplib::stdext::tolower </td>
           <td>(</td>
           <td class="paramtype">std::string &amp;&#160;</td>
           <td class="paramname"><em>str</em></td><td>)</td>
@@ -1154,14 +1200,14 @@ template&lt;typename T , typename R  = T&gt; </div>
 
 </div>
 </div>
-<a id="a1b53f54643aa126ce5cfa116f8389a25"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b53f54643aa126ce5cfa116f8389a25">&#9670;&nbsp;</a></span>toupper()</h2>
+<a id="ab6b2c7d9ac71724547b474da227e9a09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6b2c7d9ac71724547b474da227e9a09">&#9670;&nbsp;</a></span>toupper()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string&amp; derplib::stdext::toupper </td>
+          <td class="memname">std::string &amp; derplib::stdext::toupper </td>
           <td>(</td>
           <td class="paramtype">std::string &amp;&#160;</td>
           <td class="paramname"><em>str</em></td><td>)</td>

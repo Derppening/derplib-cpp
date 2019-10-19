@@ -11,7 +11,7 @@
 #include <derplib/stdext/type_traits.h>
 
 namespace derplib {
-namespace container {
+inline namespace container {
 
 /**
  * \brief A buffered consumer with parallel execution support.

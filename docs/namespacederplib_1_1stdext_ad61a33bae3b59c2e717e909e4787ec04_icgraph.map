@@ -1,4 +1,4 @@
 <map id="derplib::stdext::split_string" name="derplib::stdext::split_string">
 <area shape="rect" id="node1" title="Splits a string by a given delimiter." alt="" coords="216,5,368,47"/>
-<area shape="rect" id="node2" href="$classderplib_1_1semver.html#abdf5c8f237636f5f9ef993caf469b488" title="Constructs a semver object from a version string." alt="" coords="5,5,168,47"/>
+<area shape="rect" id="node2" href="$classderplib_1_1base_1_1semver.html#acba56351ddaa44b7e2c33ef4545679e6" title="Constructs a semver object from a version string." alt="" coords="5,5,168,47"/>
 </map>

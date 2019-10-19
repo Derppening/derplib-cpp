@@ -6,7 +6,7 @@
 #include "version.h"
 
 namespace derplib {
-namespace stdext {
+inline namespace stdext {
 
 /**
  * \brief Drop-in backport for `std::make_unique`.

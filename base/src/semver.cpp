@@ -3,6 +3,7 @@
 #include <algorithm>
 
 namespace derplib {
+inline namespace base {
 namespace {
 inline bool is_valid_identifier(const char c) {
   return std::isalpha(c) || std::isdigit(c) || c == '-' || c == '.';
@@ -117,4 +118,5 @@ semver semver::from_string(const std::string& str) {
 
   return semver(std::stoi(versions[0]), std::stoi(versions[1]), std::stoi(versions[2]), prerelease, build);
 }
+}  // namespace base
 }  // namespace derplib

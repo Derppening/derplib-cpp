@@ -6,7 +6,8 @@
 #include <vector>
 
 namespace derplib {
-namespace newlib {
+inline namespace stdext {
+inline namespace newlib {
 
 /**
  * \brief Exception-safe replacement for `std::array::at`.
@@ -125,4 +126,5 @@ const T* element_at(const std::map<Key, T, Compare, Allocator>& m, const Key& ke
 }
 
 }  // namespace newlib
+}  // namespace stdext
 }  // namespace derplib

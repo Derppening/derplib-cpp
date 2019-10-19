@@ -3,6 +3,7 @@
 #include <chrono>
 
 namespace derplib {
+inline namespace base {
 /**
  * \brief A basic stopwatch, utilizing `std::chrono::steady_clock`.
  */
@@ -54,4 +55,5 @@ class stopwatch {
 
   bool _is_active = false;
 };
+}  // namespace base
 }  // namespace derplib

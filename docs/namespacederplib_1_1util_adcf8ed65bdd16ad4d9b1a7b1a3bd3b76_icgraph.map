@@ -1,7 +1,4 @@
 <map id="derplib::util::end" name="derplib::util::end">
-<area shape="rect" id="node1" title=" " alt="" coords="416,78,544,105"/>
-<area shape="rect" id="node2" href="$namespacederplib_1_1util.html#a7722e1b2828cd8da655d2b4ae8bae197" title="Generates a int range for [start,end)." alt="" coords="231,5,353,47"/>
-<area shape="rect" id="node3" href="$namespacederplib_1_1stdext.html#a09cdb11434cb1e8aa23d6d3e1baee50c" title=" " alt="" coords="218,71,366,112"/>
-<area shape="rect" id="node4" href="$namespacederplib_1_1stdext.html#ad61a33bae3b59c2e717e909e4787ec04" title="Splits a string by a given delimiter." alt="" coords="216,136,368,177"/>
-<area shape="rect" id="node5" href="$classderplib_1_1semver.html#abdf5c8f237636f5f9ef993caf469b488" title="Constructs a semver object from a version string." alt="" coords="5,136,168,177"/>
+<area shape="rect" id="node1" title=" " alt="" coords="175,13,303,39"/>
+<area shape="rect" id="node2" href="$namespacederplib_1_1util.html#a7722e1b2828cd8da655d2b4ae8bae197" title="Generates a int range for [start,end)." alt="" coords="5,5,127,47"/>
 </map>

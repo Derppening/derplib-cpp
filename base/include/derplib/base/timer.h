@@ -10,6 +10,7 @@
 #include <derplib/stdext/type_traits.h>
 
 namespace derplib {
+inline namespace base {
 
 /**
  * \brief A simple timer that invokes a callback after a fixed amount of time.
@@ -185,4 +186,5 @@ void timer<Func>::countdown_daemon() {
   }
 }
 
+}  // namespace base
 }  // namespace derplib

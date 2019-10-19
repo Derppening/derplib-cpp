@@ -3,7 +3,7 @@
 #include "version.h"
 
 namespace derplib {
-namespace stdext {
+inline namespace stdext {
 
 #if defined(DERPLIB_HAS_LIB_IS_SWAPPABLE)
 template<typename T>

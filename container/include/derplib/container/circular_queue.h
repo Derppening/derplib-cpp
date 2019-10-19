@@ -8,7 +8,7 @@
 #include <derplib/stdext/version.h>
 
 namespace derplib {
-namespace container {
+inline namespace container {
 
 #include <derplib/internal/common_macros_begin.h>
 

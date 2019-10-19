@@ -6,7 +6,7 @@
 #include <iterator>
 
 namespace derplib {
-namespace util {
+inline namespace util {
 
 #include <derplib/internal/common_macros_begin.h>
 

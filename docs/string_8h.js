@@ -7,6 +7,6 @@ var string_8h =
     [ "split_string", "string_8h.html#ae3e23f266716bc0df7a84aecef8a6f0d", null ],
     [ "split_string", "string_8h.html#ad61a33bae3b59c2e717e909e4787ec04", null ],
     [ "split_string", "string_8h.html#aa46524e891accbc59f0d1d3a5a7436c3", null ],
-    [ "tolower", "string_8h.html#a654257e61123f6e0fbbf028eaa171969", null ],
-    [ "toupper", "string_8h.html#a1b53f54643aa126ce5cfa116f8389a25", null ]
+    [ "tolower", "string_8h.html#a800a13e34d9c73c8294a8cf95137205d", null ],
+    [ "toupper", "string_8h.html#ab6b2c7d9ac71724547b474da227e9a09", null ]
 ];

@@ -4,7 +4,7 @@
 #include <algorithm>
 
 namespace derplib {
-namespace util {
+inline namespace stdext {
 
 namespace {
 struct ToUpperUnaryOp {
@@ -28,5 +28,5 @@ std::string& tolower(std::string& str) {
   return str;
 }
 
-}  // namespace util
+}  // namespace stdext
 }  // namespace derplib
