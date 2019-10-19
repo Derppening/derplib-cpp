@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../../../../../../../../../../../usr/include/c++/9.2.0/memory"
+#include <memory>
 
-#include "../memory.h"
+#include "derplib/stdext/memory.h"
 
 namespace derplib {
 namespace newlib {
@@ -32,9 +32,19 @@ T* element_at(const std::unique_ptr<T[], Deleter>& uptr, std::size_t index) noex
  */
 // TODO(Derppening): Do the std::enable_if<std::is_invocable>> thing
 template<typename T, typename Deleter, typename R, typename... Args>
-std::unique_ptr<R> invoke(const std::unique_ptr<T, Deleter>& uptr, R (T::*func)(Args...), Args&&... args) noexcept;
+std::unique_ptr<R> invoke(const std::unique_ptr<T, Deleter>& uptr, R (T::*func)(Args...), Args&&... args) noexcept {
+  return (uptr && func) ? derplib::stdext::make_unique<R>(uptr->func(std::forward<Args>(args)...)) : nullptr;
+}
+
+template<typename T, typename Deleter>
+T* element_at(const std::unique_ptr<T[], Deleter>& uptr, std::size_t index) noexcept {
+  T* const p = uptr.get();
+  if (p == nullptr) {
+    return nullptr;
+  }
+
+  return &p[index];
+}
 
 }  // namespace newlib
 }  // namespace derplib
-
-#include "memory.ipp"

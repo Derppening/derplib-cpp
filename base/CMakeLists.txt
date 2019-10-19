@@ -3,9 +3,6 @@ set(LIBRARY_HEADERS
         include/derplib/base/semver.h
         include/derplib/base/stopwatch.h
         include/derplib/base/timer.h)
-set(LIBRARY_IMPLS
-        include/derplib/base/log.ipp
-        include/derplib/base/timer.ipp)
 set(LIBRARY_SOURCES
         src/semver.cpp
         src/stopwatch.cpp)
@@ -17,7 +14,6 @@ set(TEST_SOURCES
 
 derplib_add_library(base
         HEADERS ${LIBRARY_HEADERS}
-        IMPLS ${LIBRARY_IMPLS}
         SOURCES ${LIBRARY_SOURCES}
         LINK_DEPS derplib::internal derplib::stdext derplib::util)
 

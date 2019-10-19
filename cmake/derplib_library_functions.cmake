@@ -2,13 +2,12 @@
 #
 # Usage: derplib_add_library(name HEADERS headers... IMPLS ipps... SOURCES srcs... LINK_DEPS lib_deps...)
 function(derplib_add_library NAME)
-    set(multiValueArgs HEADERS IMPLS SOURCES LINK_DEPS)
+    set(multiValueArgs HEADERS SOURCES LINK_DEPS)
     cmake_parse_arguments(DERPLIB_LIBRARY "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
 
     # Add Targets
     add_library(derplib_${NAME}
             ${DERPLIB_LIBRARY_HEADERS}
-            ${DERPLIB_LIBRARY_IMPLS}
             ${DERPLIB_LIBRARY_SOURCES})
     add_library(derplib::${NAME} ALIAS derplib_${NAME})
     target_compile_features(derplib_${NAME} PUBLIC cxx_std_${CMAKE_CXX_STANDARD})

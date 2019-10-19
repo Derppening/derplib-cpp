@@ -5,8 +5,6 @@ set(LIBRARY_HEADERS
         include/derplib/experimental/mem_alloc/bad_alloc.h
         include/derplib/experimental/mem_alloc/fixed_pool_mem_alloc.h
         include/derplib/experimental/mem_alloc/heap_walk_iterator.h)
-set(LIBRARY_IMPLS
-        include/derplib/experimental/mem_alloc/fixed_pool_mem_alloc.ipp)
 set(LIBRARY_SOURCES
         src/cli.cpp
         src/config_file.cpp
@@ -19,7 +17,6 @@ set(TEST_SOURCES
 
 derplib_add_library(experimental
         HEADERS ${LIBRARY_HEADERS}
-        IMPLS ${LIBRARY_IMPLS}
         SOURCES ${LIBRARY_SOURCES}
         LINK_DEPS derplib::internal derplib::stdext derplib::util)
 

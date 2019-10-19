@@ -1,0 +1,5 @@
+<map id="derplib::container::circular_queue::size" name="derplib::container::circular_queue::size">
+<area shape="rect" id="node1" title="Returns the number of elements." alt="" coords="243,39,401,80"/>
+<area shape="rect" id="node2" href="$classderplib_1_1container_1_1circular__queue.html#a2c5079d4dbefdb90d2ec0372a0292f15" title="Pushes a new element to the end of the queue, which will be constructed in&#45;place." alt="" coords="5,5,195,47"/>
+<area shape="rect" id="node3" href="$classderplib_1_1container_1_1circular__queue.html#af8ec3ce5120e1263aa6e9da5dc93119e" title="Pushes the given element value to the end of the queue." alt="" coords="18,71,182,112"/>
+</map>

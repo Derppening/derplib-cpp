@@ -17,7 +17,9 @@ namespace stdext {
  * \return `std::unique_ptr<T>`.
  */
 template<typename T, typename... Args>
-std::unique_ptr<T> make_unique(Args&&... args);
+std::unique_ptr<T> make_unique(Args&&... args) {
+  return std::unique_ptr<T>(new T(std::forward<Args>(args)...));
+}
 
 /**
  * \brief Drop-in backport for `std::make_unique`.
@@ -27,12 +29,12 @@ std::unique_ptr<T> make_unique(Args&&... args);
  * \return `std::unique_ptr<T>`
  */
 template<typename T>
-std::unique_ptr<T> make_unique(std::size_t size);
+std::unique_ptr<T> make_unique(std::size_t size) {
+  return std::unique_ptr<T>(new typename std::remove_extent<T>::type[size]());
+}
 
 template<typename T, typename... Args>
 typename std::enable_if<std::is_array<T>::value>::type make_unique(Args&&... args) = delete;
 
 }  // namespace stdext
 }  // namespace derplib
-
-#include "memory.ipp"

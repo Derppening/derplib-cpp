@@ -31,7 +31,8 @@ class timer<Func> {
    * \param callback callback function to run when the timer expires
    */
   template<typename Rep, typename Period>
-  timer(std::chrono::duration<Rep, Period> duration, const Func& callback);
+  timer(std::chrono::duration<Rep, Period> duration, const Func& callback) :
+      timer(duration, std::move(callback), duration) {}
 
   /**
    * \brief Constructs an instance of `timer`.
@@ -47,7 +48,7 @@ class timer<Func> {
         const Func& callback,
         std::chrono::duration<Rep, Period> poll_rate);
 
-  timer(const timer& other);
+  timer(const timer& other) : timer(other._duration, other._callback, other._poll_rate) {}
   timer(timer&& other) noexcept = default;
 
   /**
@@ -74,11 +75,11 @@ class timer<Func> {
   /**
    * \return Whether the timer is active.
    */
-  bool active() const;
+  bool active() const { return _state == state::active; }
   /**
    * \return Whether the timer has expired.
    */
-  bool expired() const;
+  bool expired() const { return _state == state::expired; }
 
  private:
   enum struct state { halted = -1, not_started, active, expired };
@@ -99,6 +100,89 @@ class timer<Func> {
 
   std::chrono::time_point<std::chrono::steady_clock> _end_time = {};
 };
-}  // namespace derplib
 
-#include "derplib/base/timer.ipp"
+template<typename Func>
+template<typename Rep, typename Period>
+timer<Func>::timer(std::chrono::duration<Rep, Period> duration,
+                   const Func& callback,
+                   std::chrono::duration<Rep, Period> poll_rate) :
+    _state(state::not_started),
+    _keep_alive(true),
+    _duration(std::chrono::nanoseconds(duration)),
+    _poll_rate(std::chrono::nanoseconds(poll_rate)),
+    _callback(callback) {}
+
+template<typename Func>
+timer<Func>& timer<Func>::operator=(const timer& other) {
+  if (this != &other) {
+    _state = state::not_started;
+    _keep_alive = true;
+    _duration = other._duration;
+    _poll_rate = other._poll_rate;
+    _callback = other._callback;
+  }
+
+  return *this;
+}
+
+template<typename Func>
+timer<Func>::~timer() {
+  _keep_alive = false;
+
+  if (_thread.joinable()) {
+    _thread.join();
+  }
+}
+
+template<typename Func>
+void timer<Func>::start() {
+  if (_state == state::active) {
+    throw std::logic_error("Attempted to start a running timer");
+  } else if (_state == state::expired) {
+    throw std::logic_error("Attempted to restart an expired timer");
+  }
+
+  _state = state::active;
+  _end_time = std::chrono::steady_clock::now() + _duration;
+  _thread = std::thread(&timer::countdown_daemon, this);
+}
+
+template<typename Func>
+void timer<Func>::stop() {
+  if (_state == state::not_started) {
+    return;
+  }
+  if (_state != state::active) {
+    throw std::logic_error("Attempted to stop a halted timer");
+  }
+
+  _keep_alive = false;
+
+  if (_thread.joinable()) {
+    _thread.join();
+  }
+
+  _thread = std::thread();
+}
+
+template<typename Func>
+void timer<Func>::countdown_daemon() {
+  _state = state::active;
+
+  while (std::chrono::steady_clock::now() < _end_time) {
+    if (!_keep_alive) {
+      _state = state::halted;
+
+      return;
+    }
+
+    std::this_thread::sleep_for(_poll_rate);
+  }
+
+  _state = state::expired;
+  if (_callback) {
+    _callback();
+  }
+}
+
+}  // namespace derplib

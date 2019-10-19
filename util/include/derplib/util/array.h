@@ -33,11 +33,18 @@ DERPLIB_CPP14_CONSTEXPR std::array<T, N> to_array(T (&arr)[N]);
  */
 // TODO(Derppening): Move to stdext as drop-in backport for std::size
 template<typename T, std::size_t N>
-constexpr std::size_t size(DERPLIB_MAYBE_UNUSED T (&arr)[N]);
+constexpr std::size_t size(DERPLIB_MAYBE_UNUSED T (&arr)[N]) {
+  return N;
+}
+
+template<typename T, std::size_t N>
+DERPLIB_CPP14_CONSTEXPR std::array<T, N> to_array(T (&arr)[N]) {
+  std::array<T, N> a;
+  std::copy(arr, arr + N, a.begin());
+  return a;
+}
 
 #include <derplib/internal/common_macros_end.h>
 
 }  // namespace util
 }  // namespace derplib
-
-#include "array.ipp"

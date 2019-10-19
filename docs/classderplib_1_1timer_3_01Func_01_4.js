@@ -5,7 +5,6 @@ var classderplib_1_1timer_3_01Func_01_4 =
     [ "timer", "classderplib_1_1timer_3_01Func_01_4.html#a68a0d582d8b000864435dd560e4503c6", null ],
     [ "timer", "classderplib_1_1timer_3_01Func_01_4.html#aeecd6e2191b884ad8b2291c59daedb04", null ],
     [ "~timer", "classderplib_1_1timer_3_01Func_01_4.html#aa8f163d50d976d64108154b786983f5e", null ],
-    [ "timer", "classderplib_1_1timer_3_01Func_01_4.html#ace8be78d49defc5530b8a9e9b06cb5e1", null ],
     [ "active", "classderplib_1_1timer_3_01Func_01_4.html#ae04286377358b65d828b687c49b66071", null ],
     [ "expired", "classderplib_1_1timer_3_01Func_01_4.html#ab9ab0f4f3a14dbd706ffeb3ab51572d5", null ],
     [ "operator=", "classderplib_1_1timer_3_01Func_01_4.html#acda9ac5edf9679b7dc5df6b239abedd3", null ],

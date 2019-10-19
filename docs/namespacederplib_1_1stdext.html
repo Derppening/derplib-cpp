@@ -111,14 +111,14 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a99c866c68c49d9115a46bd2f27b0caa2"><td class="memTemplParams" colspan="2">template&lt;class T , class Compare &gt; </td></tr>
-<tr class="memitem:a99c866c68c49d9115a46bd2f27b0caa2"><td class="memTemplItemLeft" align="right" valign="top">const DERPLIB_CPP14_CONSTEXPR T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a99c866c68c49d9115a46bd2f27b0caa2">clamp</a> (const T &amp;v, const T &amp;lo, const T &amp;hi, Compare comp)</td></tr>
-<tr class="memdesc:a99c866c68c49d9115a46bd2f27b0caa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backport of <code>std::clamp</code> from C++17.  <a href="namespacederplib_1_1stdext.html#a99c866c68c49d9115a46bd2f27b0caa2">More...</a><br /></td></tr>
-<tr class="separator:a99c866c68c49d9115a46bd2f27b0caa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfcf5088d959c85f422d7b48e2161cd3"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:abfcf5088d959c85f422d7b48e2161cd3"><td class="memTemplItemLeft" align="right" valign="top">const DERPLIB_CPP14_CONSTEXPR T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#abfcf5088d959c85f422d7b48e2161cd3">clamp</a> (const T &amp;v, const T &amp;lo, const T &amp;hi)</td></tr>
-<tr class="memdesc:abfcf5088d959c85f422d7b48e2161cd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backport of <code>std::clamp</code> from C++17.  <a href="namespacederplib_1_1stdext.html#abfcf5088d959c85f422d7b48e2161cd3">More...</a><br /></td></tr>
-<tr class="separator:abfcf5088d959c85f422d7b48e2161cd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bfbdd646f40921cd5e84a206d41a67f"><td class="memTemplParams" colspan="2">template&lt;class T , class Compare &gt; </td></tr>
+<tr class="memitem:a7bfbdd646f40921cd5e84a206d41a67f"><td class="memTemplItemLeft" align="right" valign="top">const DERPLIB_CPP14_CONSTEXPR T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a7bfbdd646f40921cd5e84a206d41a67f">clamp</a> (const T &amp;v, const T &amp;lo, const T &amp;hi, Compare comp)</td></tr>
+<tr class="memdesc:a7bfbdd646f40921cd5e84a206d41a67f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backport of <code>std::clamp</code> from C++17.  <a href="namespacederplib_1_1stdext.html#a7bfbdd646f40921cd5e84a206d41a67f">More...</a><br /></td></tr>
+<tr class="separator:a7bfbdd646f40921cd5e84a206d41a67f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a745d5e9ff5d4012750e2f805aa333fd1"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a745d5e9ff5d4012750e2f805aa333fd1"><td class="memTemplItemLeft" align="right" valign="top">const DERPLIB_CPP14_CONSTEXPR T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a745d5e9ff5d4012750e2f805aa333fd1">clamp</a> (const T &amp;v, const T &amp;lo, const T &amp;hi)</td></tr>
+<tr class="memdesc:a745d5e9ff5d4012750e2f805aa333fd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backport of <code>std::clamp</code> from C++17.  <a href="namespacederplib_1_1stdext.html#a745d5e9ff5d4012750e2f805aa333fd1">More...</a><br /></td></tr>
+<tr class="separator:a745d5e9ff5d4012750e2f805aa333fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a186d16c8de709ff4fca28b8776b7f619"><td class="memTemplParams" colspan="2">template&lt;class T , class Compare &gt; </td></tr>
 <tr class="memitem:a186d16c8de709ff4fca28b8776b7f619"><td class="memTemplItemLeft" align="right" valign="top">DERPLIB_CPP14_CONSTEXPR bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a186d16c8de709ff4fca28b8776b7f619">in_range</a> (const T &amp;v, const T &amp;lo, const T &amp;hi, Compare comp)</td></tr>
 <tr class="memdesc:a186d16c8de709ff4fca28b8776b7f619"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a value is in range.  <a href="namespacederplib_1_1stdext.html#a186d16c8de709ff4fca28b8776b7f619">More...</a><br /></td></tr>
@@ -135,18 +135,49 @@ Functions</h2></td></tr>
 <tr class="memitem:add31fa6f7c0d563b2391e4d9e5db18fc"><td class="memTemplItemLeft" align="right" valign="top">DERPLIB_CPP14_CONSTEXPR std::enable_if&lt; std::is_floating_point&lt; T &gt;::value, T &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#add31fa6f7c0d563b2391e4d9e5db18fc">to_degrees</a> (const T &amp;radians)</td></tr>
 <tr class="memdesc:add31fa6f7c0d563b2391e4d9e5db18fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a radian value to degrees.  <a href="namespacederplib_1_1stdext.html#add31fa6f7c0d563b2391e4d9e5db18fc">More...</a><br /></td></tr>
 <tr class="separator:add31fa6f7c0d563b2391e4d9e5db18fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fcb7cb0ccc0c321280ccfe5708bcc25"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
-<tr class="memitem:a6fcb7cb0ccc0c321280ccfe5708bcc25"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a6fcb7cb0ccc0c321280ccfe5708bcc25">make_unique</a> (Args &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a6fcb7cb0ccc0c321280ccfe5708bcc25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop-in backport for <code>std::make_unique</code>.  <a href="namespacederplib_1_1stdext.html#a6fcb7cb0ccc0c321280ccfe5708bcc25">More...</a><br /></td></tr>
-<tr class="separator:a6fcb7cb0ccc0c321280ccfe5708bcc25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2f5385caa026f657333f5ecf7311607"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ab2f5385caa026f657333f5ecf7311607"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#ab2f5385caa026f657333f5ecf7311607">make_unique</a> (std::size_t size)</td></tr>
-<tr class="memdesc:ab2f5385caa026f657333f5ecf7311607"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop-in backport for <code>std::make_unique</code>.  <a href="namespacederplib_1_1stdext.html#ab2f5385caa026f657333f5ecf7311607">More...</a><br /></td></tr>
-<tr class="separator:ab2f5385caa026f657333f5ecf7311607"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12a3c0a78cd88e3b55a6cededf89998d"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
+<tr class="memitem:a12a3c0a78cd88e3b55a6cededf89998d"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a12a3c0a78cd88e3b55a6cededf89998d">make_unique</a> (Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a12a3c0a78cd88e3b55a6cededf89998d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop-in backport for <code>std::make_unique</code>.  <a href="namespacederplib_1_1stdext.html#a12a3c0a78cd88e3b55a6cededf89998d">More...</a><br /></td></tr>
+<tr class="separator:a12a3c0a78cd88e3b55a6cededf89998d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6d38d043225c1388f335dae2c00d168"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aa6d38d043225c1388f335dae2c00d168"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#aa6d38d043225c1388f335dae2c00d168">make_unique</a> (std::size_t size)</td></tr>
+<tr class="memdesc:aa6d38d043225c1388f335dae2c00d168"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop-in backport for <code>std::make_unique</code>.  <a href="namespacederplib_1_1stdext.html#aa6d38d043225c1388f335dae2c00d168">More...</a><br /></td></tr>
+<tr class="separator:aa6d38d043225c1388f335dae2c00d168"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f2a770e89bdf9e678ca39ac43bcdb98"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
 <tr class="memitem:a0f2a770e89bdf9e678ca39ac43bcdb98"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_array&lt; T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a0f2a770e89bdf9e678ca39ac43bcdb98">make_unique</a> (Args &amp;&amp;... args)=delete</td></tr>
 <tr class="memdesc:a0f2a770e89bdf9e678ca39ac43bcdb98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop-in backport for <code>std::make_unique</code>.  <a href="namespacederplib_1_1stdext.html#a0f2a770e89bdf9e678ca39ac43bcdb98">More...</a><br /></td></tr>
 <tr class="separator:a0f2a770e89bdf9e678ca39ac43bcdb98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad61a33bae3b59c2e717e909e4787ec04"><td class="memTemplParams" colspan="2">template&lt;typename CharT &gt; </td></tr>
+<tr class="memitem:ad61a33bae3b59c2e717e909e4787ec04"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::basic_string&lt; CharT &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#ad61a33bae3b59c2e717e909e4787ec04">split_string</a> (const std::basic_string&lt; CharT &gt; &amp;input, const std::basic_string&lt; CharT &gt; &amp;delimiter, unsigned limit=0)</td></tr>
+<tr class="memdesc:ad61a33bae3b59c2e717e909e4787ec04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a string by a given delimiter.  <a href="namespacederplib_1_1stdext.html#ad61a33bae3b59c2e717e909e4787ec04">More...</a><br /></td></tr>
+<tr class="separator:ad61a33bae3b59c2e717e909e4787ec04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3e23f266716bc0df7a84aecef8a6f0d"><td class="memTemplParams" colspan="2">template&lt;typename CharT &gt; </td></tr>
+<tr class="memitem:ae3e23f266716bc0df7a84aecef8a6f0d"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::basic_string&lt; CharT &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#ae3e23f266716bc0df7a84aecef8a6f0d">split_string</a> (const std::basic_string&lt; CharT &gt; &amp;input, CharT delimiter, unsigned limit=0)</td></tr>
+<tr class="memdesc:ae3e23f266716bc0df7a84aecef8a6f0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a string by a given delimiter.  <a href="namespacederplib_1_1stdext.html#ae3e23f266716bc0df7a84aecef8a6f0d">More...</a><br /></td></tr>
+<tr class="separator:ae3e23f266716bc0df7a84aecef8a6f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa46524e891accbc59f0d1d3a5a7436c3"><td class="memTemplParams" colspan="2">template&lt;typename CharT &gt; </td></tr>
+<tr class="memitem:aa46524e891accbc59f0d1d3a5a7436c3"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::basic_string&lt; CharT &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#aa46524e891accbc59f0d1d3a5a7436c3">split_string</a> (typename std::basic_string&lt; CharT &gt;::const_iterator begin, typename std::basic_string&lt; CharT &gt;::const_iterator end, CharT delimiter, unsigned limit=0)</td></tr>
+<tr class="memdesc:aa46524e891accbc59f0d1d3a5a7436c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a string by a given delimiter.  <a href="namespacederplib_1_1stdext.html#aa46524e891accbc59f0d1d3a5a7436c3">More...</a><br /></td></tr>
+<tr class="separator:aa46524e891accbc59f0d1d3a5a7436c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afba7109dbdc40156a348deb2cd14a5c8"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:afba7109dbdc40156a348deb2cd14a5c8"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#afba7109dbdc40156a348deb2cd14a5c8">join_to_string</a> (typename std::vector&lt; T &gt;::const_iterator begin, typename std::vector&lt; T &gt;::const_iterator end, const T &amp;separator)</td></tr>
+<tr class="memdesc:afba7109dbdc40156a348deb2cd14a5c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joins a string from a <code>std::vector</code> using a given separator.  <a href="namespacederplib_1_1stdext.html#afba7109dbdc40156a348deb2cd14a5c8">More...</a><br /></td></tr>
+<tr class="separator:afba7109dbdc40156a348deb2cd14a5c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09cdb11434cb1e8aa23d6d3e1baee50c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a09cdb11434cb1e8aa23d6d3e1baee50c"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a09cdb11434cb1e8aa23d6d3e1baee50c">join_to_string</a> (typename std::vector&lt; T &gt;::const_iterator begin, typename std::vector&lt; T &gt;::const_iterator end, typename T::value_type separator)</td></tr>
+<tr class="separator:a09cdb11434cb1e8aa23d6d3e1baee50c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2665dfd6b3b50554918e2bea71e9006"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ab2665dfd6b3b50554918e2bea71e9006"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#ab2665dfd6b3b50554918e2bea71e9006">join_to_string</a> (const std::vector&lt; std::basic_string&lt; T &gt;&gt; &amp;input, const std::basic_string&lt; T &gt; &amp;separator)</td></tr>
+<tr class="separator:ab2665dfd6b3b50554918e2bea71e9006"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bfb53f9fd1c44a348d64b07948c1a1b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a6bfb53f9fd1c44a348d64b07948c1a1b"><td class="memTemplItemLeft" align="right" valign="top">std::basic_string&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a6bfb53f9fd1c44a348d64b07948c1a1b">join_to_string</a> (const std::vector&lt; std::basic_string&lt; T &gt;&gt; &amp;input, T separator)</td></tr>
+<tr class="separator:a6bfb53f9fd1c44a348d64b07948c1a1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b53f54643aa126ce5cfa116f8389a25"><td class="memItemLeft" align="right" valign="top">std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a1b53f54643aa126ce5cfa116f8389a25">toupper</a> (std::string &amp;str)</td></tr>
+<tr class="memdesc:a1b53f54643aa126ce5cfa116f8389a25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the given string to upper case.  <a href="namespacederplib_1_1stdext.html#a1b53f54643aa126ce5cfa116f8389a25">More...</a><br /></td></tr>
+<tr class="separator:a1b53f54643aa126ce5cfa116f8389a25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a654257e61123f6e0fbbf028eaa171969"><td class="memItemLeft" align="right" valign="top">std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a654257e61123f6e0fbbf028eaa171969">tolower</a> (std::string &amp;str)</td></tr>
+<tr class="memdesc:a654257e61123f6e0fbbf028eaa171969"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the given string to lower case.  <a href="namespacederplib_1_1stdext.html#a654257e61123f6e0fbbf028eaa171969">More...</a><br /></td></tr>
+<tr class="separator:a654257e61123f6e0fbbf028eaa171969"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a4493c5a7a4f22a2791dcd1c7ef84c0b1"></a>
@@ -214,8 +245,8 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="abfcf5088d959c85f422d7b48e2161cd3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfcf5088d959c85f422d7b48e2161cd3">&#9670;&nbsp;</a></span>clamp() <span class="overload">[1/2]</span></h2>
+<a id="a745d5e9ff5d4012750e2f805aa333fd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a745d5e9ff5d4012750e2f805aa333fd1">&#9670;&nbsp;</a></span>clamp() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -226,7 +257,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const DERPLIB_CPP14_CONSTEXPR T &amp; derplib::stdext::clamp </td>
+          <td class="memname">const DERPLIB_CPP14_CONSTEXPR T&amp; derplib::stdext::clamp </td>
           <td>(</td>
           <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>v</em>, </td>
@@ -275,17 +306,17 @@ template&lt;class T &gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespacederplib_1_1stdext_abfcf5088d959c85f422d7b48e2161cd3_cgraph.png" border="0" usemap="#namespacederplib_1_1stdext_abfcf5088d959c85f422d7b48e2161cd3_cgraph" alt=""/></div>
-<map name="namespacederplib_1_1stdext_abfcf5088d959c85f422d7b48e2161cd3_cgraph" id="namespacederplib_1_1stdext_abfcf5088d959c85f422d7b48e2161cd3_cgraph">
+<div class="center"><img src="namespacederplib_1_1stdext_a745d5e9ff5d4012750e2f805aa333fd1_cgraph.png" border="0" usemap="#namespacederplib_1_1stdext_a745d5e9ff5d4012750e2f805aa333fd1_cgraph" alt=""/></div>
+<map name="namespacederplib_1_1stdext_a745d5e9ff5d4012750e2f805aa333fd1_cgraph" id="namespacederplib_1_1stdext_a745d5e9ff5d4012750e2f805aa333fd1_cgraph">
 <area shape="rect" title="Backport of std::clamp from C++17." alt="" coords="5,5,169,32"/>
-<area shape="rect" href="namespacederplib_1_1stdext.html#a99c866c68c49d9115a46bd2f27b0caa2" title="Backport of std::clamp from C++17." alt="" coords="217,5,381,32"/>
+<area shape="rect" href="namespacederplib_1_1stdext.html#a7bfbdd646f40921cd5e84a206d41a67f" title="Backport of std::clamp from C++17." alt="" coords="217,5,381,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a99c866c68c49d9115a46bd2f27b0caa2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99c866c68c49d9115a46bd2f27b0caa2">&#9670;&nbsp;</a></span>clamp() <span class="overload">[2/2]</span></h2>
+<a id="a7bfbdd646f40921cd5e84a206d41a67f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bfbdd646f40921cd5e84a206d41a67f">&#9670;&nbsp;</a></span>clamp() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -296,7 +327,7 @@ template&lt;class T , class Compare &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const DERPLIB_CPP14_CONSTEXPR T &amp; derplib::stdext::clamp </td>
+          <td class="memname">const DERPLIB_CPP14_CONSTEXPR T&amp; derplib::stdext::clamp </td>
           <td>(</td>
           <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>v</em>, </td>
@@ -353,10 +384,10 @@ template&lt;class T , class Compare &gt; </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespacederplib_1_1stdext_a99c866c68c49d9115a46bd2f27b0caa2_icgraph.png" border="0" usemap="#namespacederplib_1_1stdext_a99c866c68c49d9115a46bd2f27b0caa2_icgraph" alt=""/></div>
-<map name="namespacederplib_1_1stdext_a99c866c68c49d9115a46bd2f27b0caa2_icgraph" id="namespacederplib_1_1stdext_a99c866c68c49d9115a46bd2f27b0caa2_icgraph">
+<div class="center"><img src="namespacederplib_1_1stdext_a7bfbdd646f40921cd5e84a206d41a67f_icgraph.png" border="0" usemap="#namespacederplib_1_1stdext_a7bfbdd646f40921cd5e84a206d41a67f_icgraph" alt=""/></div>
+<map name="namespacederplib_1_1stdext_a7bfbdd646f40921cd5e84a206d41a67f_icgraph" id="namespacederplib_1_1stdext_a7bfbdd646f40921cd5e84a206d41a67f_icgraph">
 <area shape="rect" title="Backport of std::clamp from C++17." alt="" coords="217,5,381,32"/>
-<area shape="rect" href="namespacederplib_1_1stdext.html#abfcf5088d959c85f422d7b48e2161cd3" title="Backport of std::clamp from C++17." alt="" coords="5,5,169,32"/>
+<area shape="rect" href="namespacederplib_1_1stdext.html#a745d5e9ff5d4012750e2f805aa333fd1" title="Backport of std::clamp from C++17." alt="" coords="5,5,169,32"/>
 </map>
 </div>
 
@@ -494,8 +525,187 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a6fcb7cb0ccc0c321280ccfe5708bcc25"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6fcb7cb0ccc0c321280ccfe5708bcc25">&#9670;&nbsp;</a></span>make_unique() <span class="overload">[1/3]</span></h2>
+<a id="ab2665dfd6b3b50554918e2bea71e9006"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2665dfd6b3b50554918e2bea71e9006">&#9670;&nbsp;</a></span>join_to_string() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::basic_string&lt;T&gt; derplib::stdext::join_to_string </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::basic_string&lt; T &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::basic_string&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>separator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6bfb53f9fd1c44a348d64b07948c1a1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bfb53f9fd1c44a348d64b07948c1a1b">&#9670;&nbsp;</a></span>join_to_string() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::basic_string&lt;T&gt; derplib::stdext::join_to_string </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::basic_string&lt; T &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>separator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afba7109dbdc40156a348deb2cd14a5c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afba7109dbdc40156a348deb2cd14a5c8">&#9670;&nbsp;</a></span>join_to_string() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T derplib::stdext::join_to_string </td>
+          <td>(</td>
+          <td class="paramtype">typename std::vector&lt; T &gt;::const_iterator&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename std::vector&lt; T &gt;::const_iterator&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>separator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Joins a string from a <code>std::vector</code> using a given separator. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td><code>std::basic_string</code>, or any character sequence container which implements <code>value_type</code> typedef and <code>std::ostream&amp; operator&lt;&lt;(std::ostream&amp;, T)</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>iterator to the first element to join </td></tr>
+    <tr><td class="paramname">end</td><td>iterator to the past-the-last element to join </td></tr>
+    <tr><td class="paramname">separator</td><td>separator between two string elements </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A string with all elements joint together. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacederplib_1_1stdext_afba7109dbdc40156a348deb2cd14a5c8_cgraph.png" border="0" usemap="#namespacederplib_1_1stdext_afba7109dbdc40156a348deb2cd14a5c8_cgraph" alt=""/></div>
+<map name="namespacederplib_1_1stdext_afba7109dbdc40156a348deb2cd14a5c8_cgraph" id="namespacederplib_1_1stdext_afba7109dbdc40156a348deb2cd14a5c8_cgraph">
+<area shape="rect" title="Joins a string from a std::vector using a given separator." alt="" coords="5,23,153,65"/>
+<area shape="rect" href="namespacederplib_1_1util.html#ad2c9d87f31dc9bf2f162892897b5f7ef" title=" " alt="" coords="201,5,341,32"/>
+<area shape="rect" href="namespacederplib_1_1util.html#adcf8ed65bdd16ad4d9b1a7b1a3bd3b76" title=" " alt="" coords="207,56,335,83"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacederplib_1_1stdext_afba7109dbdc40156a348deb2cd14a5c8_icgraph.png" border="0" usemap="#namespacederplib_1_1stdext_afba7109dbdc40156a348deb2cd14a5c8_icgraph" alt=""/></div>
+<map name="namespacederplib_1_1stdext_afba7109dbdc40156a348deb2cd14a5c8_icgraph" id="namespacederplib_1_1stdext_afba7109dbdc40156a348deb2cd14a5c8_icgraph">
+<area shape="rect" title="Joins a string from a std::vector using a given separator." alt="" coords="201,5,349,47"/>
+<area shape="rect" href="namespacederplib_1_1stdext.html#a09cdb11434cb1e8aa23d6d3e1baee50c" title=" " alt="" coords="5,5,153,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a09cdb11434cb1e8aa23d6d3e1baee50c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09cdb11434cb1e8aa23d6d3e1baee50c">&#9670;&nbsp;</a></span>join_to_string() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T derplib::stdext::join_to_string </td>
+          <td>(</td>
+          <td class="paramtype">typename std::vector&lt; T &gt;::const_iterator&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename std::vector&lt; T &gt;::const_iterator&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename T::value_type&#160;</td>
+          <td class="paramname"><em>separator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacederplib_1_1stdext_a09cdb11434cb1e8aa23d6d3e1baee50c_cgraph.png" border="0" usemap="#namespacederplib_1_1stdext_a09cdb11434cb1e8aa23d6d3e1baee50c_cgraph" alt=""/></div>
+<map name="namespacederplib_1_1stdext_a09cdb11434cb1e8aa23d6d3e1baee50c_cgraph" id="namespacederplib_1_1stdext_a09cdb11434cb1e8aa23d6d3e1baee50c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,25,153,66"/>
+<area shape="rect" href="namespacederplib_1_1util.html#ad2c9d87f31dc9bf2f162892897b5f7ef" title=" " alt="" coords="397,5,537,32"/>
+<area shape="rect" href="namespacederplib_1_1util.html#adcf8ed65bdd16ad4d9b1a7b1a3bd3b76" title=" " alt="" coords="403,60,531,87"/>
+<area shape="rect" href="namespacederplib_1_1stdext.html#afba7109dbdc40156a348deb2cd14a5c8" title="Joins a string from a std::vector using a given separator." alt="" coords="201,25,349,66"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a12a3c0a78cd88e3b55a6cededf89998d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12a3c0a78cd88e3b55a6cededf89998d">&#9670;&nbsp;</a></span>make_unique() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -506,7 +716,7 @@ template&lt;typename T , typename... Args&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt; T &gt; derplib::stdext::make_unique </td>
+          <td class="memname">std::unique_ptr&lt;T&gt; derplib::stdext::make_unique </td>
           <td>(</td>
           <td class="paramtype">Args &amp;&amp;...&#160;</td>
           <td class="paramname"><em>args</em></td><td>)</td>
@@ -582,8 +792,8 @@ template&lt;typename T , typename... Args&gt; </div>
 
 </div>
 </div>
-<a id="ab2f5385caa026f657333f5ecf7311607"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2f5385caa026f657333f5ecf7311607">&#9670;&nbsp;</a></span>make_unique() <span class="overload">[3/3]</span></h2>
+<a id="aa6d38d043225c1388f335dae2c00d168"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6d38d043225c1388f335dae2c00d168">&#9670;&nbsp;</a></span>make_unique() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -591,7 +801,7 @@ template&lt;typename T , typename... Args&gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt; T &gt; derplib::stdext::make_unique </td>
+          <td class="memname">std::unique_ptr&lt;T&gt; derplib::stdext::make_unique </td>
           <td>(</td>
           <td class="paramtype">std::size_t&#160;</td>
           <td class="paramname"><em>size</em></td><td>)</td>
@@ -617,10 +827,213 @@ template&lt;typename T &gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespacederplib_1_1stdext_ab2f5385caa026f657333f5ecf7311607_cgraph.png" border="0" usemap="#namespacederplib_1_1stdext_ab2f5385caa026f657333f5ecf7311607_cgraph" alt=""/></div>
-<map name="namespacederplib_1_1stdext_ab2f5385caa026f657333f5ecf7311607_cgraph" id="namespacederplib_1_1stdext_ab2f5385caa026f657333f5ecf7311607_cgraph">
+<div class="center"><img src="namespacederplib_1_1stdext_aa6d38d043225c1388f335dae2c00d168_cgraph.png" border="0" usemap="#namespacederplib_1_1stdext_aa6d38d043225c1388f335dae2c00d168_cgraph" alt=""/></div>
+<map name="namespacederplib_1_1stdext_aa6d38d043225c1388f335dae2c00d168_cgraph" id="namespacederplib_1_1stdext_aa6d38d043225c1388f335dae2c00d168_cgraph">
 <area shape="rect" title="Drop&#45;in backport for std::make_unique." alt="" coords="5,5,165,47"/>
 <area shape="rect" href="namespacederplib_1_1util.html#a7f84bac5a259407e885fa5c29e357dba" title=" " alt="" coords="213,13,344,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae3e23f266716bc0df7a84aecef8a6f0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3e23f266716bc0df7a84aecef8a6f0d">&#9670;&nbsp;</a></span>split_string() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename CharT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::basic_string&lt; CharT &gt; &gt; derplib::stdext::split_string </td>
+          <td>(</td>
+          <td class="paramtype">const std::basic_string&lt; CharT &gt; &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CharT&#160;</td>
+          <td class="paramname"><em>delimiter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>limit</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Splits a string by a given delimiter. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">CharT</td><td>character type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>input string </td></tr>
+    <tr><td class="paramname">delimiter</td><td>delimiter character </td></tr>
+    <tr><td class="paramname">limit</td><td>maximum number of substrings to return. 0 implies no limit </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>std::vector</code> of substrings </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacederplib_1_1stdext_ae3e23f266716bc0df7a84aecef8a6f0d_cgraph.png" border="0" usemap="#namespacederplib_1_1stdext_ae3e23f266716bc0df7a84aecef8a6f0d_cgraph" alt=""/></div>
+<map name="namespacederplib_1_1stdext_ae3e23f266716bc0df7a84aecef8a6f0d_cgraph" id="namespacederplib_1_1stdext_ae3e23f266716bc0df7a84aecef8a6f0d_cgraph">
+<area shape="rect" title="Splits a string by a given delimiter." alt="" coords="5,5,157,47"/>
+<area shape="rect" href="namespacederplib_1_1util.html#adcf8ed65bdd16ad4d9b1a7b1a3bd3b76" title=" " alt="" coords="205,13,333,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad61a33bae3b59c2e717e909e4787ec04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad61a33bae3b59c2e717e909e4787ec04">&#9670;&nbsp;</a></span>split_string() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename CharT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::basic_string&lt; CharT &gt; &gt; derplib::stdext::split_string </td>
+          <td>(</td>
+          <td class="paramtype">const std::basic_string&lt; CharT &gt; &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::basic_string&lt; CharT &gt; &amp;&#160;</td>
+          <td class="paramname"><em>delimiter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>limit</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Splits a string by a given delimiter. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">CharT</td><td>character type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>input string </td></tr>
+    <tr><td class="paramname">delimiter</td><td>delimiter string </td></tr>
+    <tr><td class="paramname">limit</td><td>maximum number of substrings to return. 0 implies no limit </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>std::vector</code> of substrings </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacederplib_1_1stdext_ad61a33bae3b59c2e717e909e4787ec04_cgraph.png" border="0" usemap="#namespacederplib_1_1stdext_ad61a33bae3b59c2e717e909e4787ec04_cgraph" alt=""/></div>
+<map name="namespacederplib_1_1stdext_ad61a33bae3b59c2e717e909e4787ec04_cgraph" id="namespacederplib_1_1stdext_ad61a33bae3b59c2e717e909e4787ec04_cgraph">
+<area shape="rect" title="Splits a string by a given delimiter." alt="" coords="5,5,157,47"/>
+<area shape="rect" href="namespacederplib_1_1util.html#adcf8ed65bdd16ad4d9b1a7b1a3bd3b76" title=" " alt="" coords="205,13,333,39"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacederplib_1_1stdext_ad61a33bae3b59c2e717e909e4787ec04_icgraph.png" border="0" usemap="#namespacederplib_1_1stdext_ad61a33bae3b59c2e717e909e4787ec04_icgraph" alt=""/></div>
+<map name="namespacederplib_1_1stdext_ad61a33bae3b59c2e717e909e4787ec04_icgraph" id="namespacederplib_1_1stdext_ad61a33bae3b59c2e717e909e4787ec04_icgraph">
+<area shape="rect" title="Splits a string by a given delimiter." alt="" coords="216,5,368,47"/>
+<area shape="rect" href="classderplib_1_1semver.html#abdf5c8f237636f5f9ef993caf469b488" title="Constructs a semver object from a version string." alt="" coords="5,5,168,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa46524e891accbc59f0d1d3a5a7436c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa46524e891accbc59f0d1d3a5a7436c3">&#9670;&nbsp;</a></span>split_string() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename CharT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::basic_string&lt; CharT &gt; &gt; derplib::stdext::split_string </td>
+          <td>(</td>
+          <td class="paramtype">typename std::basic_string&lt; CharT &gt;::const_iterator&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename std::basic_string&lt; CharT &gt;::const_iterator&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CharT&#160;</td>
+          <td class="paramname"><em>delimiter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>limit</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Splits a string by a given delimiter. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">CharT</td><td>character type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>iterator to the first character to consider </td></tr>
+    <tr><td class="paramname">end</td><td>iterator to the past-the-end character to consider </td></tr>
+    <tr><td class="paramname">delimiter</td><td>delimiter character </td></tr>
+    <tr><td class="paramname">limit</td><td>maximum number of substrings to return. 0 implies no limit </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>std::vector</code> of substrings. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacederplib_1_1stdext_aa46524e891accbc59f0d1d3a5a7436c3_cgraph.png" border="0" usemap="#namespacederplib_1_1stdext_aa46524e891accbc59f0d1d3a5a7436c3_cgraph" alt=""/></div>
+<map name="namespacederplib_1_1stdext_aa46524e891accbc59f0d1d3a5a7436c3_cgraph" id="namespacederplib_1_1stdext_aa46524e891accbc59f0d1d3a5a7436c3_cgraph">
+<area shape="rect" title="Splits a string by a given delimiter." alt="" coords="5,23,157,65"/>
+<area shape="rect" href="namespacederplib_1_1util.html#ad2c9d87f31dc9bf2f162892897b5f7ef" title=" " alt="" coords="205,5,345,32"/>
+<area shape="rect" href="namespacederplib_1_1util.html#adcf8ed65bdd16ad4d9b1a7b1a3bd3b76" title=" " alt="" coords="211,56,339,83"/>
 </map>
 </div>
 
@@ -711,6 +1124,60 @@ template&lt;typename T , typename R  = T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Radian value.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd><code>R</code> is mandated to be a floating point type, in order to avoid truncation when converted into an integer. </dd></dl>
+
+</div>
+</div>
+<a id="a654257e61123f6e0fbbf028eaa171969"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a654257e61123f6e0fbbf028eaa171969">&#9670;&nbsp;</a></span>tolower()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string&amp; derplib::stdext::tolower </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts the given string to lower case. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">str</td><td>string to process </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to <code>str</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a1b53f54643aa126ce5cfa116f8389a25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b53f54643aa126ce5cfa116f8389a25">&#9670;&nbsp;</a></span>toupper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string&amp; derplib::stdext::toupper </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts the given string to upper case. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">str</td><td>string to process </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to <code>str</code>. </dd></dl>
 
 </div>
 </div>

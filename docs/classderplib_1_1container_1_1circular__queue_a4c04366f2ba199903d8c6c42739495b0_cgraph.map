@@ -1,0 +1,4 @@
+<map id="derplib::container::circular_queue::front" name="derplib::container::circular_queue::front">
+<area shape="rect" id="node1" title="Returns a constant reference to the first element." alt="" coords="5,5,169,47"/>
+<area shape="rect" id="node2" href="$classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911" title="Checks if the underlying container has no elements." alt="" coords="217,5,392,47"/>
+</map>

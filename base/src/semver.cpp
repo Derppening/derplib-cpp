@@ -75,7 +75,7 @@ bool semver::operator==(const semver& other) const {
 }
 
 semver semver::from_string(const std::string& str) {
-  std::vector<std::string> metadatas = util::split_string(str, '+');
+  std::vector<std::string> metadatas = stdext::split_string(str, '+');
   if (metadatas.size() > 2 || metadatas.empty()) {
     throw format_error("Malformed SemVer label");
   }
@@ -86,9 +86,9 @@ semver semver::from_string(const std::string& str) {
   }
   std::string build = metadatas.size() == 2 ? metadatas.back() : "";
 
-  std::vector<std::string> prereleases = util::split_string(metadatas.front(), '-');
+  std::vector<std::string> prereleases = stdext::split_string(metadatas.front(), '-');
   if (prereleases.size() > 2) {
-    auto s = util::join_to_string<std::string>(prereleases.begin() + 1, prereleases.end(), '-');
+    auto s = stdext::join_to_string<std::string>(prereleases.begin() + 1, prereleases.end(), '-');
     prereleases[1] = s;
     prereleases.erase(prereleases.begin() + 2, prereleases.end());
   }
@@ -105,7 +105,7 @@ semver semver::from_string(const std::string& str) {
   }
   std::string prerelease = prereleases.size() == 2 ? prereleases.back() : "";
 
-  std::vector<std::string> versions = util::split_string(prereleases.front(), '.');
+  std::vector<std::string> versions = stdext::split_string(prereleases.front(), '.');
   if (versions.size() != 3) {
     throw format_error("Release section does not contain 3 fields");
   }

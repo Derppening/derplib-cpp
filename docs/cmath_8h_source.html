@@ -108,20 +108,35 @@ $(document).ready(function(){initNavTree('cmath_8h_source.html','');});
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">inline</span> DERPLIB_CPP14_CONSTEXPR <span class="keyword">typename</span> std::enable_if&lt;std::is_floating_point&lt;T&gt;::value, T&gt;::type <a class="code" href="namespacederplib_1_1stdext.html#add31fa6f7c0d563b2391e4d9e5db18fc">to_degrees</a>(</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">const</span> T&amp; radians);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="common__macros__end_8h.html">derplib/internal/common_macros_end.h</a>&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}  <span class="comment">// namespace stdext</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}  <span class="comment">// namespace derplib</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cmath_8ipp.html">cmath.ipp</a>&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#if !defined(M_PI)</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define M_PI 3.141592653589793238462643383279502</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif  // !defined(M_PI)</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> R&gt;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="namespacederplib_1_1stdext.html#a169f65e44f513b5004ff166d620660f3">   41</a></span>&#160;<span class="keyword">inline</span> DERPLIB_CPP14_CONSTEXPR <span class="keyword">typename</span> std::enable_if&lt;std::is_floating_point&lt;R&gt;::value, R&gt;::type <a class="code" href="namespacederplib_1_1stdext.html#a169f65e44f513b5004ff166d620660f3">to_radians</a>(</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">const</span> T&amp; degrees) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  constexpr R degree_to_radian = R(M_PI) / 180.0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordflow">return</span> degrees * degree_to_radian;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="namespacederplib_1_1stdext.html#add31fa6f7c0d563b2391e4d9e5db18fc">   49</a></span>&#160;<span class="keyword">inline</span> DERPLIB_CPP14_CONSTEXPR <span class="keyword">typename</span> std::enable_if&lt;std::is_floating_point&lt;T&gt;::value, T&gt;::type <a class="code" href="namespacederplib_1_1stdext.html#add31fa6f7c0d563b2391e4d9e5db18fc">to_degrees</a>(</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">const</span> T&amp; radians) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  constexpr T radian_to_degree = 180.0 / T(M_PI);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordflow">return</span> radians * radian_to_degree;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="common__macros__end_8h.html">derplib/internal/common_macros_end.h</a>&gt;</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}  <span class="comment">// namespace stdext</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}  <span class="comment">// namespace derplib</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="anamespacederplib_1_1stdext_html_a169f65e44f513b5004ff166d620660f3"><div class="ttname"><a href="namespacederplib_1_1stdext.html#a169f65e44f513b5004ff166d620660f3">derplib::stdext::to_radians</a></div><div class="ttdeci">DERPLIB_CPP14_CONSTEXPR std::enable_if&lt; std::is_floating_point&lt; R &gt;::value, R &gt;::type to_radians(const T &amp;degrees)</div><div class="ttdoc">Converts a degree value to radians.</div><div class="ttdef"><b>Definition:</b> cmath.ipp:13</div></div>
-<div class="ttc" id="acmath_8ipp_html"><div class="ttname"><a href="cmath_8ipp.html">cmath.ipp</a></div></div>
-<div class="ttc" id="anamespacederplib_1_1stdext_html_a186d16c8de709ff4fca28b8776b7f619"><div class="ttname"><a href="namespacederplib_1_1stdext.html#a186d16c8de709ff4fca28b8776b7f619">derplib::stdext::in_range</a></div><div class="ttdeci">DERPLIB_CPP14_CONSTEXPR bool in_range(const T &amp;v, const T &amp;lo, const T &amp;hi, Compare comp)</div><div class="ttdoc">Checks whether a value is in range.</div><div class="ttdef"><b>Definition:</b> algorithm.ipp:21</div></div>
-<div class="ttc" id="anamespacederplib_1_1stdext_html_add31fa6f7c0d563b2391e4d9e5db18fc"><div class="ttname"><a href="namespacederplib_1_1stdext.html#add31fa6f7c0d563b2391e4d9e5db18fc">derplib::stdext::to_degrees</a></div><div class="ttdeci">DERPLIB_CPP14_CONSTEXPR std::enable_if&lt; std::is_floating_point&lt; T &gt;::value, T &gt;::type to_degrees(const T &amp;radians)</div><div class="ttdoc">Converts a radian value to degrees.</div><div class="ttdef"><b>Definition:</b> cmath.ipp:21</div></div>
-<div class="ttc" id="anamespacederplib_html"><div class="ttname"><a href="namespacederplib.html">derplib</a></div><div class="ttdef"><b>Definition:</b> log.h:13</div></div>
-<div class="ttc" id="anamespacederplib_1_1stdext_html_a99c866c68c49d9115a46bd2f27b0caa2"><div class="ttname"><a href="namespacederplib_1_1stdext.html#a99c866c68c49d9115a46bd2f27b0caa2">derplib::stdext::clamp</a></div><div class="ttdeci">const DERPLIB_CPP14_CONSTEXPR T &amp; clamp(const T &amp;v, const T &amp;lo, const T &amp;hi, Compare comp)</div><div class="ttdoc">Backport of std::clamp from C++17.</div><div class="ttdef"><b>Definition:</b> algorithm.ipp:11</div></div>
+<div class="ttc" id="anamespacederplib_1_1stdext_html_a169f65e44f513b5004ff166d620660f3"><div class="ttname"><a href="namespacederplib_1_1stdext.html#a169f65e44f513b5004ff166d620660f3">derplib::stdext::to_radians</a></div><div class="ttdeci">DERPLIB_CPP14_CONSTEXPR std::enable_if&lt; std::is_floating_point&lt; R &gt;::value, R &gt;::type to_radians(const T &amp;degrees)</div><div class="ttdoc">Converts a degree value to radians.</div><div class="ttdef"><b>Definition:</b> cmath.h:41</div></div>
+<div class="ttc" id="anamespacederplib_1_1stdext_html_add31fa6f7c0d563b2391e4d9e5db18fc"><div class="ttname"><a href="namespacederplib_1_1stdext.html#add31fa6f7c0d563b2391e4d9e5db18fc">derplib::stdext::to_degrees</a></div><div class="ttdeci">DERPLIB_CPP14_CONSTEXPR std::enable_if&lt; std::is_floating_point&lt; T &gt;::value, T &gt;::type to_degrees(const T &amp;radians)</div><div class="ttdoc">Converts a radian value to degrees.</div><div class="ttdef"><b>Definition:</b> cmath.h:49</div></div>
+<div class="ttc" id="anamespacederplib_html"><div class="ttname"><a href="namespacederplib.html">derplib</a></div><div class="ttdef"><b>Definition:</b> log.h:14</div></div>
 <div class="ttc" id="acommon__macros__end_8h_html"><div class="ttname"><a href="common__macros__end_8h.html">common_macros_end.h</a></div></div>
 <div class="ttc" id="acommon__macros__begin_8h_html"><div class="ttname"><a href="common__macros__begin_8h.html">common_macros_begin.h</a></div></div>
 <!-- start footer part -->
