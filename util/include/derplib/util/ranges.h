@@ -49,7 +49,7 @@ template<typename T, typename>
 std::vector<T> int_range(const T& start, const T& end, const T& step) {
   assert(end - start >= 0 && step >= 0 || end - start < 0 && step < 0);
 
-  std::vector<T> v(typename std::vector<T>::size_type(std::ceil((end - start) / float(step))));
+  std::vector<T> v(static_cast<typename std::vector<T>::size_type>(std::ceil((end - start) / float(step))));
   std::generate(v.begin(), v.end(), [=, &start]() {
     T n = start;
     start += step;

@@ -76,6 +76,8 @@ bool semver::operator==(const semver& other) const {
 }
 
 semver semver::from_string(const std::string& str) {
+  // TODO: Might have to start writing comments and separating into logical chunks
+
   std::vector<std::string> metadatas = stdext::split_string(str, '+');
   if (metadatas.size() > 2 || metadatas.empty()) {
     throw format_error("Malformed SemVer label");
