@@ -10,7 +10,7 @@
 namespace derplib {
 namespace container {
 
-#include "derplib/internal/common_macros_begin.h"
+#include <derplib/internal/common_macros_begin.h>
 
 /**
  * A queue implementation using an \c std::array, implemented in a circular manner.
@@ -247,7 +247,7 @@ template<typename T, std::size_t N>
 inline void swap(circular_queue<T, N>& lhs, circular_queue<T, N>& rhs) noexcept(
     stdext::is_nothrow_swappable<typename circular_queue<T, N>::container_type>::value);
 
-#include "derplib/internal/common_macros_end.h"
+#include <derplib/internal/common_macros_end.h>
 
 }  // namespace container
 }  // namespace derplib

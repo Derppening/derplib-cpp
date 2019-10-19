@@ -1,8 +1,8 @@
 #pragma once
 
-#include <memory>
+#include "../../../../../../../../../../../../usr/include/c++/9.2.0/memory"
 
-#include "derplib/stdext/memory.h"
+#include "../memory.h"
 
 namespace derplib {
 namespace newlib {

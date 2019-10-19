@@ -8,7 +8,7 @@
 namespace derplib {
 namespace util {
 
-#include "derplib/internal/common_macros_begin.h"
+#include <derplib/internal/common_macros_begin.h>
 
 /**
  * Returns the demangled name of a type.
@@ -40,7 +40,7 @@ std::string type_name(bool legacy_naming = false);
 template<typename T>
 std::string type_name(const T& var, bool legacy_naming = false);
 
-#include "derplib/internal/common_macros_end.h"
+#include <derplib/internal/common_macros_end.h>
 
 }  // namespace util
 }  // namespace derplib

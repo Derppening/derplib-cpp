@@ -1,4 +1,4 @@
-#include <memory>
+#include "../../../../../../../../../../../../usr/include/c++/9.2.0/memory"
 
 namespace derplib {
 namespace newlib {

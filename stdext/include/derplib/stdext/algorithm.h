@@ -3,7 +3,7 @@
 namespace derplib {
 namespace stdext {
 
-#include "derplib/internal/common_macros_begin.h"
+#include <derplib/internal/common_macros_begin.h>
 
 /**
  * \brief Backport of `std::clamp` from C++17.
@@ -57,7 +57,7 @@ DERPLIB_CPP14_CONSTEXPR bool in_range(const T& v, const T& lo, const T& hi, Comp
 template<class T>
 DERPLIB_CPP14_CONSTEXPR bool in_range(const T& v, const T& lo, const T& hi);
 
-#include "derplib/internal/common_macros_end.h"
+#include <derplib/internal/common_macros_end.h>
 
 }  // namespace stdext
 }  // namespace derplib

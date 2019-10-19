@@ -7,7 +7,7 @@
 namespace derplib {
 namespace stdext {
 
-#include "derplib/internal/common_macros_begin.h"
+#include <derplib/internal/common_macros_begin.h>
 
 template<typename T, typename R>
 inline DERPLIB_CPP14_CONSTEXPR typename std::enable_if<std::is_floating_point<R>::value, R>::type to_radians(
@@ -25,7 +25,7 @@ inline DERPLIB_CPP14_CONSTEXPR typename std::enable_if<std::is_floating_point<T>
   return radians * radian_to_degree;
 }
 
-#include "derplib/internal/common_macros_end.h"
+#include <derplib/internal/common_macros_end.h>
 
 }  // namespace stdext
 }  // namespace derplib

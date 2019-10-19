@@ -8,7 +8,7 @@
 namespace derplib {
 namespace util {
 
-#include "derplib/internal/common_macros_begin.h"
+#include <derplib/internal/common_macros_begin.h>
 
 /**
  * Converts a C-style array to C++11-style \c std::array.
@@ -35,7 +35,7 @@ DERPLIB_CPP14_CONSTEXPR std::array<T, N> to_array(T (&arr)[N]);
 template<typename T, std::size_t N>
 constexpr std::size_t size(DERPLIB_MAYBE_UNUSED T (&arr)[N]);
 
-#include "derplib/internal/common_macros_end.h"
+#include <derplib/internal/common_macros_end.h>
 
 }  // namespace util
 }  // namespace derplib

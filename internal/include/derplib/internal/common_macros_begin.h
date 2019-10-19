@@ -1,4 +1,4 @@
-#include "derplib/stdext/version.h"
+#include <derplib/stdext/version.h>
 
 #if !defined(DERPLIB_USING_COMMON_MACROS)
 #define DERPLIB_USING_COMMON_MACROS

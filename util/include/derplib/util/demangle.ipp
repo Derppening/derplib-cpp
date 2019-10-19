@@ -4,7 +4,7 @@
 namespace derplib {
 namespace util {
 
-#include "derplib/internal/common_macros_begin.h"
+#include <derplib/internal/common_macros_begin.h>
 
 template<typename T>
 std::string type_name(bool legacy_naming) {
@@ -33,7 +33,7 @@ std::string type_name(DERPLIB_MAYBE_UNUSED const T& var, bool legacy_naming) {
   return type_name<T>(legacy_naming);
 }
 
-#include "derplib/internal/common_macros_end.h"
+#include <derplib/internal/common_macros_end.h>
 
 }  // namespace util
 }  // namespace derplib

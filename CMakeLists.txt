@@ -50,7 +50,6 @@ add_subdirectory(base)
 add_subdirectory(container)
 add_subdirectory(experimental)
 add_subdirectory(internal)
-add_subdirectory(newlib)
 add_subdirectory(stdext)
 add_subdirectory(util)
 

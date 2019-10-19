@@ -25,8 +25,7 @@ if (${DOXYGEN_FOUND})
     set(DOXYGEN_EXCLUDE_PATTERNS
             "${PROJECT_BINARY_DIR}"
             "${PROJECT_SOURCE_DIR}/cmake-build-*"
-            "${PROJECT_SOURCE_DIR}/*/tests"
-            "${PROJECT_SOURCE_DIR}/tests")
+            "${PROJECT_SOURCE_DIR}/*/tests")
     set(DOXYGEN_HTML_OUTPUT "${PROJECT_SOURCE_DIR}/docs")
 
     set(DOXYGEN_EXCLUDE_SYMBOLS

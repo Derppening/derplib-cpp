@@ -5,11 +5,11 @@
 #include <utility>
 #include <vector>
 
-#include "derplib/stdext/string.h"
+#include <derplib/stdext/string.h>
 
 namespace derplib {
 
-#include "derplib/internal/common_macros_begin.h"
+#include <derplib/internal/common_macros_begin.h>
 
 class semver {
  public:
@@ -82,6 +82,6 @@ class semver {
   std::string _build;
 };
 
-#include "derplib/internal/common_macros_end.h"
+#include <derplib/internal/common_macros_end.h>
 
 }  // namespace derplib

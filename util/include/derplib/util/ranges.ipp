@@ -6,7 +6,7 @@
 namespace derplib {
 namespace util {
 
-#include "derplib/internal/common_macros_begin.h"
+#include <derplib/internal/common_macros_begin.h>
 
 template<typename T, typename>
 std::vector<T> int_range(const T& start, const T& end, const T& step) {
@@ -35,7 +35,7 @@ std::vector<T> generate_sequence(const std::size_t size, const T& value) {
   return v;
 }
 
-#include "derplib/internal/common_macros_end.h"
+#include <derplib/internal/common_macros_end.h>
 
 }  // namespace util
 }  // namespace derplib

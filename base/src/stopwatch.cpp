@@ -1,5 +1,3 @@
-#if __cplusplus > 199711L
-
 #include "derplib/base/stopwatch.h"
 
 #include <chrono>
@@ -15,5 +13,3 @@ void stopwatch::stop() {
   _end = std::chrono::steady_clock::now();
 }
 }  // namespace derplib
-
-#endif  // __cplusplus > 199711L

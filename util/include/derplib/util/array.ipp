@@ -4,7 +4,7 @@
 namespace derplib {
 namespace util {
 
-#include "derplib/internal/common_macros_begin.h"
+#include <derplib/internal/common_macros_begin.h>
 
 template<typename T, std::size_t N>
 DERPLIB_CPP14_CONSTEXPR std::array<T, N> to_array(T (&arr)[N]) {
@@ -18,7 +18,7 @@ constexpr std::size_t size(DERPLIB_MAYBE_UNUSED T (&arr)[N]) {
   return N;
 }
 
-#include "derplib/internal/common_macros_end.h"
+#include <derplib/internal/common_macros_end.h>
 
 }  // namespace util
 }  // namespace derplib

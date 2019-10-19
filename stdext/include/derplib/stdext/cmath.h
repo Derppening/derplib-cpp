@@ -6,7 +6,7 @@
 namespace derplib {
 namespace stdext {
 
-#include "derplib/internal/common_macros_begin.h"
+#include <derplib/internal/common_macros_begin.h>
 
 /**
  * \brief Converts a degree value to radians.
@@ -33,7 +33,7 @@ template<typename T>
 inline DERPLIB_CPP14_CONSTEXPR typename std::enable_if<std::is_floating_point<T>::value, T>::type to_degrees(
     const T& radians);
 
-#include "derplib/internal/common_macros_end.h"
+#include <derplib/internal/common_macros_end.h>
 
 }  // namespace stdext
 }  // namespace derplib

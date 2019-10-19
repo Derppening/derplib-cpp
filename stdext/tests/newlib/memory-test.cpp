@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "../include/derplib/newlib/memory.h"
+#include <derplib/stdext/newlib/memory.h>
 
 #include <derplib/stdext/memory.h>
 

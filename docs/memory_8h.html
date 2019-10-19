@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>derplib: newlib/include/derplib/newlib/memory.ipp File Reference</title>
+<title>derplib: stdext/include/derplib/stdext/memory.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,7 +67,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('newlib_2include_2derplib_2newlib_2memory_8ipp.html','');});
+$(document).ready(function(){initNavTree('memory_8h.html','');});
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -90,34 +90,40 @@ $(document).ready(function(){initNavTree('newlib_2include_2derplib_2newlib_2memo
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">memory.ipp File Reference</div>  </div>
+<div class="title">memory.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a href="memory_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacederplib"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacederplib.html">derplib</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacederplib_1_1newlib"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1newlib.html">derplib::newlib</a></td></tr>
+<tr class="memitem:namespacederplib_1_1stdext"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html">derplib::stdext</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a314590ef48a87ad810be1a749d374660"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Deleter &gt; </td></tr>
-<tr class="memitem:a314590ef48a87ad810be1a749d374660"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1newlib.html#a314590ef48a87ad810be1a749d374660">derplib::newlib::element_at</a> (const std::unique_ptr&lt; T[], Deleter &gt; &amp;uptr, std::size_t index) noexcept</td></tr>
-<tr class="memdesc:a314590ef48a87ad810be1a749d374660"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception-safe replacement for <code>std::unique_ptr::operator[]</code>  <a href="namespacederplib_1_1newlib.html#a314590ef48a87ad810be1a749d374660">More...</a><br /></td></tr>
-<tr class="separator:a314590ef48a87ad810be1a749d374660"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9585eebd76f52d237e64c32aa566afc4"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Deleter , typename R , typename... Args&gt; </td></tr>
-<tr class="memitem:a9585eebd76f52d237e64c32aa566afc4"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; R &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1newlib.html#a9585eebd76f52d237e64c32aa566afc4">derplib::newlib::invoke</a> (const std::unique_ptr&lt; T, Deleter &gt; &amp;uptr, R(T::*func)(Args...), Args &amp;&amp;... args) noexcept</td></tr>
-<tr class="memdesc:a9585eebd76f52d237e64c32aa566afc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception-safe replacement for <code>std::unique_ptr::operator-&gt;</code>.  <a href="namespacederplib_1_1newlib.html#a9585eebd76f52d237e64c32aa566afc4">More...</a><br /></td></tr>
-<tr class="separator:a9585eebd76f52d237e64c32aa566afc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fcb7cb0ccc0c321280ccfe5708bcc25"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
+<tr class="memitem:a6fcb7cb0ccc0c321280ccfe5708bcc25"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a6fcb7cb0ccc0c321280ccfe5708bcc25">derplib::stdext::make_unique</a> (Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a6fcb7cb0ccc0c321280ccfe5708bcc25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop-in backport for <code>std::make_unique</code>.  <a href="namespacederplib_1_1stdext.html#a6fcb7cb0ccc0c321280ccfe5708bcc25">More...</a><br /></td></tr>
+<tr class="separator:a6fcb7cb0ccc0c321280ccfe5708bcc25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2f5385caa026f657333f5ecf7311607"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ab2f5385caa026f657333f5ecf7311607"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#ab2f5385caa026f657333f5ecf7311607">derplib::stdext::make_unique</a> (std::size_t size)</td></tr>
+<tr class="memdesc:ab2f5385caa026f657333f5ecf7311607"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop-in backport for <code>std::make_unique</code>.  <a href="namespacederplib_1_1stdext.html#ab2f5385caa026f657333f5ecf7311607">More...</a><br /></td></tr>
+<tr class="separator:ab2f5385caa026f657333f5ecf7311607"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f2a770e89bdf9e678ca39ac43bcdb98"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
+<tr class="memitem:a0f2a770e89bdf9e678ca39ac43bcdb98"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_array&lt; T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a0f2a770e89bdf9e678ca39ac43bcdb98">derplib::stdext::make_unique</a> (Args &amp;&amp;... args)=delete</td></tr>
+<tr class="memdesc:a0f2a770e89bdf9e678ca39ac43bcdb98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop-in backport for <code>std::make_unique</code>.  <a href="namespacederplib_1_1stdext.html#a0f2a770e89bdf9e678ca39ac43bcdb98">More...</a><br /></td></tr>
+<tr class="separator:a0f2a770e89bdf9e678ca39ac43bcdb98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_6cfccc50de58e75623d55dd1a853410e.html">newlib</a></li><li class="navelem"><a class="el" href="dir_b3e522e3ad8ae4408a323cdc937c0d5f.html">include</a></li><li class="navelem"><a class="el" href="dir_9090f8124a4d33facc787746f4e21c2d.html">derplib</a></li><li class="navelem"><a class="el" href="dir_27f639b5766d312099056dee115f1fba.html">newlib</a></li><li class="navelem"><a class="el" href="newlib_2include_2derplib_2newlib_2memory_8ipp.html">memory.ipp</a></li>
+    <li class="navelem"><a class="el" href="dir_543e8fcd488a55373f71c4b27689b744.html">stdext</a></li><li class="navelem"><a class="el" href="dir_869203b395bfc260e8e529ec4098d003.html">include</a></li><li class="navelem"><a class="el" href="dir_cc017f353fb4931ae4666db29c4124d5.html">derplib</a></li><li class="navelem"><a class="el" href="dir_90aef26f124ed3c4f9f4f7ba9aabb112.html">stdext</a></li><li class="navelem"><a class="el" href="memory_8h.html">memory.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

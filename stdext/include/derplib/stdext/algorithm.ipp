@@ -5,7 +5,7 @@
 namespace derplib {
 namespace stdext {
 
-#include "derplib/internal/common_macros_begin.h"
+#include <derplib/internal/common_macros_begin.h>
 
 template<class T, class Compare>
 inline DERPLIB_CPP14_CONSTEXPR const T& clamp(const T& v, const T& lo, const T& hi, Compare comp) {
@@ -27,7 +27,7 @@ DERPLIB_CPP14_CONSTEXPR bool in_range(const T& v, const T& lo, const T& hi) {
   return in_range(v, lo, hi, std::less<T>());
 }
 
-#include "derplib/internal/common_macros_end.h"
+#include <derplib/internal/common_macros_end.h>
 
 }  // namespace stdext
 }  // namespace derplib

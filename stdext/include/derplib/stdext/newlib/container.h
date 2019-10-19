@@ -1,9 +1,9 @@
 #pragma once
 
-#include <array>
-#include <deque>
-#include <map>
-#include <vector>
+#include "../../../../../../../../../../../../usr/include/c++/9.2.0/array"
+#include "../../../../../../../../../../../../usr/include/c++/9.2.0/deque"
+#include "../../../../../../../../../../../../usr/include/c++/9.2.0/map"
+#include "../../../../../../../../../../../../usr/include/c++/9.2.0/vector"
 
 namespace derplib {
 namespace newlib {

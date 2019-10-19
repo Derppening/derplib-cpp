@@ -15,7 +15,7 @@
 #include <variant>
 #include <vector>
 
-#include "derplib/stdext/version.h"
+#include <derplib/stdext/version.h>
 
 namespace derplib {
 namespace util {

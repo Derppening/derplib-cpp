@@ -15,7 +15,7 @@
 namespace derplib {
 namespace util {
 
-#include "derplib/internal/common_macros_begin.h"
+#include <derplib/internal/common_macros_begin.h>
 
 /**
  * \brief Generates a int range for [start,end).
@@ -45,7 +45,7 @@ std::array<T, N> generate_sequence(const T& value);
 template<typename T, typename = std::enable_if<std::is_integral<T>::value>>
 std::vector<T> generate_sequence(std::size_t size, const T& value);
 
-#include "derplib/internal/common_macros_end.h"
+#include <derplib/internal/common_macros_end.h>
 
 }  // namespace util
 }  // namespace derplib
