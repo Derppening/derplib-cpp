@@ -6,8 +6,9 @@
 namespace derplib {
 namespace experimental {
 
-fixed_pool_mem_alloc::fixed_pool_mem_alloc(std::size_t size)
-    : _size(size), _heap_pool(derplib::stdext::make_unique<unsigned char[]>(size)) {}
+fixed_pool_mem_alloc::fixed_pool_mem_alloc(std::size_t size) :
+    _size(size),
+    _heap_pool(derplib::stdext::make_unique<unsigned char[]>(size)) {}
 
 fixed_pool_mem_alloc::~fixed_pool_mem_alloc() {
   std::for_each(_entries.begin(), _entries.end(), [](const entry& e) { e.destructor(e.ptr); });
@@ -20,49 +21,32 @@ void fixed_pool_mem_alloc::heap_dump(std::ostream& os) noexcept {
   const unsigned char* const end_ptr = _heap_pool.get() + _size;
   auto entry_it = _entries.begin();
 
-  os << std::setfill(' ')
-          << std::setw(region_text_padding) << "REGION START"
-          << "  "
-          << std::setw(region_text_padding) << "REGION END"
-          << "  "
-          << std::setw(4) << "S"
-          << "  "
-          << std::setw(size_text_padding + 2) << "SIZE"
-          << "  "
-          << std::setw(align_text_padding + 2) << "ALIGN"
-          << "  "
-          << "TYPENAME\n";
+  os << std::setfill(' ') << std::setw(region_text_padding) << "REGION START"
+     << "  " << std::setw(region_text_padding) << "REGION END"
+     << "  " << std::setw(4) << "S"
+     << "  " << std::setw(size_text_padding + 2) << "SIZE"
+     << "  " << std::setw(align_text_padding + 2) << "ALIGN"
+     << "  "
+     << "TYPENAME\n";
 
   while (current_ptr != end_ptr) {
     if (entry_it == _entries.end()) {
-      os << std::showbase << std::setiosflags(std::ios::internal)
-              << std::setfill('0')
-              << std::setw(region_text_padding) << static_cast<ptr_t>(current_ptr)
-              << "  "
-              << std::setw(region_text_padding) << static_cast<ptr_t>(end_ptr)
-              << "  Free  "
-              << std::setfill(' ')
-              << std::setw(size_text_padding) << end_ptr - current_ptr
-              << " B\n";
+      os << std::showbase << std::setiosflags(std::ios::internal) << std::setfill('0') << std::setw(region_text_padding)
+         << static_cast<ptr_t>(current_ptr) << "  " << std::setw(region_text_padding) << static_cast<ptr_t>(end_ptr)
+         << "  Free  " << std::setfill(' ') << std::setw(size_text_padding) << end_ptr - current_ptr << " B\n";
       break;
     } else if (entry_it->ptr == current_ptr) {
-      os << std::showbase << std::setiosflags(std::ios::internal)
-              << std::setfill('0')
-              << std::setw(region_text_padding) << static_cast<ptr_t>(current_ptr)
-              << "  "
-              << std::setw(region_text_padding) << static_cast<ptr_t>(current_ptr + entry_it->extent)
-              << "  Used  "
-              << std::setfill(' ')
-              << std::setw(size_text_padding) << entry_it->extent
-              << " B  "
-              << std::setw(align_text_padding) << entry_it->alignment
-              << " B  "
+      os << std::showbase << std::setiosflags(std::ios::internal) << std::setfill('0') << std::setw(region_text_padding)
+         << static_cast<ptr_t>(current_ptr) << "  " << std::setw(region_text_padding)
+         << static_cast<ptr_t>(current_ptr + entry_it->extent) << "  Used  " << std::setfill(' ')
+         << std::setw(size_text_padding) << entry_it->extent << " B  " << std::setw(align_text_padding)
+         << entry_it->alignment << " B  "
 #if !defined(NDEBUG)
-              << entry_it->type_name
+         << entry_it->type_name
 #else
-              << "no info"
+         << "no info"
 #endif  // !defined(NDEBUG)
-              << '\n';
+         << '\n';
 
       current_ptr = entry_it->ptr + entry_it->extent;
     } else {
@@ -71,15 +55,10 @@ void fixed_pool_mem_alloc::heap_dump(std::ostream& os) noexcept {
       std::ptrdiff_t blank_space = entry_it->ptr - current_ptr;
 
       if (entry_it != _entries.end() && blank_space != 0) {
-        os << std::showbase << std::setiosflags(std::ios::internal)
-                << std::setfill('0')
-                << std::setw(region_text_padding) << static_cast<ptr_t>(current_ptr)
-                << "  "
-                << std::setw(region_text_padding) << static_cast<ptr_t>(entry_it->ptr)
-                << "  Free  "
-                << std::setfill(' ')
-                << std::setw(size_text_padding) << blank_space
-                << " B\n";
+        os << std::showbase << std::setiosflags(std::ios::internal) << std::setfill('0')
+           << std::setw(region_text_padding) << static_cast<ptr_t>(current_ptr) << "  "
+           << std::setw(region_text_padding) << static_cast<ptr_t>(entry_it->ptr) << "  Free  " << std::setfill(' ')
+           << std::setw(size_text_padding) << blank_space << " B\n";
 
         current_ptr = entry_it->ptr;
       }

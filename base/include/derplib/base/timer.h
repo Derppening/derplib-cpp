@@ -43,7 +43,9 @@ class timer<Func> {
    * \param poll_rate rate at which the timer checks whether it should terminate
    */
   template<typename Rep, typename Period>
-  timer(std::chrono::duration<Rep, Period> duration, const Func& callback, std::chrono::duration<Rep, Period> poll_rate);
+  timer(std::chrono::duration<Rep, Period> duration,
+        const Func& callback,
+        std::chrono::duration<Rep, Period> poll_rate);
 
   timer(const timer& other);
   timer(timer&& other) noexcept = default;
@@ -79,12 +81,7 @@ class timer<Func> {
   bool expired() const;
 
  private:
-  enum struct state {
-    halted = -1,
-    not_started,
-    active,
-    expired
-  };
+  enum struct state { halted = -1, not_started, active, expired };
 
   /**
    * \brief Daemon function for polling the timer.

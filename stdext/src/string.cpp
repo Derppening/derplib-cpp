@@ -8,17 +8,13 @@ namespace util {
 
 namespace {
 struct ToUpperUnaryOp {
-  unsigned char operator()(const unsigned char& c) {
-    return static_cast<unsigned char>(std::toupper(c));
-  }
+  unsigned char operator()(const unsigned char& c) { return static_cast<unsigned char>(std::toupper(c)); }
 };
 
 struct ToLowerUnaryOp {
-  unsigned char operator()(const unsigned char& c) {
-    return static_cast<unsigned char>(std::tolower(c));
-  }
+  unsigned char operator()(const unsigned char& c) { return static_cast<unsigned char>(std::tolower(c)); }
 };
-}
+}  // namespace
 
 std::string& toupper(std::string& str) {
   std::transform(str.begin(), str.end(), str.begin(), ToUpperUnaryOp());

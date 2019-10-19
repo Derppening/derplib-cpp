@@ -19,7 +19,8 @@ namespace stdext {
  * \note `R` is mandated to be a floating point type, in order to avoid truncation when converted into an integer.
  */
 template<typename T, typename R = T>
-inline DERPLIB_CPP14_CONSTEXPR typename std::enable_if<std::is_floating_point<R>::value, R>::type to_radians(const T& degrees);
+inline DERPLIB_CPP14_CONSTEXPR typename std::enable_if<std::is_floating_point<R>::value, R>::type to_radians(
+    const T& degrees);
 
 /**
  * \brief Converts a radian value to degrees.
@@ -29,7 +30,8 @@ inline DERPLIB_CPP14_CONSTEXPR typename std::enable_if<std::is_floating_point<R>
  * \return Degree value.
  */
 template<typename T>
-inline DERPLIB_CPP14_CONSTEXPR typename std::enable_if<std::is_floating_point<T>::value, T>::type to_degrees(const T& radians);
+inline DERPLIB_CPP14_CONSTEXPR typename std::enable_if<std::is_floating_point<T>::value, T>::type to_degrees(
+    const T& radians);
 
 #include "derplib/internal/common_macros_end.h"
 

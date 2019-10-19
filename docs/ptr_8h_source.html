@@ -97,51 +97,53 @@ $(document).ready(function(){initNavTree('ptr_8h_source.html','');});
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define DERPLIB_PTR_ASSERT_NULL(ptr) derplib::util::ptr_assert_null((ptr), __FILE__, __func__, __LINE__, #ptr)</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define DERPLIB_PTR_NEW(type, ptr) derplib::util::ptr_new&lt;type&gt;((ptr), __FILE__, __func__, __LINE__, #type, #ptr)</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define DERPLIB_PTR_NEW_ARGS(type, ptr, ...) derplib::util::ptr_new&lt;type&gt;((ptr), __FILE__, __func__, __LINE__, #type, #ptr, __VA_ARGS__)</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define DERPLIB_PTR_DELETE(ptr) derplib::util::ptr_delete((ptr), __FILE__, __func__, __LINE__, #ptr)</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define DERPLIB_PTR_ARRAY_NEW(type, ptr, num_of_elements) derplib::util::ptr_array_new&lt;type&gt;((ptr), __FILE__, __func__, __LINE__, #type, #ptr, num_of_elements)</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define DERPLIB_PTR_ARRAY_DELETE(ptr) derplib::util::ptr_array_delete((ptr), __FILE__, __func__, __LINE__, #ptr)</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacederplib.html">derplib</a> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span>util {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="namespacederplib_1_1util.html#abdf9912ef50ef8359de63fa9319a4808">   21</a></span>&#160;<span class="keyword">using</span> <a class="code" href="namespacederplib_1_1util.html#abdf9912ef50ef8359de63fa9319a4808">raw_ptr</a> = T*;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespacederplib_1_1util.html#a103ec8ba757e4847888f23051b32ca0d">ptr_assert_null</a>(<span class="keywordtype">void</span>* ptr, <span class="keyword">const</span> <span class="keywordtype">char</span>* file, <span class="keyword">const</span> <span class="keywordtype">char</span>* func, std::size_t line, <span class="keyword">const</span> <span class="keywordtype">char</span>* var);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">inline</span> T*&amp; <a class="code" href="namespacederplib_1_1util.html#a38d64fe3bbc8453e125a4656e640cd2e">ptr_new</a>(T*&amp; ptr,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                   <span class="keyword">const</span> <span class="keywordtype">char</span>* file,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                   <span class="keyword">const</span> <span class="keywordtype">char</span>* func,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                   std::size_t line,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                   <span class="keyword">const</span> <span class="keywordtype">char</span>* type,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                   <span class="keyword">const</span> <span class="keywordtype">char</span>* var,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                   Args&amp;&amp; ... args);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">inline</span> T*&amp; <a class="code" href="namespacederplib_1_1util.html#a9d85c5d821ce79868f6a8a8ffe4630d7">ptr_delete</a>(T*&amp; ptr, <span class="keyword">const</span> <span class="keywordtype">char</span>* file, <span class="keyword">const</span> <span class="keywordtype">char</span>* func, std::size_t line, <span class="keyword">const</span> <span class="keywordtype">char</span>* var);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">inline</span> T*&amp; <a class="code" href="namespacederplib_1_1util.html#a1a46c1e72ff6b59da3d508e05dcca1b3">ptr_array_new</a>(T*&amp; ptr,</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                         <span class="keyword">const</span> <span class="keywordtype">char</span>* file,</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                         <span class="keyword">const</span> <span class="keywordtype">char</span>* func,</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                         std::size_t line,</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                         <span class="keyword">const</span> <span class="keywordtype">char</span>* type,</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                         <span class="keyword">const</span> <span class="keywordtype">char</span>* var,</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                         std::size_t <a class="code" href="namespacederplib_1_1util.html#a7f84bac5a259407e885fa5c29e357dba">size</a>);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">inline</span> T*&amp; <a class="code" href="namespacederplib_1_1util.html#a64fc3dac09a4fbefcbe5348a1328145f">ptr_array_delete</a>(T*&amp; ptr, <span class="keyword">const</span> <span class="keywordtype">char</span>* file, <span class="keyword">const</span> <span class="keywordtype">char</span>* func, std::size_t line, <span class="keyword">const</span> <span class="keywordtype">char</span>* var);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}  <span class="comment">// namespace util</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}  <span class="comment">// namespace derplib</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ptr_8ipp.html">ptr.ipp</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define DERPLIB_PTR_NEW_ARGS(type, ptr, ...) \</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">  derplib::util::ptr_new&lt;type&gt;((ptr), __FILE__, __func__, __LINE__, #type, #ptr, __VA_ARGS__)</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define DERPLIB_PTR_DELETE(ptr) derplib::util::ptr_delete((ptr), __FILE__, __func__, __LINE__, #ptr)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define DERPLIB_PTR_ARRAY_NEW(type, ptr, num_of_elements) \</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">  derplib::util::ptr_array_new&lt;type&gt;((ptr), __FILE__, __func__, __LINE__, #type, #ptr, num_of_elements)</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define DERPLIB_PTR_ARRAY_DELETE(ptr) derplib::util::ptr_array_delete((ptr), __FILE__, __func__, __LINE__, #ptr)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacederplib.html">derplib</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span>util {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="namespacederplib_1_1util.html#abdf9912ef50ef8359de63fa9319a4808">   23</a></span>&#160;<span class="keyword">using</span> <a class="code" href="namespacederplib_1_1util.html#abdf9912ef50ef8359de63fa9319a4808">raw_ptr</a> = T*;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespacederplib_1_1util.html#a103ec8ba757e4847888f23051b32ca0d">ptr_assert_null</a>(<span class="keywordtype">void</span>* ptr, <span class="keyword">const</span> <span class="keywordtype">char</span>* file, <span class="keyword">const</span> <span class="keywordtype">char</span>* func, std::size_t line, <span class="keyword">const</span> <span class="keywordtype">char</span>* var);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">inline</span> T*&amp; <a class="code" href="namespacederplib_1_1util.html#a38d64fe3bbc8453e125a4656e640cd2e">ptr_new</a>(T*&amp; ptr,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                   <span class="keyword">const</span> <span class="keywordtype">char</span>* file,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                   <span class="keyword">const</span> <span class="keywordtype">char</span>* func,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                   std::size_t line,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                   <span class="keyword">const</span> <span class="keywordtype">char</span>* type,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                   <span class="keyword">const</span> <span class="keywordtype">char</span>* var,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                   Args&amp;&amp;... args);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">inline</span> T*&amp; <a class="code" href="namespacederplib_1_1util.html#a9d85c5d821ce79868f6a8a8ffe4630d7">ptr_delete</a>(T*&amp; ptr, <span class="keyword">const</span> <span class="keywordtype">char</span>* file, <span class="keyword">const</span> <span class="keywordtype">char</span>* func, std::size_t line, <span class="keyword">const</span> <span class="keywordtype">char</span>* var);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">inline</span> T*&amp; <a class="code" href="namespacederplib_1_1util.html#a1a46c1e72ff6b59da3d508e05dcca1b3">ptr_array_new</a>(T*&amp; ptr,</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                         <span class="keyword">const</span> <span class="keywordtype">char</span>* file,</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                         <span class="keyword">const</span> <span class="keywordtype">char</span>* func,</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                         std::size_t line,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                         <span class="keyword">const</span> <span class="keywordtype">char</span>* type,</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                         <span class="keyword">const</span> <span class="keywordtype">char</span>* var,</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                         std::size_t <a class="code" href="namespacederplib_1_1util.html#a7f84bac5a259407e885fa5c29e357dba">size</a>);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">inline</span> T*&amp; <a class="code" href="namespacederplib_1_1util.html#a64fc3dac09a4fbefcbe5348a1328145f">ptr_array_delete</a>(T*&amp; ptr, <span class="keyword">const</span> <span class="keywordtype">char</span>* file, <span class="keyword">const</span> <span class="keywordtype">char</span>* func, std::size_t line, <span class="keyword">const</span> <span class="keywordtype">char</span>* var);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}  <span class="comment">// namespace util</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}  <span class="comment">// namespace derplib</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ptr_8ipp.html">ptr.ipp</a>&quot;</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="anamespacederplib_1_1util_html_abdf9912ef50ef8359de63fa9319a4808"><div class="ttname"><a href="namespacederplib_1_1util.html#abdf9912ef50ef8359de63fa9319a4808">derplib::util::raw_ptr</a></div><div class="ttdeci">T * raw_ptr</div><div class="ttdoc">Type definition for pointers.</div><div class="ttdef"><b>Definition:</b> ptr.h:21</div></div>
+<div class="ttc" id="anamespacederplib_1_1util_html_abdf9912ef50ef8359de63fa9319a4808"><div class="ttname"><a href="namespacederplib_1_1util.html#abdf9912ef50ef8359de63fa9319a4808">derplib::util::raw_ptr</a></div><div class="ttdeci">T * raw_ptr</div><div class="ttdoc">Type definition for pointers.</div><div class="ttdef"><b>Definition:</b> ptr.h:23</div></div>
 <div class="ttc" id="anamespacederplib_1_1util_html_a9d85c5d821ce79868f6a8a8ffe4630d7"><div class="ttname"><a href="namespacederplib_1_1util.html#a9d85c5d821ce79868f6a8a8ffe4630d7">derplib::util::ptr_delete</a></div><div class="ttdeci">T *&amp; ptr_delete(T *&amp;ptr, const char *file, const char *func, std::size_t line, const char *var)</div><div class="ttdoc">Wrapper for delete operator in C++, logging the pointer information.</div><div class="ttdef"><b>Definition:</b> ptr.ipp:28</div></div>
 <div class="ttc" id="aptr_8ipp_html"><div class="ttname"><a href="ptr_8ipp.html">ptr.ipp</a></div></div>
 <div class="ttc" id="anamespacederplib_1_1util_html_a103ec8ba757e4847888f23051b32ca0d"><div class="ttname"><a href="namespacederplib_1_1util.html#a103ec8ba757e4847888f23051b32ca0d">derplib::util::ptr_assert_null</a></div><div class="ttdeci">void ptr_assert_null(void *ptr, const char *file, const char *func, std::size_t line, const char *var)</div><div class="ttdoc">Checks whether a pointer is nullptr during runtime.</div><div class="ttdef"><b>Definition:</b> ptr.ipp:6</div></div>

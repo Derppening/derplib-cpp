@@ -62,8 +62,8 @@ class circular_queue {
    * \param[in] cont Data to copy from.
    */
   template<std::size_t SIZE>
-  explicit circular_queue(const std::array<T, SIZE>& cont)
-  noexcept(std::is_nothrow_copy_assignable<T>::value && std::is_nothrow_default_constructible<T>::value);
+  explicit circular_queue(const std::array<T, SIZE>& cont) noexcept(
+      std::is_nothrow_copy_assignable<T>::value&& std::is_nothrow_default_constructible<T>::value);
 
   /**
    * \brief Move conversion constructor from \c std::array.
@@ -107,8 +107,8 @@ class circular_queue {
    * \param other The circular_queue to copy from.
    * \return `*this`.
    */
-  circular_queue& operator=(const circular_queue& other)
-  noexcept(std::is_nothrow_copy_assignable<container_type>::value);
+  circular_queue& operator=(const circular_queue& other) noexcept(
+      std::is_nothrow_copy_assignable<container_type>::value);
 
   /**
    * \brief Move assignment operator.
@@ -200,7 +200,7 @@ class circular_queue {
    * \throw std::length_error when the queue is full.
    */
   template<typename... Args>
-  decltype(auto) emplace(Args&& ... args);
+  decltype(auto) emplace(Args&&... args);
 #else
   /**
    * \brief Pushes a new element to the end of the queue, which will be constructed in-place.
@@ -210,7 +210,7 @@ class circular_queue {
    * \throw std::length_error when the queue is full.
    */
   template<typename... Args>
-  void emplace(Args&& ... args);
+  void emplace(Args&&... args);
 #endif  // defined(DERPLIB_HAS_CPP17_SUPPORT)
 
   /**
@@ -244,8 +244,8 @@ class circular_queue {
  * \param rhs Containers to swap.
  */
 template<typename T, std::size_t N>
-inline void swap(circular_queue<T, N>& lhs, circular_queue<T, N>& rhs)
-noexcept(stdext::is_nothrow_swappable<typename circular_queue<T, N>::container_type>::value);
+inline void swap(circular_queue<T, N>& lhs, circular_queue<T, N>& rhs) noexcept(
+    stdext::is_nothrow_swappable<typename circular_queue<T, N>::container_type>::value);
 
 #include "derplib/internal/common_macros_end.h"
 

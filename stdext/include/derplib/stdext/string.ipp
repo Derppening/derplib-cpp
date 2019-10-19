@@ -17,7 +17,9 @@ std::vector<std::basic_string<CharT>> split_string(const std::basic_string<CharT
     vs.emplace_back(input.substr(pos, end - pos));
     pos = end + delimiter.length();
 
-    if (limit != 0 && vs.size() >= limit) { return vs; }
+    if (limit != 0 && vs.size() >= limit) {
+      return vs;
+    }
   }
 
   if (pos < input.size()) {
@@ -40,7 +42,9 @@ std::vector<std::basic_string<CharT>> split_string(const std::basic_string<CharT
     vs.emplace_back(input.substr(pos, end - pos));
     pos = end + 1;
 
-    if (limit != 0 && vs.size() >= limit) { return vs; }
+    if (limit != 0 && vs.size() >= limit) {
+      return vs;
+    }
   }
 
   if (pos < input.size()) {
@@ -64,7 +68,9 @@ std::vector<std::basic_string<CharT>> split_string(typename std::basic_string<Ch
       vs.emplace_back(std::move(buffer));
       buffer = std::string();
 
-      if (limit != 0 && vs.size() >= limit) { return vs; }
+      if (limit != 0 && vs.size() >= limit) {
+        return vs;
+      }
     } else {
       buffer.append(*it);
     }

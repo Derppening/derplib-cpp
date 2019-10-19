@@ -4,10 +4,10 @@ endif (${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.15.0")
 
 if (NOT DEFINED RUNTIME_SANITIZE)
     set(RUNTIME_SANITIZE OFF)
-endif()
+endif ()
 if (NOT DEFINED STRICT_WARN_MODE)
     set(STRICT_WARN_MODE OFF)
-endif()
+endif ()
 
 # Enforce C/C++ standard level
 set(CMAKE_C_STANDARD_REQUIRED YES)

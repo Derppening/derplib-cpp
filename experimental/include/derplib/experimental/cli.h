@@ -18,8 +18,9 @@ namespace experimental {
  * \tparam CharT character type for input
  * \tparam Func function type for invoking callbacks. Must be `void(const std::basic_string<CharT>&)`.
  */
-template<typename CharT, typename Func = void (*)(const std::basic_string<CharT>&), typename = stdext::enable_if_invocable<
-    Func>>
+template<typename CharT,
+         typename Func = void (*)(const std::basic_string<CharT>&),
+         typename = stdext::enable_if_invocable<Func>>
 class basic_cli {
  public:
   /**
@@ -38,15 +39,15 @@ class basic_cli {
     /**
      * \brief Do not display any available options to the user.
      */
-        none,
+    none,
     /**
      * \brief Only display the primary input alias to the user.
      */
-        simple,
+    simple,
     /**
      * \brief Display all input aliases to the user.
      */
-        full
+    full
   };
 
   /**
@@ -56,15 +57,15 @@ class basic_cli {
     /**
      * \brief Command not found.
      */
-        cmd_not_found = -1,
+    cmd_not_found = -1,
     /**
      * \brief No operation, i.e. the control is still managed by this class.
      */
-        no_op,
+    no_op,
     /**
      * \brief Exit, i.e. the control continues by the rest of the application.
      */
-        exit
+    exit
   };
 
   /**
@@ -109,9 +110,7 @@ class basic_cli {
    * \brief Inserts an empty line.
    * \return `*this`.
    */
-  basic_cli& div_line() {
-    return header("");
-  }
+  basic_cli& div_line() { return header(""); }
 
   /**
    * \brief Adds a header.
@@ -119,9 +118,7 @@ class basic_cli {
    * \param header header text
    * \return `*this`.
    */
-  basic_cli& header(const string_type& header) {
-    return item(header, std::vector<string_type>());
-  }
+  basic_cli& header(const string_type& header) { return item(header, std::vector<string_type>()); }
 
   /**
    * \brief Adds an option item.
@@ -186,9 +183,8 @@ class basic_cli {
 
     // find whether the argument corresponds to any alias
     auto search_res = std::find_if(_options.begin(), _options.end(), [&](const entry& e) -> bool {
-      return std::any_of(e.alias.begin(), e.alias.end(), [&](const string_type& alias) -> bool {
-        return cmd == alias;
-      });
+      return std::any_of(e.alias.begin(), e.alias.end(),
+                         [&](const string_type& alias) -> bool { return cmd == alias; });
     });
 
     if (search_res == _options.end()) {
@@ -209,8 +205,10 @@ class basic_cli {
 #elif defined(__unix__) || defined(__APPLE__) || defined(__linux__)
     std::system("clear");
 #else
-    for (int i = 0; i < 120; ++i) { std::cout << "\n\r"; }
-  std::cout.flush();
+    for (int i = 0; i < 120; ++i) {
+      std::cout << "\n\r";
+    }
+    std::cout.flush();
 #endif
   }
 

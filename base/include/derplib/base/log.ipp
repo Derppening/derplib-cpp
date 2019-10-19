@@ -8,7 +8,8 @@ std::unique_ptr<basic_logger<CharT>> basic_logger<CharT>::instance;
 
 template<typename CharT>
 basic_logger<CharT>::basic_logger(basic_logger::ostream& os, basic_logger::level min_level) :
-    _min_level(min_level), _ostream(os) {}
+    _min_level(min_level),
+    _ostream(os) {}
 
 template<typename CharT>
 void basic_logger<CharT>::v(const basic_logger::string& message) {
@@ -36,7 +37,9 @@ void basic_logger<CharT>::e(const basic_logger::string& message) {
 }
 
 template<typename CharT>
-void basic_logger<CharT>::flush() { _ostream.flush(); }
+void basic_logger<CharT>::flush() {
+  _ostream.flush();
+}
 
 template<typename CharT>
 basic_logger<CharT>& basic_logger<CharT>::make_default(basic_logger::ostream& os, basic_logger::level min_level) {

@@ -6,10 +6,10 @@ namespace derplib {
 namespace experimental {
 
 /**
-   * \brief Thrown when an allocation cannot be made with the current heap.
-   *
-   * Similar to `std::bad_alloc`, but also provides an optional message on why the allocation failed.
-   */
+ * \brief Thrown when an allocation cannot be made with the current heap.
+ *
+ * Similar to `std::bad_alloc`, but also provides an optional message on why the allocation failed.
+ */
 class bad_alloc : public std::bad_alloc {
  public:
   bad_alloc();

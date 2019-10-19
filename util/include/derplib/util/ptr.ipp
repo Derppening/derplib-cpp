@@ -17,7 +17,7 @@ T*& ptr_new(T*& ptr,
             std::size_t line,
             const char* type,
             const char* var,
-            Args&& ... args) {
+            Args&&... args) {
   ptr = new T(args...);
   std::cout << file << ": In function " << func << '\n'
             << file << ":" << line << ": new " << type << ": " << var << " " << static_cast<void*>(ptr) << std::endl;

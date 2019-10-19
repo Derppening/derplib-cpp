@@ -163,7 +163,7 @@ config_file config_file::from_file(const std::string& filename, bool dispose_emp
 }
 
 void config_file::garbage_collect() {
-  for (auto it = this->_config.begin(); it != this->_config.end(); ) {
+  for (auto it = this->_config.begin(); it != this->_config.end();) {
     if (it->second.empty()) {
       it = this->_config.erase(it);
     } else {

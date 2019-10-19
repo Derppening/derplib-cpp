@@ -27,7 +27,7 @@ class fixed_pool_mem_alloc final {
  public:
   /**
    * \brief Constructs an allocator.
-   * 
+   *
    * \param size size of the heap
    */
   explicit fixed_pool_mem_alloc(std::size_t size);
@@ -47,7 +47,7 @@ class fixed_pool_mem_alloc final {
    * \throws mem_alloc::bad_alloc if the allocation cannot be done.
    */
   template<typename T, typename... Args>
-  T* allocate(Args&& ... args);
+  T* allocate(Args&&... args);
 
   /**
    * \brief Retrieves an object from the heap.
@@ -100,7 +100,7 @@ class fixed_pool_mem_alloc final {
    * \brief Entry of an object in the heap.
    */
   struct entry {
-    using destructor_type = void(*)(const void*);
+    using destructor_type = void (*)(const void*);
 
     /**
      * \brief Pointer to the first byte in the heap.
@@ -130,9 +130,7 @@ class fixed_pool_mem_alloc final {
    * Sorts the set by the pointer locations.
    */
   struct entry_set_comparator {
-    bool operator()(const entry& lhs, const entry& rhs) const {
-      return lhs.ptr < rhs.ptr;
-    }
+    bool operator()(const entry& lhs, const entry& rhs) const { return lhs.ptr < rhs.ptr; }
   };
 
   /**

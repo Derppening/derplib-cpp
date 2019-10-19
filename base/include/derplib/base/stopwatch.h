@@ -33,7 +33,9 @@ class stopwatch {
    * \return Time elapsed in terms of `ToDuration`, in numeric form.
    */
   template<typename ToDuration = std::chrono::nanoseconds>
-  typename ToDuration::rep count() const { return duration<ToDuration>().count(); }
+  typename ToDuration::rep count() const {
+    return duration<ToDuration>().count();
+  }
   /**
    * \brief Retrieves either the time elapsed since the stopwatch started, or the duration of the
    * stopwatch if the stopwatch is stopped.
@@ -43,7 +45,7 @@ class stopwatch {
    */
   template<typename ToDuration = std::chrono::nanoseconds>
   ToDuration duration() const {
-    return std::chrono::duration_cast<ToDuration>((_is_active ? std::chrono::steady_clock::now() : _end ) - _start);
+    return std::chrono::duration_cast<ToDuration>((_is_active ? std::chrono::steady_clock::now() : _end) - _start);
   }
 
  private:

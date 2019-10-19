@@ -40,4 +40,3 @@ using enable_if_invocable = std::true_type;
 
 }  // namespace stdext
 }  // namespace derplib
-

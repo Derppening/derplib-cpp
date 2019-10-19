@@ -19,9 +19,7 @@ class ref_count_pointer {
 
     observer(element_type* p, ref_count_pointer<T>* src) noexcept : _p(p), _rcp(src) {}
 
-    observer(const observer& other) : _p(other._p), _rcp(other._rcp) {
-      _rcp->_v.push_back(this);
-    }
+    observer(const observer& other) : _p(other._p), _rcp(other._rcp) { _rcp->_v.push_back(this); }
 
     observer(observer&& other) : _p(other._p), _rcp(other._rcp) {
       other._p = nullptr;
@@ -34,9 +32,7 @@ class ref_count_pointer {
     pointer operator->() const noexcept { return _p; }
     T* get() const { return _p; }
 
-    ~observer() {
-      _rcp->_v.erase(std::remove(_rcp->_v.begin(), _rcp->_v.end(), this));
-    }
+    ~observer() { _rcp->_v.erase(std::remove(_rcp->_v.begin(), _rcp->_v.end(), this)); }
 
    private:
     T* _p;

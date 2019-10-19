@@ -78,7 +78,7 @@ class cfq_parallel_consumer<InT, ConsumerT> {
    * \param args Arguments to forward to the constructor of the element.
    */
   template<typename... Args>
-  void emplace(Args&& ... args);
+  void emplace(Args&&... args);
 
  private:
   /**

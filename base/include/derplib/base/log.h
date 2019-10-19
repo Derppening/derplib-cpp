@@ -41,13 +41,7 @@ class basic_logger {
   /**
    * \brief Level of logging.
    */
-  enum struct level {
-    verbose,
-    debug,
-    info,
-    warn,
-    error
-  };
+  enum struct level { verbose, debug, info, warn, error };
 
   /**
    * \brief Constructor.

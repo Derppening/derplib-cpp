@@ -62,6 +62,7 @@
 #define DERPLIB_HAS_LIB_OPTIONAL 1
 #endif
 
-#if (defined(DERPLIB_HAS_CPP2A_SUPPORT) && defined(__cpp_lib_type_trait_variable_templates)) || defined(DERPLIB_HAS_CPP17_SUPPORT)
+#if (defined(DERPLIB_HAS_CPP2A_SUPPORT) && defined(__cpp_lib_type_trait_variable_templates)) \
+    || defined(DERPLIB_HAS_CPP17_SUPPORT)
 #define DERPLIB_HAS_LIB_TYPE_TRAIT_VARIABLE_TEMPLATES 1
 #endif

@@ -7,7 +7,9 @@ timer<Func>::timer(std::chrono::duration<Rep, Period> duration, const Func& call
 
 template<typename Func>
 template<typename Rep, typename Period>
-timer<Func>::timer(std::chrono::duration<Rep, Period> duration, const Func& callback, std::chrono::duration<Rep, Period> poll_rate) :
+timer<Func>::timer(std::chrono::duration<Rep, Period> duration,
+                   const Func& callback,
+                   std::chrono::duration<Rep, Period> poll_rate) :
     _state(state::not_started),
     _keep_alive(true),
     _duration(std::chrono::nanoseconds(duration)),
@@ -15,8 +17,7 @@ timer<Func>::timer(std::chrono::duration<Rep, Period> duration, const Func& call
     _callback(callback) {}
 
 template<typename Func>
-timer<Func>::timer(const timer<Func>& other) :
-    timer(other._duration, other._callback, other._poll_rate) {}
+timer<Func>::timer(const timer<Func>& other) : timer(other._duration, other._callback, other._poll_rate) {}
 
 template<typename Func>
 timer<Func>& timer<Func>::operator=(const timer& other) {

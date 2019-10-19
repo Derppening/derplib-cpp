@@ -9,9 +9,7 @@ namespace util = derplib::util;
 TEST(IteratorTest, ForEachIndexedImmutable) {
   std::ostringstream actual_oss;
 
-  auto func = [&actual_oss](std::size_t i, int val) {
-    actual_oss << i << val << ' ';
-  };
+  auto func = [&actual_oss](std::size_t i, int val) { actual_oss << i << val << ' '; };
 
   const std::array<int, 5> given = {1, 2, 3, 4, 5};
   std::array<int, 5> actual = given;
@@ -28,9 +26,7 @@ TEST(IteratorTest, ForEachIndexedImmutable) {
 }
 
 TEST(IteratorTest, ForEachIndexedMutable) {
-  auto func = [](std::size_t i, int& val) {
-    val += i;
-  };
+  auto func = [](std::size_t i, int& val) { val += i; };
 
   const std::array<int, 5> given = {1, 2, 3, 4, 5};
   std::array<int, 5> actual = given;

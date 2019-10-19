@@ -5,10 +5,12 @@
 #define DERPLIB_PTR_ASSERT_NULL(ptr) derplib::util::ptr_assert_null((ptr), __FILE__, __func__, __LINE__, #ptr)
 
 #define DERPLIB_PTR_NEW(type, ptr) derplib::util::ptr_new<type>((ptr), __FILE__, __func__, __LINE__, #type, #ptr)
-#define DERPLIB_PTR_NEW_ARGS(type, ptr, ...) derplib::util::ptr_new<type>((ptr), __FILE__, __func__, __LINE__, #type, #ptr, __VA_ARGS__)
+#define DERPLIB_PTR_NEW_ARGS(type, ptr, ...) \
+  derplib::util::ptr_new<type>((ptr), __FILE__, __func__, __LINE__, #type, #ptr, __VA_ARGS__)
 #define DERPLIB_PTR_DELETE(ptr) derplib::util::ptr_delete((ptr), __FILE__, __func__, __LINE__, #ptr)
 
-#define DERPLIB_PTR_ARRAY_NEW(type, ptr, num_of_elements) derplib::util::ptr_array_new<type>((ptr), __FILE__, __func__, __LINE__, #type, #ptr, num_of_elements)
+#define DERPLIB_PTR_ARRAY_NEW(type, ptr, num_of_elements) \
+  derplib::util::ptr_array_new<type>((ptr), __FILE__, __func__, __LINE__, #type, #ptr, num_of_elements)
 #define DERPLIB_PTR_ARRAY_DELETE(ptr) derplib::util::ptr_array_delete((ptr), __FILE__, __func__, __LINE__, #ptr)
 
 namespace derplib {
@@ -56,7 +58,7 @@ inline T*& ptr_new(T*& ptr,
                    std::size_t line,
                    const char* type,
                    const char* var,
-                   Args&& ... args);
+                   Args&&... args);
 
 /**
  * \brief Wrapper for `delete` operator in C++, logging the pointer information.

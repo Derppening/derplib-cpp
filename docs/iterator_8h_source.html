@@ -117,8 +117,8 @@ $(document).ready(function(){initNavTree('iterator_8h_source.html','');});
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">using</span> <a class="code" href="namespacederplib_1_1util.html#aeabbcb436c81e5922a7d2076568dee65">std::begin</a>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">using</span> <a class="code" href="namespacederplib_1_1util.html#a34063f055041cb3ee04d40559a26c937">std::end</a>;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// TODO: Introduced in C++14</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//using std::rbegin;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//using std::rend;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// using std::rbegin;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// using std::rend;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
@@ -133,7 +133,7 @@ $(document).ready(function(){initNavTree('iterator_8h_source.html','');});
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="namespacederplib_1_1util.html#aeabbcb436c81e5922a7d2076568dee65">   56</a></span>&#160;T* <a class="code" href="namespacederplib_1_1util.html#ad2c9d87f31dc9bf2f162892897b5f7ef">begin</a>(T (&amp; array)[N]) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="namespacederplib_1_1util.html#aeabbcb436c81e5922a7d2076568dee65">   56</a></span>&#160;T* <a class="code" href="namespacederplib_1_1util.html#ad2c9d87f31dc9bf2f162892897b5f7ef">begin</a>(T (&amp;array)[N]) {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">return</span> &amp;items[0];</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
@@ -148,7 +148,7 @@ $(document).ready(function(){initNavTree('iterator_8h_source.html','');});
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="namespacederplib_1_1util.html#a34063f055041cb3ee04d40559a26c937">   71</a></span>&#160;T* <a class="code" href="namespacederplib_1_1util.html#adcf8ed65bdd16ad4d9b1a7b1a3bd3b76">end</a>(T (&amp; array)[N]) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="namespacederplib_1_1util.html#a34063f055041cb3ee04d40559a26c937">   71</a></span>&#160;T* <a class="code" href="namespacederplib_1_1util.html#adcf8ed65bdd16ad4d9b1a7b1a3bd3b76">end</a>(T (&amp;array)[N]) {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">return</span> &amp;items[N];</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
@@ -163,7 +163,7 @@ $(document).ready(function(){initNavTree('iterator_8h_source.html','');});
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="namespacederplib_1_1util.html#a8860d9cc26f657601e13223b0f67b407">   86</a></span>&#160;T* <a class="code" href="namespacederplib_1_1util.html#ad169e33d18e61605364629880161b680">rbegin</a>(T (&amp; array)[N]) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="namespacederplib_1_1util.html#a8860d9cc26f657601e13223b0f67b407">   86</a></span>&#160;T* <a class="code" href="namespacederplib_1_1util.html#ad169e33d18e61605364629880161b680">rbegin</a>(T (&amp;array)[N]) {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordflow">return</span> &amp;items[N - 1];</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
@@ -178,7 +178,7 @@ $(document).ready(function(){initNavTree('iterator_8h_source.html','');});
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="namespacederplib_1_1util.html#a79e9968dfbca62c9a2fe21b46b3be81d">  101</a></span>&#160;T* <a class="code" href="namespacederplib_1_1util.html#a66366eff63168641ee6b113a6af8c132">rend</a>(T (&amp; array)[N]) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="namespacederplib_1_1util.html#a79e9968dfbca62c9a2fe21b46b3be81d">  101</a></span>&#160;T* <a class="code" href="namespacederplib_1_1util.html#a66366eff63168641ee6b113a6af8c132">rend</a>(T (&amp;array)[N]) {</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordflow">return</span> &amp;items[-1];</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>

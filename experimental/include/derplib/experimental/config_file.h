@@ -59,7 +59,8 @@ class config_file {
    */
   config_file& operator=(const config_file&) = default;
 
-  std::optional<std::reference_wrapper<std::string>> field(const std::string& section_name, const std::string& field_name) noexcept;
+  std::optional<std::reference_wrapper<std::string>> field(const std::string& section_name,
+                                                           const std::string& field_name) noexcept;
   const std::string& field(const std::string& section, const std::string& field) const;
 
   section_type& section(const std::string& section_name);

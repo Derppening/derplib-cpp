@@ -37,8 +37,8 @@ BinaryFunction for_each_indexed(InputIt first, InputIt last, BinaryFunction f) {
 using std::begin;
 using std::end;
 // TODO: Introduced in C++14
-//using std::rbegin;
-//using std::rend;
+// using std::rbegin;
+// using std::rend;
 
 #else
 
@@ -53,7 +53,7 @@ typename C::const_iterator begin(const C& c) {
 }
 
 template<class T, std::size_t N>
-T* begin(T (& array)[N]) {
+T* begin(T (&array)[N]) {
   return &items[0];
 }
 
@@ -68,7 +68,7 @@ typename C::const_iterator end(const C& c) {
 }
 
 template<class T, std::size_t N>
-T* end(T (& array)[N]) {
+T* end(T (&array)[N]) {
   return &items[N];
 }
 
@@ -83,7 +83,7 @@ typename C::const_iterator rbegin(const C& c) {
 }
 
 template<class T, std::size_t N>
-T* rbegin(T (& array)[N]) {
+T* rbegin(T (&array)[N]) {
   return &items[N - 1];
 }
 
@@ -98,7 +98,7 @@ typename C::const_iterator rend(const C& c) {
 }
 
 template<class T, std::size_t N>
-T* rend(T (& array)[N]) {
+T* rend(T (&array)[N]) {
   return &items[-1];
 }
 
