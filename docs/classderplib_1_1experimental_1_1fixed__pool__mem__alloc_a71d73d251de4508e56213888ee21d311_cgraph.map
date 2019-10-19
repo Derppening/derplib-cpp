@@ -1,0 +1,4 @@
+<map id="derplib::experimental::fixed_pool_mem_alloc::allocate" name="derplib::experimental::fixed_pool_mem_alloc::allocate">
+<area shape="rect" id="node1" title="Allocates an object onto the heap using this allocator." alt="" coords="5,5,183,61"/>
+<area shape="rect" id="node2" href="$classderplib_1_1experimental_1_1fixed__pool__mem__alloc.html#a19f65641c6def90c8a462d0a59e9ba78" title="Dumps the memory allocation information to a stream." alt="" coords="231,5,408,61"/>
+</map>

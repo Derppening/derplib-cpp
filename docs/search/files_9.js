@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['timer_2eh_285',['timer.h',['../timer_8h.html',1,'']]],
-  ['timer_2eipp_286',['timer.ipp',['../timer_8ipp.html',1,'']]],
-  ['type_5ftraits_2eh_287',['type_traits.h',['../type__traits_8h.html',1,'']]]
+  ['ptr_2eh_280',['ptr.h',['../ptr_8h.html',1,'']]],
+  ['ptr_2eipp_281',['ptr.ipp',['../ptr_8ipp.html',1,'']]]
 ];

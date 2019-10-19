@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['logger_417',['logger',['../namespacederplib.html#a2df71fa0e37b84a619bd0161cb141826',1,'derplib']]]
+  ['is_5fnothrow_5fswappable_432',['is_nothrow_swappable',['../namespacederplib_1_1stdext.html#a73de9673fed509ce3779f40ca8f85fd7',1,'derplib::stdext']]],
+  ['iterator_5fcategory_433',['iterator_category',['../classderplib_1_1experimental_1_1heap__walk__iterator.html#a19e535c40df75680ffd5e9c1a0ecba44',1,'derplib::experimental::heap_walk_iterator']]]
 ];

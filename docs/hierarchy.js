@@ -1,7 +1,7 @@
 var hierarchy =
 [
     [ "bad_alloc", null, [
-      [ "derplib::experimental::mem_alloc::bad_alloc", "classderplib_1_1experimental_1_1mem__alloc_1_1bad__alloc.html", null ]
+      [ "derplib::experimental::bad_alloc", "classderplib_1_1experimental_1_1bad__alloc.html", null ]
     ] ],
     [ "derplib::experimental::basic_cli< CharT, Func, typename >", "classderplib_1_1experimental_1_1basic__cli.html", null ],
     [ "derplib::experimental::basic_cli< char >", "classderplib_1_1experimental_1_1basic__cli.html", [
@@ -13,10 +13,11 @@ var hierarchy =
     [ "derplib::container::circular_queue< T, N >", "classderplib_1_1container_1_1circular__queue.html", null ],
     [ "derplib::config_file", "classderplib_1_1config__file.html", null ],
     [ "derplib::experimental::basic_cli< CharT, Func, typename >::entry", "structderplib_1_1experimental_1_1basic__cli_1_1entry.html", null ],
+    [ "derplib::experimental::fixed_pool_mem_alloc", "classderplib_1_1experimental_1_1fixed__pool__mem__alloc.html", null ],
+    [ "derplib::experimental::heap_walk_iterator< T, Comp >", "classderplib_1_1experimental_1_1heap__walk__iterator.html", null ],
     [ "logic_error", null, [
       [ "derplib::basic_logger< CharT >::invalid_state", "classderplib_1_1basic__logger_1_1invalid__state.html", null ]
     ] ],
-    [ "derplib::experimental::mem_alloc", "classderplib_1_1experimental_1_1mem__alloc.html", null ],
     [ "derplib::ref_count_pointer< T, Deleter >::observer", "classderplib_1_1ref__count__pointer_1_1observer.html", null ],
     [ "derplib::ref_count_pointer< T, Deleter >", "classderplib_1_1ref__count__pointer.html", null ],
     [ "derplib::ref_count_pointer< T >", "classderplib_1_1ref__count__pointer.html", null ],

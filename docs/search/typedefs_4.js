@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['is_5fnothrow_5fswappable_416',['is_nothrow_swappable',['../namespacederplib_1_1stdext.html#a73de9673fed509ce3779f40ca8f85fd7',1,'derplib::stdext']]]
+  ['function_5ftype_431',['function_type',['../classderplib_1_1experimental_1_1basic__cli.html#a7681a402256e2c80131a871222680003',1,'derplib::experimental::basic_cli']]]
 ];

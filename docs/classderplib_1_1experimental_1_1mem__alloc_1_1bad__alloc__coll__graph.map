@@ -1,4 +1,0 @@
-<map id="derplib::experimental::mem_alloc::bad_alloc" name="derplib::experimental::mem_alloc::bad_alloc">
-<area shape="rect" id="node1" title="Thrown when an allocation cannot be made with the current heap." alt="" coords="5,80,177,121"/>
-<area shape="rect" id="node2" title=" " alt="" coords="35,5,147,32"/>
-</map>

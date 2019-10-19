@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mem_5falloc_226',['mem_alloc',['../classderplib_1_1experimental_1_1mem__alloc.html',1,'derplib::experimental']]]
+  ['invalid_5fstate_235',['invalid_state',['../classderplib_1_1basic__logger_1_1invalid__state.html',1,'derplib::basic_logger']]]
 ];

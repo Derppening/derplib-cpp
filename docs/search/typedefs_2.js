@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['element_5ftype_412',['element_type',['../classderplib_1_1ref__count__pointer.html#ade72f38e4cc74e3f3c9780d1e9fd6a73',1,'derplib::ref_count_pointer::element_type()'],['../classderplib_1_1ref__count__pointer_1_1observer.html#a66bbc77ff48a8457011f5e255e71006c',1,'derplib::ref_count_pointer::observer::element_type()']]],
-  ['enable_5fif_5finvocable_413',['enable_if_invocable',['../namespacederplib_1_1stdext.html#ad8f23c1309a31e22591a5f0dbf4534bb',1,'derplib::stdext']]],
-  ['enable_5fif_5ft_414',['enable_if_t',['../namespacederplib_1_1stdext.html#a9c2d32700c32d10b916b09ab1f83aa17',1,'derplib::stdext']]]
+  ['decay_5ft_425',['decay_t',['../namespacederplib_1_1stdext.html#a4493c5a7a4f22a2791dcd1c7ef84c0b1',1,'derplib::stdext']]],
+  ['deleter_5ftype_426',['deleter_type',['../classderplib_1_1ref__count__pointer.html#a345597199b69b38cc49e3a723b9c42d4',1,'derplib::ref_count_pointer']]],
+  ['difference_5ftype_427',['difference_type',['../classderplib_1_1experimental_1_1heap__walk__iterator.html#aa2aac0387141f4103ac0efc177ee6fd6',1,'derplib::experimental::heap_walk_iterator']]]
 ];

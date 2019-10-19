@@ -100,17 +100,18 @@ derplib_add_library(container derplib_stdext)
 derplib_add_headers(DERPLIB_experimental_HEADERS
         experimental/config_file.h
         experimental/cli.h
-        experimental/mem_alloc.h
+        experimental/mem_alloc/bad_alloc.h
+        experimental/mem_alloc/fixed_pool_mem_alloc.h
+        experimental/mem_alloc/heap_walk_iterator.h
         experimental/ref_count_pointer.h)
 derplib_add_headers(DERPLIB_experimental_IMPLS
-        experimental/mem_alloc.ipp
+        experimental/mem_alloc/fixed_pool_mem_alloc.ipp
 )
 derplib_add_sources(DERPLIB_experimental_SOURCES
         experimental/config_file.cpp
         experimental/cli.cpp
-        experimental/mem_alloc.cpp
-        experimental/mem_alloc_exceptions.cpp
-        experimental/mem_alloc_heap_walk_iterator.cpp)
+        experimental/mem_alloc/fixed_pool_mem_alloc.cpp
+        experimental/mem_alloc/mem_alloc_exceptions.cpp)
 derplib_add_library(experimental derplib_stdext derplib_util)
 
 # derplib::newlib

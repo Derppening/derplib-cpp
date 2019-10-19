@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['invalid_5fstate_225',['invalid_state',['../classderplib_1_1basic__logger_1_1invalid__state.html',1,'derplib::basic_logger']]]
+  ['heap_5fwalk_5fiterator_234',['heap_walk_iterator',['../classderplib_1_1experimental_1_1heap__walk__iterator.html',1,'derplib::experimental']]]
 ];
