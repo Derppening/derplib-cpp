@@ -86,54 +86,54 @@ class cfq_parallel_consumer<InT, ConsumerT> {
    *
    * \param i The index of the thread.
    */
-  void daemon(std::size_t i);
+  void _daemon(std::size_t i);
 
-  consumer_type _consumer = nullptr;
+  consumer_type _consumer_ = nullptr;
 
-  std::atomic_bool _keep_alive;
+  std::atomic_bool _keep_alive_;
 
-  std::vector<std::deque<stdext::decay_t<InT>>> _buffers;
-  std::vector<std::thread> _threads;
-  std::vector<std::mutex> _mutexes;
-  std::vector<std::condition_variable> _cvs;
+  std::vector<std::deque<stdext::decay_t<InT>>> _buffers_;
+  std::vector<std::thread> _threads_;
+  std::vector<std::mutex> _mutexes_;
+  std::vector<std::condition_variable> _cvs_;
 };
 
 template<typename InT, typename ConsumerT>
 cfq_parallel_consumer<InT, ConsumerT>::cfq_parallel_consumer(const std::size_t concurrency,
                                                              const consumer_type& consumer) :
-    _consumer(consumer),
-    _keep_alive{true},
-    _buffers{concurrency},
-    _threads{concurrency},
-    _mutexes{concurrency},
-    _cvs{concurrency} {
-  for (std::size_t i = 0; i < _threads.size(); ++i) {
-    _threads[i] = std::thread(&cfq_parallel_consumer::daemon, this, i);
+    _consumer_(consumer),
+    _keep_alive_{true},
+    _buffers_{concurrency},
+    _threads_{concurrency},
+    _mutexes_{concurrency},
+    _cvs_{concurrency} {
+  for (std::size_t i = 0; i < _threads_.size(); ++i) {
+    _threads_[i] = std::thread(&cfq_parallel_consumer::_daemon, this, i);
   }
 }
 
 template<typename InT, typename ConsumerT>
 cfq_parallel_consumer<InT, ConsumerT>::cfq_parallel_consumer(const std::size_t concurrency, consumer_type&& consumer) :
-    _consumer(consumer),
-    _keep_alive{true},
-    _buffers{concurrency},
-    _threads{concurrency},
-    _mutexes{concurrency},
-    _cvs{concurrency} {
-  for (std::size_t i = 0; i < _threads.size(); ++i) {
-    _threads[i] = std::thread(&cfq_parallel_consumer::daemon, this, i);
+    _consumer_(consumer),
+    _keep_alive_{true},
+    _buffers_{concurrency},
+    _threads_{concurrency},
+    _mutexes_{concurrency},
+    _cvs_{concurrency} {
+  for (std::size_t i = 0; i < _threads_.size(); ++i) {
+    _threads_[i] = std::thread(&cfq_parallel_consumer::_daemon, this, i);
   }
 }
 
 template<typename InT, typename ConsumerT>
 cfq_parallel_consumer<InT, ConsumerT>::~cfq_parallel_consumer() {
-  _keep_alive = false;
+  _keep_alive_ = false;
 
-  for (auto& cv : _cvs) {
+  for (auto& cv : _cvs_) {
     cv.notify_all();
   }
 
-  for (auto& thread : _threads) {
+  for (auto& thread : _threads_) {
     if (thread.joinable()) {
       thread.join();
     }
@@ -145,35 +145,35 @@ void cfq_parallel_consumer<InT, ConsumerT>::push(const stdext::decay_t<InT>& val
   std::size_t n = std::numeric_limits<std::size_t>::max();
   std::size_t it = std::numeric_limits<std::size_t>::max();
 
-  for (std::size_t i = 0; i < _buffers.size(); ++i) {
-    std::size_t size = _buffers[i].size();
+  for (std::size_t i = 0; i < _buffers_.size(); ++i) {
+    std::size_t size = _buffers_[i].size();
     if (n > size) {
       it = i;
       n = size;
     }
   }
 
-  std::lock_guard<std::mutex> lk(_mutexes[it]);
-  _buffers[it].push_back(value);
+  std::lock_guard<std::mutex> lk(_mutexes_[it]);
+  _buffers_[it].push_back(value);
 }
 
 template<typename InT, typename ConsumerT>
 void cfq_parallel_consumer<InT, ConsumerT>::push(stdext::decay_t<InT>&& value) {
   std::size_t it = std::numeric_limits<std::size_t>::max();
 
-  for (std::size_t i = 0, n = std::numeric_limits<std::size_t>::max(); i < _buffers.size(); ++i) {
-    std::size_t size = _buffers[i].size();
+  for (std::size_t i = 0, n = std::numeric_limits<std::size_t>::max(); i < _buffers_.size(); ++i) {
+    std::size_t size = _buffers_[i].size();
     if (n > size) {
       it = i;
       n = size;
     }
   }
 
-  std::unique_lock<std::mutex> lk(_mutexes[it]);
-  _buffers[it].push_back(value);
+  std::unique_lock<std::mutex> lk(_mutexes_[it]);
+  _buffers_[it].push_back(value);
 
   lk.unlock();
-  _cvs[it].notify_one();
+  _cvs_[it].notify_one();
 }
 
 template<typename InT, typename ConsumerT>
@@ -182,33 +182,33 @@ void cfq_parallel_consumer<InT, ConsumerT>::emplace(Args&&... args) {
   std::size_t n = std::numeric_limits<std::size_t>::max();
   std::size_t it = std::numeric_limits<std::size_t>::max();
 
-  for (std::size_t i = 0; i < _buffers.size(); ++i) {
-    std::size_t size = _buffers[i].size();
+  for (std::size_t i = 0; i < _buffers_.size(); ++i) {
+    std::size_t size = _buffers_[i].size();
     if (n > size) {
       it = i;
       n = size;
     }
   }
 
-  std::lock_guard<std::mutex> lk(_mutexes[it]);
-  _buffers[it].emplace_back(std::forward<Args>(args)...);
+  std::lock_guard<std::mutex> lk(_mutexes_[it]);
+  _buffers_[it].emplace_back(std::forward<Args>(args)...);
 }
 
 template<typename InT, typename ConsumerT>
-void cfq_parallel_consumer<InT, ConsumerT>::daemon(const std::size_t i) {
-  while (_keep_alive || !_buffers[i].empty()) {
-    std::unique_lock<std::mutex> lk(_mutexes[i]);
-    _cvs[i].wait(lk, [&] { return !_keep_alive || !_buffers[i].empty(); });
+void cfq_parallel_consumer<InT, ConsumerT>::_daemon(size_t i) {
+  while (_keep_alive_ || !_buffers_[i].empty()) {
+    std::unique_lock<std::mutex> lk(_mutexes_[i]);
+    _cvs_[i].wait(lk, [&] { return !_keep_alive_ || !_buffers_[i].empty(); });
 
-    if (!_keep_alive && _buffers[i].empty()) {
+    if (!_keep_alive_ && _buffers_[i].empty()) {
       break;
     }
 
-    _consumer(_buffers[i].front());
-    _buffers[i].pop_front();
+    _consumer_(_buffers_[i].front());
+    _buffers_[i].pop_front();
 
     lk.unlock();
-    _cvs[i].notify_one();
+    _cvs_[i].notify_one();
   }
 }
 

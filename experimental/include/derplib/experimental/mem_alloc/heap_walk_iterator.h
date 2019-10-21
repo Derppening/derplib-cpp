@@ -31,8 +31,8 @@ class heap_walk_iterator {
    * \param container backing container of the iterator
    */
   explicit heap_walk_iterator(const container_type& container) noexcept :
-      _prev(container.begin()),
-      _curr(container.begin()) {}
+      _prev_(container.begin()),
+      _curr_(container.begin()) {}
   /**
    * \brief Constructs an iterator pointing to a given element of the container.
    *
@@ -40,25 +40,25 @@ class heap_walk_iterator {
    * \param iterator current iterator position
    */
   heap_walk_iterator(const container_type& container, base_iterator_type iterator) noexcept :
-      _prev(iterator != container.begin() ? --base_iterator_type(iterator) : container.begin()),
-      _curr(iterator) {}
+      _prev_(iterator != container.begin() ? --base_iterator_type(iterator) : container.begin()),
+      _curr_(iterator) {}
 
   /**
    * \return Iterator to the previous entry, or `current()` if `current()` is equal to the backing container's first
    * iterator.
    */
-  base_iterator_type prev() const noexcept { return _prev; }
+  base_iterator_type prev() const noexcept { return _prev_; }
   /**
    * \return Iterator to the current entry.
    */
-  base_iterator_type current() const noexcept { return _curr; }
+  base_iterator_type current() const noexcept { return _curr_; }
 
-  const typename container_type::key_type& operator*() const noexcept { return *_curr; }
-  const typename container_type::key_type* operator->() const noexcept { return std::addressof(*_curr); }
+  const typename container_type::key_type& operator*() const noexcept { return *_curr_; }
+  const typename container_type::key_type* operator->() const noexcept { return std::addressof(*_curr_); }
 
   heap_walk_iterator& operator++() noexcept {
-    _prev = _curr;
-    ++_curr;
+    _prev_ = _curr_;
+    ++_curr_;
     return *this;
   }
   heap_walk_iterator operator++(int) noexcept {
@@ -68,12 +68,12 @@ class heap_walk_iterator {
   }
 
   bool operator==(const heap_walk_iterator& other) const noexcept {
-    return _prev == other._prev && _curr == other._curr;
+    return _prev_ == other._prev_ && _curr_ == other._curr_;
   }
 
  private:
-  base_iterator_type _prev;
-  base_iterator_type _curr;
+  base_iterator_type _prev_;
+  base_iterator_type _curr_;
 };
 
 }  // namespace experimental

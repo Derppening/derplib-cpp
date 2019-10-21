@@ -76,30 +76,30 @@ class timer<Func> {
   /**
    * \return Whether the timer is active.
    */
-  bool active() const { return _state == state::active; }
+  bool active() const { return _state_ == State::Active; }
   /**
    * \return Whether the timer has expired.
    */
-  bool expired() const { return _state == state::expired; }
+  bool expired() const { return _state_ == State::Expired; }
 
  private:
-  enum struct state { halted = -1, not_started, active, expired };
+  enum struct State { Halted = -1, NotStarted, Active, Expired };
 
   /**
    * \brief Daemon function for polling the timer.
    */
-  void countdown_daemon();
+  void _countdown_daemon();
 
-  std::atomic<state> _state;
-  std::atomic<bool> _keep_alive;
+  std::atomic<State> _state_;
+  std::atomic<bool> _keep_alive_;
 
   const std::chrono::nanoseconds _duration;
   const std::chrono::nanoseconds _poll_rate;
 
-  Func _callback;
-  std::thread _thread;
+  Func _callback_;
+  std::thread _thread_;
 
-  std::chrono::time_point<std::chrono::steady_clock> _end_time = {};
+  std::chrono::time_point<std::chrono::steady_clock> _end_time_ = {};
 };
 
 template<typename Func>
@@ -107,20 +107,20 @@ template<typename Rep, typename Period>
 timer<Func>::timer(std::chrono::duration<Rep, Period> duration,
                    const Func& callback,
                    std::chrono::duration<Rep, Period> poll_rate) :
-    _state(state::not_started),
-    _keep_alive(true),
+    _state_(State::NotStarted),
+    _keep_alive_(true),
     _duration(std::chrono::nanoseconds(duration)),
     _poll_rate(std::chrono::nanoseconds(poll_rate)),
-    _callback(callback) {}
+    _callback_(callback) {}
 
 template<typename Func>
 timer<Func>& timer<Func>::operator=(const timer& other) {
   if (this != &other) {
-    _state = state::not_started;
-    _keep_alive = true;
+    _state_ = State::NotStarted;
+    _keep_alive_ = true;
     _duration = other._duration;
     _poll_rate = other._poll_rate;
-    _callback = other._callback;
+    _callback_ = other._callback;
   }
 
   return *this;
@@ -128,51 +128,51 @@ timer<Func>& timer<Func>::operator=(const timer& other) {
 
 template<typename Func>
 timer<Func>::~timer() {
-  _keep_alive = false;
+  _keep_alive_ = false;
 
-  if (_thread.joinable()) {
-    _thread.join();
+  if (_thread_.joinable()) {
+    _thread_.join();
   }
 }
 
 template<typename Func>
 void timer<Func>::start() {
-  if (_state == state::active) {
+  if (_state_ == State::Active) {
     throw std::logic_error("Attempted to start a running timer");
-  } else if (_state == state::expired) {
+  } else if (_state_ == State::Expired) {
     throw std::logic_error("Attempted to restart an expired timer");
   }
 
-  _state = state::active;
-  _end_time = std::chrono::steady_clock::now() + _duration;
-  _thread = std::thread(&timer::countdown_daemon, this);
+  _state_ = State::Active;
+  _end_time_ = std::chrono::steady_clock::now() + _duration;
+  _thread_ = std::thread(&timer::_countdown_daemon, this);
 }
 
 template<typename Func>
 void timer<Func>::stop() {
-  if (_state == state::not_started) {
+  if (_state_ == State::NotStarted) {
     return;
   }
-  if (_state != state::active) {
+  if (_state_ != State::Active) {
     throw std::logic_error("Attempted to stop a halted timer");
   }
 
-  _keep_alive = false;
+  _keep_alive_ = false;
 
-  if (_thread.joinable()) {
-    _thread.join();
+  if (_thread_.joinable()) {
+    _thread_.join();
   }
 
-  _thread = std::thread();
+  _thread_ = std::thread();
 }
 
 template<typename Func>
-void timer<Func>::countdown_daemon() {
-  _state = state::active;
+void timer<Func>::_countdown_daemon() {
+  _state_ = State::Active;
 
-  while (std::chrono::steady_clock::now() < _end_time) {
-    if (!_keep_alive) {
-      _state = state::halted;
+  while (std::chrono::steady_clock::now() < _end_time_) {
+    if (!_keep_alive_) {
+      _state_ = State::Halted;
 
       return;
     }
@@ -180,9 +180,9 @@ void timer<Func>::countdown_daemon() {
     std::this_thread::sleep_for(_poll_rate);
   }
 
-  _state = state::expired;
-  if (_callback) {
-    _callback();
+  _state_ = State::Expired;
+  if (_callback_) {
+    _callback_();
   }
 }
 

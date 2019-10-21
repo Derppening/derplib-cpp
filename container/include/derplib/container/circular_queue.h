@@ -47,7 +47,7 @@ class circular_queue {
   /**
    * Default constructor. Value-initializes the container.
    */
-  circular_queue() noexcept : _data() {}
+  circular_queue() noexcept : _data_() {}
 
   /**
    * \brief Conversion constructor from \c std::array.
@@ -58,11 +58,11 @@ class circular_queue {
    *
    * The \c size() after initialization will be the equivalent of `std::min(SIZE, N)`.
    *
-   * \tparam SIZE Size of the \c std::array.
+   * \tparam Size Size of the \c std::array.
    * \param[in] cont Data to copy from.
    */
-  template<std::size_t SIZE>
-  explicit circular_queue(const std::array<T, SIZE>& cont) noexcept(
+  template<std::size_t Size>
+  explicit circular_queue(const std::array<T, Size>& cont) noexcept(
       std::is_nothrow_copy_assignable<T>::value&& std::is_nothrow_default_constructible<T>::value);
 
   /**
@@ -107,8 +107,8 @@ class circular_queue {
    * \param other The circular_queue to copy from.
    * \return `*this`.
    */
-  circular_queue& operator=(const circular_queue& other) noexcept(
-      std::is_nothrow_copy_assignable<container_type>::value);
+  circular_queue&
+  operator=(const circular_queue& other) noexcept(std::is_nothrow_copy_assignable<container_type>::value);
 
   /**
    * \brief Move assignment operator.
@@ -229,12 +229,12 @@ class circular_queue {
    */
   using pointer = typename container_type::pointer;
 
-  std::array<T, N> _data;
+  std::array<T, N> _data_;
 
-  pointer _begin = _data.begin();
-  pointer _end = nullptr;
+  pointer _begin_ = _data_.begin();
+  pointer _end_ = nullptr;
 
-  size_type _size = 0;
+  size_type _size_ = 0;
 };
 
 /**
@@ -252,64 +252,64 @@ inline void swap(circular_queue<T, N>& lhs, circular_queue<T, N>& rhs) noexcept(
 template<typename T, std::size_t N>
 template<std::size_t SIZE>
 circular_queue<T, N>::circular_queue(const std::array<T, SIZE>& cont) noexcept(
-std::is_nothrow_copy_assignable<T>::value&& std::is_nothrow_default_constructible<T>::value) :
-    _begin(_data.begin()),
-    _end(SIZE > N ? _data.begin() + N : _data.begin() + SIZE),
-    _size(std::min(SIZE, N)) {
-  std::copy(cont.begin(), cont.begin() + _size, _begin);
-  std::fill(_end, _data.end(), T());
+    std::is_nothrow_copy_assignable<T>::value&& std::is_nothrow_default_constructible<T>::value) :
+    _begin_(_data_.begin()),
+    _end_(SIZE > N ? _data_.begin() + N : _data_.begin() + SIZE),
+    _size_(std::min(SIZE, N)) {
+  std::copy(cont.begin(), cont.begin() + _size_, _begin_);
+  std::fill(_end_, _data_.end(), T());
 }
 
 template<typename T, std::size_t N>
 circular_queue<T, N>::circular_queue(container_type&& cont) noexcept(
-std::is_nothrow_move_assignable<container_type>::value) :
-    _data(std::move(cont)),
-    _begin(_data.begin()),
-    _end(_data.end()),
-    _size(N) {}
+    std::is_nothrow_move_assignable<container_type>::value) :
+    _data_(std::move(cont)),
+    _begin_(_data_.begin()),
+    _end_(_data_.end()),
+    _size_(N) {}
 
 template<typename T, std::size_t N>
 circular_queue<T, N>::circular_queue(const circular_queue& other) noexcept(
-std::is_nothrow_copy_constructible<container_type>::value) :
-    _data(other._data),
-    _begin(_data.begin() + (other._begin - other._data.begin())),
-    _end(other._end == nullptr ? nullptr : _data.begin() + (other._end - other._data.begin())),
-    _size(other._size) {}
+    std::is_nothrow_copy_constructible<container_type>::value) :
+    _data_(other._data_),
+    _begin_(_data_.begin() + (other._begin_ - other._data_.begin())),
+    _end_(other._end_ == nullptr ? nullptr : _data_.begin() + (other._end_ - other._data_.begin())),
+    _size_(other._size_) {}
 
 template<typename T, std::size_t N>
 circular_queue<T, N>::circular_queue(circular_queue&& other) noexcept(
-std::is_nothrow_move_constructible<container_type>::value) :
-    _data(std::move(other._data)),
-    _begin(_data.begin() + (other._begin - other._data.begin())),
-    _end(other._end == nullptr ? nullptr : _data.begin() + (other._end - other._data.begin())),
-    _size(other._size) {}
+    std::is_nothrow_move_constructible<container_type>::value) :
+    _data_(std::move(other._data_)),
+    _begin_(_data_.begin() + (other._begin_ - other._data_.begin())),
+    _end_(other._end_ == nullptr ? nullptr : _data_.begin() + (other._end_ - other._data_.begin())),
+    _size_(other._size_) {}
 
 template<typename T, std::size_t N>
 circular_queue<T, N>& circular_queue<T, N>::operator=(const circular_queue& other) noexcept(
-std::is_nothrow_copy_assignable<container_type>::value) {
+    std::is_nothrow_copy_assignable<container_type>::value) {
   if (&other == this) {
     return *this;
   }
 
-  _data = other._data;
-  _begin = _data.begin() + (other._begin - other._data.begin());
-  _end = other._end == nullptr ? nullptr : _data.begin() + (other._end - other._data.begin());
-  _size = other._size;
+  _data_ = other._data_;
+  _begin_ = _data_.begin() + (other._begin_ - other._data_.begin());
+  _end_ = other._end_ == nullptr ? nullptr : _data_.begin() + (other._end_ - other._data_.begin());
+  _size_ = other._size_;
 
   return *this;
 }
 
 template<typename T, std::size_t N>
 circular_queue<T, N>& circular_queue<T, N>::operator=(circular_queue&& other) noexcept(
-std::is_nothrow_move_assignable<container_type>::value) {
+    std::is_nothrow_move_assignable<container_type>::value) {
   if (&other == this) {
     return *this;
   }
 
-  _data = std::move(other._data);
-  _begin = _data.begin() + (other._begin - other._data.begin());
-  _end = other._end == nullptr ? nullptr : _data.begin() + (other._end - other._data.begin());
-  _size = other._size;
+  _data_ = std::move(other._data_);
+  _begin_ = _data_.begin() + (other._begin_ - other._data_.begin());
+  _end_ = other._end_ == nullptr ? nullptr : _data_.begin() + (other._end_ - other._data_.begin());
+  _size_ = other._size_;
 
   return *this;
 }
@@ -320,7 +320,7 @@ typename circular_queue<T, N>::reference circular_queue<T, N>::front() {
     throw std::runtime_error("front(): no element");
   }
 
-  return *_begin;
+  return *_begin_;
 }
 
 template<typename T, std::size_t N>
@@ -329,7 +329,7 @@ typename circular_queue<T, N>::const_reference circular_queue<T, N>::front() con
     throw std::runtime_error("front(): no element");
   }
 
-  return *_begin;
+  return *_begin_;
 }
 
 template<typename T, std::size_t N>
@@ -338,7 +338,7 @@ typename circular_queue<T, N>::reference circular_queue<T, N>::back() {
     throw std::runtime_error("back(): no element");
   }
 
-  return _end[-1];
+  return _end_[-1];
 }
 
 template<typename T, std::size_t N>
@@ -347,17 +347,17 @@ typename circular_queue<T, N>::const_reference circular_queue<T, N>::back() cons
     throw std::runtime_error("front(): no element");
   }
 
-  return _end[-1];
+  return _end_[-1];
 }
 
 template<typename T, std::size_t N>
 bool circular_queue<T, N>::empty() const noexcept {
-  return _size == 0;
+  return _size_ == 0;
 }
 
 template<typename T, std::size_t N>
 typename circular_queue<T, N>::size_type circular_queue<T, N>::size() const noexcept {
-  return _size;
+  return _size_;
 }
 
 template<typename T, std::size_t N>
@@ -366,12 +366,12 @@ void circular_queue<T, N>::push(const value_type& value) {
     throw std::length_error("push(): max elements alloc'd");
   }
 
-  if (empty() || _end == _data.end()) {
-    _end = _data.begin();
+  if (empty() || _end_ == _data_.end()) {
+    _end_ = _data_.begin();
   }
 
-  *_end++ = value;
-  ++_size;
+  *_end_++ = value;
+  ++_size_;
 }
 
 template<typename T, std::size_t N>
@@ -380,12 +380,12 @@ void circular_queue<T, N>::push(value_type&& value) {
     throw std::length_error("push(): max elements alloc'd");
   }
 
-  if (empty() || _end == _data.end()) {
-    _end = _data.begin();
+  if (empty() || _end_ == _data_.end()) {
+    _end_ = _data_.begin();
   }
 
-  *_end++ = std::move(value);
-  ++_size;
+  *_end_++ = std::move(value);
+  ++_size_;
 }
 
 #if defined(DERPLIB_HAS_CPP17_SUPPORT)
@@ -396,12 +396,12 @@ decltype(auto) circular_queue<T, N>::emplace(Args&&... args) {
     throw std::length_error("push(): max elements alloc'd");
   }
 
-  if (empty() || _end == _data.end()) {
-    _end = _data.begin();
+  if (empty() || _end_ == _data_.end()) {
+    _end_ = _data_.begin();
   }
 
-  *_end++ = T(std::forward<Args>(args)...);
-  ++_size;
+  *_end_++ = T(std::forward<Args>(args)...);
+  ++_size_;
 
   return back();
 }
@@ -413,12 +413,12 @@ void circular_queue<T, N>::emplace(Args&&... args) {
     throw std::length_error("push(): max elements alloc'd");
   }
 
-  if (empty() || _end == _data.end()) {
-    _end = _data.begin();
+  if (empty() || _end_ == _data_.end()) {
+    _end_ = _data_.begin();
   }
 
-  *_end++ = T(std::forward<Args>(args)...);
-  ++_size;
+  *_end_++ = T(std::forward<Args>(args)...);
+  ++_size_;
 }
 #endif  // defined(DERPLIB_HAS_CPP17_SUPPORT)
 
@@ -428,22 +428,22 @@ void circular_queue<T, N>::pop() noexcept(std::is_nothrow_default_constructible<
     return;
   }
 
-  *_begin = T();
-  ++_begin;
-  --_size;
+  *_begin_ = T();
+  ++_begin_;
+  --_size_;
 
-  if (_size == 0) {
-    _begin = _data.begin();
-    _end = nullptr;
+  if (_size_ == 0) {
+    _begin_ = _data_.begin();
+    _end_ = nullptr;
   }
 }
 
 template<typename T, std::size_t N>
 void circular_queue<T, N>::swap(circular_queue& other) noexcept(stdext::is_nothrow_swappable<container_type>::value) {
-  std::swap(this->_data, other._data);
-  std::swap(this->_begin, other._begin);
-  std::swap(this->_end, other._end);
-  std::swap(this->_size, other._size);
+  std::swap(this->_data_, other._data_);
+  std::swap(this->_begin_, other._begin_);
+  std::swap(this->_end_, other._end_);
+  std::swap(this->_size_, other._size_);
 }
 
 #include <derplib/internal/common_macros_end.h>

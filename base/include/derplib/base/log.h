@@ -53,7 +53,7 @@ class basic_logger {
    * \param os destination of the logger
    * \param min_level minimum level of information that will be output to the logger
    */
-  basic_logger(ostream& os, level min_level) : _min_level(min_level), _ostream(os) {}
+  basic_logger(ostream& os, level min_level) : _min_level_(min_level), _ostream_(os) {}
 
   /**
    * \brief Copy constructor.
@@ -75,36 +75,36 @@ class basic_logger {
    * \brief Logs a verbose message.
    * \param message message to log
    */
-  void v(const string& message) { print_helper(message, level::verbose); }
+  void v(const string& message) { _print_helper(message, level::verbose); }
 
   /**
    * \brief Logs a debug message.
    * \param message message to log
    */
-  void d(const string& message) { print_helper(message, level::debug); }
+  void d(const string& message) { _print_helper(message, level::debug); }
 
   /**
    * \brief Logs an information message.
    * \param message message to log
    */
-  void i(const string& message) { print_helper(message, level::info); }
+  void i(const string& message) { _print_helper(message, level::info); }
 
   /**
    * \brief Logs a warning message.
    * \param message message to log
    */
-  void w(const string& message) { print_helper(message, level::warn); }
+  void w(const string& message) { _print_helper(message, level::warn); }
 
   /**
    * \brief Logs an error message.
    * \param message message to log
    */
-  void e(const string& message) { print_helper(message, level::error); }
+  void e(const string& message) { _print_helper(message, level::error); }
 
   /**
    * \brief Flushes the `ostream` associated to this logger.
    */
-  void flush() { _ostream.flush(); }
+  void flush() { _ostream_.flush(); }
 
   /**
    * \brief Creates a default logger.
@@ -141,12 +141,12 @@ class basic_logger {
   static basic_logger<CharT>& get_default();
 
  private:
-  static std::unique_ptr<basic_logger<CharT>> instance;
+  static std::unique_ptr<basic_logger<CharT>>& _instance();
 
   /**
    * \return String representing the current time.
    */
-  static std::basic_string<CharT> fmt_time();
+  static std::basic_string<CharT> _fmt_time();
 
   /**
    * \brief Helper function for formatting and outputting messages.
@@ -154,46 +154,49 @@ class basic_logger {
    * \param message message to output
    * \param p_level level of the message
    */
-  void print_helper(const string& message, level p_level);
+  void _print_helper(const string& message, level p_level);
 
-  level _min_level;
-  ostream& _ostream;
+  level _min_level_;
+  ostream& _ostream_;
 };
 
 template<typename CharT>
-std::unique_ptr<basic_logger<CharT>> basic_logger<CharT>::instance;
+std::unique_ptr<basic_logger<CharT>>& basic_logger<CharT>::_instance() {
+  static std::unique_ptr<basic_logger<CharT>> i;
+  return i;
+}
 
 template<typename CharT>
 basic_logger<CharT>& basic_logger<CharT>::make_default(basic_logger::ostream& os, basic_logger::level min_level) {
-  if (instance != nullptr) {
+  if (_instance() != nullptr) {
     throw basic_logger::invalid_state("Default logger already initialized");
   }
 
-  instance = stdext::make_unique<basic_logger<CharT>>(os, min_level);
+  _instance() = stdext::make_unique<basic_logger<CharT>>(os, min_level);
   return get_default();
 }
 
 template<typename CharT>
 basic_logger<CharT>& basic_logger<CharT>::replace_default(basic_logger::ostream& os, basic_logger::level min_level) {
-  if (instance != nullptr) {
-    instance->flush();
+  if (_instance() != nullptr) {
+    _instance()->flush();
   }
-  instance = stdext::make_unique<basic_logger<CharT>>(os, min_level);
+  _instance() = stdext::make_unique<basic_logger<CharT>>(os, min_level);
 
   return get_default();
 }
 
 template<typename CharT>
 basic_logger<CharT>& basic_logger<CharT>::get_default() {
-  if (instance == nullptr) {
+  if (_instance() == nullptr) {
     throw basic_logger::invalid_state("Default logger not initialized");
   }
 
-  return *instance;
+  return *_instance();
 }
 
 template<typename CharT>
-std::basic_string<CharT> basic_logger<CharT>::fmt_time() {
+std::basic_string<CharT> basic_logger<CharT>::_fmt_time() {
   // https://stackoverflow.com/questions/24686846/get-current-time-in-milliseconds-or-hhmmssmmm-format
 
   auto now = std::chrono::system_clock::now();
@@ -208,32 +211,32 @@ std::basic_string<CharT> basic_logger<CharT>::fmt_time() {
 }
 
 template<typename CharT>
-void basic_logger<CharT>::print_helper(const basic_logger::string& message, basic_logger::level p_level) {
-  if (int(p_level) < int(_min_level)) {
+void basic_logger<CharT>::_print_helper(const basic_logger::string& message, basic_logger::level p_level) {
+  if (p_level < _min_level_) {
     return;
   }
 
-  _ostream << fmt_time() << '\t';
+  _ostream_ << _fmt_time() << '\t';
 
   switch (p_level) {
     case level::verbose:
-      _ostream << 'V';
+      _ostream_ << 'V';
       break;
     case level::debug:
-      _ostream << 'D';
+      _ostream_ << 'D';
       break;
     case level::info:
-      _ostream << 'I';
+      _ostream_ << 'I';
       break;
     case level::warn:
-      _ostream << 'W';
+      _ostream_ << 'W';
       break;
     case level::error:
-      _ostream << 'E';
+      _ostream_ << 'E';
       break;
   }
 
-  _ostream << ": " << message << '\n';
+  _ostream_ << ": " << message << '\n';
 }
 
 using logger = basic_logger<char>;

@@ -1,6 +1,7 @@
 #pragma once
 
-#include <stdexcept>
+#include <new>
+#include <string>
 
 namespace derplib {
 namespace experimental {
@@ -21,7 +22,7 @@ class bad_alloc : public std::bad_alloc {
   const char* what() const noexcept override;
 
  private:
-  const char* _what;
+  const char* _what_;
 };
 
 }  // namespace experimental

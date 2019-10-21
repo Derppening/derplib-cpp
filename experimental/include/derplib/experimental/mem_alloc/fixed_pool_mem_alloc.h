@@ -21,8 +21,8 @@ namespace experimental {
  */
 class fixed_pool_mem_alloc final {
  private:
-  struct entry;
-  struct entry_set_comparator;
+  struct _entry;
+  struct _entry_set_comparator;
 
  public:
   /**
@@ -53,24 +53,24 @@ class fixed_pool_mem_alloc final {
    * \brief Retrieves an object from the heap.
    *
    * \tparam T type of object
-   * \tparam STRICT_CHECK if true, checks whether the size of the object is exactly as big as `T`
+   * \tparam StrictCheck if true, checks whether the size of the object is exactly as big as `T`
    * \param ptr pointer to the location of the heap allocated object
    * \return `(T) ptr` if the object is found, otherwise `nullptr`
    * \throws std::logic_error if the object does not fit into the requested type `T`.
    */
-  template<typename T, bool STRICT_CHECK = false>
+  template<typename T, bool StrictCheck = false>
   T* get(void* ptr);
 
   /**
    * \brief Retrieves an object from the heap.
    *
    * \tparam T type of object
-   * \tparam STRICT_CHECK if true, checks whether the size of the object is exactly as big as `T`
+   * \tparam StrictCheck if true, checks whether the size of the object is exactly as big as `T`
    * \param offset offset of the object from the start of the heap
    * \return pointer to the object if the object is found, otherwise `nullptr`
    * \throws std::logic_error if the object does not fit into the requested type `T`.
    */
-  template<typename T, bool STRICT_CHECK = false>
+  template<typename T, bool StrictCheck = false>
   T* get(std::ptrdiff_t offset);
 
   /**
@@ -90,38 +90,38 @@ class fixed_pool_mem_alloc final {
   void heap_dump(std::ostream& os = std::cout) noexcept;
 
  private:
-  using heap_entry_iterator = heap_walk_iterator<entry, entry_set_comparator>;
+  using heap_entry_iterator = heap_walk_iterator<_entry, _entry_set_comparator>;
 
-  static constexpr const int region_text_padding = 18;
-  static constexpr const int size_text_padding = 12;
-  static constexpr const int align_text_padding = 4;
+  static constexpr const int RegionTextPadding = 18;
+  static constexpr const int SizeTextPadding = 12;
+  static constexpr const int AlignTextPadding = 4;
 
   /**
    * \brief Entry of an object in the heap.
    */
-  struct entry {
+  struct _entry {
     using destructor_type = void (*)(const void*);
 
     /**
      * \brief Pointer to the first byte in the heap.
      */
-    unsigned char* ptr;
+    unsigned char* _ptr;
     /**
      * \brief Destruction method.
      */
-    const destructor_type destructor;
+    const destructor_type _destructor;
     /**
      * \brief Extent of the allocation in bytes.
      */
-    const std::size_t extent;
+    const std::size_t _extent;
     /**
      * \brief Padding of the allocation in bytes.
      */
-    const std::size_t alignment;
+    const std::size_t _alignment;
     /**
      * \brief Demangled name of type.
      */
-    const std::string type_name;
+    const std::string _type_name;
   };
 
   /**
@@ -129,8 +129,8 @@ class fixed_pool_mem_alloc final {
    *
    * Sorts the set by the pointer locations.
    */
-  struct entry_set_comparator {
-    bool operator()(const entry& lhs, const entry& rhs) const { return lhs.ptr < rhs.ptr; }
+  struct _entry_set_comparator {
+    bool operator()(const _entry& lhs, const _entry& rhs) const { return lhs._ptr < rhs._ptr; }
   };
 
   /**
@@ -140,11 +140,11 @@ class fixed_pool_mem_alloc final {
    * \param alignment alignment of the allocation
    * \return Pointer to the heap if a segment is available, otherwise `nullptr`.
    */
-  unsigned char* find_first_fit(std::size_t size, std::size_t alignment);
+  unsigned char* _find_first_fit(std::size_t size, std::size_t alignment);
 
   const std::size_t _size;
-  std::unique_ptr<unsigned char[]> _heap_pool;
-  std::set<entry, entry_set_comparator> _entries;
+  std::unique_ptr<unsigned char[]> _heap_pool_;
+  std::set<_entry, _entry_set_comparator> _entries_;
 };
 
 #include <derplib/internal/common_macros_begin.h>
@@ -154,61 +154,62 @@ T* fixed_pool_mem_alloc::allocate(Args&&... args) {
   constexpr std::size_t type_size = sizeof(T);
   constexpr std::size_t align_size = alignof(T);
 
-  unsigned char* const ptr = find_first_fit(type_size, align_size);
+  unsigned char* const ptr = _find_first_fit(type_size, align_size);
   if (ptr == nullptr) {
     std::cerr << "Cannot allocate requested " << std::to_string(type_size) << " bytes for data type "
-              #if !defined(NDEBUG)
+#if !defined(NDEBUG)
               << derplib::util::type_name<T>()
-              #else
+#else
               << typeid(T).name()
-              #endif  // !defined(NDEBUG)
+#endif  // !defined(NDEBUG)
               << '\n';
     heap_dump(std::cerr);
     throw bad_alloc("Not enough memory for requested allocation");
   }
 
-  entry e = {
-      ptr,
-      [](const void* pobj) { static_cast<const T*>(pobj)->~T(); },
-      type_size,
-      align_size,
+  _entry e = {
+    ptr,
+    [](const void* pobj) { static_cast<const T*>(pobj)->~T(); },
+    type_size,
+    align_size,
 #if !defined(NDEBUG)
-      derplib::util::type_name<T>()
+    derplib::util::type_name<T>()
 #else
-      {}
+    {}
 #endif  // !defined(NDEBUG)
   };
-  _entries.insert(e);
+  _entries_.insert(e);
 
   new (ptr) T(args...);
   return reinterpret_cast<T*>(ptr);
 }
 
-template<typename T, bool STRICT_CHECK>
+template<typename T, bool StrictCheck>
 T* fixed_pool_mem_alloc::get(void* const ptr) {
-  const auto it = std::find_if(_entries.begin(), _entries.end(),
-                               [ptr](const entry& e) { return reinterpret_cast<const unsigned char*>(ptr) == e.ptr; });
-  if (it != _entries.end()) {
-    if (sizeof(T) > it->extent) {
+  const auto it = std::find_if(_entries_.begin(), _entries_.end(),
+                               [ptr](const _entry& e) { return reinterpret_cast<const unsigned char*>(ptr) == e._ptr; });
+  if (it != _entries_.end()) {
+    if (sizeof(T) > it->_extent) {
 #if !defined(NDEBUG)
       throw std::logic_error("Type conversion error: Requested target type [" + derplib::util::type_name<T>()
-                                 + "] larger than allocated size (" + std::to_string(it->extent) + ")");
+                             + "] larger than allocated size (" + std::to_string(it->_extent) + ")");
 #else
       throw std::logic_error("Type conversion error: Requested target type smaller than allocated size");
 #endif  // defined(NDEBUG)
     }
 
+    // TODO: Use an additional template parameter for constexpr-if
     if
-      DERPLIB_CPP17_CONSTEXPR(STRICT_CHECK) {
-      if (sizeof(T) < it->extent) {
+      DERPLIB_CPP17_CONSTEXPR(StrictCheck) {
+        if (sizeof(T) < it->_extent) {
 #if !defined(NDEBUG)
-        throw std::logic_error("Type conversion error: Requested target type [" + derplib::util::type_name<T>()
-                                   + "] smaller than allocated size (" + std::to_string(it->extent) + ")");
+          throw std::logic_error("Type conversion error: Requested target type [" + derplib::util::type_name<T>()
+                                 + "] smaller than allocated size (" + std::to_string(it->_extent) + ")");
 #else
-        throw std::logic_error("Type conversion error: Requested target type smaller than allocated size");
+          throw std::logic_error("Type conversion error: Requested target type smaller than allocated size");
 #endif  // defined(NDEBUG)
+        }
       }
-    }
 
     return reinterpret_cast<T*>(ptr);
   } else {
@@ -216,18 +217,18 @@ T* fixed_pool_mem_alloc::get(void* const ptr) {
   }
 }
 
-template<typename T, bool STRICT_CHECK>
+template<typename T, bool StrictCheck>
 T* fixed_pool_mem_alloc::get(const std::ptrdiff_t offset) {
-  return get<T, STRICT_CHECK>(_heap_pool.get() + offset);
+  return get<T, StrictCheck>(_heap_pool_.get() + offset);
 }
 
 template<typename T>
 void fixed_pool_mem_alloc::deallocate(T*& ptr) {
-  const auto it = std::find_if(_entries.begin(), _entries.end(),
-                               [ptr](const entry& e) { return reinterpret_cast<unsigned char*>(ptr) == e.ptr; });
-  if (it != _entries.end()) {
-    it->destructor(ptr);
-    _entries.erase(it);
+  const auto it = std::find_if(_entries_.begin(), _entries_.end(),
+                               [ptr](const _entry& e) { return reinterpret_cast<unsigned char*>(ptr) == e._ptr; });
+  if (it != _entries_.end()) {
+    it->_destructor(ptr);
+    _entries_.erase(it);
   }
 }
 

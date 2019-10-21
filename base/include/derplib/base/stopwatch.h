@@ -46,14 +46,14 @@ class stopwatch {
    */
   template<typename ToDuration = std::chrono::nanoseconds>
   ToDuration duration() const {
-    return std::chrono::duration_cast<ToDuration>((_is_active ? std::chrono::steady_clock::now() : _end) - _start);
+    return std::chrono::duration_cast<ToDuration>((_is_active_ ? std::chrono::steady_clock::now() : _end_) - _start_);
   }
 
  private:
-  std::chrono::time_point<std::chrono::steady_clock> _start;
-  std::chrono::time_point<std::chrono::steady_clock> _end;
+  std::chrono::time_point<std::chrono::steady_clock> _start_;
+  std::chrono::time_point<std::chrono::steady_clock> _end_;
 
-  bool _is_active = false;
+  bool _is_active_ = false;
 };
 }  // namespace base
 }  // namespace derplib

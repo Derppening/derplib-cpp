@@ -53,11 +53,11 @@ class semver {
    */
   DERPLIB_NODISCARD explicit operator std::string() const;
 
-  DERPLIB_NODISCARD int major() const { return _major; }
-  DERPLIB_NODISCARD int minor() const { return _minor; }
-  DERPLIB_NODISCARD int patch() const { return _patch; }
-  DERPLIB_NODISCARD const std::string& prerelease() const { return _prerelease; }
-  DERPLIB_NODISCARD const std::string& build() const { return _build; }
+  DERPLIB_NODISCARD int major() const { return _major_; }
+  DERPLIB_NODISCARD int minor() const { return _minor_; }
+  DERPLIB_NODISCARD int patch() const { return _patch_; }
+  DERPLIB_NODISCARD const std::string& prerelease() const { return _prerelease_; }
+  DERPLIB_NODISCARD const std::string& build() const { return _build_; }
 
   bool operator<(const semver& other) const;
   bool operator==(const semver& other) const;
@@ -76,11 +76,11 @@ class semver {
   DERPLIB_NODISCARD static semver from_string(const std::string& str);
 
  private:
-  int _major;
-  int _minor;
-  int _patch;
-  std::string _prerelease;
-  std::string _build;
+  int _major_;
+  int _minor_;
+  int _patch_;
+  std::string _prerelease_;
+  std::string _build_;
 };
 
 #include <derplib/internal/common_macros_end.h>

@@ -9,10 +9,11 @@
 #include <stdexcept>
 
 namespace derplib {
+namespace experimental {
 
 std::optional<std::reference_wrapper<std::string>> config_file::field(const std::string& section_name,
                                                                       const std::string& field_name) noexcept {
-  if (this->_config.find(section_name) != this->_config.end()) {
+  if (this->_config_.find(section_name) != this->_config_.end()) {
     auto& s = this->section(section_name);
     if (s.find(field_name) != s.end()) {
       return std::optional(std::ref(s.at(field_name)));
@@ -28,9 +29,9 @@ auto config_file::field(const std::string& section_name, const std::string& fiel
 
 void config_file::put(const std::string& section, const std::string& field, const std::string& data) {
   // find the section
-  auto config_it = this->_config.find(section);
-  if (config_it == this->_config.end()) {
-    auto res = this->_config.emplace(section, std::map<std::string, std::string>());
+  auto config_it = this->_config_.find(section);
+  if (config_it == this->_config_.end()) {
+    auto res = this->_config_.emplace(section, std::map<std::string, std::string>());
     config_it = res.first;
   }
 
@@ -48,8 +49,8 @@ void config_file::put(const std::string& section, const std::string& field, cons
 
 void config_file::erase(const std::string& section, const std::string& field) {
   // find the section
-  auto config_it = this->_config.find(section);
-  if (config_it == this->_config.end()) {
+  auto config_it = this->_config_.find(section);
+  if (config_it == this->_config_.end()) {
     return;
   }
 
@@ -64,15 +65,15 @@ void config_file::erase(const std::string& section, const std::string& field) {
 }
 
 config_file::section_type& config_file::section(const std::string& section_name) {
-  return this->_config.at(section_name);
+  return this->_config_.at(section_name);
 }
 
 const config_file::section_type& config_file::section(const std::string& section_name) const {
-  return this->_config.at(section_name);
+  return this->_config_.at(section_name);
 }
 
 bool config_file::contains(const std::string& section_name) const {
-  return this->_config.find(section_name) != this->_config.end();
+  return this->_config_.find(section_name) != this->_config_.end();
 }
 
 bool config_file::contains(const std::string& section_name, const std::string& field_name) const {
@@ -85,11 +86,11 @@ bool config_file::contains(const std::string& section_name, const std::string& f
 }
 
 config_file::container_type& config_file::get() {
-  return this->_config;
+  return this->_config_;
 }
 
 const config_file::container_type& config_file::get() const {
-  return this->_config;
+  return this->_config_;
 }
 
 void config_file::to_file(const std::string& filename, const bool skip_empty) const {
@@ -99,7 +100,7 @@ void config_file::to_file(const std::string& filename, const bool skip_empty) co
   file_ostr.open(filename);
 
   // loop through the section headers
-  for (auto&& section : this->_config) {
+  for (auto&& section : this->_config_) {
     // skip empty headers
     if (skip_empty && section.second.empty()) {
       continue;
@@ -163,9 +164,9 @@ config_file config_file::from_file(const std::string& filename, bool dispose_emp
 }
 
 void config_file::garbage_collect() {
-  for (auto it = this->_config.begin(); it != this->_config.end();) {
+  for (auto it = this->_config_.begin(); it != this->_config_.end();) {
     if (it->second.empty()) {
-      it = this->_config.erase(it);
+      it = this->_config_.erase(it);
     } else {
       ++it;
     }
@@ -173,9 +174,10 @@ void config_file::garbage_collect() {
 }
 
 void config_file::clear() {
-  this->_config.clear();
+  this->_config_.clear();
 }
 
+}  // namespace experimental
 }  // namespace derplib
 
 #endif  // __cplusplus > 201402L

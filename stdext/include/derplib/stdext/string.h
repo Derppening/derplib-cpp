@@ -18,9 +18,8 @@ inline namespace stdext {
  * \return `std::vector` of substrings
  */
 template<typename CharT>
-std::vector<std::basic_string<CharT>> split_string(const std::basic_string<CharT>& input,
-                                                   const std::basic_string<CharT>& delimiter,
-                                                   unsigned limit = 0);
+std::vector<std::basic_string<CharT>>
+split_string(const std::basic_string<CharT>& input, const std::basic_string<CharT>& delimiter, unsigned limit = 0);
 
 /**
  * \brief Splits a string by a given delimiter.
@@ -32,9 +31,8 @@ std::vector<std::basic_string<CharT>> split_string(const std::basic_string<CharT
  * \return `std::vector` of substrings
  */
 template<typename CharT>
-std::vector<std::basic_string<CharT>> split_string(const std::basic_string<CharT>& input,
-                                                   CharT delimiter,
-                                                   unsigned limit = 0);
+std::vector<std::basic_string<CharT>>
+split_string(const std::basic_string<CharT>& input, CharT delimiter, unsigned limit = 0);
 
 /**
  * \brief Splits a string by a given delimiter.
@@ -101,9 +99,8 @@ std::string& toupper(std::string& str);
 std::string& tolower(std::string& str);
 
 template<typename CharT>
-std::vector<std::basic_string<CharT>> split_string(const std::basic_string<CharT>& input,
-                                                   const std::basic_string<CharT>& delimiter,
-                                                   unsigned limit) {
+std::vector<std::basic_string<CharT>>
+split_string(const std::basic_string<CharT>& input, const std::basic_string<CharT>& delimiter, unsigned limit) {
   using string_type = typename std::basic_string<CharT>;
   std::vector<string_type> vs;
 
@@ -126,9 +123,8 @@ std::vector<std::basic_string<CharT>> split_string(const std::basic_string<CharT
 }
 
 template<typename CharT>
-std::vector<std::basic_string<CharT>> split_string(const std::basic_string<CharT>& input,
-                                                   const CharT delimiter,
-                                                   unsigned limit) {
+std::vector<std::basic_string<CharT>>
+split_string(const std::basic_string<CharT>& input, const CharT delimiter, unsigned limit) {
   using string_type = typename std::basic_string<CharT>;
   std::vector<string_type> vs;
 

@@ -8,72 +8,72 @@ namespace experimental {
 
 fixed_pool_mem_alloc::fixed_pool_mem_alloc(std::size_t size) :
     _size(size),
-    _heap_pool(derplib::stdext::make_unique<unsigned char[]>(size)) {}
+    _heap_pool_(derplib::stdext::make_unique<unsigned char[]>(size)) {}
 
 fixed_pool_mem_alloc::~fixed_pool_mem_alloc() {
-  std::for_each(_entries.begin(), _entries.end(), [](const entry& e) { e.destructor(e.ptr); });
+  std::for_each(_entries_.begin(), _entries_.end(), [](const _entry& e) { e._destructor(e._ptr); });
 }
 
 void fixed_pool_mem_alloc::heap_dump(std::ostream& os) noexcept {
   using ptr_t = const void*;
 
-  const unsigned char* current_ptr = _heap_pool.get();
-  const unsigned char* const end_ptr = _heap_pool.get() + _size;
-  auto entry_it = _entries.begin();
+  const unsigned char* current_ptr = _heap_pool_.get();
+  const unsigned char* const end_ptr = _heap_pool_.get() + _size;
+  auto entry_it = _entries_.begin();
 
-  os << std::setfill(' ') << std::setw(region_text_padding) << "REGION START"
-     << "  " << std::setw(region_text_padding) << "REGION END"
+  os << std::setfill(' ') << std::setw(RegionTextPadding) << "REGION START"
+     << "  " << std::setw(RegionTextPadding) << "REGION END"
      << "  " << std::setw(4) << "S"
-     << "  " << std::setw(size_text_padding + 2) << "SIZE"
-     << "  " << std::setw(align_text_padding + 2) << "ALIGN"
+     << "  " << std::setw(SizeTextPadding + 2) << "SIZE"
+     << "  " << std::setw(AlignTextPadding + 2) << "ALIGN"
      << "  "
      << "TYPENAME\n";
 
   while (current_ptr != end_ptr) {
-    if (entry_it == _entries.end()) {
-      os << std::showbase << std::setiosflags(std::ios::internal) << std::setfill('0') << std::setw(region_text_padding)
-         << static_cast<ptr_t>(current_ptr) << "  " << std::setw(region_text_padding) << static_cast<ptr_t>(end_ptr)
-         << "  Free  " << std::setfill(' ') << std::setw(size_text_padding) << end_ptr - current_ptr << " B\n";
+    if (entry_it == _entries_.end()) {
+      os << std::showbase << std::setiosflags(std::ios::internal) << std::setfill('0') << std::setw(RegionTextPadding)
+         << static_cast<ptr_t>(current_ptr) << "  " << std::setw(RegionTextPadding) << static_cast<ptr_t>(end_ptr)
+         << "  Free  " << std::setfill(' ') << std::setw(SizeTextPadding) << end_ptr - current_ptr << " B\n";
       break;
-    } else if (entry_it->ptr == current_ptr) {
-      os << std::showbase << std::setiosflags(std::ios::internal) << std::setfill('0') << std::setw(region_text_padding)
-         << static_cast<ptr_t>(current_ptr) << "  " << std::setw(region_text_padding)
-         << static_cast<ptr_t>(current_ptr + entry_it->extent) << "  Used  " << std::setfill(' ')
-         << std::setw(size_text_padding) << entry_it->extent << " B  " << std::setw(align_text_padding)
-         << entry_it->alignment << " B  "
+    } else if (entry_it->_ptr == current_ptr) {
+      os << std::showbase << std::setiosflags(std::ios::internal) << std::setfill('0') << std::setw(RegionTextPadding)
+         << static_cast<ptr_t>(current_ptr) << "  " << std::setw(RegionTextPadding)
+         << static_cast<ptr_t>(current_ptr + entry_it->_extent) << "  Used  " << std::setfill(' ')
+         << std::setw(SizeTextPadding) << entry_it->_extent << " B  " << std::setw(AlignTextPadding)
+         << entry_it->_alignment << " B  "
 #if !defined(NDEBUG)
-         << entry_it->type_name
+         << entry_it->_type_name
 #else
          << "no info"
 #endif  // !defined(NDEBUG)
          << '\n';
 
-      current_ptr = entry_it->ptr + entry_it->extent;
+      current_ptr = entry_it->_ptr + entry_it->_extent;
     } else {
       ++entry_it;
 
-      std::ptrdiff_t blank_space = entry_it->ptr - current_ptr;
+      std::ptrdiff_t blank_space = entry_it->_ptr - current_ptr;
 
-      if (entry_it != _entries.end() && blank_space != 0) {
-        os << std::showbase << std::setiosflags(std::ios::internal) << std::setfill('0')
-           << std::setw(region_text_padding) << static_cast<ptr_t>(current_ptr) << "  "
-           << std::setw(region_text_padding) << static_cast<ptr_t>(entry_it->ptr) << "  Free  " << std::setfill(' ')
-           << std::setw(size_text_padding) << blank_space << " B\n";
+      if (entry_it != _entries_.end() && blank_space != 0) {
+        os << std::showbase << std::setiosflags(std::ios::internal) << std::setfill('0') << std::setw(RegionTextPadding)
+           << static_cast<ptr_t>(current_ptr) << "  " << std::setw(RegionTextPadding)
+           << static_cast<ptr_t>(entry_it->_ptr) << "  Free  " << std::setfill(' ') << std::setw(SizeTextPadding)
+           << blank_space << " B\n";
 
-        current_ptr = entry_it->ptr;
+        current_ptr = entry_it->_ptr;
       }
     }
   }
 }
 
-unsigned char* fixed_pool_mem_alloc::find_first_fit(const std::size_t size, const std::size_t alignment) {
+unsigned char* fixed_pool_mem_alloc::_find_first_fit(size_t size, size_t alignment) {
   // edge case 1: empty allocation block
-  if (_entries.empty()) {
+  if (_entries_.empty()) {
     if (size > _size) {
       return nullptr;
     }
 
-    return _heap_pool.get();
+    return _heap_pool_.get();
   }
 
   void* aligned_extent;
@@ -81,10 +81,10 @@ unsigned char* fixed_pool_mem_alloc::find_first_fit(const std::size_t size, cons
   unsigned char* extent_end;
   std::size_t extent_size;
 
-  heap_entry_iterator iterator(_entries);
+  heap_entry_iterator iterator(_entries_);
 
-  aligned_extent = extent_begin = _heap_pool.get();
-  extent_end = iterator->ptr;
+  aligned_extent = extent_begin = _heap_pool_.get();
+  extent_end = iterator->_ptr;
   extent_size = std::size_t(extent_end - extent_begin);
 
   // edge case 2: beginning block
@@ -97,9 +97,9 @@ unsigned char* fixed_pool_mem_alloc::find_first_fit(const std::size_t size, cons
   ++iterator;
 
   // nominal case: in-between blocks
-  for (; iterator.current() != _entries.end(); ++iterator) {
-    aligned_extent = extent_begin = iterator.prev()->ptr + iterator.prev()->extent;
-    extent_end = iterator->ptr;
+  for (; iterator.current() != _entries_.end(); ++iterator) {
+    aligned_extent = extent_begin = iterator.prev()->_ptr + iterator.prev()->_extent;
+    extent_end = iterator->_ptr;
     extent_size = std::size_t(extent_end - extent_begin);
 
     assert(extent_end >= extent_begin);
@@ -109,8 +109,8 @@ unsigned char* fixed_pool_mem_alloc::find_first_fit(const std::size_t size, cons
   }
 
   // edge case 3: end block
-  aligned_extent = extent_begin = iterator.prev()->ptr + iterator.prev()->extent;
-  extent_end = _heap_pool.get() + _size;
+  aligned_extent = extent_begin = iterator.prev()->_ptr + iterator.prev()->_extent;
+  extent_end = _heap_pool_.get() + _size;
   extent_size = std::size_t(extent_end - extent_begin);
 
   assert(extent_end >= extent_begin);

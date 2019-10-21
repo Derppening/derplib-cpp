@@ -7,7 +7,7 @@ var dir_5e3d3b9811c8e608053dc6c7f8fe6b1f =
       [ "cli", "classderplib_1_1experimental_1_1cli.html", "classderplib_1_1experimental_1_1cli" ]
     ] ],
     [ "config_file.h", "config__file_8h.html", [
-      [ "config_file", "classderplib_1_1config__file.html", "classderplib_1_1config__file" ]
+      [ "config_file", "classderplib_1_1experimental_1_1config__file.html", "classderplib_1_1experimental_1_1config__file" ]
     ] ],
     [ "ref_count_pointer.h", "ref__count__pointer_8h.html", [
       [ "ref_count_pointer", "classderplib_1_1ref__count__pointer.html", "classderplib_1_1ref__count__pointer" ],

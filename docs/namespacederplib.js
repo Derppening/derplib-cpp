@@ -8,7 +8,6 @@ var namespacederplib =
     [ "cfq_parallel_consumer", "classderplib_1_1container_1_1cfq__parallel__consumer.html", null ],
     [ "cfq_parallel_consumer< InT, ConsumerT >", "classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html", "classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4" ],
     [ "circular_queue", "classderplib_1_1container_1_1circular__queue.html", "classderplib_1_1container_1_1circular__queue" ],
-    [ "config_file", "classderplib_1_1config__file.html", "classderplib_1_1config__file" ],
     [ "ref_count_pointer", "classderplib_1_1ref__count__pointer.html", "classderplib_1_1ref__count__pointer" ],
     [ "semver", "classderplib_1_1base_1_1semver.html", "classderplib_1_1base_1_1semver" ],
     [ "stopwatch", "classderplib_1_1base_1_1stopwatch.html", "classderplib_1_1base_1_1stopwatch" ],

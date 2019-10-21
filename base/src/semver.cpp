@@ -5,7 +5,7 @@
 namespace derplib {
 inline namespace base {
 namespace {
-inline bool is_valid_identifier(const char c) {
+inline bool _is_valid_identifier(const char c) {
   return std::isalpha(c) || std::isdigit(c) || c == '-' || c == '.';
 }
 }  // namespace
@@ -22,57 +22,58 @@ semver::format_error& semver::format_error::operator=(semver::format_error&&) no
 semver::format_error::~format_error() = default;
 
 semver::semver(int major, int minor, int patch, std::string prerelease, std::string build) :
-    _major(major),
-    _minor(minor),
-    _patch(patch),
-    _prerelease(std::move(prerelease)),
-    _build(std::move(build)) {}
+    _major_(major),
+    _minor_(minor),
+    _patch_(patch),
+    _prerelease_(std::move(prerelease)),
+    _build_(std::move(build)) {}
 
 semver::operator std::string() const {
-  std::string s = std::to_string(_major) + "." + std::to_string(_minor) + "." + std::to_string(_patch);
-  if (!_prerelease.empty()) {
-    s += ("-" + _prerelease);
+  std::string s = std::to_string(_major_) + "." + std::to_string(_minor_) + "." + std::to_string(_patch_);
+  if (!_prerelease_.empty()) {
+    s += ("-" + _prerelease_);
   }
-  if (!_build.empty()) {
-    s += ("+" + _build);
+  if (!_build_.empty()) {
+    s += ("+" + _build_);
   }
 
   return s;
 }
 
 bool semver::operator<(const semver& other) const {
-  if (_major < other._major) {
+  if (_major_ < other._major_) {
     return true;
   }
-  if (_major > other._major) {
+  if (_major_ > other._major_) {
     return false;
   }
 
-  if (_minor < other._minor) {
+  if (_minor_ < other._minor_) {
     return true;
   }
-  if (_minor > other._minor) {
+  if (_minor_ > other._minor_) {
     return false;
   }
 
-  if (_patch < other._patch) {
+  if (_patch_ < other._patch_) {
     return true;
   }
-  if (_patch > other._patch) {
+  if (_patch_ > other._patch_) {
     return false;
   }
 
-  if (!_prerelease.empty() && other._prerelease.empty()) {
+  if (!_prerelease_.empty() && other._prerelease_.empty()) {
     return true;
   }
-  if (_prerelease.empty() && !other._prerelease.empty()) {
+  if (_prerelease_.empty() && !other._prerelease_.empty()) {
     return false;
   }
-  return _prerelease < other._prerelease;
+  return _prerelease_ < other._prerelease_;
 }
 
 bool semver::operator==(const semver& other) const {
-  return _major == other._major && _minor == other._minor && _patch == other._patch && _prerelease == other._prerelease;
+  return _major_ == other._major_ && _minor_ == other._minor_ && _patch_ == other._patch_
+         && _prerelease_ == other._prerelease_;
 }
 
 semver semver::from_string(const std::string& str) {
@@ -83,7 +84,7 @@ semver semver::from_string(const std::string& str) {
     throw format_error("Malformed SemVer label");
   }
   if (metadatas.size() == 2 && !std::all_of(metadatas.back().begin(), metadatas.back().end(), [](const char c) {
-        return is_valid_identifier(c);
+        return _is_valid_identifier(c);
       })) {
     throw format_error("Build metadata identifier contains invalid characters");
   }
@@ -99,7 +100,7 @@ semver semver::from_string(const std::string& str) {
     throw format_error("Malformed prerelease section");
   }
   if (prereleases.size() == 2 && !std::all_of(metadatas.back().begin(), metadatas.back().end(), [](const char c) {
-        return is_valid_identifier(c);
+        return _is_valid_identifier(c);
       })) {
     throw format_error("Prerelease identifier contains invalid characters");
   }

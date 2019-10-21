@@ -15,7 +15,7 @@ var hierarchy =
     [ "derplib::container::cfq_parallel_consumer< InT, ConsumerT >", "classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html", null ],
     [ "derplib::container::circular_queue< T, N >", "classderplib_1_1container_1_1circular__queue.html", null ],
     [ "derplib::container::circular_queue< T, N >", "classderplib_1_1container_1_1circular__queue.html", null ],
-    [ "derplib::config_file", "classderplib_1_1config__file.html", null ],
+    [ "derplib::experimental::config_file", "classderplib_1_1experimental_1_1config__file.html", null ],
     [ "derplib::experimental::basic_cli< CharT, Func, typename >::entry", "structderplib_1_1experimental_1_1basic__cli_1_1entry.html", null ],
     [ "derplib::experimental::fixed_pool_mem_alloc", "classderplib_1_1experimental_1_1fixed__pool__mem__alloc.html", null ],
     [ "derplib::experimental::heap_walk_iterator< T, Comp >", "classderplib_1_1experimental_1_1heap__walk__iterator.html", null ],

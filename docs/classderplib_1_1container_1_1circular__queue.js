@@ -6,7 +6,7 @@ var classderplib_1_1container_1_1circular__queue =
     [ "size_type", "classderplib_1_1container_1_1circular__queue.html#ab30285ea276bfd9925d68ed8199d4984", null ],
     [ "value_type", "classderplib_1_1container_1_1circular__queue.html#a116ec7e5f3004552b27b2935cc11c5ff", null ],
     [ "circular_queue", "classderplib_1_1container_1_1circular__queue.html#a87a07acd2319cc20df9aa8ef569c3627", null ],
-    [ "circular_queue", "classderplib_1_1container_1_1circular__queue.html#ab1358846e0e057229002107c5178d22b", null ],
+    [ "circular_queue", "classderplib_1_1container_1_1circular__queue.html#adb79ad1d51c5ef934b824118ac29445c", null ],
     [ "circular_queue", "classderplib_1_1container_1_1circular__queue.html#a9b416b53bfafa14d4dae814e4af3eba0", null ],
     [ "circular_queue", "classderplib_1_1container_1_1circular__queue.html#a41a14dde5a54ff969de3aeea2437912b", null ],
     [ "circular_queue", "classderplib_1_1container_1_1circular__queue.html#a1413dab7aab96c326adcf1db0d19040b", null ],

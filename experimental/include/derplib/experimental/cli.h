@@ -102,7 +102,7 @@ class basic_cli {
    *
    * \param level overridden hint level
    */
-  explicit basic_cli(hint_level level) : _hint_level(level) {}
+  explicit basic_cli(hint_level level) : _hint_level_(level) {}
 
   virtual ~basic_cli() = default;
 
@@ -127,7 +127,7 @@ class basic_cli {
    * \return `*this`.
    */
   basic_cli& item(const entry& e) {
-    _options.emplace_back(e);
+    _options_.emplace_back(e);
 
     return *this;
   }
@@ -141,10 +141,8 @@ class basic_cli {
    * \param is_term if true, leaves the interactive prompt after processing the callback
    * \return `*this`
    */
-  basic_cli& item(const string_type& text,
-                  const string_type& input,
-                  function_type fptr = nullptr,
-                  bool is_term = false) {
+  basic_cli&
+  item(const string_type& text, const string_type& input, function_type fptr = nullptr, bool is_term = false) {
     return item(text, std::vector<string_type>{input}, std::move(fptr), is_term);
   }
 
@@ -163,7 +161,7 @@ class basic_cli {
                   function_type fptr = nullptr,
                   bool is_term = false) {
     entry e{text, input, std::move(fptr), is_term};
-    _options.emplace_back(std::move(e));
+    _options_.emplace_back(std::move(e));
 
     return *this;
   }
@@ -182,12 +180,12 @@ class basic_cli {
     }
 
     // find whether the argument corresponds to any alias
-    auto search_res = std::find_if(_options.begin(), _options.end(), [&](const entry& e) -> bool {
+    auto search_res = std::find_if(_options_.begin(), _options_.end(), [&](const entry& e) -> bool {
       return std::any_of(e.alias.begin(), e.alias.end(),
                          [&](const string_type& alias) -> bool { return cmd == alias; });
     });
 
-    if (search_res == _options.end()) {
+    if (search_res == _options_.end()) {
       return parse_result::cmd_not_found;
     }
 
@@ -212,18 +210,18 @@ class basic_cli {
 #endif
   }
 
-  hint_level hint() const { return _hint_level; }
+  hint_level hint() const { return _hint_level_; }
 
   void output_options(std::basic_ostream<CharT>& cos) {
-    for (auto it = _options.begin(); it != _options.end(); ++it) {
+    for (auto it = _options_.begin(); it != _options_.end(); ++it) {
       if (it->text.empty()) {
         cos << '\n';
-      } else if (it->alias.empty() && it == _options.begin()) {
+      } else if (it->alias.empty() && it == _options_.begin()) {
         cos << it->text << '\n';
       } else if (it->alias.empty()) {
         cos << '\n' << it->text << '\n';
       } else {
-        if (_hint_level == hint_level::simple) {
+        if (_hint_level_ == hint_level::simple) {
           cos << it->alias.front() << ": " << it->text << '\n';
         } else {
           std::ostringstream hints_oss;
@@ -242,8 +240,8 @@ class basic_cli {
   }
 
  private:
-  hint_level _hint_level = hint_level::simple;
-  std::vector<entry> _options;
+  hint_level _hint_level_ = hint_level::simple;
+  std::vector<entry> _options_;
 };
 
 class cli : public basic_cli<char> {

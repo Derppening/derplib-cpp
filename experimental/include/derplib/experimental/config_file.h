@@ -12,6 +12,7 @@
 #include <string>
 
 namespace derplib {
+namespace experimental {
 
 /**
  * Class to manage application configurations.
@@ -115,9 +116,10 @@ class config_file {
   void garbage_collect();
 
  private:
-  container_type _config;
+  container_type _config_;
 };
 
+}  // namespace experimental
 }  // namespace derplib
 
 #else

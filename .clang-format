@@ -25,7 +25,6 @@ IndentCaseLabels: true
 IndentPPDirectives: None
 IndentWidth: 2
 MaxEmptyLinesToKeep: 1
-PenaltyReturnTypeOnItsOwnLine: 500
 PointerAlignment: Left
 ReflowComments: true
 SortIncludes: false

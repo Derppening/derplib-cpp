@@ -10,7 +10,7 @@ var indexSectionsWithContent =
   7: "hlp",
   8: "cdefinsvw",
   9: "r",
-  10: "d"
+  10: "ds"
 };
 
 var indexSectionNames =

@@ -34,6 +34,14 @@ var NAVTREE =
       ] ],
       [ "Versioning", "md_README.html#autotoc_md7", null ]
     ] ],
+    [ "Style Guidelines", "md_STYLE.html", [
+      [ "Rules", "md_STYLE.html#autotoc_md9", [
+        [ "Syntax", "md_STYLE.html#autotoc_md10", null ],
+        [ "API Naming", "md_STYLE.html#autotoc_md11", null ],
+        [ "Argument Naming", "md_STYLE.html#autotoc_md12", null ]
+      ] ],
+      [ "Sample", "md_STYLE.html#autotoc_md13", null ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -64,8 +72,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "algorithm_8h.html",
-"classderplib_1_1container_1_1circular__queue.html#ac2439f4f6d1d7e4681d78cf842a5c0e4",
-"string_8h.html#ad61a33bae3b59c2e717e909e4787ec04"
+"classderplib_1_1experimental_1_1basic__cli.html#a72ef83c2349b08db65c39da5626ed4b9",
+"string_8h.html#a09cdb11434cb1e8aa23d6d3e1baee50c"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

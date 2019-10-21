@@ -9,7 +9,7 @@ var searchData=
   ['enable_5fif_5ft_62',['enable_if_t',['../namespacederplib_1_1stdext.html#a9c2d32700c32d10b916b09ab1f83aa17',1,'derplib::enable_if_t()'],['../namespacederplib_1_1stdext.html#a9c2d32700c32d10b916b09ab1f83aa17',1,'derplib::stdext::enable_if_t()']]],
   ['end_63',['end',['../namespacederplib_1_1util.html#adcf8ed65bdd16ad4d9b1a7b1a3bd3b76',1,'derplib::end()'],['../namespacederplib_1_1util.html#adcf8ed65bdd16ad4d9b1a7b1a3bd3b76',1,'derplib::util::end()'],['../namespacederplib_1_1util.html#a11b5f486c0d345adcb35df10ea0fc204',1,'derplib::end()'],['../namespacederplib_1_1util.html#a11b5f486c0d345adcb35df10ea0fc204',1,'derplib::util::end()'],['../namespacederplib_1_1util.html#a34063f055041cb3ee04d40559a26c937',1,'derplib::end()'],['../namespacederplib_1_1util.html#a34063f055041cb3ee04d40559a26c937',1,'derplib::util::end()']]],
   ['entry_64',['entry',['../structderplib_1_1experimental_1_1basic__cli_1_1entry.html',1,'derplib::experimental::basic_cli']]],
-  ['erase_65',['erase',['../classderplib_1_1config__file.html#aade05e3cf25df9be99b2ff6770f97f46',1,'derplib::config_file']]],
+  ['erase_65',['erase',['../classderplib_1_1experimental_1_1config__file.html#afbcac05a30764a5e0a745b6bc34b4036',1,'derplib::experimental::config_file']]],
   ['error_66',['error',['../classderplib_1_1base_1_1basic__logger.html#ae403f82c113c5d37353af61578b75f33acb5e100e5a9a3e7f6d1fd97512215282',1,'derplib::base::basic_logger']]],
   ['exit_67',['exit',['../classderplib_1_1experimental_1_1basic__cli.html#a2f632a0a4bfc5d0a8849d3ab893d35f4af24f62eeb789199b9b2e467df3b1876b',1,'derplib::experimental::basic_cli']]],
   ['expired_68',['expired',['../classderplib_1_1base_1_1timer_3_01Func_01_4.html#ad93d24a142e39505d41257c4ea28af36',1,'derplib::base::timer&lt; Func &gt;']]]

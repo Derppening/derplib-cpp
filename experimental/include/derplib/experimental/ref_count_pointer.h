@@ -17,46 +17,46 @@ class ref_count_pointer {
     using pointer = ref_count_pointer::pointer;
     using element_type = ref_count_pointer::element_type;
 
-    observer(element_type* p, ref_count_pointer<T>* src) noexcept : _p(p), _rcp(src) {}
+    observer(element_type* p, ref_count_pointer<T>* src) noexcept : _p_(p), _rcp_(src) {}
 
-    observer(const observer& other) : _p(other._p), _rcp(other._rcp) { _rcp->_v.push_back(this); }
+    observer(const observer& other) : _p_(other._p_), _rcp_(other._rcp_) { _rcp_->_v_.push_back(this); }
 
-    observer(observer&& other) : _p(other._p), _rcp(other._rcp) {
-      other._p = nullptr;
-      other._rcp = nullptr;
+    observer(observer&& other) : _p_(other._p_), _rcp_(other._rcp_) {
+      other._p_ = nullptr;
+      other._rcp_ = nullptr;
 
-      _rcp->_v.push_back(this);
+      _rcp_->_v_.push_back(this);
     }
 
-    typename std::add_lvalue_reference<T>::type operator*() const { return *_p; }
-    pointer operator->() const noexcept { return _p; }
-    T* get() const { return _p; }
+    typename std::add_lvalue_reference<T>::type operator*() const { return *_p_; }
+    pointer operator->() const noexcept { return _p_; }
+    T* get() const { return _p_; }
 
-    ~observer() { _rcp->_v.erase(std::remove(_rcp->_v.begin(), _rcp->_v.end(), this)); }
+    ~observer() { _rcp_->_v_.erase(std::remove(_rcp_->_v_.begin(), _rcp_->_v_.end(), this)); }
 
    private:
-    T* _p;
-    ref_count_pointer<T>* _rcp;
+    T* _p_;
+    ref_count_pointer<T>* _rcp_;
 
     friend class ref_count_pointer;
   };
 
-  constexpr ref_count_pointer() noexcept : _u(), _v() {}
+  constexpr ref_count_pointer() noexcept : _u_(), _v_() {}
 
-  constexpr ref_count_pointer(std::nullptr_t) noexcept : _u(std::nullptr_t()), _v() {}
+  constexpr ref_count_pointer(std::nullptr_t) noexcept : _u_(std::nullptr_t()), _v_() {}
 
-  explicit ref_count_pointer(pointer p) noexcept : _u(p), _v() {}
+  explicit ref_count_pointer(pointer p) noexcept : _u_(p), _v_() {}
 
   // TODO: Overload 3, 4 for unique_ptr
-  ref_count_pointer(ref_count_pointer&& rc) noexcept : _u(std::move(rc._u)), _v(std::move(rc._v)) {}
+  ref_count_pointer(ref_count_pointer&& rc) noexcept : _u_(std::move(rc._u_)), _v_(std::move(rc._v_)) {}
 
   template<typename U, typename E>
-  ref_count_pointer(ref_count_pointer<U, E>&& u) noexcept : _u(std::move(u._u)), _v(std::move(u._v)) {}
+  ref_count_pointer(ref_count_pointer<U, E>&& u) noexcept : _u_(std::move(u._u_)), _v_(std::move(u._v_)) {}
 
   ~ref_count_pointer() {
-    std::for_each(_v.begin(), _v.end(), [&](observer*& o) {
-      o->_p = nullptr;
-      o->_rcp = nullptr;
+    std::for_each(_v_.begin(), _v_.end(), [&](observer*& o) {
+      o->_p_ = nullptr;
+      o->_rcp_ = nullptr;
     });
   }
 
@@ -65,41 +65,41 @@ class ref_count_pointer {
       return *this;
     }
 
-    _u = std::move(r._u);
-    _v = std::move(r._v);
+    _u_ = std::move(r._u_);
+    _v_ = std::move(r._v_);
 
     return *this;
   }
 
   ref_count_pointer& operator=(std::nullptr_t) noexcept {
-    _u = std::unique_ptr<T>();
-    _v = std::vector<observer*>();
+    _u_ = std::unique_ptr<T>();
+    _v_ = std::vector<observer*>();
 
     return *this;
   }
 
   pointer release() noexcept {
-    _u.release();
+    _u_.release();
 
-    std::for_each(_v.begin(), _v.end(), [](observer*& p) { p->_p = nullptr; });
-    _v.clear();
+    std::for_each(_v_.begin(), _v_.end(), [](observer*& p) { p->_p_ = nullptr; });
+    _v_.clear();
   }
 
   void reset(pointer ptr = pointer()) noexcept {
-    _u.reset(ptr);
+    _u_.reset(ptr);
 
-    std::for_each(_v.begin(), _v.end(), [&](observer*& p) { p->_p = nullptr; });
-    _v.clear();
+    std::for_each(_v_.begin(), _v_.end(), [&](observer*& p) { p->_p_ = nullptr; });
+    _v_.clear();
   }
 
   observer get() noexcept {
-    observer p = observer(_u.get(), this);
-    _v.push_back(&p);
+    observer p = observer(_u_.get(), this);
+    _v_.push_back(&p);
     return p;
   }
 
  private:
-  std::unique_ptr<T, Deleter> _u;
-  std::vector<observer*> _v;
+  std::unique_ptr<T, Deleter> _u_;
+  std::vector<observer*> _v_;
 };
 }  // namespace derplib
