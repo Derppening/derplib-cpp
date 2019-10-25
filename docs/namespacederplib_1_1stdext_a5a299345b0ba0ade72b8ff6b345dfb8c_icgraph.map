@@ -1,0 +1,6 @@
+<map id="derplib::stdext::size" name="derplib::stdext::size">
+<area shape="rect" id="node1" title=" " alt="" coords="236,78,387,105"/>
+<area shape="rect" id="node2" href="$namespacederplib_1_1stdext.html#a9a0eaf18666131749322b86d408f27df" title="Generates a sequence with sequentially increasing values starting with value." alt="" coords="5,5,188,47"/>
+<area shape="rect" id="node3" href="$namespacederplib_1_1stdext.html#aa6d38d043225c1388f335dae2c00d168" title="Drop&#45;in backport for std::make_unique." alt="" coords="17,71,177,112"/>
+<area shape="rect" id="node4" href="$namespacederplib_1_1stdext.html#a2c82aed728765d0eace7a3ecef6d7e44" title="Wrapper for new[] operator in C++, logging the pointer information." alt="" coords="25,136,168,177"/>
+</map>

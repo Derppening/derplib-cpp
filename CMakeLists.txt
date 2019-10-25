@@ -51,7 +51,6 @@ add_subdirectory(container)
 add_subdirectory(experimental)
 add_subdirectory(internal)
 add_subdirectory(stdext)
-add_subdirectory(util)
 
 # Doxygen Target
 if (${DERPLIB_BUILD_DOCS})

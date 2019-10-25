@@ -10,10 +10,10 @@
 #include <type_traits>
 #include <vector>
 
-#include <derplib/stdext/type_traits.h>
+#include "type_traits.h"
 
 namespace derplib {
-inline namespace util {
+inline namespace stdext {
 
 #include <derplib/internal/common_macros_begin.h>
 
@@ -74,5 +74,5 @@ std::vector<T> generate_sequence(const std::size_t size, const T& value) {
 
 #include <derplib/internal/common_macros_end.h>
 
-}  // namespace util
+}  // namespace stdext
 }  // namespace derplib

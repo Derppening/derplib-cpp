@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>derplib: util/include/derplib/util/ptr.h File Reference</title>
+<title>derplib: stdext/include/derplib/stdext/ptr.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -101,44 +101,44 @@ $(document).ready(function(){initNavTree('ptr_8h.html','');});
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacederplib"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacederplib.html">derplib</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacederplib_1_1util"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1util.html">derplib::util</a></td></tr>
+<tr class="memitem:namespacederplib_1_1stdext"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html">derplib::stdext</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:abdf9912ef50ef8359de63fa9319a4808"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:abdf9912ef50ef8359de63fa9319a4808"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1util.html#abdf9912ef50ef8359de63fa9319a4808">derplib::util::raw_ptr</a> = T *</td></tr>
-<tr class="memdesc:abdf9912ef50ef8359de63fa9319a4808"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type definition for pointers.  <a href="namespacederplib_1_1util.html#abdf9912ef50ef8359de63fa9319a4808">More...</a><br /></td></tr>
-<tr class="separator:abdf9912ef50ef8359de63fa9319a4808"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad057a070d25216aaa0ddc003e3b235c7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ad057a070d25216aaa0ddc003e3b235c7"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#ad057a070d25216aaa0ddc003e3b235c7">derplib::stdext::raw_ptr</a> = T *</td></tr>
+<tr class="memdesc:ad057a070d25216aaa0ddc003e3b235c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type definition for pointers.  <a href="namespacederplib_1_1stdext.html#ad057a070d25216aaa0ddc003e3b235c7">More...</a><br /></td></tr>
+<tr class="separator:ad057a070d25216aaa0ddc003e3b235c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a103ec8ba757e4847888f23051b32ca0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1util.html#a103ec8ba757e4847888f23051b32ca0d">derplib::util::ptr_assert_null</a> (void *ptr, const char *file, const char *func, std::size_t line, const char *var)</td></tr>
-<tr class="memdesc:a103ec8ba757e4847888f23051b32ca0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a pointer is <code>nullptr</code> during runtime.  <a href="namespacederplib_1_1util.html#a103ec8ba757e4847888f23051b32ca0d">More...</a><br /></td></tr>
-<tr class="separator:a103ec8ba757e4847888f23051b32ca0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38d64fe3bbc8453e125a4656e640cd2e"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
-<tr class="memitem:a38d64fe3bbc8453e125a4656e640cd2e"><td class="memTemplItemLeft" align="right" valign="top">T *&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1util.html#a38d64fe3bbc8453e125a4656e640cd2e">derplib::util::ptr_new</a> (T *&amp;ptr, const char *file, const char *func, std::size_t line, const char *type, const char *var, Args &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a38d64fe3bbc8453e125a4656e640cd2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for <code>new</code> operator in C++, logging the pointer information.  <a href="namespacederplib_1_1util.html#a38d64fe3bbc8453e125a4656e640cd2e">More...</a><br /></td></tr>
-<tr class="separator:a38d64fe3bbc8453e125a4656e640cd2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d85c5d821ce79868f6a8a8ffe4630d7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a9d85c5d821ce79868f6a8a8ffe4630d7"><td class="memTemplItemLeft" align="right" valign="top">T *&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1util.html#a9d85c5d821ce79868f6a8a8ffe4630d7">derplib::util::ptr_delete</a> (T *&amp;ptr, const char *file, const char *func, std::size_t line, const char *var)</td></tr>
-<tr class="memdesc:a9d85c5d821ce79868f6a8a8ffe4630d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for <code>delete</code> operator in C++, logging the pointer information.  <a href="namespacederplib_1_1util.html#a9d85c5d821ce79868f6a8a8ffe4630d7">More...</a><br /></td></tr>
-<tr class="separator:a9d85c5d821ce79868f6a8a8ffe4630d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a46c1e72ff6b59da3d508e05dcca1b3"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a1a46c1e72ff6b59da3d508e05dcca1b3"><td class="memTemplItemLeft" align="right" valign="top">T *&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1util.html#a1a46c1e72ff6b59da3d508e05dcca1b3">derplib::util::ptr_array_new</a> (T *&amp;ptr, const char *file, const char *func, std::size_t line, const char *type, const char *var, std::size_t size)</td></tr>
-<tr class="memdesc:a1a46c1e72ff6b59da3d508e05dcca1b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for <code>new[]</code> operator in C++, logging the pointer information.  <a href="namespacederplib_1_1util.html#a1a46c1e72ff6b59da3d508e05dcca1b3">More...</a><br /></td></tr>
-<tr class="separator:a1a46c1e72ff6b59da3d508e05dcca1b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64fc3dac09a4fbefcbe5348a1328145f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a64fc3dac09a4fbefcbe5348a1328145f"><td class="memTemplItemLeft" align="right" valign="top">T *&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1util.html#a64fc3dac09a4fbefcbe5348a1328145f">derplib::util::ptr_array_delete</a> (T *&amp;ptr, const char *file, const char *func, std::size_t line, const char *var)</td></tr>
-<tr class="memdesc:a64fc3dac09a4fbefcbe5348a1328145f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for <code>delete[]</code> operator in C++, logging the pointer information.  <a href="namespacederplib_1_1util.html#a64fc3dac09a4fbefcbe5348a1328145f">More...</a><br /></td></tr>
-<tr class="separator:a64fc3dac09a4fbefcbe5348a1328145f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6b9b7f206e340f99ec96b328005c311"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#ae6b9b7f206e340f99ec96b328005c311">derplib::stdext::ptr_assert_null</a> (void *ptr, const char *file, const char *func, std::size_t line, const char *var)</td></tr>
+<tr class="memdesc:ae6b9b7f206e340f99ec96b328005c311"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a pointer is <code>nullptr</code> during runtime.  <a href="namespacederplib_1_1stdext.html#ae6b9b7f206e340f99ec96b328005c311">More...</a><br /></td></tr>
+<tr class="separator:ae6b9b7f206e340f99ec96b328005c311"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88274f897471c5f88fc7c653d311dce9"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
+<tr class="memitem:a88274f897471c5f88fc7c653d311dce9"><td class="memTemplItemLeft" align="right" valign="top">T *&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a88274f897471c5f88fc7c653d311dce9">derplib::stdext::ptr_new</a> (T *&amp;ptr, const char *file, const char *func, std::size_t line, const char *type, const char *var, Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a88274f897471c5f88fc7c653d311dce9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for <code>new</code> operator in C++, logging the pointer information.  <a href="namespacederplib_1_1stdext.html#a88274f897471c5f88fc7c653d311dce9">More...</a><br /></td></tr>
+<tr class="separator:a88274f897471c5f88fc7c653d311dce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ed5c8e982423c8a42647ef3988e675e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a9ed5c8e982423c8a42647ef3988e675e"><td class="memTemplItemLeft" align="right" valign="top">T *&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a9ed5c8e982423c8a42647ef3988e675e">derplib::stdext::ptr_delete</a> (T *&amp;ptr, const char *file, const char *func, std::size_t line, const char *var)</td></tr>
+<tr class="memdesc:a9ed5c8e982423c8a42647ef3988e675e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for <code>delete</code> operator in C++, logging the pointer information.  <a href="namespacederplib_1_1stdext.html#a9ed5c8e982423c8a42647ef3988e675e">More...</a><br /></td></tr>
+<tr class="separator:a9ed5c8e982423c8a42647ef3988e675e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c82aed728765d0eace7a3ecef6d7e44"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a2c82aed728765d0eace7a3ecef6d7e44"><td class="memTemplItemLeft" align="right" valign="top">T *&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#a2c82aed728765d0eace7a3ecef6d7e44">derplib::stdext::ptr_array_new</a> (T *&amp;ptr, const char *file, const char *func, std::size_t line, const char *type, const char *var, std::size_t size)</td></tr>
+<tr class="memdesc:a2c82aed728765d0eace7a3ecef6d7e44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for <code>new[]</code> operator in C++, logging the pointer information.  <a href="namespacederplib_1_1stdext.html#a2c82aed728765d0eace7a3ecef6d7e44">More...</a><br /></td></tr>
+<tr class="separator:a2c82aed728765d0eace7a3ecef6d7e44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abba25b7fd02a56af1374cf7a696d49b3"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:abba25b7fd02a56af1374cf7a696d49b3"><td class="memTemplItemLeft" align="right" valign="top">T *&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacederplib_1_1stdext.html#abba25b7fd02a56af1374cf7a696d49b3">derplib::stdext::ptr_array_delete</a> (T *&amp;ptr, const char *file, const char *func, std::size_t line, const char *var)</td></tr>
+<tr class="memdesc:abba25b7fd02a56af1374cf7a696d49b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for <code>delete[]</code> operator in C++, logging the pointer information.  <a href="namespacederplib_1_1stdext.html#abba25b7fd02a56af1374cf7a696d49b3">More...</a><br /></td></tr>
+<tr class="separator:abba25b7fd02a56af1374cf7a696d49b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_03a6cfce30b88f6a84e388fa6a89390f.html">include</a></li><li class="navelem"><a class="el" href="dir_76a38cf6f2267ce3167e47a815f72cb3.html">derplib</a></li><li class="navelem"><a class="el" href="dir_228fea0f672a85be327cba88fdc4c98d.html">util</a></li><li class="navelem"><a class="el" href="ptr_8h.html">ptr.h</a></li>
+    <li class="navelem"><a class="el" href="dir_543e8fcd488a55373f71c4b27689b744.html">stdext</a></li><li class="navelem"><a class="el" href="dir_869203b395bfc260e8e529ec4098d003.html">include</a></li><li class="navelem"><a class="el" href="dir_cc017f353fb4931ae4666db29c4124d5.html">derplib</a></li><li class="navelem"><a class="el" href="dir_90aef26f124ed3c4f9f4f7ba9aabb112.html">stdext</a></li><li class="navelem"><a class="el" href="ptr_8h.html">ptr.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

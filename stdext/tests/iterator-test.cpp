@@ -1,10 +1,10 @@
 #include <gtest/gtest.h>
 
 #include <sstream>
-#include <derplib/util/iterator.h>
+#include <derplib/stdext/iterator.h>
 
 namespace {
-namespace util = derplib::util;
+namespace stdext = derplib::stdext;
 
 TEST(IteratorTest, ForEachIndexedImmutable) {
   std::ostringstream actual_oss;
@@ -15,7 +15,7 @@ TEST(IteratorTest, ForEachIndexedImmutable) {
   std::array<int, 5> actual = given;
   ASSERT_EQ(given.size(), actual.size()) << "Should never occur!";
 
-  util::for_each_indexed(actual.begin(), actual.end(), func);
+  stdext::for_each_indexed(actual.begin(), actual.end(), func);
   EXPECT_EQ(given, actual) << "Immutable contract broken";
 
   std::ostringstream expected_oss;
@@ -32,7 +32,7 @@ TEST(IteratorTest, ForEachIndexedMutable) {
   std::array<int, 5> actual = given;
   ASSERT_EQ(given.size(), actual.size()) << "Should never occur!";
 
-  util::for_each_indexed(actual.begin(), actual.end(), func);
+  stdext::for_each_indexed(actual.begin(), actual.end(), func);
 
   for (std::size_t i = 0; i < given.size(); ++i) {
     EXPECT_EQ(given[i] + i, actual[i]) << "at index [" << i << "]";

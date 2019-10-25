@@ -8,7 +8,7 @@
 #include <stdexcept>
 
 #include <derplib/stdext/memory.h>
-#include <derplib/util/demangle.h>
+#include <derplib/stdext/demangle.h>
 
 #include "bad_alloc.h"
 #include "heap_walk_iterator.h"
@@ -158,7 +158,7 @@ T* fixed_pool_mem_alloc::allocate(Args&&... args) {
   if (ptr == nullptr) {
     std::cerr << "Cannot allocate requested " << std::to_string(type_size) << " bytes for data type "
 #if !defined(NDEBUG)
-              << derplib::util::type_name<T>()
+              << stdext::type_name<T>()
 #else
               << typeid(T).name()
 #endif  // !defined(NDEBUG)
@@ -173,7 +173,7 @@ T* fixed_pool_mem_alloc::allocate(Args&&... args) {
     type_size,
     align_size,
 #if !defined(NDEBUG)
-    derplib::util::type_name<T>()
+    stdext::type_name<T>()
 #else
     {}
 #endif  // !defined(NDEBUG)
@@ -191,7 +191,7 @@ T* fixed_pool_mem_alloc::get(void* const ptr) {
   if (it != _entries_.end()) {
     if (sizeof(T) > it->_extent) {
 #if !defined(NDEBUG)
-      throw std::logic_error("Type conversion error: Requested target type [" + derplib::util::type_name<T>()
+      throw std::logic_error("Type conversion error: Requested target type [" + stdext::type_name<T>()
                              + "] larger than allocated size (" + std::to_string(it->_extent) + ")");
 #else
       throw std::logic_error("Type conversion error: Requested target type smaller than allocated size");
@@ -203,7 +203,7 @@ T* fixed_pool_mem_alloc::get(void* const ptr) {
       DERPLIB_CPP17_CONSTEXPR(StrictCheck) {
         if (sizeof(T) < it->_extent) {
 #if !defined(NDEBUG)
-          throw std::logic_error("Type conversion error: Requested target type [" + derplib::util::type_name<T>()
+          throw std::logic_error("Type conversion error: Requested target type [" + stdext::type_name<T>()
                                  + "] smaller than allocated size (" + std::to_string(it->_extent) + ")");
 #else
           throw std::logic_error("Type conversion error: Requested target type smaller than allocated size");

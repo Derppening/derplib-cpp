@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>derplib: util/include/derplib/util/demangle.h Source File</title>
+<title>derplib: stdext/include/derplib/stdext/demangle.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -98,20 +98,20 @@ $(document).ready(function(){initNavTree('demangle_8h_source.html','');});
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;cxxabi.h&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacederplib.html">derplib</a> {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">inline</span> <span class="keyword">namespace </span>util {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">inline</span> <span class="keyword">namespace </span>stdext {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="common__macros__begin_8h.html">derplib/internal/common_macros_begin.h</a>&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;std::string <a class="code" href="namespacederplib_1_1util.html#a677710251d773964486a99f221877faa">type_name</a>(<span class="keywordtype">bool</span> legacy_naming = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;std::string <a class="code" href="namespacederplib_1_1stdext.html#abc1df8ce96eb4c0fbfe1db75be2b7d62">type_name</a>(<span class="keywordtype">bool</span> legacy_naming = <span class="keyword">false</span>);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="namespacederplib_1_1util.html#a11313618e9f6b53ce8c85a9c0ee87084">   41</a></span>&#160;std::string <a class="code" href="namespacederplib_1_1util.html#a677710251d773964486a99f221877faa">type_name</a>(DERPLIB_MAYBE_UNUSED <span class="keyword">const</span> T&amp; var, <span class="keywordtype">bool</span> legacy_naming = <span class="keyword">false</span>) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="namespacederplib_1_1stdext.html#a35528a90f7220890dd157bdf03950331">   41</a></span>&#160;std::string <a class="code" href="namespacederplib_1_1stdext.html#abc1df8ce96eb4c0fbfe1db75be2b7d62">type_name</a>(DERPLIB_MAYBE_UNUSED <span class="keyword">const</span> T&amp; var, <span class="keywordtype">bool</span> legacy_naming = <span class="keyword">false</span>) {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">return</span> type_name&lt;T&gt;(legacy_naming);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="namespacederplib_1_1util.html#a677710251d773964486a99f221877faa">   46</a></span>&#160;std::string <a class="code" href="namespacederplib_1_1util.html#a677710251d773964486a99f221877faa">type_name</a>(<span class="keywordtype">bool</span> legacy_naming) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="namespacederplib_1_1stdext.html#abc1df8ce96eb4c0fbfe1db75be2b7d62">   46</a></span>&#160;std::string <a class="code" href="namespacederplib_1_1stdext.html#abc1df8ce96eb4c0fbfe1db75be2b7d62">type_name</a>(<span class="keywordtype">bool</span> legacy_naming) {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">int</span> status;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  std::string tname;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">char</span>* <span class="keyword">const</span> demangled_name = abi::__cxa_demangle(<span class="keyword">typeid</span>(T).name(), <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, &amp;status);</div>
@@ -134,18 +134,18 @@ $(document).ready(function(){initNavTree('demangle_8h_source.html','');});
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="common__macros__end_8h.html">derplib/internal/common_macros_end.h</a>&gt;</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}  <span class="comment">// namespace util</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}  <span class="comment">// namespace stdext</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}  <span class="comment">// namespace derplib</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="anamespacederplib_1_1util_html_a677710251d773964486a99f221877faa"><div class="ttname"><a href="namespacederplib_1_1util.html#a677710251d773964486a99f221877faa">derplib::util::type_name</a></div><div class="ttdeci">std::string type_name(bool legacy_naming=false)</div><div class="ttdef"><b>Definition:</b> demangle.h:46</div></div>
+<div class="ttc" id="anamespacederplib_1_1stdext_html_abc1df8ce96eb4c0fbfe1db75be2b7d62"><div class="ttname"><a href="namespacederplib_1_1stdext.html#abc1df8ce96eb4c0fbfe1db75be2b7d62">derplib::stdext::type_name</a></div><div class="ttdeci">std::string type_name(bool legacy_naming=false)</div><div class="ttdef"><b>Definition:</b> demangle.h:46</div></div>
 <div class="ttc" id="anamespacederplib_html"><div class="ttname"><a href="namespacederplib.html">derplib</a></div><div class="ttdef"><b>Definition:</b> log.h:14</div></div>
 <div class="ttc" id="acommon__macros__end_8h_html"><div class="ttname"><a href="common__macros__end_8h.html">common_macros_end.h</a></div></div>
 <div class="ttc" id="acommon__macros__begin_8h_html"><div class="ttname"><a href="common__macros__begin_8h.html">common_macros_begin.h</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_03a6cfce30b88f6a84e388fa6a89390f.html">include</a></li><li class="navelem"><a class="el" href="dir_76a38cf6f2267ce3167e47a815f72cb3.html">derplib</a></li><li class="navelem"><a class="el" href="dir_228fea0f672a85be327cba88fdc4c98d.html">util</a></li><li class="navelem"><a class="el" href="demangle_8h.html">demangle.h</a></li>
+    <li class="navelem"><a class="el" href="dir_543e8fcd488a55373f71c4b27689b744.html">stdext</a></li><li class="navelem"><a class="el" href="dir_869203b395bfc260e8e529ec4098d003.html">include</a></li><li class="navelem"><a class="el" href="dir_cc017f353fb4931ae4666db29c4124d5.html">derplib</a></li><li class="navelem"><a class="el" href="dir_90aef26f124ed3c4f9f4f7ba9aabb112.html">stdext</a></li><li class="navelem"><a class="el" href="demangle_8h.html">demangle.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

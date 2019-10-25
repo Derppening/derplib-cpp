@@ -6,4 +6,4 @@ set(LIBRARY_SOURCES)
 derplib_add_library(internal
         HEADERS ${LIBRARY_HEADERS}
         SOURCES ${LIBRARY_SOURCES}
-        LINK_DEPS derplib::stdext derplib::util)
+        LINK_DEPS derplib::stdext)

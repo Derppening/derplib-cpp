@@ -106,8 +106,8 @@ $(document).ready(function(){initNavTree('memory_8h_source.html','');});
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="namespacederplib_1_1stdext.html#aa6d38d043225c1388f335dae2c00d168">   32</a></span>&#160;std::unique_ptr&lt;T&gt; <a class="code" href="namespacederplib_1_1stdext.html#a12a3c0a78cd88e3b55a6cededf89998d">make_unique</a>(std::size_t <a class="code" href="namespacederplib_1_1util.html#a7f84bac5a259407e885fa5c29e357dba">size</a>) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordflow">return</span> std::unique_ptr&lt;T&gt;(<span class="keyword">new</span> <span class="keyword">typename</span> std::remove_extent&lt;T&gt;::type[<a class="code" href="namespacederplib_1_1util.html#a7f84bac5a259407e885fa5c29e357dba">size</a>]());</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="namespacederplib_1_1stdext.html#aa6d38d043225c1388f335dae2c00d168">   32</a></span>&#160;std::unique_ptr&lt;T&gt; <a class="code" href="namespacederplib_1_1stdext.html#a12a3c0a78cd88e3b55a6cededf89998d">make_unique</a>(std::size_t <a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordflow">return</span> std::unique_ptr&lt;T&gt;(<span class="keyword">new</span> <span class="keyword">typename</span> std::remove_extent&lt;T&gt;::type[<a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>]());</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Args&gt;</div>
@@ -119,8 +119,8 @@ $(document).ready(function(){initNavTree('memory_8h_source.html','');});
 </div><!-- doc-content -->
 <div class="ttc" id="aversion_8h_html"><div class="ttname"><a href="version_8h.html">version.h</a></div></div>
 <div class="ttc" id="anamespacederplib_1_1stdext_html_a12a3c0a78cd88e3b55a6cededf89998d"><div class="ttname"><a href="namespacederplib_1_1stdext.html#a12a3c0a78cd88e3b55a6cededf89998d">derplib::stdext::make_unique</a></div><div class="ttdeci">std::unique_ptr&lt; T &gt; make_unique(Args &amp;&amp;... args)</div><div class="ttdoc">Drop-in backport for std::make_unique.</div><div class="ttdef"><b>Definition:</b> memory.h:20</div></div>
+<div class="ttc" id="anamespacederplib_1_1stdext_html_a5a299345b0ba0ade72b8ff6b345dfb8c"><div class="ttname"><a href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">derplib::stdext::size</a></div><div class="ttdeci">constexpr std::size_t size(DERPLIB_MAYBE_UNUSED T(&amp;arr)[N])</div><div class="ttdef"><b>Definition:</b> array.h:46</div></div>
 <div class="ttc" id="anamespacederplib_html"><div class="ttname"><a href="namespacederplib.html">derplib</a></div><div class="ttdef"><b>Definition:</b> log.h:14</div></div>
-<div class="ttc" id="anamespacederplib_1_1util_html_a7f84bac5a259407e885fa5c29e357dba"><div class="ttname"><a href="namespacederplib_1_1util.html#a7f84bac5a259407e885fa5c29e357dba">derplib::util::size</a></div><div class="ttdeci">constexpr std::size_t size(DERPLIB_MAYBE_UNUSED T(&amp;arr)[N])</div><div class="ttdef"><b>Definition:</b> array.h:36</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

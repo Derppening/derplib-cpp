@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>derplib: util/include/derplib/util/ranges.h Source File</title>
+<title>derplib: stdext/include/derplib/stdext/ranges.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,27 +102,27 @@ $(document).ready(function(){initNavTree('ranges_8h_source.html','');});
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="type__traits_8h.html">derplib/stdext/type_traits.h</a>&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="type__traits_8h.html">type_traits.h</a>&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacederplib.html">derplib</a> {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">inline</span> <span class="keyword">namespace </span>util {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">inline</span> <span class="keyword">namespace </span>stdext {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="common__macros__begin_8h.html">derplib/internal/common_macros_begin.h</a>&gt;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;template&lt;typename T, typename = std::enable_if&lt;std::is_integral&lt;T&gt;::value&gt;&gt;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;std::vector&lt;T&gt; <a class="code" href="namespacederplib_1_1util.html#a7722e1b2828cd8da655d2b4ae8bae197">int_range</a>(<span class="keyword">const</span> T&amp; start, <span class="keyword">const</span> T&amp; <a class="code" href="namespacederplib_1_1util.html#adcf8ed65bdd16ad4d9b1a7b1a3bd3b76">end</a>, <span class="keyword">const</span> T&amp; step);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;std::vector&lt;T&gt; <a class="code" href="namespacederplib_1_1stdext.html#a95556d6e00e09a39084cb4c4975f253d">int_range</a>(<span class="keyword">const</span> T&amp; start, <span class="keyword">const</span> T&amp; end, <span class="keyword">const</span> T&amp; step);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;template&lt;typename T, std::size_t N, typename = std::enable_if&lt;std::is_integral&lt;T&gt;::value&gt;&gt;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;std::array&lt;T, N&gt; <a class="code" href="namespacederplib_1_1util.html#a2c2e62a51ca801ba151a297aca798fc5">generate_sequence</a>(<span class="keyword">const</span> T&amp; value);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;std::array&lt;T, N&gt; <a class="code" href="namespacederplib_1_1stdext.html#aa24f5b222fa373430453f55ee2736c47">generate_sequence</a>(<span class="keyword">const</span> T&amp; value);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;template&lt;typename T, typename = std::enable_if&lt;std::is_integral&lt;T&gt;::value&gt;&gt;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;std::vector&lt;T&gt; <a class="code" href="namespacederplib_1_1util.html#a2c2e62a51ca801ba151a297aca798fc5">generate_sequence</a>(std::size_t <a class="code" href="namespacederplib_1_1util.html#a7f84bac5a259407e885fa5c29e357dba">size</a>, <span class="keyword">const</span> T&amp; value);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;std::vector&lt;T&gt; <a class="code" href="namespacederplib_1_1stdext.html#aa24f5b222fa373430453f55ee2736c47">generate_sequence</a>(std::size_t <a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>, <span class="keyword">const</span> T&amp; value);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>&gt;</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="namespacederplib_1_1util.html#a7722e1b2828cd8da655d2b4ae8bae197">   49</a></span>&#160;std::vector&lt;T&gt; <a class="code" href="namespacederplib_1_1util.html#a7722e1b2828cd8da655d2b4ae8bae197">int_range</a>(<span class="keyword">const</span> T&amp; start, <span class="keyword">const</span> T&amp; <a class="code" href="namespacederplib_1_1util.html#adcf8ed65bdd16ad4d9b1a7b1a3bd3b76">end</a>, <span class="keyword">const</span> T&amp; step) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  assert(<a class="code" href="namespacederplib_1_1util.html#adcf8ed65bdd16ad4d9b1a7b1a3bd3b76">end</a> - start &gt;= 0 &amp;&amp; step &gt;= 0 || <a class="code" href="namespacederplib_1_1util.html#adcf8ed65bdd16ad4d9b1a7b1a3bd3b76">end</a> - start &lt; 0 &amp;&amp; step &lt; 0);</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="namespacederplib_1_1stdext.html#a95556d6e00e09a39084cb4c4975f253d">   49</a></span>&#160;std::vector&lt;T&gt; <a class="code" href="namespacederplib_1_1stdext.html#a95556d6e00e09a39084cb4c4975f253d">int_range</a>(<span class="keyword">const</span> T&amp; start, <span class="keyword">const</span> T&amp; end, <span class="keyword">const</span> T&amp; step) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  assert(end - start &gt;= 0 &amp;&amp; step &gt;= 0 || end - start &lt; 0 &amp;&amp; step &lt; 0);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  std::vector&lt;T&gt; v(<span class="keyword">static_cast&lt;</span>typename std::vector&lt;T&gt;::size_type<span class="keyword">&gt;</span>(std::ceil((<a class="code" href="namespacederplib_1_1util.html#adcf8ed65bdd16ad4d9b1a7b1a3bd3b76">end</a> - start) / <span class="keywordtype">float</span>(step))));</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  std::vector&lt;T&gt; v(<span class="keyword">static_cast&lt;</span>typename std::vector&lt;T&gt;::size_type<span class="keyword">&gt;</span>(std::ceil((end - start) / <span class="keywordtype">float</span>(step))));</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  std::generate(v.begin(), v.end(), [=, &amp;start]() {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    T n = start;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    start += step;</div>
@@ -132,37 +132,36 @@ $(document).ready(function(){initNavTree('ranges_8h_source.html','');});
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N, <span class="keyword">typename</span>&gt;</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="namespacederplib_1_1util.html#a2c2e62a51ca801ba151a297aca798fc5">   62</a></span>&#160;std::array&lt;T, N&gt; <a class="code" href="namespacederplib_1_1util.html#a2c2e62a51ca801ba151a297aca798fc5">generate_sequence</a>(<span class="keyword">const</span> T&amp; value) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="namespacederplib_1_1stdext.html#aa24f5b222fa373430453f55ee2736c47">   62</a></span>&#160;std::array&lt;T, N&gt; <a class="code" href="namespacederplib_1_1stdext.html#aa24f5b222fa373430453f55ee2736c47">generate_sequence</a>(<span class="keyword">const</span> T&amp; value) {</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  std::array&lt;T, N&gt; array = {};</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  std::iota(array.begin(), array.end(), value);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">return</span> array;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>&gt;</div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="namespacederplib_1_1util.html#a168ee03794c256de146d2286d96d4d3a">   69</a></span>&#160;std::vector&lt;T&gt; <a class="code" href="namespacederplib_1_1util.html#a2c2e62a51ca801ba151a297aca798fc5">generate_sequence</a>(<span class="keyword">const</span> std::size_t <a class="code" href="namespacederplib_1_1util.html#a7f84bac5a259407e885fa5c29e357dba">size</a>, <span class="keyword">const</span> T&amp; value) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  std::vector&lt;T&gt; v(<a class="code" href="namespacederplib_1_1util.html#a7f84bac5a259407e885fa5c29e357dba">size</a>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="namespacederplib_1_1stdext.html#a9a0eaf18666131749322b86d408f27df">   69</a></span>&#160;std::vector&lt;T&gt; <a class="code" href="namespacederplib_1_1stdext.html#aa24f5b222fa373430453f55ee2736c47">generate_sequence</a>(<span class="keyword">const</span> std::size_t <a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>, <span class="keyword">const</span> T&amp; value) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  std::vector&lt;T&gt; v(<a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  std::iota(v.begin(), v.end(), value);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">return</span> v;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="common__macros__end_8h.html">derplib/internal/common_macros_end.h</a>&gt;</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}  <span class="comment">// namespace util</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}  <span class="comment">// namespace stdext</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}  <span class="comment">// namespace derplib</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="anamespacederplib_1_1util_html_adcf8ed65bdd16ad4d9b1a7b1a3bd3b76"><div class="ttname"><a href="namespacederplib_1_1util.html#adcf8ed65bdd16ad4d9b1a7b1a3bd3b76">derplib::util::end</a></div><div class="ttdeci">C::iterator end(C &amp;c)</div><div class="ttdef"><b>Definition:</b> iterator.h:61</div></div>
-<div class="ttc" id="anamespacederplib_1_1util_html_a2c2e62a51ca801ba151a297aca798fc5"><div class="ttname"><a href="namespacederplib_1_1util.html#a2c2e62a51ca801ba151a297aca798fc5">derplib::util::generate_sequence</a></div><div class="ttdeci">std::array&lt; T, N &gt; generate_sequence(const T &amp;value)</div><div class="ttdoc">Generates a sequence with sequentially increasing values starting with value.</div><div class="ttdef"><b>Definition:</b> ranges.h:62</div></div>
-<div class="ttc" id="anamespacederplib_1_1util_html_a7722e1b2828cd8da655d2b4ae8bae197"><div class="ttname"><a href="namespacederplib_1_1util.html#a7722e1b2828cd8da655d2b4ae8bae197">derplib::util::int_range</a></div><div class="ttdeci">std::vector&lt; T &gt; int_range(const T &amp;start, const T &amp;end, const T &amp;step)</div><div class="ttdoc">Generates a int range for [start,end).</div><div class="ttdef"><b>Definition:</b> ranges.h:49</div></div>
+<div class="ttc" id="anamespacederplib_1_1stdext_html_a95556d6e00e09a39084cb4c4975f253d"><div class="ttname"><a href="namespacederplib_1_1stdext.html#a95556d6e00e09a39084cb4c4975f253d">derplib::stdext::int_range</a></div><div class="ttdeci">std::vector&lt; T &gt; int_range(const T &amp;start, const T &amp;end, const T &amp;step)</div><div class="ttdoc">Generates a int range for [start,end).</div><div class="ttdef"><b>Definition:</b> ranges.h:49</div></div>
+<div class="ttc" id="anamespacederplib_1_1stdext_html_a5a299345b0ba0ade72b8ff6b345dfb8c"><div class="ttname"><a href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">derplib::stdext::size</a></div><div class="ttdeci">constexpr std::size_t size(DERPLIB_MAYBE_UNUSED T(&amp;arr)[N])</div><div class="ttdef"><b>Definition:</b> array.h:46</div></div>
 <div class="ttc" id="atype__traits_8h_html"><div class="ttname"><a href="type__traits_8h.html">type_traits.h</a></div></div>
 <div class="ttc" id="anamespacederplib_html"><div class="ttname"><a href="namespacederplib.html">derplib</a></div><div class="ttdef"><b>Definition:</b> log.h:14</div></div>
-<div class="ttc" id="anamespacederplib_1_1util_html_a7f84bac5a259407e885fa5c29e357dba"><div class="ttname"><a href="namespacederplib_1_1util.html#a7f84bac5a259407e885fa5c29e357dba">derplib::util::size</a></div><div class="ttdeci">constexpr std::size_t size(DERPLIB_MAYBE_UNUSED T(&amp;arr)[N])</div><div class="ttdef"><b>Definition:</b> array.h:36</div></div>
 <div class="ttc" id="acommon__macros__end_8h_html"><div class="ttname"><a href="common__macros__end_8h.html">common_macros_end.h</a></div></div>
 <div class="ttc" id="acommon__macros__begin_8h_html"><div class="ttname"><a href="common__macros__begin_8h.html">common_macros_begin.h</a></div></div>
+<div class="ttc" id="anamespacederplib_1_1stdext_html_aa24f5b222fa373430453f55ee2736c47"><div class="ttname"><a href="namespacederplib_1_1stdext.html#aa24f5b222fa373430453f55ee2736c47">derplib::stdext::generate_sequence</a></div><div class="ttdeci">std::array&lt; T, N &gt; generate_sequence(const T &amp;value)</div><div class="ttdoc">Generates a sequence with sequentially increasing values starting with value.</div><div class="ttdef"><b>Definition:</b> ranges.h:62</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_23ec12649285f9fabf3a6b7380226c28.html">util</a></li><li class="navelem"><a class="el" href="dir_03a6cfce30b88f6a84e388fa6a89390f.html">include</a></li><li class="navelem"><a class="el" href="dir_76a38cf6f2267ce3167e47a815f72cb3.html">derplib</a></li><li class="navelem"><a class="el" href="dir_228fea0f672a85be327cba88fdc4c98d.html">util</a></li><li class="navelem"><a class="el" href="ranges_8h.html">ranges.h</a></li>
+    <li class="navelem"><a class="el" href="dir_543e8fcd488a55373f71c4b27689b744.html">stdext</a></li><li class="navelem"><a class="el" href="dir_869203b395bfc260e8e529ec4098d003.html">include</a></li><li class="navelem"><a class="el" href="dir_cc017f353fb4931ae4666db29c4124d5.html">derplib</a></li><li class="navelem"><a class="el" href="dir_90aef26f124ed3c4f9f4f7ba9aabb112.html">stdext</a></li><li class="navelem"><a class="el" href="ranges_8h.html">ranges.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

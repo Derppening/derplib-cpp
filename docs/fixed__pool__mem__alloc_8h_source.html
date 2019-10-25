@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('fixed__pool__mem__alloc_8h_source.html
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="memory_8h.html">derplib/stdext/memory.h</a>&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="demangle_8h.html">derplib/util/demangle.h</a>&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="demangle_8h.html">derplib/stdext/demangle.h</a>&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="bad__alloc_8h.html">bad_alloc.h</a>&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="heap__walk__iterator_8h.html">heap_walk_iterator.h</a>&quot;</span></div>
@@ -114,7 +114,7 @@ $(document).ready(function(){initNavTree('fixed__pool__mem__alloc_8h_source.html
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">struct </span>_entry_set_comparator;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classderplib_1_1experimental_1_1fixed__pool__mem__alloc.html#aedb4d1ad3e115674010e93ad54bae665">fixed_pool_mem_alloc</a>(std::size_t <a class="code" href="namespacederplib_1_1util.html#a7f84bac5a259407e885fa5c29e357dba">size</a>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classderplib_1_1experimental_1_1fixed__pool__mem__alloc.html#aedb4d1ad3e115674010e93ad54bae665">fixed_pool_mem_alloc</a>(std::size_t <a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="classderplib_1_1experimental_1_1fixed__pool__mem__alloc.html#a8bab0f2e4c6053b6405c2790460f4c58">~fixed_pool_mem_alloc</a>();</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
@@ -153,7 +153,7 @@ $(document).ready(function(){initNavTree('fixed__pool__mem__alloc_8h_source.html
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordtype">bool</span> operator()(<span class="keyword">const</span> _entry&amp; lhs, <span class="keyword">const</span> _entry&amp; rhs)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> lhs._ptr &lt; rhs._ptr; }</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  };</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* _find_first_fit(std::size_t <a class="code" href="namespacederplib_1_1util.html#a7f84bac5a259407e885fa5c29e357dba">size</a>, std::size_t alignment);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* _find_first_fit(std::size_t <a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>, std::size_t alignment);</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="keyword">const</span> std::size_t _size;</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  std::unique_ptr&lt;unsigned char[]&gt; _heap_pool_;</div>
@@ -171,7 +171,7 @@ $(document).ready(function(){initNavTree('fixed__pool__mem__alloc_8h_source.html
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keywordflow">if</span> (ptr == <span class="keyword">nullptr</span>) {</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    std::cerr &lt;&lt; <span class="stringliteral">&quot;Cannot allocate requested &quot;</span> &lt;&lt; std::to_string(type_size) &lt;&lt; <span class="stringliteral">&quot; bytes for data type &quot;</span></div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">#if !defined(NDEBUG)</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;              &lt;&lt; derplib::util::type_name&lt;T&gt;()</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;              &lt;&lt; stdext::type_name&lt;T&gt;()</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;              &lt;&lt; <span class="keyword">typeid</span>(T).name()</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">#endif  // !defined(NDEBUG)</span></div>
@@ -186,7 +186,7 @@ $(document).ready(function(){initNavTree('fixed__pool__mem__alloc_8h_source.html
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    type_size,</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    align_size,</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor">#if !defined(NDEBUG)</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    derplib::util::type_name&lt;T&gt;()</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    stdext::type_name&lt;T&gt;()</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    {}</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor">#endif  // !defined(NDEBUG)</span></div>
@@ -204,7 +204,7 @@ $(document).ready(function(){initNavTree('fixed__pool__mem__alloc_8h_source.html
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="keywordflow">if</span> (it != _entries_.end()) {</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>(T) &gt; it-&gt;_extent) {</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor">#if !defined(NDEBUG)</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;      <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Type conversion error: Requested target type [&quot;</span> + derplib::util::type_name&lt;T&gt;()</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;      <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Type conversion error: Requested target type [&quot;</span> + stdext::type_name&lt;T&gt;()</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                             + <span class="stringliteral">&quot;] larger than allocated size (&quot;</span> + std::to_string(it-&gt;_extent) + <span class="stringliteral">&quot;)&quot;</span>);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;      <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Type conversion error: Requested target type smaller than allocated size&quot;</span>);</div>
@@ -216,7 +216,7 @@ $(document).ready(function(){initNavTree('fixed__pool__mem__alloc_8h_source.html
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;      DERPLIB_CPP17_CONSTEXPR(StrictCheck) {</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>(T) &lt; it-&gt;_extent) {</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor">#if !defined(NDEBUG)</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;          <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Type conversion error: Requested target type [&quot;</span> + derplib::util::type_name&lt;T&gt;()</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;          <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Type conversion error: Requested target type [&quot;</span> + stdext::type_name&lt;T&gt;()</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                                 + <span class="stringliteral">&quot;] smaller than allocated size (&quot;</span> + std::to_string(it-&gt;_extent) + <span class="stringliteral">&quot;)&quot;</span>);</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;          <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Type conversion error: Requested target type smaller than allocated size&quot;</span>);</div>
@@ -256,13 +256,13 @@ $(document).ready(function(){initNavTree('fixed__pool__mem__alloc_8h_source.html
 <div class="ttc" id="aclassderplib_1_1experimental_1_1fixed__pool__mem__alloc_html"><div class="ttname"><a href="classderplib_1_1experimental_1_1fixed__pool__mem__alloc.html">derplib::experimental::fixed_pool_mem_alloc</a></div><div class="ttdoc">A fixed-size pool heap memory allocator.</div><div class="ttdef"><b>Definition:</b> fixed_pool_mem_alloc.h:22</div></div>
 <div class="ttc" id="aclassderplib_1_1experimental_1_1fixed__pool__mem__alloc_html_a8bab0f2e4c6053b6405c2790460f4c58"><div class="ttname"><a href="classderplib_1_1experimental_1_1fixed__pool__mem__alloc.html#a8bab0f2e4c6053b6405c2790460f4c58">derplib::experimental::fixed_pool_mem_alloc::~fixed_pool_mem_alloc</a></div><div class="ttdeci">~fixed_pool_mem_alloc()</div><div class="ttdef"><b>Definition:</b> fixed_pool_mem_alloc.cpp:13</div></div>
 <div class="ttc" id="aclassderplib_1_1experimental_1_1bad__alloc_html"><div class="ttname"><a href="classderplib_1_1experimental_1_1bad__alloc.html">derplib::experimental::bad_alloc</a></div><div class="ttdoc">Thrown when an allocation cannot be made with the current heap.</div><div class="ttdef"><b>Definition:</b> bad_alloc.h:14</div></div>
+<div class="ttc" id="anamespacederplib_1_1stdext_html_a5a299345b0ba0ade72b8ff6b345dfb8c"><div class="ttname"><a href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">derplib::stdext::size</a></div><div class="ttdeci">constexpr std::size_t size(DERPLIB_MAYBE_UNUSED T(&amp;arr)[N])</div><div class="ttdef"><b>Definition:</b> array.h:46</div></div>
 <div class="ttc" id="abad__alloc_8h_html"><div class="ttname"><a href="bad__alloc_8h.html">bad_alloc.h</a></div></div>
 <div class="ttc" id="aclassderplib_1_1experimental_1_1heap__walk__iterator_html"><div class="ttname"><a href="classderplib_1_1experimental_1_1heap__walk__iterator.html">derplib::experimental::heap_walk_iterator</a></div><div class="ttdoc">Iterator which can be used to walk through the object heap. Satisfies LegacyForwardIterator requireme...</div><div class="ttdef"><b>Definition:</b> heap_walk_iterator.h:15</div></div>
 <div class="ttc" id="aclassderplib_1_1experimental_1_1fixed__pool__mem__alloc_html_aedb4d1ad3e115674010e93ad54bae665"><div class="ttname"><a href="classderplib_1_1experimental_1_1fixed__pool__mem__alloc.html#aedb4d1ad3e115674010e93ad54bae665">derplib::experimental::fixed_pool_mem_alloc::fixed_pool_mem_alloc</a></div><div class="ttdeci">fixed_pool_mem_alloc(std::size_t size)</div><div class="ttdoc">Constructs an allocator.</div><div class="ttdef"><b>Definition:</b> fixed_pool_mem_alloc.cpp:9</div></div>
 <div class="ttc" id="aclassderplib_1_1experimental_1_1fixed__pool__mem__alloc_html_a6535364e1b1a69bd1d7fd21a89ed27b2"><div class="ttname"><a href="classderplib_1_1experimental_1_1fixed__pool__mem__alloc.html#a6535364e1b1a69bd1d7fd21a89ed27b2">derplib::experimental::fixed_pool_mem_alloc::deallocate</a></div><div class="ttdeci">void deallocate(T *&amp;ptr)</div><div class="ttdoc">Deallocates the space occupied by the pointer.</div><div class="ttdef"><b>Definition:</b> fixed_pool_mem_alloc.h:226</div></div>
 <div class="ttc" id="ademangle_8h_html"><div class="ttname"><a href="demangle_8h.html">demangle.h</a></div></div>
 <div class="ttc" id="anamespacederplib_html"><div class="ttname"><a href="namespacederplib.html">derplib</a></div><div class="ttdef"><b>Definition:</b> log.h:14</div></div>
-<div class="ttc" id="anamespacederplib_1_1util_html_a7f84bac5a259407e885fa5c29e357dba"><div class="ttname"><a href="namespacederplib_1_1util.html#a7f84bac5a259407e885fa5c29e357dba">derplib::util::size</a></div><div class="ttdeci">constexpr std::size_t size(DERPLIB_MAYBE_UNUSED T(&amp;arr)[N])</div><div class="ttdef"><b>Definition:</b> array.h:36</div></div>
 <div class="ttc" id="aheap__walk__iterator_8h_html"><div class="ttname"><a href="heap__walk__iterator_8h.html">heap_walk_iterator.h</a></div></div>
 <div class="ttc" id="acommon__macros__end_8h_html"><div class="ttname"><a href="common__macros__end_8h.html">common_macros_end.h</a></div></div>
 <div class="ttc" id="aclassderplib_1_1experimental_1_1fixed__pool__mem__alloc_html_a19f65641c6def90c8a462d0a59e9ba78"><div class="ttname"><a href="classderplib_1_1experimental_1_1fixed__pool__mem__alloc.html#a19f65641c6def90c8a462d0a59e9ba78">derplib::experimental::fixed_pool_mem_alloc::heap_dump</a></div><div class="ttdeci">void heap_dump(std::ostream &amp;os=std::cout) noexcept</div><div class="ttdoc">Dumps the memory allocation information to a stream.</div><div class="ttdef"><b>Definition:</b> fixed_pool_mem_alloc.cpp:17</div></div>

@@ -6,7 +6,7 @@
 #include <cxxabi.h>
 
 namespace derplib {
-inline namespace util {
+inline namespace stdext {
 
 #include <derplib/internal/common_macros_begin.h>
 
@@ -66,5 +66,5 @@ std::string type_name(bool legacy_naming) {
 
 #include <derplib/internal/common_macros_end.h>
 
-}  // namespace util
+}  // namespace stdext
 }  // namespace derplib

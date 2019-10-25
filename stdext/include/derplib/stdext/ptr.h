@@ -2,19 +2,19 @@
 
 #include <iostream>
 
-#define DERPLIB_PTR_ASSERT_NULL(ptr) derplib::util::ptr_assert_null((ptr), __FILE__, __func__, __LINE__, #ptr)
+#define DERPLIB_PTR_ASSERT_NULL(ptr) derplib::stdext::ptr_assert_null((ptr), __FILE__, __func__, __LINE__, #ptr)
 
-#define DERPLIB_PTR_NEW(type, ptr) derplib::util::ptr_new<type>((ptr), __FILE__, __func__, __LINE__, #type, #ptr)
+#define DERPLIB_PTR_NEW(type, ptr) derplib::stdext::ptr_new<type>((ptr), __FILE__, __func__, __LINE__, #type, #ptr)
 #define DERPLIB_PTR_NEW_ARGS(type, ptr, ...) \
-  derplib::util::ptr_new<type>((ptr), __FILE__, __func__, __LINE__, #type, #ptr, __VA_ARGS__)
-#define DERPLIB_PTR_DELETE(ptr) derplib::util::ptr_delete((ptr), __FILE__, __func__, __LINE__, #ptr)
+  derplib::stdext::ptr_new<type>((ptr), __FILE__, __func__, __LINE__, #type, #ptr, __VA_ARGS__)
+#define DERPLIB_PTR_DELETE(ptr) derplib::stdext::ptr_delete((ptr), __FILE__, __func__, __LINE__, #ptr)
 
 #define DERPLIB_PTR_ARRAY_NEW(type, ptr, num_of_elements) \
-  derplib::util::ptr_array_new<type>((ptr), __FILE__, __func__, __LINE__, #type, #ptr, num_of_elements)
-#define DERPLIB_PTR_ARRAY_DELETE(ptr) derplib::util::ptr_array_delete((ptr), __FILE__, __func__, __LINE__, #ptr)
+  derplib::stdext::ptr_array_new<type>((ptr), __FILE__, __func__, __LINE__, #type, #ptr, num_of_elements)
+#define DERPLIB_PTR_ARRAY_DELETE(ptr) derplib::stdext::ptr_array_delete((ptr), __FILE__, __func__, __LINE__, #ptr)
 
 namespace derplib {
-inline namespace util {
+inline namespace stdext {
 
 /**
  * \brief Type definition for pointers.
@@ -170,5 +170,5 @@ T*& ptr_array_delete(T*& ptr, const char* file, const char* func, std::size_t li
   return ptr;
 }
 
-}  // namespace util
+}  // namespace stdext
 }  // namespace derplib

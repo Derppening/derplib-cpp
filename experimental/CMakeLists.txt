@@ -18,7 +18,7 @@ set(TEST_SOURCES
 derplib_add_library(experimental
         HEADERS ${LIBRARY_HEADERS}
         SOURCES ${LIBRARY_SOURCES}
-        LINK_DEPS derplib::internal derplib::stdext derplib::util)
+        LINK_DEPS derplib::internal derplib::stdext)
 
 derplib_add_test(experimental
         SOURCES ${TEST_SOURCES})

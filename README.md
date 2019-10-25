@@ -30,7 +30,6 @@ This will add the following targets to your project:
 - `derplib::experimental`: Experimental features that are currently under development
 - `derplib::stdext`: Functions and classes which extend the functionality of the C++ standard library
     - `derplib::newlib` is now merged into this library
-- `derplib::util`: Utility functions which do not belong in any of the other libraries
 
 Link these libraries to your project using `target_link_libraries(<your_project> <libraries_to_link>)`
 
