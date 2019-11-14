@@ -46,11 +46,16 @@ if (${DERPLIB_RUN_TESTS})
 endif (${DERPLIB_RUN_TESTS})
 
 # Add targets here.
-add_subdirectory(base)
-add_subdirectory(container)
-add_subdirectory(experimental)
-add_subdirectory(internal)
-add_subdirectory(stdext)
+set(SUBDIR_TARGETS
+        base
+        container
+        experimental
+        internal
+        stdext)
+
+foreach(TARGET ${SUBDIR_TARGETS})
+    add_subdirectory(${TARGET})
+endforeach()
 
 # Doxygen Target
 if (${DERPLIB_BUILD_DOCS})

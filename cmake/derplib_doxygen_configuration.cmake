@@ -31,6 +31,10 @@ if (${DOXYGEN_FOUND})
     set(DOXYGEN_EXCLUDE_SYMBOLS
             derplib::internal)
 
+    # Display the include path relative to the library
+    set(DOXYGEN_STRIP_FROM_INC_PATH ${SUBDIR_TARGETS})
+    list(TRANSFORM DOXYGEN_STRIP_FROM_INC_PATH REPLACE "(.+)" "${PROJECT_SOURCE_DIR}/\\0/include")
+
     doxygen_add_docs(derplib_doxygen ${PROJECT_SOURCE_DIR})
 else (${DOXYGEN_FOUND})
     message(WARNING "Cannot find Doxygen: Documentation will not be generated")
