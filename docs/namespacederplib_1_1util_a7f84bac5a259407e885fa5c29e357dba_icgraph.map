@@ -1,5 +1,0 @@
-<map id="derplib::util::size" name="derplib::util::size">
-<area shape="rect" id="node1" title=" " alt="" coords="216,46,347,73"/>
-<area shape="rect" id="node2" href="$namespacederplib_1_1util.html#a168ee03794c256de146d2286d96d4d3a" title="Generates a sequence with sequentially increasing values starting with value." alt="" coords="5,5,168,47"/>
-<area shape="rect" id="node3" href="$namespacederplib_1_1util.html#a1a46c1e72ff6b59da3d508e05dcca1b3" title="Wrapper for new[] operator in C++, logging the pointer information." alt="" coords="25,71,148,112"/>
-</map>

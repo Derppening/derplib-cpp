@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['active_0',['active',['../classderplib_1_1base_1_1timer_3_01Func_01_4.html#ae0a50296e9a5b06c09fa3c9417e85cfb',1,'derplib::base::timer&lt; Func &gt;']]],
-  ['algorithm_2eh_1',['algorithm.h',['../algorithm_8h.html',1,'']]],
-  ['alias_2',['alias',['../structderplib_1_1experimental_1_1basic__cli_1_1entry.html#aeace2942fa0c9616d7f866bb35e766e2',1,'derplib::experimental::basic_cli::entry']]],
-  ['allocate_3',['allocate',['../classderplib_1_1experimental_1_1fixed__pool__mem__alloc.html#a71d73d251de4508e56213888ee21d311',1,'derplib::experimental::fixed_pool_mem_alloc']]],
-  ['array_2eh_4',['array.h',['../array_8h.html',1,'']]]
+  ['_5fheap_5fentry_5fiterator_0',['_heap_entry_iterator',['../classderplib_1_1experimental_1_1__heap__entry__iterator.html',1,'derplib::experimental::_heap_entry_iterator&lt; T &gt;'],['../classderplib_1_1experimental_1_1__heap__entry__iterator.html#a7b8a3bcae2e4ce96d3e348b23d2ce656',1,'derplib::experimental::_heap_entry_iterator::_heap_entry_iterator()=default'],['../classderplib_1_1experimental_1_1__heap__entry__iterator.html#a311fa33fd60cb6ad1b1d46a0208e42e0',1,'derplib::experimental::_heap_entry_iterator::_heap_entry_iterator(const container_type &amp;container) noexcept'],['../classderplib_1_1experimental_1_1__heap__entry__iterator.html#a8c993843a98f05e51d86b36b7a6adcb7',1,'derplib::experimental::_heap_entry_iterator::_heap_entry_iterator(const container_type &amp;container, base_iterator_type iterator) noexcept']]]
 ];

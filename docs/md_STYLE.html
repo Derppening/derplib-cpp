@@ -129,6 +129,10 @@ API Naming</h2>
 <ul>
 <li>The nested class has <code>private</code> API visibility but <code>public</code> class visibility due to member sharing.</li>
 <li>The nested class has <code>public</code> API visibility but <code>private</code> class visibility due to proxy implementation.</li>
+<li>The nested class is a <code>struct</code>.<ul>
+<li>The <code>struct</code> will use leading-underscore <code>_snake_case</code> for all <code>public</code> members.</li>
+</ul>
+</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md12"></a>
 Argument Naming</h2>
@@ -161,6 +165,10 @@ Sample</h1>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">enum</span> PrivateEnum {</div>
 <div class="line">    Enumerator</div>
+<div class="line">  };</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">struct </span>_private_struct {</div>
+<div class="line">    <span class="keywordtype">int</span> _member_in_private_struct;</div>
 <div class="line">  };</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordtype">void</span> _private_function(<span class="keywordtype">void</span>* params);</div>

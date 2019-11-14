@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['heap_5fwalk_5fiterator_215',['heap_walk_iterator',['../classderplib_1_1experimental_1_1heap__walk__iterator.html',1,'derplib::experimental']]]
+  ['format_5ferror_216',['format_error',['../classderplib_1_1base_1_1semver_1_1format__error.html',1,'derplib::base::semver']]]
 ];

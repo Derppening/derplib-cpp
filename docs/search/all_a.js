@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['level_102',['level',['../classderplib_1_1base_1_1basic__logger.html#ae403f82c113c5d37353af61578b75f33',1,'derplib::base::basic_logger']]],
-  ['log_2eh_103',['log.h',['../log_8h.html',1,'']]],
-  ['logger_104',['logger',['../namespacederplib_1_1base.html#ac419b0d7caa186d629e992282b65cd74',1,'derplib::base::logger()'],['../namespacederplib_1_1base.html#ac419b0d7caa186d629e992282b65cd74',1,'derplib::logger()']]]
+  ['join_5fto_5fstring_99',['join_to_string',['../namespacederplib_1_1stdext.html#afba7109dbdc40156a348deb2cd14a5c8',1,'derplib::join_to_string()'],['../namespacederplib_1_1stdext.html#afba7109dbdc40156a348deb2cd14a5c8',1,'derplib::stdext::join_to_string()'],['../namespacederplib_1_1stdext.html#a09cdb11434cb1e8aa23d6d3e1baee50c',1,'derplib::join_to_string()'],['../namespacederplib_1_1stdext.html#a09cdb11434cb1e8aa23d6d3e1baee50c',1,'derplib::stdext::join_to_string()'],['../namespacederplib_1_1stdext.html#ab2665dfd6b3b50554918e2bea71e9006',1,'derplib::join_to_string()'],['../namespacederplib_1_1stdext.html#ab2665dfd6b3b50554918e2bea71e9006',1,'derplib::stdext::join_to_string()'],['../namespacederplib_1_1stdext.html#a6bfb53f9fd1c44a348d64b07948c1a1b',1,'derplib::join_to_string()'],['../namespacederplib_1_1stdext.html#a6bfb53f9fd1c44a348d64b07948c1a1b',1,'derplib::stdext::join_to_string()']]]
 ];

@@ -2,14 +2,13 @@ set(LIBRARY_HEADERS
         include/derplib/experimental/config_file.h
         include/derplib/experimental/cli.h
         include/derplib/experimental/ref_count_pointer.h
-        include/derplib/experimental/mem_alloc/bad_alloc.h
-        include/derplib/experimental/mem_alloc/fixed_pool_mem_alloc.h
-        include/derplib/experimental/mem_alloc/heap_walk_iterator.h)
+        include/derplib/experimental/heap_pool_allocator/base_heap_pool.h
+        include/derplib/experimental/heap_pool_allocator/heap_entry_iterator.h
+        include/derplib/experimental/heap_pool_allocator/simple_pool_alloc.h)
 set(LIBRARY_SOURCES
         src/cli.cpp
         src/config_file.cpp
-        src/mem_alloc/fixed_pool_mem_alloc.cpp
-        src/mem_alloc/mem_alloc_exceptions.cpp)
+        src/heap_pool_allocator/simple_pool_alloc.cpp)
 set(TEST_SOURCES
         tests/cli-test.cpp
         tests/config_file-test.cpp

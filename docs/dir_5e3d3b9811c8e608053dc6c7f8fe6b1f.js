@@ -1,6 +1,6 @@
 var dir_5e3d3b9811c8e608053dc6c7f8fe6b1f =
 [
-    [ "mem_alloc", "dir_45d1ebbd87ce407f2e732e4be0489c14.html", "dir_45d1ebbd87ce407f2e732e4be0489c14" ],
+    [ "heap_pool_allocator", "dir_94f51bde83c6a8335d6feecb631c4ff4.html", "dir_94f51bde83c6a8335d6feecb631c4ff4" ],
     [ "cli.h", "cli_8h.html", [
       [ "basic_cli", "classderplib_1_1experimental_1_1basic__cli.html", "classderplib_1_1experimental_1_1basic__cli" ],
       [ "entry", "structderplib_1_1experimental_1_1basic__cli_1_1entry.html", "structderplib_1_1experimental_1_1basic__cli_1_1entry" ],
