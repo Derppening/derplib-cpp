@@ -30,6 +30,8 @@ Nested classes will inherit the visibility rules of the previous-level class, un
 
 - The nested class has `private` API visibility but `public` class visibility due to member sharing.
 - The nested class has `public` API visibility but `private` class visibility due to proxy implementation.
+- The nested class is a `struct`.
+    - The `struct` will use leading-underscore `_snake_case` for all `public` members.
 
 ### Argument Naming
 
@@ -62,6 +64,10 @@ class public_api_class {
 
   enum PrivateEnum {
     Enumerator
+  };
+
+  struct _private_struct {
+    int _member_in_private_struct;
   };
 
   void _private_function(void* params);
