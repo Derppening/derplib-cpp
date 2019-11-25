@@ -8,11 +8,15 @@ inline namespace stdext {
 
 namespace {
 struct _to_upper_unary_op {
-  unsigned char operator()(const unsigned char& c) { return static_cast<unsigned char>(std::toupper(c)); }
+  using char_type = std::string::value_type;
+
+  char_type operator()(char_type c) { return static_cast<char_type>(std::toupper(c)); }
 };
 
 struct _to_lower_unary_op {
-  unsigned char operator()(const unsigned char& c) { return static_cast<unsigned char>(std::tolower(c)); }
+  using char_type = std::string::value_type;
+
+  char_type operator()(char_type c) { return static_cast<char_type>(std::tolower(c)); }
 };
 }  // namespace
 
