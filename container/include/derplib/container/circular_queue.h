@@ -432,8 +432,10 @@ void circular_queue<T, N>::pop() noexcept(std::is_nothrow_default_constructible<
   ++_begin_;
   --_size_;
 
-  if (_size_ == 0) {
+  if (empty() || _begin_ == _data_.end()) {
     _begin_ = _data_.begin();
+  }
+  if (empty()) {
     _end_ = nullptr;
   }
 }

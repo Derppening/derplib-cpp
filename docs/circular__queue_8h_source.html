@@ -364,24 +364,26 @@ $(document).ready(function(){initNavTree('circular__queue_8h_source.html','');})
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;  ++_begin_;</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;  --_size_;</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;  <span class="keywordflow">if</span> (_size_ == 0) {</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">empty</a>() || _begin_ == _data_.end()) {</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    _begin_ = _data_.begin();</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    _end_ = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;  }</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;}</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00442"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1circular__queue.html#a7f10cac6853f999cd8c903a3e56d0586">  442</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#a7f10cac6853f999cd8c903a3e56d0586">circular_queue&lt;T, N&gt;::swap</a>(<a class="code" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a>&amp; other) noexcept(<a class="code" href="namespacederplib_1_1stdext.html#a73de9673fed509ce3779f40ca8f85fd7">stdext::is_nothrow_swappable&lt;container_type&gt;::value</a>) {</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;  <a class="code" href="namespacederplib_1_1container.html#a2c14266bc30ba0f4b155bf13c7ff73be">std::swap</a>(this-&gt;_data_, other._data_);</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;  <a class="code" href="namespacederplib_1_1container.html#a2c14266bc30ba0f4b155bf13c7ff73be">std::swap</a>(this-&gt;_begin_, other._begin_);</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;  <a class="code" href="namespacederplib_1_1container.html#a2c14266bc30ba0f4b155bf13c7ff73be">std::swap</a>(this-&gt;_end_, other._end_);</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;  <a class="code" href="namespacederplib_1_1container.html#a2c14266bc30ba0f4b155bf13c7ff73be">std::swap</a>(this-&gt;_size_, other._size_);</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;}</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160; </div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="common__macros__end_8h.html">derplib/internal/common_macros_end.h</a>&gt;</span></div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;  }</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">empty</a>()) {</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    _end_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;  }</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;}</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00444"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1circular__queue.html#a7f10cac6853f999cd8c903a3e56d0586">  444</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#a7f10cac6853f999cd8c903a3e56d0586">circular_queue&lt;T, N&gt;::swap</a>(<a class="code" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a>&amp; other) noexcept(<a class="code" href="namespacederplib_1_1stdext.html#a73de9673fed509ce3779f40ca8f85fd7">stdext::is_nothrow_swappable&lt;container_type&gt;::value</a>) {</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;  <a class="code" href="namespacederplib_1_1container.html#a2c14266bc30ba0f4b155bf13c7ff73be">std::swap</a>(this-&gt;_data_, other._data_);</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;  <a class="code" href="namespacederplib_1_1container.html#a2c14266bc30ba0f4b155bf13c7ff73be">std::swap</a>(this-&gt;_begin_, other._begin_);</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;  <a class="code" href="namespacederplib_1_1container.html#a2c14266bc30ba0f4b155bf13c7ff73be">std::swap</a>(this-&gt;_end_, other._end_);</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;  <a class="code" href="namespacederplib_1_1container.html#a2c14266bc30ba0f4b155bf13c7ff73be">std::swap</a>(this-&gt;_size_, other._size_);</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;}</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160; </div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;}  <span class="comment">// namespace container</span></div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;}  <span class="comment">// namespace derplib</span></div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="common__macros__end_8h.html">derplib/internal/common_macros_end.h</a>&gt;</span></div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; </div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;}  <span class="comment">// namespace container</span></div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;}  <span class="comment">// namespace derplib</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="anamespacederplib_1_1container_html_a2c14266bc30ba0f4b155bf13c7ff73be"><div class="ttname"><a href="namespacederplib_1_1container.html#a2c14266bc30ba0f4b155bf13c7ff73be">derplib::container::swap</a></div><div class="ttdeci">void swap(circular_queue&lt; T, N &gt; &amp;lhs, circular_queue&lt; T, N &gt; &amp;rhs) noexcept(stdext::is_nothrow_swappable&lt; typename circular_queue&lt; T, N &gt;::container_type &gt;::value)</div><div class="ttdoc">Specialization of std::swap algorithm.</div><div class="ttdef"><b>Definition:</b> circular_queue.h:247</div></div>
@@ -405,7 +407,7 @@ $(document).ready(function(){initNavTree('circular__queue_8h_source.html','');})
 <div class="ttc" id="anamespacederplib_html"><div class="ttname"><a href="namespacederplib.html">derplib</a></div><div class="ttdef"><b>Definition:</b> log.h:14</div></div>
 <div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html_a8a72f0630f14b5fecb3a24f3657da911"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">derplib::container::circular_queue::empty</a></div><div class="ttdeci">DERPLIB_NODISCARD bool empty() const noexcept</div><div class="ttdoc">Checks if the underlying container has no elements.</div><div class="ttdef"><b>Definition:</b> circular_queue.h:354</div></div>
 <div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html_a7947df4c9959f0a75e270b3f80706a47"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html#a7947df4c9959f0a75e270b3f80706a47">derplib::container::circular_queue::pop</a></div><div class="ttdeci">void pop() noexcept(std::is_nothrow_default_constructible&lt; T &gt;::value)</div><div class="ttdoc">Removes an element from the top of the queue.</div><div class="ttdef"><b>Definition:</b> circular_queue.h:426</div></div>
-<div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html_a7f10cac6853f999cd8c903a3e56d0586"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html#a7f10cac6853f999cd8c903a3e56d0586">derplib::container::circular_queue::swap</a></div><div class="ttdeci">void swap(circular_queue &amp;other) noexcept(stdext::is_nothrow_swappable&lt; container_type &gt;::value)</div><div class="ttdoc">Exchanges the contents of this object with other.</div><div class="ttdef"><b>Definition:</b> circular_queue.h:442</div></div>
+<div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html_a7f10cac6853f999cd8c903a3e56d0586"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html#a7f10cac6853f999cd8c903a3e56d0586">derplib::container::circular_queue::swap</a></div><div class="ttdeci">void swap(circular_queue &amp;other) noexcept(stdext::is_nothrow_swappable&lt; container_type &gt;::value)</div><div class="ttdoc">Exchanges the contents of this object with other.</div><div class="ttdef"><b>Definition:</b> circular_queue.h:444</div></div>
 <div class="ttc" id="acommon__macros__end_8h_html"><div class="ttname"><a href="common__macros__end_8h.html">common_macros_end.h</a></div></div>
 <div class="ttc" id="acommon__macros__begin_8h_html"><div class="ttname"><a href="common__macros__begin_8h.html">common_macros_begin.h</a></div></div>
 <!-- start footer part -->
