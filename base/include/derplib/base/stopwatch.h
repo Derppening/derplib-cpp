@@ -14,8 +14,8 @@ class stopwatch {
   stopwatch(const stopwatch& other) = delete;
   stopwatch(stopwatch&& other) noexcept = default;
 
-  stopwatch& operator=(const stopwatch& other) = delete;
-  stopwatch& operator=(stopwatch&& other) noexcept = default;
+  stopwatch& operator=(const stopwatch& other) & = delete;
+  stopwatch& operator=(stopwatch&& other) & noexcept = default;
 
   /**
    * \brief Starts the stopwatch.

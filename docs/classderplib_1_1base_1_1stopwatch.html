@@ -107,10 +107,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3da95f867e3abe8389538c80dd9b75f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2a1deef4b3d903f00cba021ef046958"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1base_1_1stopwatch.html#af2a1deef4b3d903f00cba021ef046958">stopwatch</a> (<a class="el" href="classderplib_1_1base_1_1stopwatch.html">stopwatch</a> &amp;&amp;other) noexcept=default</td></tr>
 <tr class="separator:af2a1deef4b3d903f00cba021ef046958"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab81e486760d4f55e396bb0af9baca8df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classderplib_1_1base_1_1stopwatch.html">stopwatch</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1base_1_1stopwatch.html#ab81e486760d4f55e396bb0af9baca8df">operator=</a> (const <a class="el" href="classderplib_1_1base_1_1stopwatch.html">stopwatch</a> &amp;other)=delete</td></tr>
-<tr class="separator:ab81e486760d4f55e396bb0af9baca8df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbd4e10179f5db83d6b624d6c2d2eb92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classderplib_1_1base_1_1stopwatch.html">stopwatch</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1base_1_1stopwatch.html#acbd4e10179f5db83d6b624d6c2d2eb92">operator=</a> (<a class="el" href="classderplib_1_1base_1_1stopwatch.html">stopwatch</a> &amp;&amp;other) noexcept=default</td></tr>
-<tr class="separator:acbd4e10179f5db83d6b624d6c2d2eb92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e31df037092403c8ddaeb7e9d7a136f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classderplib_1_1base_1_1stopwatch.html">stopwatch</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1base_1_1stopwatch.html#a6e31df037092403c8ddaeb7e9d7a136f">operator=</a> (const <a class="el" href="classderplib_1_1base_1_1stopwatch.html">stopwatch</a> &amp;other) &amp;=delete</td></tr>
+<tr class="separator:a6e31df037092403c8ddaeb7e9d7a136f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad05f0d02b8a0b98c699614c8294f475d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classderplib_1_1base_1_1stopwatch.html">stopwatch</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1base_1_1stopwatch.html#ad05f0d02b8a0b98c699614c8294f475d">operator=</a> (<a class="el" href="classderplib_1_1base_1_1stopwatch.html">stopwatch</a> &amp;&amp;other) &amp;noexcept=default</td></tr>
+<tr class="separator:ad05f0d02b8a0b98c699614c8294f475d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28ad479c46746c0ba27e7aa95191681d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1base_1_1stopwatch.html#a28ad479c46746c0ba27e7aa95191681d">start</a> ()</td></tr>
 <tr class="memdesc:a28ad479c46746c0ba27e7aa95191681d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the stopwatch.  <a href="classderplib_1_1base_1_1stopwatch.html#a28ad479c46746c0ba27e7aa95191681d">More...</a><br /></td></tr>
 <tr class="separator:a28ad479c46746c0ba27e7aa95191681d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -279,8 +279,8 @@ template&lt;typename ToDuration  = std::chrono::nanoseconds&gt; </div>
 
 </div>
 </div>
-<a id="ab81e486760d4f55e396bb0af9baca8df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab81e486760d4f55e396bb0af9baca8df">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+<a id="a6e31df037092403c8ddaeb7e9d7a136f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e31df037092403c8ddaeb7e9d7a136f">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -293,7 +293,7 @@ template&lt;typename ToDuration  = std::chrono::nanoseconds&gt; </div>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classderplib_1_1base_1_1stopwatch.html">stopwatch</a> &amp;&#160;</td>
           <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
+          <td> &amp;</td>
         </tr>
       </table>
   </td>
@@ -305,8 +305,8 @@ template&lt;typename ToDuration  = std::chrono::nanoseconds&gt; </div>
 
 </div>
 </div>
-<a id="acbd4e10179f5db83d6b624d6c2d2eb92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acbd4e10179f5db83d6b624d6c2d2eb92">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+<a id="ad05f0d02b8a0b98c699614c8294f475d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad05f0d02b8a0b98c699614c8294f475d">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -319,7 +319,7 @@ template&lt;typename ToDuration  = std::chrono::nanoseconds&gt; </div>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classderplib_1_1base_1_1stopwatch.html">stopwatch</a> &amp;&amp;&#160;</td>
           <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
+          <td> &amp;</td>
         </tr>
       </table>
   </td>

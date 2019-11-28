@@ -18,8 +18,8 @@ var classderplib_1_1base_1_1basic__logger =
     [ "e", "classderplib_1_1base_1_1basic__logger.html#a84d5c3a898246f6600a16801311a5985", null ],
     [ "flush", "classderplib_1_1base_1_1basic__logger.html#a07c0205e8640a802469e201f52c86a8b", null ],
     [ "i", "classderplib_1_1base_1_1basic__logger.html#ae3ad25ed3a5a7c752113b9bcbf565cab", null ],
-    [ "operator=", "classderplib_1_1base_1_1basic__logger.html#abbf4fd961511bf68fbd5514c7b0a9e4f", null ],
-    [ "operator=", "classderplib_1_1base_1_1basic__logger.html#a534393b66ee843dc40d13f6afe0a0b3b", null ],
+    [ "operator=", "classderplib_1_1base_1_1basic__logger.html#a1f81f87b3b320dbdb07b6319a8ab9d1b", null ],
+    [ "operator=", "classderplib_1_1base_1_1basic__logger.html#a310190f824679ff3d82edb86c240d65d", null ],
     [ "v", "classderplib_1_1base_1_1basic__logger.html#a9cba4774cb5c64f77d01c708aae5c932", null ],
     [ "w", "classderplib_1_1base_1_1basic__logger.html#a9f204e373b4f23c8ad9332dea31e93ba", null ]
 ];

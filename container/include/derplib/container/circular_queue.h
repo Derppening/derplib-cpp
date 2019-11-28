@@ -108,7 +108,7 @@ class circular_queue {
    * \return `*this`.
    */
   circular_queue&
-  operator=(const circular_queue& other) noexcept(std::is_nothrow_copy_assignable<container_type>::value);
+  operator=(const circular_queue& other) & noexcept(std::is_nothrow_copy_assignable<container_type>::value);
 
   /**
    * \brief Move assignment operator.
@@ -118,7 +118,7 @@ class circular_queue {
    * \param other The circular_queue to move from.
    * \return `*this`.
    */
-  circular_queue& operator=(circular_queue&& other) noexcept(std::is_nothrow_move_assignable<container_type>::value);
+  circular_queue& operator=(circular_queue&& other) & noexcept(std::is_nothrow_move_assignable<container_type>::value);
 
   /**
    * \brief Returns a reference to the first element.
@@ -285,7 +285,7 @@ circular_queue<T, N>::circular_queue(circular_queue&& other) noexcept(
     _size_(other._size_) {}
 
 template<typename T, std::size_t N>
-circular_queue<T, N>& circular_queue<T, N>::operator=(const circular_queue& other) noexcept(
+circular_queue<T, N>& circular_queue<T, N>::operator=(const circular_queue& other) & noexcept(
     std::is_nothrow_copy_assignable<container_type>::value) {
   if (&other == this) {
     return *this;
@@ -300,7 +300,7 @@ circular_queue<T, N>& circular_queue<T, N>::operator=(const circular_queue& othe
 }
 
 template<typename T, std::size_t N>
-circular_queue<T, N>& circular_queue<T, N>::operator=(circular_queue&& other) noexcept(
+circular_queue<T, N>& circular_queue<T, N>::operator=(circular_queue&& other) & noexcept(
     std::is_nothrow_move_assignable<container_type>::value) {
   if (&other == this) {
     return *this;

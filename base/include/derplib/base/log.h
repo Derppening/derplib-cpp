@@ -68,8 +68,8 @@ class basic_logger {
    *
    * Deleted to avoid unintentional copies of a logger.
    */
-  basic_logger& operator=(const basic_logger&) = delete;
-  basic_logger& operator=(basic_logger&&) noexcept = default;
+  basic_logger& operator=(const basic_logger&) & = delete;
+  basic_logger& operator=(basic_logger&&) & noexcept = default;
 
   /**
    * \brief Logs a verbose message.

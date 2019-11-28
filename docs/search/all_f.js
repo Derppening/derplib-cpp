@@ -5,7 +5,7 @@ var searchData=
   ['patch_127',['patch',['../classderplib_1_1base_1_1semver.html#a61b7d8dcb805f75bd39500f3efc60d23',1,'derplib::base::semver']]],
   ['pointer_128',['pointer',['../classderplib_1_1experimental_1_1__heap__entry__iterator.html#a0f8792a819ca09509800160f76e6dcef',1,'derplib::experimental::_heap_entry_iterator::pointer()'],['../classderplib_1_1ref__count__pointer.html#a81cb1e2745c4744d940f865545d6d5ed',1,'derplib::ref_count_pointer::pointer()'],['../classderplib_1_1ref__count__pointer_1_1observer.html#a3eb270e422fa68968a23af0473cbabc5',1,'derplib::ref_count_pointer::observer::pointer()']]],
   ['pop_129',['pop',['../classderplib_1_1container_1_1circular__queue.html#a7947df4c9959f0a75e270b3f80706a47',1,'derplib::container::circular_queue']]],
-  ['prerelease_130',['prerelease',['../classderplib_1_1base_1_1semver.html#a88e59de5b2a0fc13e90b3c2f5ea24998',1,'derplib::base::semver']]],
+  ['prerelease_130',['prerelease',['../classderplib_1_1base_1_1semver.html#a0a9b4f4e7fb9c6c7cfdc5aec0b86543c',1,'derplib::base::semver']]],
   ['prev_131',['prev',['../classderplib_1_1experimental_1_1__heap__entry__iterator.html#afa6f02007e8e3364a081189511cd792b',1,'derplib::experimental::_heap_entry_iterator']]],
   ['ptr_2eh_132',['ptr.h',['../ptr_8h.html',1,'']]],
   ['ptr_5farray_5fdelete_133',['ptr_array_delete',['../namespacederplib_1_1stdext.html#abba25b7fd02a56af1374cf7a696d49b3',1,'derplib::ptr_array_delete()'],['../namespacederplib_1_1stdext.html#abba25b7fd02a56af1374cf7a696d49b3',1,'derplib::stdext::ptr_array_delete()']]],

@@ -60,8 +60,8 @@ class timer<Func> {
    * \param other `timer` to copy from.
    * \return `*this`.
    */
-  timer& operator=(const timer& other);
-  timer& operator=(timer&& other) noexcept = default;
+  timer& operator=(const timer& other) &;
+  timer& operator=(timer&& other) & noexcept = default;
 
   ~timer();
 
@@ -114,7 +114,7 @@ timer<Func>::timer(std::chrono::duration<Rep, Period> duration,
     _callback_(callback) {}
 
 template<typename Func>
-timer<Func>& timer<Func>::operator=(const timer& other) {
+timer<Func>& timer<Func>::operator=(const timer& other) & {
   if (this != &other) {
     _state_ = State::NotStarted;
     _keep_alive_ = true;

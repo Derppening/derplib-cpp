@@ -3,7 +3,7 @@ var searchData=
   ['parse_332',['parse',['../classderplib_1_1experimental_1_1basic__cli.html#a3ed606e3ec3c87243eb6e9e4cc3b7b66',1,'derplib::experimental::basic_cli']]],
   ['patch_333',['patch',['../classderplib_1_1base_1_1semver.html#a61b7d8dcb805f75bd39500f3efc60d23',1,'derplib::base::semver']]],
   ['pop_334',['pop',['../classderplib_1_1container_1_1circular__queue.html#a7947df4c9959f0a75e270b3f80706a47',1,'derplib::container::circular_queue']]],
-  ['prerelease_335',['prerelease',['../classderplib_1_1base_1_1semver.html#a88e59de5b2a0fc13e90b3c2f5ea24998',1,'derplib::base::semver']]],
+  ['prerelease_335',['prerelease',['../classderplib_1_1base_1_1semver.html#a0a9b4f4e7fb9c6c7cfdc5aec0b86543c',1,'derplib::base::semver']]],
   ['prev_336',['prev',['../classderplib_1_1experimental_1_1__heap__entry__iterator.html#afa6f02007e8e3364a081189511cd792b',1,'derplib::experimental::_heap_entry_iterator']]],
   ['ptr_5farray_5fdelete_337',['ptr_array_delete',['../namespacederplib_1_1stdext.html#abba25b7fd02a56af1374cf7a696d49b3',1,'derplib::ptr_array_delete()'],['../namespacederplib_1_1stdext.html#abba25b7fd02a56af1374cf7a696d49b3',1,'derplib::stdext::ptr_array_delete()']]],
   ['ptr_5farray_5fnew_338',['ptr_array_new',['../namespacederplib_1_1stdext.html#a2c82aed728765d0eace7a3ecef6d7e44',1,'derplib::ptr_array_new()'],['../namespacederplib_1_1stdext.html#a2c82aed728765d0eace7a3ecef6d7e44',1,'derplib::stdext::ptr_array_new()']]],

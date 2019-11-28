@@ -56,8 +56,8 @@ class semver {
   DERPLIB_NODISCARD int major() const { return _major_; }
   DERPLIB_NODISCARD int minor() const { return _minor_; }
   DERPLIB_NODISCARD int patch() const { return _patch_; }
-  DERPLIB_NODISCARD const std::string& prerelease() const { return _prerelease_; }
-  DERPLIB_NODISCARD const std::string& build() const { return _build_; }
+  DERPLIB_NODISCARD const std::string& prerelease() const& { return _prerelease_; }
+  DERPLIB_NODISCARD const std::string& build() const& { return _build_; }
 
   bool operator<(const semver& other) const;
   bool operator==(const semver& other) const;
