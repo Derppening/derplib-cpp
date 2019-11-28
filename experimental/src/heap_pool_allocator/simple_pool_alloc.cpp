@@ -20,7 +20,7 @@ simple_pool_alloc::~simple_pool_alloc() {
 }
 
 void* simple_pool_alloc::allocate(std::size_t size, std::size_t alignment) noexcept {
-  _entry e = {size, alignment};
+  const _entry e = {size, alignment};
 
   // edge case 1: empty allocation block
   if (_entries_.empty()) {
@@ -53,7 +53,7 @@ void* simple_pool_alloc::allocate(std::size_t size, std::size_t alignment) noexc
   ++iterator;
 
   // nominal case: in-between blocks
-  for (; iterator.current() != _entries_.end(); ++iterator) {
+  for (const auto end = _entries_.end(); iterator.current() != end; ++iterator) {
     aligned_extent = extent_begin =
         static_cast<unsigned char*>(iterator.prev()->first) + iterator.prev()->second._extent;
     extent_end = static_cast<unsigned char*>(iterator->first);
