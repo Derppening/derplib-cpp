@@ -12,7 +12,8 @@ namespace experimental {
 
 simple_pool_alloc::simple_pool_alloc(std::size_t n, DERPLIB_MAYBE_UNUSED const simple_pool_alloc::config& config) :
     _size(n),
-    _heap_pool_(derplib::stdext::make_unique<unsigned char[]>(n)) {}
+    _heap_pool_(derplib::stdext::make_unique<unsigned char[]>(n)),
+    _alloc_bounds_(_heap_pool_.get(), _heap_pool_.get() + _size) {}
 
 simple_pool_alloc::~simple_pool_alloc() {
   volatile unsigned char* ptr = _heap_pool_.get();
@@ -21,58 +22,25 @@ simple_pool_alloc::~simple_pool_alloc() {
 
 void* simple_pool_alloc::allocate(std::size_t size, std::size_t alignment) noexcept {
   const _entry e = {size, alignment};
+  void* alloc_ptr = nullptr;
 
-  // edge case 1: empty allocation block
-  if (_entries_.empty()) {
-    if (size > _size) {
-      return nullptr;
-    }
-
-    const auto it = _entries_.emplace(std::make_pair(_heap_pool_.get(), e));
-    return it.first->first;
+  // fast throw if we can't fit the allocation
+  if (e._extent > _size) {
+    return nullptr;
+  }
+  // fast throw if we are out of memory
+  if (_alloc_bounds_.first > _alloc_bounds_.second) {
+    return nullptr;
   }
 
-  void* aligned_extent;
-  unsigned char* extent_begin;
-  unsigned char* extent_end;
-  std::size_t extent_size;
-
-  heap_entry_iterator iterator(_entries_);
-
-  aligned_extent = extent_begin = _heap_pool_.get();
-  extent_end = static_cast<unsigned char*>(iterator->first);
-  extent_size = std::size_t(extent_end - extent_begin);
-
-  // edge case 2: beginning block
-  if (std::align(alignment, size, aligned_extent, extent_size) != nullptr) {
-    _entries_.emplace(std::make_pair(aligned_extent, e));
-    return aligned_extent;
+  if ((alloc_ptr = try_alloc_begin(e)) != nullptr) {
+    return alloc_ptr;
   }
-
-  // move the iterator fwd
-  ++iterator;
-
-  // nominal case: in-between blocks
-  for (const auto end = _entries_.end(); iterator.current() != end; ++iterator) {
-    aligned_extent = extent_begin =
-        static_cast<unsigned char*>(iterator.prev()->first) + iterator.prev()->second._extent;
-    extent_end = static_cast<unsigned char*>(iterator->first);
-    extent_size = std::size_t(extent_end - extent_begin);
-
-    if (std::align(alignment, size, aligned_extent, extent_size) != nullptr) {
-      _entries_.emplace(std::make_pair(aligned_extent, e));
-      return aligned_extent;
-    }
+  if ((alloc_ptr = try_alloc_nominal(e)) != nullptr) {
+    return alloc_ptr;
   }
-
-  // edge case 3: end block
-  aligned_extent = extent_begin = static_cast<unsigned char*>(iterator.prev()->first) + iterator.prev()->second._extent;
-  extent_end = _heap_pool_.get() + _size;
-  extent_size = std::size_t(extent_end - extent_begin);
-
-  if (std::align(alignment, size, aligned_extent, extent_size) != nullptr) {
-    _entries_.emplace(std::make_pair(aligned_extent, e));
-    return aligned_extent;
+  if ((alloc_ptr = try_alloc_end(e)) != nullptr) {
+    return alloc_ptr;
   }
 
   return nullptr;
@@ -81,7 +49,19 @@ void* simple_pool_alloc::allocate(std::size_t size, std::size_t alignment) noexc
 void simple_pool_alloc::deallocate(void* p) noexcept {
   const auto it = _entries_.find(p);
   if (it != _entries_.end()) {
-    _entries_.erase(it);
+    void* const ptr = it->first;
+
+    auto next_it = _entries_.erase(it);
+    if (_alloc_bounds_.second < _alloc_bounds_.first) {
+      _alloc_bounds_.first = ptr;
+      _alloc_bounds_.second = next_it == _entries_.end() ? _heap_pool_.get() + _size : next_it->first;
+    } else {
+      if (ptr <= _alloc_bounds_.first) {
+        _alloc_bounds_.first = next_it == _entries_.begin() ? _heap_pool_.get() : (--next_it)->first;
+      } else if (ptr >= _alloc_bounds_.second) {
+        _alloc_bounds_.second = next_it == _entries_.end() ? _heap_pool_.get() + _size : next_it->first;
+      }
+    }
   }
 }
 
@@ -131,6 +111,98 @@ void simple_pool_alloc::heap_dump(std::ostream& os) const noexcept {
 
 std::size_t simple_pool_alloc::max_size() const noexcept {
   return _size;
+}
+
+void* simple_pool_alloc::try_alloc_begin(const _entry e) noexcept {
+  if (_alloc_bounds_.first > _heap_pool_.get()) {
+    return nullptr;
+  }
+
+  void* aligned_extent = _heap_pool_.get();
+  const auto* const extent_begin = static_cast<unsigned char*>(aligned_extent);
+  const auto* const extent_end = static_cast<unsigned char*>(_entries_.begin()->first);
+  auto extent_size = std::size_t(extent_end - extent_begin);
+
+  if (std::align(e._alignment, e._extent, aligned_extent, extent_size) != nullptr) {
+    _entries_.emplace(std::make_pair(aligned_extent, e));
+
+    auto* const alloc_end = static_cast<unsigned char*>(aligned_extent) + e._extent;
+    if (_alloc_bounds_.first < alloc_end) {
+      _alloc_bounds_.first = alloc_end;
+    }
+    if (_alloc_bounds_.second == alloc_end) {
+      _alloc_bounds_.second = aligned_extent;
+    }
+
+    return aligned_extent;
+  }
+
+  return nullptr;
+}
+
+void* simple_pool_alloc::try_alloc_nominal(simple_pool_alloc::_entry e) noexcept {
+  const auto lower_bound = _entries_.lower_bound(_alloc_bounds_.first);
+  const auto upper_bound = _entries_.upper_bound(_alloc_bounds_.second);
+
+  if (lower_bound == upper_bound) {
+    return nullptr;
+  }
+
+  heap_entry_iterator iterator(_entries_, lower_bound);
+
+  for (; iterator.current() != upper_bound; ++iterator) {
+    const auto last_it = iterator.prev();
+
+    void* aligned_extent = static_cast<unsigned char*>(last_it->first) + last_it->second._extent;
+    const auto* const extent_begin = static_cast<unsigned char*>(aligned_extent);
+    const auto* const extent_end = static_cast<unsigned char*>(iterator->first);
+    auto extent_size = std::size_t(extent_end - extent_begin);
+
+    if (std::align(e._alignment, e._extent, aligned_extent, extent_size) != nullptr) {
+      _entries_.emplace(std::make_pair(aligned_extent, e));
+
+      auto* const alloc_end = static_cast<unsigned char*>(aligned_extent) + e._extent;
+      if (_alloc_bounds_.first < alloc_end) {
+        _alloc_bounds_.first = alloc_end;
+      }
+      if (_alloc_bounds_.second == alloc_end) {
+        _alloc_bounds_.second = aligned_extent;
+      }
+
+      return aligned_extent;
+    }
+  }
+
+  return nullptr;
+}
+
+void* simple_pool_alloc::try_alloc_end(simple_pool_alloc::_entry e) noexcept {
+  if (_alloc_bounds_.second < _heap_pool_.get() + _size) {
+    return nullptr;
+  }
+
+  const auto last_it = --_entries_.end();
+
+  void* aligned_extent = static_cast<unsigned char*>(last_it->first) + last_it->second._extent;
+  const auto* const extent_begin = static_cast<unsigned char*>(aligned_extent);
+  const auto* const extent_end = _heap_pool_.get() + _size;
+  auto extent_size = std::size_t(extent_end - extent_begin);
+
+  if (std::align(e._alignment, e._extent, aligned_extent, extent_size) != nullptr) {
+    _entries_.emplace(std::make_pair(aligned_extent, e));
+
+    auto* const alloc_end = static_cast<unsigned char*>(aligned_extent) + e._extent;
+    if (_alloc_bounds_.first < alloc_end) {
+      _alloc_bounds_.first = alloc_end;
+    }
+    if (_alloc_bounds_.second == alloc_end) {
+      _alloc_bounds_.second = aligned_extent;
+    }
+
+    return aligned_extent;
+  }
+
+  return nullptr;
 }
 
 #include <derplib/internal/common_macros_end.h>

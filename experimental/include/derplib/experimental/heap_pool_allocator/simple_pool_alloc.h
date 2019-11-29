@@ -9,6 +9,7 @@
 namespace derplib {
 namespace experimental {
 
+#include <derplib/internal/common_macros_begin.h>
 
 /**
  * \brief A simple pool allocator.
@@ -50,7 +51,7 @@ class simple_pool_alloc final {
   void deallocate(void* p) noexcept;
 
   void heap_dump(std::ostream& os) const noexcept;
-  std::size_t max_size() const noexcept;
+  DERPLIB_NODISCARD std::size_t max_size() const noexcept;
 
  private:
   using heap_entry_iterator = _heap_entry_iterator<_entry>;
@@ -64,10 +65,43 @@ class simple_pool_alloc final {
     const std::size_t _alignment;
   };
 
+  /**
+   * \brief Tries to allocate a region of memory between the start of the memory pool and the first allocated region.
+   *
+   * \param e properties of the allocation
+   * \return The memory address to the allocated region, or `nullptr` of the allocation cannot be made.
+   */
+  void* try_alloc_begin(_entry e) noexcept;
+  /**
+   * \brief Tries to allocate a region of memory between allocated regions.
+   *
+   * \param e properties of the allocation
+   * \return The memory address to the allocated region, or `nullptr` of the allocation cannot be made.
+   */
+  void* try_alloc_nominal(_entry e) noexcept;
+  /**
+   * \brief Tries to allocate a region of memory between the last allocated region and the end of the memory pool.
+   *
+   * \param e properties of the allocation
+   * \return The memory address to the allocated region, or `nullptr` of the allocation cannot be made.
+   */
+  void* try_alloc_end(_entry e) noexcept;
+
   const std::size_t _size;
   std::unique_ptr<unsigned char[]> _heap_pool_;
   std::map<void*, _entry> _entries_;
+
+  /**
+   * \brief The lower and upper bound for the region where allocations are possible.
+   *
+   * To avoid checking regions which do not contain space for new allocations, we cache boundaries between the first and
+   * last empty regions. This results in the beginning and end contiguous allocation entries to be skipped during free
+   * space checking, and can improve performance on non-fragmented heaps.
+   */
+  std::pair<void*, void*> _alloc_bounds_;
 };
+
+#include <derplib/internal/common_macros_end.h>
 
 }  // namespace experimental
 }  // namespace derplib
