@@ -1,6 +1,6 @@
 var classderplib_1_1experimental_1_1simple__pool__alloc =
 [
-    [ "config", "structderplib_1_1experimental_1_1simple__pool__alloc_1_1config.html", null ],
+    [ "config", "structderplib_1_1experimental_1_1simple__pool__alloc_1_1config.html", "structderplib_1_1experimental_1_1simple__pool__alloc_1_1config" ],
     [ "simple_pool_alloc", "classderplib_1_1experimental_1_1simple__pool__alloc.html#a4419eacedf5b4d23f2c63d52688f9797", null ],
     [ "~simple_pool_alloc", "classderplib_1_1experimental_1_1simple__pool__alloc.html#af5e4e8c97a3b48de7a496b24e636eaba", null ],
     [ "allocate", "classderplib_1_1experimental_1_1simple__pool__alloc.html#ae8d6e7b33cd62cfc69556261cb4aec46", null ],

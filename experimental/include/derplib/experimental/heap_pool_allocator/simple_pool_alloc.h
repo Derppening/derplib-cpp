@@ -24,7 +24,16 @@ class simple_pool_alloc final {
   /**
    * \brief Allocator configuration.
    */
-  struct config {};
+  struct config {
+    /**
+     * \brief Whether to zero out the allocated region when deallocating.
+     */
+    bool zero_memory_after_free = false;
+    /**
+     * \brief Whether to zero out the entire memory pool when the allocator is destructed.
+     */
+    bool zero_memory_on_destruct = true;
+  };
 
   /**
    * \brief Constructs the allocator with a heap pool.
@@ -86,6 +95,8 @@ class simple_pool_alloc final {
    * \return The memory address to the allocated region, or `nullptr` of the allocation cannot be made.
    */
   void* try_alloc_end(_entry e) noexcept;
+
+  const config _config_;
 
   const std::size_t _size;
   std::unique_ptr<unsigned char[]> _heap_pool_;

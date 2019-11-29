@@ -1,6 +1,8 @@
 var NAVTREEINDEX2 =
 {
 "structderplib_1_1experimental_1_1simple__pool__alloc_1_1config.html":[3,0,0,2,5,0],
+"structderplib_1_1experimental_1_1simple__pool__alloc_1_1config.html#a052344fa28e2435e0f3657a0e2f3643e":[3,0,0,2,5,0,1],
+"structderplib_1_1experimental_1_1simple__pool__alloc_1_1config.html#a6f381927ec22aed4ea25008ecf9a81a8":[3,0,0,2,5,0,0],
 "timer_8h.html":[4,0,0,0,0,0,3],
 "timer_8h_source.html":[4,0,0,0,0,0,3],
 "type__traits_8h.html":[4,0,4,0,0,0,10],

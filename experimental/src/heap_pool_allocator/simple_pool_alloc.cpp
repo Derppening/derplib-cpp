@@ -10,14 +10,17 @@ namespace experimental {
 
 #include <derplib/internal/common_macros_begin.h>
 
-simple_pool_alloc::simple_pool_alloc(std::size_t n, DERPLIB_MAYBE_UNUSED const simple_pool_alloc::config& config) :
+simple_pool_alloc::simple_pool_alloc(std::size_t n, const simple_pool_alloc::config& config) :
+    _config_(config),
     _size(n),
     _heap_pool_(derplib::stdext::make_unique<unsigned char[]>(n)),
     _alloc_bounds_(_heap_pool_.get(), _heap_pool_.get() + _size) {}
 
 simple_pool_alloc::~simple_pool_alloc() {
-  volatile unsigned char* ptr = _heap_pool_.get();
-  std::fill(ptr, ptr + _size, 0);
+  if (_config_.zero_memory_on_destruct) {
+    volatile unsigned char* ptr = _heap_pool_.get();
+    std::fill(ptr, ptr + _size, 0);
+  }
 }
 
 void* simple_pool_alloc::allocate(std::size_t size, std::size_t alignment) noexcept {
@@ -50,6 +53,13 @@ void simple_pool_alloc::deallocate(void* p) noexcept {
   const auto it = _entries_.find(p);
   if (it != _entries_.end()) {
     void* const ptr = it->first;
+
+    if (_config_.zero_memory_after_free) {
+      volatile auto* const begin = static_cast<unsigned char*>(ptr);
+      volatile auto* const end = begin + it->second._extent;
+
+      std::fill(begin, end, 0);
+    }
 
     auto next_it = _entries_.erase(it);
     if (_alloc_bounds_.second < _alloc_bounds_.first) {
