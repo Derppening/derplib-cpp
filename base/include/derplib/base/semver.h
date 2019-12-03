@@ -45,8 +45,8 @@ class semver {
   semver(const semver& other) = default;
   semver(semver&& other) noexcept = default;
 
-  semver& operator=(const semver& other) = default;
-  semver& operator=(semver&& other) noexcept = default;
+  semver& operator=(const semver& other) & = default;
+  semver& operator=(semver&& other) & noexcept = default;
 
   /**
    * \return `std::string` representation of the version.
@@ -59,12 +59,12 @@ class semver {
   DERPLIB_NODISCARD const std::string& prerelease() const& { return _prerelease_; }
   DERPLIB_NODISCARD const std::string& build() const& { return _build_; }
 
-  bool operator<(const semver& other) const;
-  bool operator==(const semver& other) const;
-  bool operator!=(const semver& other) const { return !(*this == other); }
-  bool operator<=(const semver& other) const { return *this < other || *this == other; }
-  bool operator>(const semver& other) const { return !(*this <= other); }
-  bool operator>=(const semver& other) const { return !(*this < other); }
+  bool operator<(const semver& other) const noexcept;
+  bool operator==(const semver& other) const noexcept;
+  bool operator!=(const semver& other) const noexcept { return !(*this == other); }
+  bool operator<=(const semver& other) const noexcept { return *this < other || *this == other; }
+  bool operator>(const semver& other) const noexcept { return !(*this <= other); }
+  bool operator>=(const semver& other) const noexcept { return !(*this < other); }
 
   /**
    * \brief Constructs a `semver` object from a version string.

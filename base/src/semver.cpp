@@ -40,7 +40,7 @@ semver::operator std::string() const {
   return s;
 }
 
-bool semver::operator<(const semver& other) const {
+bool semver::operator<(const semver& other) const noexcept {
   if (_major_ < other._major_) {
     return true;
   }
@@ -71,7 +71,7 @@ bool semver::operator<(const semver& other) const {
   return _prerelease_ < other._prerelease_;
 }
 
-bool semver::operator==(const semver& other) const {
+bool semver::operator==(const semver& other) const noexcept {
   return _major_ == other._major_ && _minor_ == other._minor_ && _patch_ == other._patch_
          && _prerelease_ == other._prerelease_;
 }
