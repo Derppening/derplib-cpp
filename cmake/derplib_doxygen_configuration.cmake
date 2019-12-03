@@ -35,6 +35,8 @@ if (${DOXYGEN_FOUND})
     set(DOXYGEN_STRIP_FROM_INC_PATH ${SUBDIR_TARGETS})
     list(TRANSFORM DOXYGEN_STRIP_FROM_INC_PATH REPLACE "(.+)" "${PROJECT_SOURCE_DIR}/\\0/include")
 
+    set(DOXYGEN_USE_MDFILE_AS_MAINPAGE README.md)
+
     doxygen_add_docs(derplib_doxygen ${PROJECT_SOURCE_DIR})
 else (${DOXYGEN_FOUND})
     message(WARNING "Cannot find Doxygen: Documentation will not be generated")

@@ -23,17 +23,15 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "derplib", "index.html", [
-    [ "derplib", "md_README.html", [
-      [ "Getting Started", "md_README.html#autotoc_md1", [
-        [ "Prerequisites", "md_README.html#autotoc_md2", [
-          [ "Adding this project as a CMake dependency", "md_README.html#autotoc_md3", null ],
-          [ "Building as Standalone Library", "md_README.html#autotoc_md4", null ],
-          [ "Building tests", "md_README.html#autotoc_md5", null ]
-        ] ],
-        [ "CMake Configuration", "md_README.html#autotoc_md6", null ]
+    [ "Getting Started", "index.html#autotoc_md1", [
+      [ "Prerequisites", "index.html#autotoc_md2", [
+        [ "Adding this project as a CMake dependency", "index.html#autotoc_md3", null ],
+        [ "Building as Standalone Library", "index.html#autotoc_md4", null ],
+        [ "Building tests", "index.html#autotoc_md5", null ]
       ] ],
-      [ "Versioning", "md_README.html#autotoc_md7", null ]
+      [ "CMake Configuration", "index.html#autotoc_md6", null ]
     ] ],
+    [ "Versioning", "index.html#autotoc_md7", null ],
     [ "Style Guidelines", "md_STYLE.html", [
       [ "Rules", "md_STYLE.html#autotoc_md9", [
         [ "Syntax", "md_STYLE.html#autotoc_md10", null ],
@@ -73,7 +71,7 @@ var NAVTREEINDEX =
 [
 "algorithm_8h.html",
 "classderplib_1_1experimental_1_1__heap__entry__iterator.html#a9e89b52473d9d4cc9e49408a4c381a87",
-"structderplib_1_1experimental_1_1simple__pool__alloc_1_1config.html"
+"structderplib_1_1experimental_1_1simple__pool__alloc_1_1config.html#a052344fa28e2435e0f3657a0e2f3643e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
