@@ -1,12 +1,86 @@
 #include "derplib/base/semver.h"
 
 #include <algorithm>
+#include <array>
 
 namespace derplib {
 inline namespace base {
 namespace {
-inline bool _is_valid_identifier(const char c) {
-  return std::isalpha(c) || std::isdigit(c) || c == '-' || c == '.';
+/**
+ * \return Whether `c` is a valid identifier character as defined in the SemVer standard.
+ */
+inline bool _is_valid_identifier(const char c) noexcept {
+  const auto uc = static_cast<unsigned char>(c);
+  return std::isalpha(uc) || std::isdigit(uc) || uc == '-' || uc == '.';
+}
+
+/**
+ * \brief Parses the build identifier.
+ *
+ * \param tokens tokens as split by the character '+'.
+ * \return String of the build identifier, or an empty string if none was found.
+ * \throws semver::format_error if the SemVer label is malformed.
+ */
+std::string _parse_build(const std::vector<std::string>& tokens) {
+  if (tokens.size() > 2 || tokens.empty()) {
+    throw semver::format_error("Malformed SemVer label");
+  }
+
+  if (tokens.size() == 1) {
+    return "";
+  }
+
+  const std::string& build = tokens.back();
+  if (!std::all_of(build.begin(), build.end(), _is_valid_identifier)) {
+    throw semver::format_error("Build metadata identifier contains invalid characters");
+  }
+  return build;
+}
+
+/**
+ * \brief Parses the prerelease identifier.
+ *
+ * \param tokens tokens as split by the character '-`, after the build identifier is trimmed.
+ * \return String of the prerelease identifier, or an empty string if none was found.
+ * \throws semver::format_error if the SemVer label is malformed.
+ */
+std::string _parse_prerelease(const std::vector<std::string>& tokens) {
+  if (tokens.empty()) {
+    throw semver::format_error("Malformed SemVer label");
+  }
+
+  if (tokens.size() == 1) {
+    return "";
+  }
+
+  const auto prerelease = stdext::join_to_string<std::string>(tokens.begin() + 1, tokens.end(), '-');
+  if (!std::all_of(prerelease.begin(), prerelease.end(), _is_valid_identifier)) {
+    throw semver::format_error("Prerelease identifier contains invalid characters");
+  }
+  return prerelease;
+}
+
+/**
+ * \brief Parses the version identifiers.
+ *
+ * \param version_string the version string with the prerelease and build identifier trimmed.
+ * \return Array of version integers, sequenced as MAJOR, MINOR, PATCH.
+ * \throws semver::format_error if the SemVer label is malformed.
+ */
+std::array<int, 3> _parse_version(const std::string& version_string) {
+  const auto is_digit_char = [](const std::string& s) {
+    return std::all_of(s.begin(), s.end(), [](const unsigned char c) { return std::isdigit(c); });
+  };
+
+  const std::vector<std::string> versions = stdext::split_string(version_string, '.');
+  if (versions.size() != 3) {
+    throw semver::format_error("Release section does not contain 3 fields");
+  }
+  if (!std::all_of(versions.begin(), versions.end(), is_digit_char)) {
+    throw semver::format_error("Release section contains non-digit characters");
+  }
+
+  return {{std::stoi(versions[0]), std::stoi(versions[1]), std::stoi(versions[2])}};
 }
 }  // namespace
 
@@ -22,11 +96,7 @@ semver::format_error& semver::format_error::operator=(semver::format_error&&) no
 semver::format_error::~format_error() = default;
 
 semver::semver(int major, int minor, int patch, std::string prerelease, std::string build) :
-    _major_(major),
-    _minor_(minor),
-    _patch_(patch),
-    _prerelease_(std::move(prerelease)),
-    _build_(std::move(build)) {}
+    _major_(major), _minor_(minor), _patch_(patch), _prerelease_(std::move(prerelease)), _build_(std::move(build)) {}
 
 semver::operator std::string() const {
   std::string s = std::to_string(_major_) + "." + std::to_string(_minor_) + "." + std::to_string(_patch_);
@@ -77,49 +147,15 @@ bool semver::operator==(const semver& other) const noexcept {
 }
 
 semver semver::from_string(const std::string& str) {
-  // TODO: Might have to start writing comments and separating into logical chunks
+  const std::vector<std::string> build_tokens = stdext::split_string(str, '+');
+  std::string build = _parse_build(build_tokens);
 
-  std::vector<std::string> metadatas = stdext::split_string(str, '+');
-  if (metadatas.size() > 2 || metadatas.empty()) {
-    throw format_error("Malformed SemVer label");
-  }
-  if (metadatas.size() == 2 && !std::all_of(metadatas.back().begin(), metadatas.back().end(), [](const char c) {
-        return _is_valid_identifier(c);
-      })) {
-    throw format_error("Build metadata identifier contains invalid characters");
-  }
-  std::string build = metadatas.size() == 2 ? metadatas.back() : "";
+  const std::vector<std::string> prerelease_tokens = stdext::split_string(build_tokens.front(), '-');
+  std::string prerelease = _parse_prerelease(prerelease_tokens);
 
-  std::vector<std::string> prereleases = stdext::split_string(metadatas.front(), '-');
-  if (prereleases.size() > 2) {
-    auto s = stdext::join_to_string<std::string>(prereleases.begin() + 1, prereleases.end(), '-');
-    prereleases[1] = s;
-    prereleases.erase(prereleases.begin() + 2, prereleases.end());
-  }
-  if (prereleases.size() > 2 || prereleases.empty()) {
-    throw format_error("Malformed prerelease section");
-  }
-  if (prereleases.size() == 2 && !std::all_of(metadatas.back().begin(), metadatas.back().end(), [](const char c) {
-        return _is_valid_identifier(c);
-      })) {
-    throw format_error("Prerelease identifier contains invalid characters");
-  }
-  if (prereleases.size() == 2 && std::isdigit(prereleases.back().front())) {
-    throw format_error("Prerelease version cannot start with a digit");
-  }
-  std::string prerelease = prereleases.size() == 2 ? prereleases.back() : "";
+  const std::array<int, 3> versions = _parse_version(prerelease_tokens.front());
 
-  std::vector<std::string> versions = stdext::split_string(prereleases.front(), '.');
-  if (versions.size() != 3) {
-    throw format_error("Release section does not contain 3 fields");
-  }
-  if (!std::all_of(versions.begin(), versions.end(), [](const std::string& rstr) {
-        return std::all_of(rstr.begin(), rstr.end(), [](const char c) { return std::isdigit(c); });
-      })) {
-    throw format_error("Release section contains non-digit characters");
-  }
-
-  return semver(std::stoi(versions[0]), std::stoi(versions[1]), std::stoi(versions[2]), prerelease, build);
+  return semver(versions[0], versions[1], versions[2], prerelease, build);
 }
 }  // namespace base
 }  // namespace derplib
