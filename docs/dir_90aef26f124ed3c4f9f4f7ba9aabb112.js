@@ -8,6 +8,7 @@ var dir_90aef26f124ed3c4f9f4f7ba9aabb112 =
     [ "iterator.h", "iterator_8h.html", "iterator_8h" ],
     [ "memory.h", "memory_8h.html", "memory_8h" ],
     [ "ptr.h", "ptr_8h.html", "ptr_8h" ],
+    [ "random.h", "random_8h.html", "random_8h" ],
     [ "ranges.h", "ranges_8h.html", "ranges_8h" ],
     [ "string.h", "string_8h.html", "string_8h" ],
     [ "type_traits.h", "type__traits_8h.html", "type__traits_8h" ],

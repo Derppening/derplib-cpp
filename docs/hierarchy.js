@@ -21,6 +21,8 @@ var hierarchy =
       [ "derplib::base::basic_logger< CharT >::invalid_state", "classderplib_1_1base_1_1basic__logger_1_1invalid__state.html", null ]
     ] ],
     [ "derplib::ref_count_pointer< T, Deleter >::observer", "classderplib_1_1ref__count__pointer_1_1observer.html", null ],
+    [ "derplib::stdext::random< RandEngine >", "classderplib_1_1stdext_1_1random.html", null ],
+    [ "derplib::stdext::random< RandEngine >", "classderplib_1_1stdext_1_1random.html", null ],
     [ "derplib::ref_count_pointer< T, Deleter >", "classderplib_1_1ref__count__pointer.html", null ],
     [ "derplib::ref_count_pointer< T >", "classderplib_1_1ref__count__pointer.html", null ],
     [ "runtime_error", null, [

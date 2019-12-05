@@ -6,6 +6,7 @@ set(LIBRARY_HEADERS
         include/derplib/stdext/iterator.h
         include/derplib/stdext/memory.h
         include/derplib/stdext/ptr.h
+        include/derplib/stdext/random.h
         include/derplib/stdext/ranges.h
         include/derplib/stdext/string.h
         include/derplib/stdext/type_traits.h

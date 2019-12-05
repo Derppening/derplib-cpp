@@ -1,4 +1,4 @@
 var namespacederplib_1_1stdext =
 [
-    [ "newlib", "namespacederplib_1_1stdext_1_1newlib.html", null ]
+    [ "random", "classderplib_1_1stdext_1_1random.html", "classderplib_1_1stdext_1_1random" ]
 ];
