@@ -91,7 +91,7 @@ class base_heap_pool {
     /**
      * \brief Hash of the object type.
      */
-    std::size_t _type_hash;
+    const std::size_t _type_hash;
   };
 
   AllocStrategy _allocator_;
