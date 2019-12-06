@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['zero_5fmemory_5fafter_5ffree_396',['zero_memory_after_free',['../structderplib_1_1experimental_1_1simple__pool__alloc_1_1config.html#a6f381927ec22aed4ea25008ecf9a81a8',1,'derplib::experimental::simple_pool_alloc::config']]],
-  ['zero_5fmemory_5fon_5fdestruct_397',['zero_memory_on_destruct',['../structderplib_1_1experimental_1_1simple__pool__alloc_1_1config.html#a052344fa28e2435e0f3657a0e2f3643e',1,'derplib::experimental::simple_pool_alloc::config']]]
+  ['zero_5fmemory_5fafter_5ffree_396',['zero_memory_after_free',['../structderplib_1_1experimental_1_1simple__pool__allocator_1_1config.html#a9573f65c3a0d035cd460bf6618f16fad',1,'derplib::experimental::simple_pool_allocator::config']]],
+  ['zero_5fmemory_5fon_5fdestruct_397',['zero_memory_on_destruct',['../structderplib_1_1experimental_1_1simple__pool__allocator_1_1config.html#acd7c3f1e545c9c45728708f8c54b9a01',1,'derplib::experimental::simple_pool_allocator::config']]]
 ];

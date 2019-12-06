@@ -14,7 +14,7 @@ var hierarchy =
     [ "derplib::container::cfq_parallel_consumer< InT, ConsumerT >", "classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html", null ],
     [ "derplib::container::circular_queue< T, N >", "classderplib_1_1container_1_1circular__queue.html", null ],
     [ "derplib::container::circular_queue< T, N >", "classderplib_1_1container_1_1circular__queue.html", null ],
-    [ "derplib::experimental::simple_pool_alloc::config", "structderplib_1_1experimental_1_1simple__pool__alloc_1_1config.html", null ],
+    [ "derplib::experimental::simple_pool_allocator::config", "structderplib_1_1experimental_1_1simple__pool__allocator_1_1config.html", null ],
     [ "derplib::experimental::config_file", "classderplib_1_1experimental_1_1config__file.html", null ],
     [ "derplib::experimental::basic_cli< CharT, Func, typename >::entry", "structderplib_1_1experimental_1_1basic__cli_1_1entry.html", null ],
     [ "logic_error", null, [
@@ -30,7 +30,7 @@ var hierarchy =
     ] ],
     [ "derplib::base::semver", "classderplib_1_1base_1_1semver.html", null ],
     [ "derplib::base::semver", "classderplib_1_1base_1_1semver.html", null ],
-    [ "derplib::experimental::simple_pool_alloc", "classderplib_1_1experimental_1_1simple__pool__alloc.html", null ],
+    [ "derplib::experimental::simple_pool_allocator", "classderplib_1_1experimental_1_1simple__pool__allocator.html", null ],
     [ "derplib::base::stopwatch", "classderplib_1_1base_1_1stopwatch.html", null ],
     [ "derplib::base::stopwatch", "classderplib_1_1base_1_1stopwatch.html", null ],
     [ "derplib::base::timer< Func, typename >", "classderplib_1_1base_1_1timer.html", null ],

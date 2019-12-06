@@ -14,13 +14,16 @@ namespace experimental {
 /**
  * \brief A simple pool allocator.
  *
- * This allocator allocates a fixed-size contiguous region of memory as the heap memory pool.
+ * This allocator allocates a fixed-size contiguous region of memory as the heap memory pool. Fulfills the `Allocator`
+ * named requirement.
  */
-class simple_pool_alloc final {
+class simple_pool_allocator final {
  private:
   struct _entry;
 
  public:
+  using value_type = void;
+
   /**
    * \brief Allocator configuration.
    */
@@ -41,9 +44,25 @@ class simple_pool_alloc final {
    * \param n size of the heap
    * \param config configuration of this allocator
    */
-  simple_pool_alloc(std::size_t n, const config& config);
-  ~simple_pool_alloc();
+  simple_pool_allocator(std::size_t n, const config& config);
+  ~simple_pool_allocator();
 
+  simple_pool_allocator(const simple_pool_allocator&) = delete;
+  simple_pool_allocator(simple_pool_allocator&&) noexcept = default;
+
+  simple_pool_allocator& operator=(const simple_pool_allocator&) & = delete;
+  simple_pool_allocator& operator=(simple_pool_allocator&&) & noexcept = delete;
+
+  /**
+   * \brief Allocates a region of memory from the heap.
+   *
+   * \param n size of the allocation
+   * \return Pointer to the region with the required size, or `nullptr` if no such region was found.
+   *
+   * \note This function cannot allocate an aligned region of memory. If such functionality is required, use the
+   * `allocate(std::size_t,std::size_t)` overload.
+   */
+  void* allocate(std::size_t n) noexcept;
   /**
    * \brief Allocates a region of memory from the heap.
    *
@@ -58,6 +77,16 @@ class simple_pool_alloc final {
    * \param p pointer to the object allocated by this heap pool
    */
   void deallocate(void* p) noexcept;
+  /**
+   * \brief Deallocates a region of memory from the heap.
+   *
+   * \param p pointer to the object allocated by this heap pool
+   * \param n size of the object, or `0` if the size is unknown
+   *
+   * \note This function exists to satisfy the `Allocator` named requirement. The `deallocate(void*)` overload is
+   * generally preferred over this overload.
+   */
+  void deallocate(void* p, std::size_t n) noexcept;
 
   void heap_dump(std::ostream& os) const noexcept;
   DERPLIB_NODISCARD std::size_t max_size() const noexcept;

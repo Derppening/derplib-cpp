@@ -11,7 +11,8 @@ namespace experimental {
 /**
  * \brief A heap memory pool with support for different allocation strategies.
  *
- * \tparam AllocStrategy An allocation strategy that is used to acquire/release memory in the pool.
+ * \tparam AllocStrategy An allocation strategy that is used to acquire/release memory in the pool. Must satisfy the
+ * `Allocator` named requirement, and `std::allocator_traits<AllocStrategy>::value_type` must be `void`.
  * \tparam ThrowIfError Whether to throw an exception if an error has occurred. Refer to the specific function for when
  * the function will throw an error.
  */
@@ -26,6 +27,12 @@ class base_heap_pool {
    */
   explicit base_heap_pool(std::size_t size, const typename AllocStrategy::config& config = {});
   ~base_heap_pool();
+
+  base_heap_pool(const base_heap_pool&) = delete;
+  base_heap_pool(base_heap_pool&&) noexcept = default;
+
+  base_heap_pool& operator=(const base_heap_pool&) & = delete;
+  base_heap_pool& operator=(base_heap_pool&&) & noexcept = delete;
 
   /**
    * \brief Allocates an object onto the heap.
@@ -76,13 +83,15 @@ class base_heap_pool {
   std::size_t max_size() const noexcept;
 
  private:
+  using allocator_traits = std::allocator_traits<AllocStrategy>;
+
   /**
    * \brief Heap object type-dependent information.
    *
    * This POD type is used to store type-dependent information in order to enforce RAII and runtime type checking.
    */
   struct _entry {
-    using destructor_type = void (*)(const void*);
+    using destructor_type = void (*)(AllocStrategy&, const void*);
 
     /**
      * \brief Pointer to the destructor of the object.
@@ -108,8 +117,8 @@ base_heap_pool<AllocStrategy, ThrowIfError>::base_heap_pool(std::size_t size,
 template<typename AllocStrategy, bool ThrowIfError>
 base_heap_pool<AllocStrategy, ThrowIfError>::~base_heap_pool() {
   for (auto it = _entries_.begin(); it != _entries_.end();) {
-    it->second._destructor(it->first);
-    _allocator_.deallocate(it->first);
+    it->second._destructor(_allocator_, it->first);
+    allocator_traits::deallocate(_allocator_, it->first, 0);
     it = _entries_.erase(it);
   }
 }
@@ -126,11 +135,15 @@ T* base_heap_pool<AllocStrategy, ThrowIfError>::allocate(Args&&... args) {
     }
   }
 
-  _entry e = {[](const void* pobj) { static_cast<const T*>(pobj)->~T(); }, typeid(T).hash_code()};
+  constexpr auto dtor = [](AllocStrategy& allocator, const void* pobj) {
+    allocator_traits::destroy(allocator, static_cast<const T*>(pobj));
+  };
+  _entry e = {std::move(dtor), typeid(T).hash_code()};
   _entries_.emplace(std::make_pair(ptr, e));
 
-  new (ptr) T(args...);
-  return reinterpret_cast<T*>(ptr);
+  T* const tptr = reinterpret_cast<T*>(ptr);
+  allocator_traits::construct(_allocator_, tptr, args...);
+  return tptr;
 }
 
 template<typename AllocStrategy, bool ThrowIfError>
@@ -161,8 +174,10 @@ void base_heap_pool<AllocStrategy, ThrowIfError>::deallocate(T* ptr) {
   const auto it = _entries_.find(ptr);
   if (it != _entries_.end()) {
     if (it->second._type_hash == typeid(T).hash_code()) {
-      it->second._destructor(ptr);
-      _allocator_.deallocate(ptr);
+      T* const tptr = reinterpret_cast<T*>(ptr);
+
+      allocator_traits::destroy(_allocator_, tptr);
+      allocator_traits::deallocate(_allocator_, tptr, sizeof(T));
       _entries_.erase(it);
     } else {
       if (ThrowIfError) {

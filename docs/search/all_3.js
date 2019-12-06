@@ -15,7 +15,7 @@ var searchData=
   ['cmd_5fnot_5ffound_26',['cmd_not_found',['../classderplib_1_1experimental_1_1basic__cli.html#a2f632a0a4bfc5d0a8849d3ab893d35f4aaca20b057f73fca9fb98fd4f473d8ffb',1,'derplib::experimental::basic_cli']]],
   ['common_5fmacros_5fbegin_2eh_27',['common_macros_begin.h',['../common__macros__begin_8h.html',1,'']]],
   ['common_5fmacros_5fend_2eh_28',['common_macros_end.h',['../common__macros__end_8h.html',1,'']]],
-  ['config_29',['config',['../structderplib_1_1experimental_1_1simple__pool__alloc_1_1config.html',1,'derplib::experimental::simple_pool_alloc']]],
+  ['config_29',['config',['../structderplib_1_1experimental_1_1simple__pool__allocator_1_1config.html',1,'derplib::experimental::simple_pool_allocator']]],
   ['config_5ffile_30',['config_file',['../classderplib_1_1experimental_1_1config__file.html',1,'derplib::experimental::config_file'],['../classderplib_1_1experimental_1_1config__file.html#a4465aa09f9f817b79acc98a4a1228df7',1,'derplib::experimental::config_file::config_file()=default'],['../classderplib_1_1experimental_1_1config__file.html#a25442943db6b85e9a624d62fcaac3c89',1,'derplib::experimental::config_file::config_file(config_file &amp;&amp;c) noexcept=default'],['../classderplib_1_1experimental_1_1config__file.html#a2edb3ba5d2d4738c723f8be3cc4bb586',1,'derplib::experimental::config_file::config_file(const config_file &amp;c)=default']]],
   ['config_5ffile_2ecpp_31',['config_file.cpp',['../config__file_8cpp.html',1,'']]],
   ['config_5ffile_2eh_32',['config_file.h',['../config__file_8h.html',1,'']]],

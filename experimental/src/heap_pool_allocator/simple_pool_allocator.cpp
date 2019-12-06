@@ -1,4 +1,4 @@
-#include "derplib/experimental/heap_pool_allocator/simple_pool_alloc.h"
+#include "derplib/experimental/heap_pool_allocator/simple_pool_allocator.h"
 
 #include <iomanip>
 #include <iostream>
@@ -10,20 +10,26 @@ namespace experimental {
 
 #include <derplib/internal/common_macros_begin.h>
 
-simple_pool_alloc::simple_pool_alloc(std::size_t n, const simple_pool_alloc::config& config) :
+simple_pool_allocator::simple_pool_allocator(std::size_t n, const simple_pool_allocator::config& config) :
     _config_(config),
     _size(n),
     _heap_pool_(derplib::stdext::make_unique<unsigned char[]>(n)),
     _alloc_bounds_(_heap_pool_.get(), _heap_pool_.get() + _size) {}
 
-simple_pool_alloc::~simple_pool_alloc() {
+simple_pool_allocator::~simple_pool_allocator() {
   if (_config_.zero_memory_on_destruct) {
-    volatile unsigned char* ptr = _heap_pool_.get();
-    std::fill(ptr, ptr + _size, 0);
+    if (_heap_pool_) {
+      volatile unsigned char* ptr = _heap_pool_.get();
+      std::fill(ptr, ptr + _size, 0);
+    }
   }
 }
 
-void* simple_pool_alloc::allocate(std::size_t size, std::size_t alignment) noexcept {
+void* simple_pool_allocator::allocate(std::size_t n) noexcept {
+  return allocate(n, 1);
+}
+
+void* simple_pool_allocator::allocate(std::size_t size, std::size_t alignment) noexcept {
   const _entry e = {size, alignment};
   void* alloc_ptr = nullptr;
 
@@ -49,9 +55,17 @@ void* simple_pool_alloc::allocate(std::size_t size, std::size_t alignment) noexc
   return nullptr;
 }
 
-void simple_pool_alloc::deallocate(void* p) noexcept {
+void simple_pool_allocator::deallocate(void* p) noexcept {
+  deallocate(p, 0);
+}
+
+void simple_pool_allocator::deallocate(void* p, std::size_t n) noexcept {
   const auto it = _entries_.find(p);
   if (it != _entries_.end()) {
+    if (n != 0 && it->second._extent != n) {
+      return;
+    }
+
     void* const ptr = it->first;
 
     if (_config_.zero_memory_after_free) {
@@ -75,7 +89,7 @@ void simple_pool_alloc::deallocate(void* p) noexcept {
   }
 }
 
-void simple_pool_alloc::heap_dump(std::ostream& os) const noexcept {
+void simple_pool_allocator::heap_dump(std::ostream& os) const noexcept {
   using ptr_t = const void*;
 
   const unsigned char* current_ptr = _heap_pool_.get();
@@ -119,11 +133,11 @@ void simple_pool_alloc::heap_dump(std::ostream& os) const noexcept {
   }
 }
 
-std::size_t simple_pool_alloc::max_size() const noexcept {
+std::size_t simple_pool_allocator::max_size() const noexcept {
   return _size;
 }
 
-void* simple_pool_alloc::try_alloc_begin(const _entry e) noexcept {
+void* simple_pool_allocator::try_alloc_begin(const _entry e) noexcept {
   if (_alloc_bounds_.first > _heap_pool_.get()) {
     return nullptr;
   }
@@ -150,7 +164,7 @@ void* simple_pool_alloc::try_alloc_begin(const _entry e) noexcept {
   return nullptr;
 }
 
-void* simple_pool_alloc::try_alloc_nominal(simple_pool_alloc::_entry e) noexcept {
+void* simple_pool_allocator::try_alloc_nominal(simple_pool_allocator::_entry e) noexcept {
   const auto lower_bound = _entries_.lower_bound(_alloc_bounds_.first);
   const auto upper_bound = _entries_.upper_bound(_alloc_bounds_.second);
 
@@ -186,7 +200,7 @@ void* simple_pool_alloc::try_alloc_nominal(simple_pool_alloc::_entry e) noexcept
   return nullptr;
 }
 
-void* simple_pool_alloc::try_alloc_end(simple_pool_alloc::_entry e) noexcept {
+void* simple_pool_allocator::try_alloc_end(simple_pool_allocator::_entry e) noexcept {
   if (_alloc_bounds_.second < _heap_pool_.get() + _size) {
     return nullptr;
   }

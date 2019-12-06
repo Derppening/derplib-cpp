@@ -107,6 +107,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aaad45acf1868429883f516fc7fbe22fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf7eac8981fa4564d2ac6279803b99a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html#abf7eac8981fa4564d2ac6279803b99a1">~base_heap_pool</a> ()</td></tr>
 <tr class="separator:abf7eac8981fa4564d2ac6279803b99a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1c80c1a0e86b920fff26ba5bb101cde"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html#af1c80c1a0e86b920fff26ba5bb101cde">base_heap_pool</a> (const <a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html">base_heap_pool</a> &amp;)=delete</td></tr>
+<tr class="separator:af1c80c1a0e86b920fff26ba5bb101cde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b69622d70806ee92aa2bd2fdcd42f4f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html#a9b69622d70806ee92aa2bd2fdcd42f4f">base_heap_pool</a> (<a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html">base_heap_pool</a> &amp;&amp;) noexcept=default</td></tr>
+<tr class="separator:a9b69622d70806ee92aa2bd2fdcd42f4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c022a1f7c0537fb581fbd544c754a68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html">base_heap_pool</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html#a1c022a1f7c0537fb581fbd544c754a68">operator=</a> (const <a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html">base_heap_pool</a> &amp;) &amp;=delete</td></tr>
+<tr class="separator:a1c022a1f7c0537fb581fbd544c754a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4ba78634fd147eaaec519e78d370cd7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html">base_heap_pool</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html#af4ba78634fd147eaaec519e78d370cd7">operator=</a> (<a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html">base_heap_pool</a> &amp;&amp;) &amp;noexcept=delete</td></tr>
+<tr class="separator:af4ba78634fd147eaaec519e78d370cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02bae0df323216f02b364aedd190bcd9"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
 <tr class="memitem:a02bae0df323216f02b364aedd190bcd9"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html#a02bae0df323216f02b364aedd190bcd9">allocate</a> (Args &amp;&amp;... args)</td></tr>
 <tr class="memdesc:a02bae0df323216f02b364aedd190bcd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates an object onto the heap.  <a href="classderplib_1_1experimental_1_1base__heap__pool.html#a02bae0df323216f02b364aedd190bcd9">More...</a><br /></td></tr>
@@ -132,14 +140,14 @@ class derplib::experimental::base_heap_pool&lt; AllocStrategy, ThrowIfError &gt;
 <p>A heap memory pool with support for different allocation strategies. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">AllocStrategy</td><td>An allocation strategy that is used to acquire/release memory in the pool. </td></tr>
+    <tr><td class="paramname">AllocStrategy</td><td>An allocation strategy that is used to acquire/release memory in the pool. Must satisfy the <code>Allocator</code> named requirement, and <code>std::allocator_traits&lt;AllocStrategy&gt;::value_type</code> must be <code>void</code>. </td></tr>
     <tr><td class="paramname">ThrowIfError</td><td>Whether to throw an exception if an error has occurred. Refer to the specific function for when the function will throw an error. </td></tr>
   </table>
   </dd>
 </dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aaad45acf1868429883f516fc7fbe22fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaad45acf1868429883f516fc7fbe22fe">&#9670;&nbsp;</a></span>base_heap_pool()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aaad45acf1868429883f516fc7fbe22fe">&#9670;&nbsp;</a></span>base_heap_pool() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -200,6 +208,62 @@ template&lt;typename AllocStrategy , bool ThrowIfError&gt; </div>
           <td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af1c80c1a0e86b920fff26ba5bb101cde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1c80c1a0e86b920fff26ba5bb101cde">&#9670;&nbsp;</a></span>base_heap_pool() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename AllocStrategy , bool ThrowIfError = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html">derplib::experimental::base_heap_pool</a>&lt; AllocStrategy, ThrowIfError &gt;::<a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html">base_heap_pool</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html">base_heap_pool</a>&lt; AllocStrategy, ThrowIfError &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9b69622d70806ee92aa2bd2fdcd42f4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b69622d70806ee92aa2bd2fdcd42f4f">&#9670;&nbsp;</a></span>base_heap_pool() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename AllocStrategy , bool ThrowIfError = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html">derplib::experimental::base_heap_pool</a>&lt; AllocStrategy, ThrowIfError &gt;::<a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html">base_heap_pool</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html">base_heap_pool</a>&lt; AllocStrategy, ThrowIfError &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -396,6 +460,62 @@ template&lt;typename AllocStrategy , bool ThrowIfError&gt; </div>
 </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>Largest supported allocation size. </dd></dl>
+
+</div>
+</div>
+<a id="af4ba78634fd147eaaec519e78d370cd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4ba78634fd147eaaec519e78d370cd7">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename AllocStrategy , bool ThrowIfError = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html">base_heap_pool</a>&amp; <a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html">derplib::experimental::base_heap_pool</a>&lt; AllocStrategy, ThrowIfError &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html">base_heap_pool</a>&lt; AllocStrategy, ThrowIfError &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1c022a1f7c0537fb581fbd544c754a68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c022a1f7c0537fb581fbd544c754a68">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename AllocStrategy , bool ThrowIfError = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html">base_heap_pool</a>&amp; <a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html">derplib::experimental::base_heap_pool</a>&lt; AllocStrategy, ThrowIfError &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classderplib_1_1experimental_1_1base__heap__pool.html">base_heap_pool</a>&lt; AllocStrategy, ThrowIfError &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
