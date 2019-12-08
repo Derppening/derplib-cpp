@@ -112,11 +112,12 @@ class base_heap_pool {
 template<typename AllocStrategy, bool ThrowIfError>
 base_heap_pool<AllocStrategy, ThrowIfError>::base_heap_pool(std::size_t size,
                                                             const typename AllocStrategy::config& config) :
-    _allocator_(size, config) {}
+    _allocator_{size, config} {}
 
 template<typename AllocStrategy, bool ThrowIfError>
 base_heap_pool<AllocStrategy, ThrowIfError>::~base_heap_pool() {
-  for (auto it = _entries_.begin(); it != _entries_.end();) {
+  // TODO: const auto the end iterator
+  for (auto it{_entries_.begin()}; it != _entries_.end();) {
     it->second._destructor(_allocator_, it->first);
     allocator_traits::deallocate(_allocator_, it->first, 0);
     it = _entries_.erase(it);
@@ -126,10 +127,10 @@ base_heap_pool<AllocStrategy, ThrowIfError>::~base_heap_pool() {
 template<typename AllocStrategy, bool ThrowIfError>
 template<typename T, typename... Args>
 T* base_heap_pool<AllocStrategy, ThrowIfError>::allocate(Args&&... args) {
-  void* ptr = _allocator_.allocate(sizeof(T), alignof(T));
+  void* ptr{_allocator_.allocate(sizeof(T), alignof(T))};
   if (ptr == nullptr) {
     if (ThrowIfError) {
-      throw std::bad_alloc();
+      throw std::bad_alloc{};
     } else {
       return nullptr;
     }
@@ -138,10 +139,10 @@ T* base_heap_pool<AllocStrategy, ThrowIfError>::allocate(Args&&... args) {
   constexpr auto dtor = [](AllocStrategy& allocator, const void* pobj) {
     allocator_traits::destroy(allocator, static_cast<const T*>(pobj));
   };
-  _entry e = {std::move(dtor), typeid(T).hash_code()};
+  _entry e{std::move(dtor), typeid(T).hash_code()};
   _entries_.emplace(std::make_pair(ptr, e));
 
-  T* const tptr = reinterpret_cast<T*>(ptr);
+  T* const tptr{reinterpret_cast<T*>(ptr)};
   allocator_traits::construct(_allocator_, tptr, args...);
   return tptr;
 }
@@ -149,21 +150,21 @@ T* base_heap_pool<AllocStrategy, ThrowIfError>::allocate(Args&&... args) {
 template<typename AllocStrategy, bool ThrowIfError>
 template<typename T>
 T* base_heap_pool<AllocStrategy, ThrowIfError>::get(void* ptr) {
-  const auto it = _entries_.find(ptr);
+  const auto it{_entries_.find(ptr)};
   if (it != _entries_.end()) {
     if (it->second._type_hash == typeid(T).hash_code()) {
       return reinterpret_cast<T*>(ptr);
     }
 
     if (ThrowIfError) {
-      throw std::bad_cast();
+      throw std::bad_cast{};
     }
 
     return nullptr;
   }
 
   if (ThrowIfError) {
-    throw std::invalid_argument("get(): Target object not allocated by this heap pool");
+    throw std::invalid_argument{"get(): Target object not allocated by this heap pool"};
   }
   return nullptr;
 }
@@ -171,22 +172,22 @@ T* base_heap_pool<AllocStrategy, ThrowIfError>::get(void* ptr) {
 template<typename AllocStrategy, bool ThrowIfError>
 template<typename T>
 void base_heap_pool<AllocStrategy, ThrowIfError>::deallocate(T* ptr) {
-  const auto it = _entries_.find(ptr);
+  const auto it{_entries_.find(ptr)};
   if (it != _entries_.end()) {
     if (it->second._type_hash == typeid(T).hash_code()) {
-      T* const tptr = reinterpret_cast<T*>(ptr);
+      T* const tptr{reinterpret_cast<T*>(ptr)};
 
       allocator_traits::destroy(_allocator_, tptr);
       allocator_traits::deallocate(_allocator_, tptr, sizeof(T));
       _entries_.erase(it);
     } else {
       if (ThrowIfError) {
-        throw std::bad_cast();
+        throw std::bad_cast{};
       }
     }
   } else {
     if (ThrowIfError) {
-      throw std::invalid_argument("deallocate(): Target object not allocated by this heap pool");
+      throw std::invalid_argument{"deallocate(): Target object not allocated by this heap pool"};
     }
   }
 }

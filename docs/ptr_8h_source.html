@@ -152,7 +152,7 @@ $(document).ready(function(){initNavTree('ptr_8h_source.html','');});
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">char</span>* type,</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">char</span>* var,</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            Args&amp;&amp;... args) {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  ptr = <span class="keyword">new</span> T(args...);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  ptr = <span class="keyword">new</span> T{args...};</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  std::cout &lt;&lt; file &lt;&lt; <span class="stringliteral">&quot;: In function &quot;</span> &lt;&lt; func &lt;&lt; <span class="charliteral">&#39;\n&#39;</span></div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            &lt;&lt; file &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; line &lt;&lt; <span class="stringliteral">&quot;: new &quot;</span> &lt;&lt; type &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; var &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; static_cast&lt;void*&gt;(ptr) &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <span class="keywordflow">return</span> ptr;</div>

@@ -115,7 +115,7 @@ $(document).ready(function(){initNavTree('cmath_8h_source.html','');});
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> R&gt;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">inline</span> DERPLIB_CPP14_CONSTEXPR <span class="keyword">typename</span> std::enable_if&lt;std::is_floating_point&lt;R&gt;::value, R&gt;::type</div>
 <div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="namespacederplib_1_1stdext.html#a169f65e44f513b5004ff166d620660f3">   42</a></span>&#160;<a class="code" href="namespacederplib_1_1stdext.html#a169f65e44f513b5004ff166d620660f3">to_radians</a>(<span class="keyword">const</span> T&amp; degrees) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  constexpr R degree_to_radian = static_cast&lt;R&gt;(M_PI) / 180.0;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  constexpr R degree_to_radian{static_cast&lt;R&gt;(M_PI) / 180.0};</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordflow">return</span> degrees * degree_to_radian;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
@@ -123,7 +123,7 @@ $(document).ready(function(){initNavTree('cmath_8h_source.html','');});
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">inline</span> DERPLIB_CPP14_CONSTEXPR <span class="keyword">typename</span> std::enable_if&lt;std::is_floating_point&lt;T&gt;::value, T&gt;::type</div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="namespacederplib_1_1stdext.html#add31fa6f7c0d563b2391e4d9e5db18fc">   50</a></span>&#160;<a class="code" href="namespacederplib_1_1stdext.html#add31fa6f7c0d563b2391e4d9e5db18fc">to_degrees</a>(<span class="keyword">const</span> T&amp; radians) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  constexpr T radian_to_degree = 180.0 / static_cast&lt;T&gt;(M_PI);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  constexpr T radian_to_degree{180.0 / static_cast&lt;T&gt;(M_PI)};</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordflow">return</span> radians * radian_to_degree;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>

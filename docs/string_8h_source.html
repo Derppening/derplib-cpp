@@ -123,7 +123,7 @@ $(document).ready(function(){initNavTree('string_8h_source.html','');});
 <div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="namespacederplib_1_1stdext.html#a09cdb11434cb1e8aa23d6d3e1baee50c">   69</a></span>&#160;T <a class="code" href="namespacederplib_1_1stdext.html#afba7109dbdc40156a348deb2cd14a5c8">join_to_string</a>(<span class="keyword">typename</span> std::vector&lt;T&gt;::const_iterator begin,</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                 <span class="keyword">typename</span> std::vector&lt;T&gt;::const_iterator end,</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                 <span class="keyword">typename</span> T::value_type separator) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacederplib_1_1stdext.html#afba7109dbdc40156a348deb2cd14a5c8">join_to_string</a>(begin, end, T(1, separator));</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacederplib_1_1stdext.html#afba7109dbdc40156a348deb2cd14a5c8">join_to_string</a>(begin, end, T{1, separator});</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
@@ -144,10 +144,10 @@ $(document).ready(function(){initNavTree('string_8h_source.html','');});
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;std::vector&lt;std::basic_string&lt;CharT&gt;&gt;</div>
 <div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="namespacederplib_1_1stdext.html#ad61a33bae3b59c2e717e909e4787ec04">  103</a></span>&#160;<a class="code" href="namespacederplib_1_1stdext.html#ad61a33bae3b59c2e717e909e4787ec04">split_string</a>(<span class="keyword">const</span> std::basic_string&lt;CharT&gt;&amp; input, <span class="keyword">const</span> std::basic_string&lt;CharT&gt;&amp; delimiter, <span class="keywordtype">unsigned</span> limit) {</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keyword">using</span> string_type = <span class="keyword">typename</span> std::basic_string&lt;CharT&gt;;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  std::vector&lt;string_type&gt; vs;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  std::vector&lt;string_type&gt; vs{};</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  std::size_t pos = 0;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  std::size_t end;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  std::size_t pos{0};</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  std::size_t end{};</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordflow">while</span> ((end = input.find(delimiter, pos)) != string_type::npos) {</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    vs.emplace_back(input.substr(pos, end - pos));</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    pos = end + delimiter.length();</div>
@@ -168,10 +168,10 @@ $(document).ready(function(){initNavTree('string_8h_source.html','');});
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;std::vector&lt;std::basic_string&lt;CharT&gt;&gt;</div>
 <div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="namespacederplib_1_1stdext.html#ae3e23f266716bc0df7a84aecef8a6f0d">  127</a></span>&#160;<a class="code" href="namespacederplib_1_1stdext.html#ad61a33bae3b59c2e717e909e4787ec04">split_string</a>(<span class="keyword">const</span> std::basic_string&lt;CharT&gt;&amp; input, <span class="keyword">const</span> CharT delimiter, <span class="keywordtype">unsigned</span> limit) {</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keyword">using</span> string_type = <span class="keyword">typename</span> std::basic_string&lt;CharT&gt;;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  std::vector&lt;string_type&gt; vs;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  std::vector&lt;string_type&gt; vs{};</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  std::size_t pos = 0;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  std::size_t end;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  std::size_t pos{0};</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  std::size_t end{};</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keywordflow">while</span> ((end = input.find(delimiter, pos)) != string_type::npos) {</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    vs.emplace_back(input.substr(pos, end - pos));</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    pos = end + 1;</div>
@@ -194,13 +194,13 @@ $(document).ready(function(){initNavTree('string_8h_source.html','');});
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                                                   CharT delimiter,</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                                                   <span class="keywordtype">unsigned</span> limit) {</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <span class="keyword">using</span> string_type = <span class="keyword">typename</span> std::basic_string&lt;CharT&gt;;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  std::vector&lt;string_type&gt; vs;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  std::vector&lt;string_type&gt; vs{};</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  std::string buffer;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  std::string buffer{};</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = begin; it != end; ++it) {</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">if</span> (*it == delimiter) {</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;      vs.emplace_back(std::move(buffer));</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;      buffer = std::string();</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;      buffer = std::string{};</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      <span class="keywordflow">if</span> (limit != 0 &amp;&amp; vs.size() &gt;= limit) {</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">return</span> vs;</div>
@@ -221,9 +221,9 @@ $(document).ready(function(){initNavTree('string_8h_source.html','');});
 <div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="namespacederplib_1_1stdext.html#afba7109dbdc40156a348deb2cd14a5c8">  179</a></span>&#160;T <a class="code" href="namespacederplib_1_1stdext.html#afba7109dbdc40156a348deb2cd14a5c8">join_to_string</a>(<span class="keyword">typename</span> std::vector&lt;T&gt;::const_iterator begin,</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                 <span class="keyword">typename</span> std::vector&lt;T&gt;::const_iterator end,</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                 <span class="keyword">const</span> T&amp; separator) {</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  std::basic_stringstream&lt;typename T::value_type&gt; arg;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  std::basic_stringstream&lt;typename T::value_type&gt; arg{};</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  std::copy(begin, end, std::ostream_iterator&lt;T&gt;(arg, separator.c_str()));</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  <span class="keyword">auto</span> str = arg.str();</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  <span class="keyword">auto</span> str{arg.str()};</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  str.erase(str.length() - separator.length());</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <span class="keywordflow">return</span> str;</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>

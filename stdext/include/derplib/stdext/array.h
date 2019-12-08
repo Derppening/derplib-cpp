@@ -63,15 +63,15 @@ constexpr std::size_t size(const C& c) {
 
 template<typename T, std::size_t N>
 DERPLIB_CPP14_CONSTEXPR std::array<T, N> to_array(const T (&arr)[N]) noexcept {
-  std::array<T, N> a;
+  std::array<T, N> a{};
   std::copy(std::begin(arr), std::end(arr), a.begin());
   return a;
 }
 
 template<typename T, std::size_t N>
 DERPLIB_CPP14_CONSTEXPR std::array<T, N> to_array(T(&&arr)[N]) noexcept {
-  std::array<T, N> a;
-  for (std::size_t i = 0; i < N; ++i) {
+  std::array<T, N> a{};
+  for (std::size_t i{0}; i < N; ++i) {
     a[i] = std::move(arr[i]);
   }
   return a;

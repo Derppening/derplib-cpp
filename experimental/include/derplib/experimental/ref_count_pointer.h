@@ -17,11 +17,11 @@ class ref_count_pointer {
     using pointer = ref_count_pointer::pointer;
     using element_type = ref_count_pointer::element_type;
 
-    observer(element_type* p, ref_count_pointer<T>* src) noexcept : _p_(p), _rcp_(src) {}
+    observer(element_type* p, ref_count_pointer<T>* src) noexcept : _p_{p}, _rcp_{src} {}
 
-    observer(const observer& other) : _p_(other._p_), _rcp_(other._rcp_) { _rcp_->_v_.push_back(this); }
+    observer(const observer& other) : _p_{other._p_}, _rcp_{other._rcp_} { _rcp_->_v_.push_back(this); }
 
-    observer(observer&& other) : _p_(other._p_), _rcp_(other._rcp_) {
+    observer(observer&& other) : _p_{other._p_}, _rcp_{other._rcp_} {
       other._p_ = nullptr;
       other._rcp_ = nullptr;
 
@@ -41,19 +41,20 @@ class ref_count_pointer {
     friend class ref_count_pointer;
   };
 
-  constexpr ref_count_pointer() noexcept : _u_(), _v_() {}
+  constexpr ref_count_pointer() noexcept : _u_{}, _v_{} {}
 
-  constexpr ref_count_pointer(std::nullptr_t) noexcept : _u_(std::nullptr_t()), _v_() {}
+  constexpr ref_count_pointer(std::nullptr_t) noexcept : _u_{std::nullptr_t{}}, _v_{} {}
 
-  explicit ref_count_pointer(pointer p) noexcept : _u_(p), _v_() {}
+  explicit ref_count_pointer(pointer p) noexcept : _u_{p}, _v_{} {}
 
   // TODO: Overload 3, 4 for unique_ptr
-  ref_count_pointer(ref_count_pointer&& rc) noexcept : _u_(std::move(rc._u_)), _v_(std::move(rc._v_)) {}
+  ref_count_pointer(ref_count_pointer&& rc) noexcept : _u_{std::move(rc._u_)}, _v_{std::move(rc._v_)} {}
 
   template<typename U, typename E>
-  ref_count_pointer(ref_count_pointer<U, E>&& u) noexcept : _u_(std::move(u._u_)), _v_(std::move(u._v_)) {}
+  ref_count_pointer(ref_count_pointer<U, E>&& u) noexcept : _u_{std::move(u._u_)}, _v_{std::move(u._v_)} {}
 
   ~ref_count_pointer() {
+    // TODO: We don't need the reference capture right?
     std::for_each(_v_.begin(), _v_.end(), [&](observer*& o) {
       o->_p_ = nullptr;
       o->_rcp_ = nullptr;
@@ -72,8 +73,8 @@ class ref_count_pointer {
   }
 
   ref_count_pointer& operator=(std::nullptr_t) noexcept {
-    _u_ = std::unique_ptr<T>();
-    _v_ = std::vector<observer*>();
+    _u_ = std::unique_ptr<T>{};
+    _v_ = std::vector<observer*>{};
 
     return *this;
   }
@@ -88,12 +89,14 @@ class ref_count_pointer {
   void reset(pointer ptr = pointer()) noexcept {
     _u_.reset(ptr);
 
+    // TODO: We don't need to lambda capture right?
     std::for_each(_v_.begin(), _v_.end(), [&](observer*& p) { p->_p_ = nullptr; });
     _v_.clear();
   }
 
   observer get() noexcept {
-    observer p = observer(_u_.get(), this);
+    // TODO: auto-init
+    observer p = observer{_u_.get(), this};
     _v_.push_back(&p);
     return p;
   }

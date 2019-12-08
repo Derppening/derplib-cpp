@@ -51,7 +51,7 @@ std::vector<T> int_range(const T& start, const T& end, const T& step) {
 
   std::vector<T> v(static_cast<typename std::vector<T>::size_type>(std::ceil((end - start) / float(step))));
   std::generate(v.begin(), v.end(), [=, &start]() {
-    T n = start;
+    T n{start};
     start += step;
     return n;
   });
@@ -60,7 +60,7 @@ std::vector<T> int_range(const T& start, const T& end, const T& step) {
 
 template<typename T, std::size_t N, typename>
 std::array<T, N> generate_sequence(const T& value) {
-  std::array<T, N> array = {};
+  std::array<T, N> array{};
   std::iota(array.begin(), array.end(), value);
   return array;
 }

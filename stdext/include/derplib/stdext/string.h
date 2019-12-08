@@ -69,7 +69,7 @@ template<typename T>
 T join_to_string(typename std::vector<T>::const_iterator begin,
                  typename std::vector<T>::const_iterator end,
                  typename T::value_type separator) {
-  return join_to_string(begin, end, T(1, separator));
+  return join_to_string(begin, end, T{1, separator});
 }
 
 template<typename T>
@@ -102,10 +102,10 @@ template<typename CharT>
 std::vector<std::basic_string<CharT>>
 split_string(const std::basic_string<CharT>& input, const std::basic_string<CharT>& delimiter, unsigned limit) {
   using string_type = typename std::basic_string<CharT>;
-  std::vector<string_type> vs;
+  std::vector<string_type> vs{};
 
-  std::size_t pos = 0;
-  std::size_t end;
+  std::size_t pos{0};
+  std::size_t end{};
   while ((end = input.find(delimiter, pos)) != string_type::npos) {
     vs.emplace_back(input.substr(pos, end - pos));
     pos = end + delimiter.length();
@@ -126,10 +126,10 @@ template<typename CharT>
 std::vector<std::basic_string<CharT>>
 split_string(const std::basic_string<CharT>& input, const CharT delimiter, unsigned limit) {
   using string_type = typename std::basic_string<CharT>;
-  std::vector<string_type> vs;
+  std::vector<string_type> vs{};
 
-  std::size_t pos = 0;
-  std::size_t end;
+  std::size_t pos{0};
+  std::size_t end{};
   while ((end = input.find(delimiter, pos)) != string_type::npos) {
     vs.emplace_back(input.substr(pos, end - pos));
     pos = end + 1;
@@ -152,13 +152,13 @@ std::vector<std::basic_string<CharT>> split_string(typename std::basic_string<Ch
                                                    CharT delimiter,
                                                    unsigned limit) {
   using string_type = typename std::basic_string<CharT>;
-  std::vector<string_type> vs;
+  std::vector<string_type> vs{};
 
-  std::string buffer;
+  std::string buffer{};
   for (auto it = begin; it != end; ++it) {
     if (*it == delimiter) {
       vs.emplace_back(std::move(buffer));
-      buffer = std::string();
+      buffer = std::string{};
 
       if (limit != 0 && vs.size() >= limit) {
         return vs;
@@ -179,9 +179,9 @@ template<typename T>
 T join_to_string(typename std::vector<T>::const_iterator begin,
                  typename std::vector<T>::const_iterator end,
                  const T& separator) {
-  std::basic_stringstream<typename T::value_type> arg;
+  std::basic_stringstream<typename T::value_type> arg{};
   std::copy(begin, end, std::ostream_iterator<T>(arg, separator.c_str()));
-  auto str = arg.str();
+  auto str{arg.str()};
   str.erase(str.length() - separator.length());
   return str;
 }

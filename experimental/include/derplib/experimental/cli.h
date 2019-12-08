@@ -102,7 +102,7 @@ class basic_cli {
    *
    * \param level overridden hint level
    */
-  explicit basic_cli(hint_level level) : _hint_level_(level) {}
+  explicit basic_cli(hint_level level) : _hint_level_{level} {}
 
   virtual ~basic_cli() = default;
 
@@ -118,7 +118,7 @@ class basic_cli {
    * \param header header text
    * \return `*this`.
    */
-  basic_cli& header(const string_type& header) { return item(header, std::vector<string_type>()); }
+  basic_cli& header(const string_type& header) { return item(header, std::vector<string_type>{}); }
 
   /**
    * \brief Adds an option item.

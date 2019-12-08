@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('ranges_8h_source.html','');});
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  std::vector&lt;T&gt; v(<span class="keyword">static_cast&lt;</span>typename std::vector&lt;T&gt;::size_type<span class="keyword">&gt;</span>(std::ceil((end - start) / <span class="keywordtype">float</span>(step))));</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  std::generate(v.begin(), v.end(), [=, &amp;start]() {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    T n = start;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    T n{start};</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    start += step;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> n;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  });</div>
@@ -133,7 +133,7 @@ $(document).ready(function(){initNavTree('ranges_8h_source.html','');});
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N, <span class="keyword">typename</span>&gt;</div>
 <div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="namespacederplib_1_1stdext.html#aa24f5b222fa373430453f55ee2736c47">   62</a></span>&#160;std::array&lt;T, N&gt; <a class="code" href="namespacederplib_1_1stdext.html#aa24f5b222fa373430453f55ee2736c47">generate_sequence</a>(<span class="keyword">const</span> T&amp; value) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  std::array&lt;T, N&gt; array = {};</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  std::array&lt;T, N&gt; array{};</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  std::iota(array.begin(), array.end(), value);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">return</span> array;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>

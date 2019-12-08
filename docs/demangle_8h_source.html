@@ -112,8 +112,8 @@ $(document).ready(function(){initNavTree('demangle_8h_source.html','');});
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="namespacederplib_1_1stdext.html#abc1df8ce96eb4c0fbfe1db75be2b7d62">   46</a></span>&#160;std::string <a class="code" href="namespacederplib_1_1stdext.html#abc1df8ce96eb4c0fbfe1db75be2b7d62">type_name</a>(<span class="keywordtype">bool</span> legacy_naming) {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">int</span> status;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  std::string tname;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">int</span> status{};</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  std::string tname{};</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">char</span>* <span class="keyword">const</span> demangled_name = abi::__cxa_demangle(<span class="keyword">typeid</span>(T).name(), <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, &amp;status);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">if</span> (status == 0) {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    tname = demangled_name;</div>
@@ -123,7 +123,7 @@ $(document).ready(function(){initNavTree('demangle_8h_source.html','');});
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  }</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">if</span> (!legacy_naming) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    std::size_t pos;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    std::size_t pos{};</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">while</span> ((pos = tname.find(<span class="stringliteral">&quot;&gt; &gt;&quot;</span>)) != std::string::npos) {</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      tname.replace(pos, 3, <span class="stringliteral">&quot;&gt;&gt;&quot;</span>);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>

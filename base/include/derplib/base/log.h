@@ -35,9 +35,9 @@ class basic_logger {
    */
   class invalid_state final : public std::logic_error {
    public:
-    explicit invalid_state(const char* what_arg) : logic_error(what_arg) {}
+    explicit invalid_state(const char* what_arg) : logic_error{what_arg} {}
 
-    explicit invalid_state(const std::string& what_arg) : logic_error(what_arg) {}
+    explicit invalid_state(const std::string& what_arg) : logic_error{what_arg} {}
   };
 
   /**
@@ -53,7 +53,7 @@ class basic_logger {
    * \param os destination of the logger
    * \param min_level minimum level of information that will be output to the logger
    */
-  basic_logger(ostream& os, level min_level) : _min_level_(min_level), _ostream_(os) {}
+  basic_logger(ostream& os, level min_level) : _min_level_{min_level}, _ostream_{os} {}
 
   /**
    * \brief Copy constructor.
@@ -162,14 +162,14 @@ class basic_logger {
 
 template<typename CharT>
 std::unique_ptr<basic_logger<CharT>>& basic_logger<CharT>::_instance() {
-  static std::unique_ptr<basic_logger<CharT>> i;
+  static std::unique_ptr<basic_logger<CharT>> i{};
   return i;
 }
 
 template<typename CharT>
 basic_logger<CharT>& basic_logger<CharT>::make_default(basic_logger::ostream& os, basic_logger::level min_level) {
   if (_instance() != nullptr) {
-    throw basic_logger::invalid_state("Default logger already initialized");
+    throw basic_logger::invalid_state{"Default logger already initialized"};
   }
 
   _instance() = stdext::make_unique<basic_logger<CharT>>(os, min_level);
@@ -189,7 +189,7 @@ basic_logger<CharT>& basic_logger<CharT>::replace_default(basic_logger::ostream&
 template<typename CharT>
 basic_logger<CharT>& basic_logger<CharT>::get_default() {
   if (_instance() == nullptr) {
-    throw basic_logger::invalid_state("Default logger not initialized");
+    throw basic_logger::invalid_state{"Default logger not initialized"};
   }
 
   return *_instance();
@@ -199,13 +199,15 @@ template<typename CharT>
 std::basic_string<CharT> basic_logger<CharT>::_fmt_time() {
   // https://stackoverflow.com/questions/24686846/get-current-time-in-milliseconds-or-hhmmssmmm-format
 
-  auto now = std::chrono::system_clock::now();
-  auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()) % 1000;
+  // TODO: Verify const-ness of locals
 
-  auto time = std::chrono::system_clock::to_time_t(now);
-  std::tm tm = *std::localtime(&time);
+  auto now{std::chrono::system_clock::now()};
+  auto ms{std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()) % 1000};
 
-  basic_logger::ostringstream ss;
+  auto time{std::chrono::system_clock::to_time_t(now)};
+  std::tm tm{*std::localtime(&time)};
+
+  basic_logger::ostringstream ss{};
   ss << std::put_time(&tm, "%m-%d %H:%M:%S") << '.' << std::setfill('0') << std::setw(3) << ms.count();
   return ss.str();
 }

@@ -154,11 +154,11 @@ $(document).ready(function(){initNavTree('timer_8h_source.html','');});
 <div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classderplib_1_1base_1_1timer_3_01Func_01_4.html#a0bbfb1458e98260fb8499b1f5ec2106a">  107</a></span>&#160;<a class="code" href="classderplib_1_1base_1_1timer.html">timer&lt;Func&gt;::timer</a>(std::chrono::duration&lt;Rep, Period&gt; duration,</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                   <span class="keyword">const</span> Func&amp; callback,</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                   std::chrono::duration&lt;Rep, Period&gt; poll_rate) :</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    _state_(State::NotStarted),</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    _keep_alive_(true),</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    _duration(std::chrono::nanoseconds(duration)),</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    _poll_rate(std::chrono::nanoseconds(poll_rate)),</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    _callback_(callback) {}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    _state_{State::NotStarted},</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    _keep_alive_{<span class="keyword">true</span>},</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    _duration{std::chrono::nanoseconds(duration)},</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    _poll_rate{std::chrono::nanoseconds(poll_rate)},</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    _callback_{callback} {}</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Func&gt;</div>
 <div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classderplib_1_1base_1_1timer_3_01Func_01_4.html#a37524861fbe5e8268ddd149052bd2139">  117</a></span>&#160;<a class="code" href="classderplib_1_1base_1_1timer_3_01Func_01_4.html">timer&lt;Func&gt;</a>&amp; <a class="code" href="classderplib_1_1base_1_1timer.html">timer&lt;Func&gt;::operator=</a>(<span class="keyword">const</span> <a class="code" href="classderplib_1_1base_1_1timer.html">timer</a>&amp; other) &amp; {</div>
@@ -185,14 +185,14 @@ $(document).ready(function(){initNavTree('timer_8h_source.html','');});
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Func&gt;</div>
 <div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="classderplib_1_1base_1_1timer_3_01Func_01_4.html#a4338c2052a4cfa923af5c369490decaa">  139</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classderplib_1_1base_1_1timer.html">timer&lt;Func&gt;::start</a>() {</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="keywordflow">if</span> (_state_ == State::Active) {</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Attempted to start a running timer&quot;</span>);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">throw</span> std::logic_error{<span class="stringliteral">&quot;Attempted to start a running timer&quot;</span>};</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_state_ == State::Expired) {</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Attempted to restart an expired timer&quot;</span>);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">throw</span> std::logic_error{<span class="stringliteral">&quot;Attempted to restart an expired timer&quot;</span>};</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  }</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  _state_ = State::Active;</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  _end_time_ = std::chrono::steady_clock::now() + _duration;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  _thread_ = std::thread(&amp;timer::_countdown_daemon, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  _thread_ = std::thread{&amp;timer::_countdown_daemon, <span class="keyword">this</span>};</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;}</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Func&gt;</div>
@@ -201,7 +201,7 @@ $(document).ready(function(){initNavTree('timer_8h_source.html','');});
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  }</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="keywordflow">if</span> (_state_ != State::Active) {</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Attempted to stop a halted timer&quot;</span>);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">throw</span> std::logic_error{<span class="stringliteral">&quot;Attempted to stop a halted timer&quot;</span>};</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  }</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  _keep_alive_ = <span class="keyword">false</span>;</div>
@@ -210,7 +210,7 @@ $(document).ready(function(){initNavTree('timer_8h_source.html','');});
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    _thread_.join();</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  }</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  _thread_ = std::thread();</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  _thread_ = std::thread{};</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Func&gt;</div>

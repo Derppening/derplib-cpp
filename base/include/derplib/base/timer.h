@@ -107,11 +107,11 @@ template<typename Rep, typename Period>
 timer<Func>::timer(std::chrono::duration<Rep, Period> duration,
                    const Func& callback,
                    std::chrono::duration<Rep, Period> poll_rate) :
-    _state_(State::NotStarted),
-    _keep_alive_(true),
-    _duration(std::chrono::nanoseconds(duration)),
-    _poll_rate(std::chrono::nanoseconds(poll_rate)),
-    _callback_(callback) {}
+    _state_{State::NotStarted},
+    _keep_alive_{true},
+    _duration{std::chrono::nanoseconds(duration)},
+    _poll_rate{std::chrono::nanoseconds(poll_rate)},
+    _callback_{callback} {}
 
 template<typename Func>
 timer<Func>& timer<Func>::operator=(const timer& other) & {
@@ -138,14 +138,14 @@ timer<Func>::~timer() {
 template<typename Func>
 void timer<Func>::start() {
   if (_state_ == State::Active) {
-    throw std::logic_error("Attempted to start a running timer");
+    throw std::logic_error{"Attempted to start a running timer"};
   } else if (_state_ == State::Expired) {
-    throw std::logic_error("Attempted to restart an expired timer");
+    throw std::logic_error{"Attempted to restart an expired timer"};
   }
 
   _state_ = State::Active;
   _end_time_ = std::chrono::steady_clock::now() + _duration;
-  _thread_ = std::thread(&timer::_countdown_daemon, this);
+  _thread_ = std::thread{&timer::_countdown_daemon, this};
 }
 
 template<typename Func>
@@ -154,7 +154,7 @@ void timer<Func>::stop() {
     return;
   }
   if (_state_ != State::Active) {
-    throw std::logic_error("Attempted to stop a halted timer");
+    throw std::logic_error{"Attempted to stop a halted timer"};
   }
 
   _keep_alive_ = false;
@@ -163,7 +163,7 @@ void timer<Func>::stop() {
     _thread_.join();
   }
 
-  _thread_ = std::thread();
+  _thread_ = std::thread{};
 }
 
 template<typename Func>

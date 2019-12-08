@@ -6,9 +6,9 @@ namespace {
 using derplib::logger;
 
 TEST(LogTest, OutputError) {
-  std::ostringstream oss;
+  std::ostringstream oss{};
 
-  logger l(oss, logger::level::error);
+  logger l{oss, logger::level::error};
 
   l.v("Verbose");
   ASSERT_TRUE(oss.str().empty());
@@ -24,7 +24,7 @@ TEST(LogTest, OutputError) {
 
   l.e("Error");
 
-  std::string oss_str = oss.str();
+  std::string oss_str{oss.str()};
   ASSERT_FALSE(oss_str.empty());
   ASSERT_TRUE(oss_str.find("Error") != std::string::npos);
 }

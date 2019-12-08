@@ -131,7 +131,7 @@ T*& ptr_new(T*& ptr,
             const char* type,
             const char* var,
             Args&&... args) {
-  ptr = new T(args...);
+  ptr = new T{args...};
   std::cout << file << ": In function " << func << '\n'
             << file << ":" << line << ": new " << type << ": " << var << " " << static_cast<void*>(ptr) << std::endl;
   return ptr;

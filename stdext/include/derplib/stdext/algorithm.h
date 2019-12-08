@@ -32,7 +32,7 @@ inline DERPLIB_CPP14_CONSTEXPR const T& clamp(const T& v, const T& lo, const T& 
  */
 template<class T>
 inline DERPLIB_CPP14_CONSTEXPR const T& clamp(const T& v, const T& lo, const T& hi) {
-  return clamp(v, lo, hi, std::less<T>());
+  return clamp(v, lo, hi, std::less<T>{});
 }
 
 /**
@@ -62,7 +62,7 @@ DERPLIB_CPP14_CONSTEXPR bool in_range(const T& v, const T& lo, const T& hi, Comp
  */
 template<class T>
 DERPLIB_CPP14_CONSTEXPR bool in_range(const T& v, const T& lo, const T& hi) {
-  return in_range(v, lo, hi, std::less<T>());
+  return in_range(v, lo, hi, std::less<T>{});
 }
 
 #include <derplib/internal/common_macros_end.h>

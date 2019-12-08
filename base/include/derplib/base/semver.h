@@ -14,6 +14,8 @@ inline namespace base {
 
 class semver {
  public:
+  // TODO(Derppening): Rewrite to use tokenization
+
   /**
    * \brief Reports errors that are caused by parsing a malformed version string.
    */

@@ -34,8 +34,8 @@ class _heap_entry_iterator {
    * \param container backing container of the iterator
    */
   explicit _heap_entry_iterator(const container_type& container) noexcept :
-      _prev_(container.begin()),
-      _curr_(container.begin()) {}
+      _prev_{container.begin()},
+      _curr_{container.begin()} {}
   /**
    * \brief Constructs an iterator pointing to a given element of the container.
    *
@@ -43,8 +43,8 @@ class _heap_entry_iterator {
    * \param iterator current iterator position
    */
   _heap_entry_iterator(const container_type& container, base_iterator_type iterator) noexcept :
-      _prev_(iterator != container.begin() ? --base_iterator_type(iterator) : container.begin()),
-      _curr_(iterator) {}
+      _prev_{iterator != container.begin() ? --base_iterator_type(iterator) : container.begin()},
+      _curr_{iterator} {}
 
   /**
    * \return Iterator to the previous entry, or `current()` if `current()` is equal to the backing container's first
@@ -65,7 +65,7 @@ class _heap_entry_iterator {
     return *this;
   }
   _heap_entry_iterator operator++(int) noexcept {
-    auto tmp = *this;
+    auto tmp{*this};
     ++*this;
     return tmp;
   }

@@ -11,10 +11,10 @@ using cq_int = derplib::container::circular_queue<int, Size>;
 struct TestClass {
   enum { none, copy, move } init;
 
-  TestClass() : init(none) {}
+  TestClass() : init{none} {}
 
-  TestClass(const TestClass&) : init(copy) {}
-  TestClass(TestClass&&) noexcept : init(move) {}
+  TestClass(const TestClass&) : init{copy} {}
+  TestClass(TestClass&&) noexcept : init{move} {}
 
   TestClass& operator=(const TestClass&) {
     init = copy;
@@ -30,14 +30,14 @@ template<std::size_t Size>
 using cq_tc = derplib::container::circular_queue<TestClass, Size>;
 
 TEST(CircularQueueTest, DefaultConstructTrivial) {
-  cq_int<5> cq;
+  cq_int<5> cq{};
 
   EXPECT_TRUE(cq.empty());
   EXPECT_EQ(0, cq.size());
 }
 
 TEST(CircularQueueTest, DefaultConstructThrowContracts) {
-  cq_int<5> cq;
+  cq_int<5> cq{};
 
   EXPECT_THROW(cq.front(), std::runtime_error);
   EXPECT_THROW(cq.back(), std::runtime_error);
@@ -45,8 +45,8 @@ TEST(CircularQueueTest, DefaultConstructThrowContracts) {
 }
 
 TEST(CircularQueueTest, CopyConstructFromOtherTrivial) {
-  cq_int<5> orig(std::array<int, 5>{1, 2, 3, 4, 5});
-  cq_int<5> actual(orig);
+  cq_int<5> orig{std::array<int, 5>{1, 2, 3, 4, 5}};
+  cq_int<5> actual{orig};
 
   EXPECT_NE(std::addressof(orig.front()), std::addressof(actual.front()));
 
@@ -57,8 +57,8 @@ TEST(CircularQueueTest, CopyConstructFromOtherTrivial) {
 }
 
 TEST(CircularQueueTest, MoveConstructFromOtherTrivial) {
-  cq_int<5> orig(std::array<int, 5>{1, 2, 3, 4, 5});
-  cq_int<5> actual(std::move(orig));
+  cq_int<5> orig{std::array<int, 5>{1, 2, 3, 4, 5}};
+  cq_int<5> actual{std::move(orig)};
 
   EXPECT_EQ(false, actual.empty());
   EXPECT_EQ(5, actual.size());
@@ -67,8 +67,8 @@ TEST(CircularQueueTest, MoveConstructFromOtherTrivial) {
 }
 
 TEST(CircularQueueTest, CopyConstructFromOther) {
-  cq_tc<5> orig(std::array<TestClass, 5>{});
-  cq_tc<5> actual(orig);
+  cq_tc<5> orig{std::array<TestClass, 5>{}};
+  cq_tc<5> actual{orig};
 
   EXPECT_NE(std::addressof(orig.front()), std::addressof(actual.front()));
 
@@ -80,8 +80,8 @@ TEST(CircularQueueTest, CopyConstructFromOther) {
 }
 
 TEST(CircularQueueTest, MoveConstructFromOther) {
-  cq_tc<5> orig(std::array<TestClass, 5>{});
-  cq_tc<5> actual(std::move(orig));
+  cq_tc<5> orig{std::array<TestClass, 5>{}};
+  cq_tc<5> actual{std::move(orig)};
 
   EXPECT_EQ(false, actual.empty());
   EXPECT_EQ(5, actual.size());
@@ -91,8 +91,8 @@ TEST(CircularQueueTest, MoveConstructFromOther) {
 }
 
 TEST(CircularQueueTest, CopyConstructFromTrivialArrayOverfill) {
-  std::array<int, 7> arr = {{1, 2, 3, 4, 5, 6, 7}};
-  cq_int<5> cq(arr);
+  std::array<int, 7> arr{{1, 2, 3, 4, 5, 6, 7}};
+  cq_int<5> cq{arr};
 
   EXPECT_FALSE(cq.empty());
   EXPECT_EQ(5, cq.size());
@@ -101,8 +101,8 @@ TEST(CircularQueueTest, CopyConstructFromTrivialArrayOverfill) {
 }
 
 TEST(CircularQueueTest, CopyConstructFromTrivialArrayFull) {
-  std::array<int, 5> arr = {{1, 2, 3, 4, 5}};
-  cq_int<5> cq(arr);
+  std::array<int, 5> arr{{1, 2, 3, 4, 5}};
+  cq_int<5> cq{arr};
 
   EXPECT_FALSE(cq.empty());
   EXPECT_EQ(arr.size(), cq.size());
@@ -111,8 +111,8 @@ TEST(CircularQueueTest, CopyConstructFromTrivialArrayFull) {
 }
 
 TEST(CircularQueueTest, CopyConstructFromTrivialArrayPartial) {
-  std::array<int, 3> arr = {{1, 2, 3}};
-  cq_int<5> cq(arr);
+  std::array<int, 3> arr{{1, 2, 3}};
+  cq_int<5> cq{arr};
 
   EXPECT_FALSE(cq.empty());
   EXPECT_EQ(arr.size(), cq.size());
@@ -121,8 +121,8 @@ TEST(CircularQueueTest, CopyConstructFromTrivialArrayPartial) {
 }
 
 TEST(CircularQueueTest, MoveConstructFromTrivialArrayOverfill) {
-  std::array<int, 7> arr = {{1, 2, 3, 4, 5, 6, 7}};
-  cq_int<5> cq(std::move(arr));
+  std::array<int, 7> arr{{1, 2, 3, 4, 5, 6, 7}};
+  cq_int<5> cq{std::move(arr)};
 
   EXPECT_FALSE(cq.empty());
   EXPECT_EQ(5, cq.size());
@@ -131,8 +131,8 @@ TEST(CircularQueueTest, MoveConstructFromTrivialArrayOverfill) {
 }
 
 TEST(CircularQueueTest, MoveConstructFromTrivialArrayFull) {
-  std::array<int, 5> arr = {{1, 2, 3, 4, 5}};
-  cq_int<5> cq(std::move(arr));
+  std::array<int, 5> arr{{1, 2, 3, 4, 5}};
+  cq_int<5> cq{std::move(arr)};
 
   EXPECT_FALSE(cq.empty());
   EXPECT_EQ(5, cq.size());
@@ -141,8 +141,8 @@ TEST(CircularQueueTest, MoveConstructFromTrivialArrayFull) {
 }
 
 TEST(CircularQueueTest, MoveConstructFromTrivialArrayPartial) {
-  std::array<int, 3> arr = {{1, 2, 3}};
-  cq_int<5> cq(std::move(arr));
+  std::array<int, 3> arr{{1, 2, 3}};
+  cq_int<5> cq{std::move(arr)};
 
   EXPECT_FALSE(cq.empty());
   EXPECT_EQ(3, cq.size());
@@ -151,8 +151,8 @@ TEST(CircularQueueTest, MoveConstructFromTrivialArrayPartial) {
 }
 
 TEST(CircularQueueTest, CopyConstructFromArrayOverfill) {
-  std::array<TestClass, 7> arr = {};
-  cq_tc<5> cq(arr);
+  std::array<TestClass, 7> arr{};
+  cq_tc<5> cq{arr};
 
   EXPECT_FALSE(cq.empty());
   EXPECT_EQ(5, cq.size());
@@ -162,8 +162,8 @@ TEST(CircularQueueTest, CopyConstructFromArrayOverfill) {
 }
 
 TEST(CircularQueueTest, CopyConstructFromArrayFull) {
-  std::array<TestClass, 5> arr = {};
-  cq_tc<5> cq(arr);
+  std::array<TestClass, 5> arr{};
+  cq_tc<5> cq{arr};
 
   EXPECT_FALSE(cq.empty());
   EXPECT_EQ(arr.size(), cq.size());
@@ -173,8 +173,8 @@ TEST(CircularQueueTest, CopyConstructFromArrayFull) {
 }
 
 TEST(CircularQueueTest, CopyConstructFromArrayPartial) {
-  std::array<TestClass, 3> arr = {};
-  cq_tc<5> cq(arr);
+  std::array<TestClass, 3> arr{};
+  cq_tc<5> cq{arr};
 
   EXPECT_FALSE(cq.empty());
   EXPECT_EQ(arr.size(), cq.size());
@@ -184,8 +184,8 @@ TEST(CircularQueueTest, CopyConstructFromArrayPartial) {
 }
 
 TEST(CircularQueueTest, MoveConstructFromArrayFull) {
-  std::array<TestClass, 5> arr = {};
-  cq_tc<5> cq(std::move(arr));
+  std::array<TestClass, 5> arr{};
+  cq_tc<5> cq{std::move(arr)};
 
   EXPECT_FALSE(cq.empty());
   EXPECT_EQ(5, cq.size());
@@ -195,16 +195,16 @@ TEST(CircularQueueTest, MoveConstructFromArrayFull) {
 }
 
 TEST(CircularQueueTest, PushPopOrdering) {
-  constexpr std::array<int, 5> elems = {1, 2, 3, 4, 5};
+  constexpr std::array<int, 5> elems{{1, 2, 3, 4, 5}};
 
-  cq_int<5> cq;
+  cq_int<5> cq{};
   for (const int e : elems) {
     EXPECT_NO_THROW(cq.push(e)) << "at element " << e;
   }
 
   EXPECT_EQ(elems.size(), cq.size());
 
-  for (std::size_t i = 0; i < 5; ++i) {
+  for (std::size_t i{0}; i < 5; ++i) {
     EXPECT_EQ(elems[i], cq.front()) << "at index [" << i << "]";
     cq.pop();
   }
@@ -213,14 +213,14 @@ TEST(CircularQueueTest, PushPopOrdering) {
 }
 
 TEST(CircularQueueTest, PushPopWithWraparound) {
-  constexpr std::array<int, 5> init_elems = {1, 2, 3, 4, 5};
-  constexpr std::array<int, 5> circ_elems = {6, 7, 8, 9, 10};
+  constexpr std::array<int, 5> init_elems{{1, 2, 3, 4, 5}};
+  constexpr std::array<int, 5> circ_elems{{6, 7, 8, 9, 10}};
 
-  cq_int<5> cq(init_elems);
+  cq_int<5> cq{init_elems};
   ASSERT_EQ(init_elems.size(), cq.size());
 
   // Pass 1: Replace original elements with circ1_elems
-  for (std::size_t i = 0; i < 5; ++i) {
+  for (std::size_t i{0}; i < 5; ++i) {
     EXPECT_EQ(init_elems[i], cq.front()) << "at index [" << i << "]";
     cq.pop();
     EXPECT_NO_THROW(cq.push(circ_elems[i])) << "at value " << circ_elems[i] << " with index [" << i << "]";
@@ -232,7 +232,7 @@ TEST(CircularQueueTest, PushPopWithWraparound) {
 
   // Pass 2: Replace circ1_elems with circ2_elems
   // This is to ensure that after replacing all elements in the circular queue, the queue is in a well-defined state.
-  for (std::size_t i = 0; i < 5; ++i) {
+  for (std::size_t i{0}; i < 5; ++i) {
     EXPECT_EQ(circ_elems[i], cq.front()) << "at index [" << i << "]";
     cq.pop();
     EXPECT_NO_THROW(cq.push(init_elems[i])) << "at value " << init_elems[i] << " with index [" << i << "]";
@@ -242,7 +242,7 @@ TEST(CircularQueueTest, PushPopWithWraparound) {
   EXPECT_EQ(init_elems.front(), cq.front());
   EXPECT_EQ(init_elems.back(), cq.back());
 
-  for (std::size_t i = 0; i < 5; ++i) {
+  for (std::size_t i{0}; i < 5; ++i) {
     EXPECT_EQ(init_elems[i], cq.front()) << "at index [" << i << "]";
     cq.pop();
   }
@@ -251,7 +251,7 @@ TEST(CircularQueueTest, PushPopWithWraparound) {
 }
 
 TEST(CircularQueueTest, CopyPushElementTrivialWhenEmpty) {
-  cq_int<1> cq;
+  cq_int<1> cq{};
 
   ASSERT_TRUE(cq.empty());
 
@@ -265,11 +265,11 @@ TEST(CircularQueueTest, CopyPushElementTrivialWhenEmpty) {
 }
 
 TEST(CircularQueueTest, CopyPushElementWhenEmpty) {
-  cq_tc<1> cq;
+  cq_tc<1> cq{};
 
   ASSERT_TRUE(cq.empty());
 
-  cq.push(static_cast<const TestClass&>(TestClass()));
+  cq.push(static_cast<const TestClass&>(TestClass{}));
 
   EXPECT_FALSE(cq.empty());
   EXPECT_EQ(1, cq.size());
@@ -279,7 +279,7 @@ TEST(CircularQueueTest, CopyPushElementWhenEmpty) {
 }
 
 TEST(CircularQueueTest, MovePushElementTrivialWhenEmpty) {
-  cq_int<1> cq;
+  cq_int<1> cq{};
 
   ASSERT_TRUE(cq.empty());
 
@@ -293,11 +293,11 @@ TEST(CircularQueueTest, MovePushElementTrivialWhenEmpty) {
 }
 
 TEST(CircularQueueTest, MovePushElementWhenEmpty) {
-  cq_tc<1> cq;
+  cq_tc<1> cq{};
 
   ASSERT_TRUE(cq.empty());
 
-  cq.push(std::move(TestClass()));
+  cq.push(std::move(TestClass{}));
 
   EXPECT_FALSE(cq.empty());
   EXPECT_EQ(1, cq.size());
@@ -307,7 +307,7 @@ TEST(CircularQueueTest, MovePushElementWhenEmpty) {
 }
 
 TEST(CircularQueueTest, CopyPushElementTrivialWhenNonEmpty) {
-  cq_int<2> cq(std::array<int, 1>{1});
+  cq_int<2> cq{std::array<int, 1>{{1}}};
 
   ASSERT_FALSE(cq.empty());
   ASSERT_EQ(1, cq.size());
@@ -322,11 +322,11 @@ TEST(CircularQueueTest, CopyPushElementTrivialWhenNonEmpty) {
 }
 
 TEST(CircularQueueTest, CopyPushElementWhenNonEmpty) {
-  cq_tc<2> cq((std::array<TestClass, 1>()));
+  cq_tc<2> cq{std::array<TestClass, 1>{}};
 
   ASSERT_FALSE(cq.empty());
 
-  cq.push(static_cast<const TestClass&>(TestClass()));
+  cq.push(static_cast<const TestClass&>(TestClass{}));
 
   EXPECT_FALSE(cq.empty());
   EXPECT_EQ(2, cq.size());
@@ -335,7 +335,7 @@ TEST(CircularQueueTest, CopyPushElementWhenNonEmpty) {
 }
 
 TEST(CircularQueueTest, MovePushElementTrivialWhenNonEmpty) {
-  cq_int<2> cq(std::array<int, 1>{1});
+  cq_int<2> cq{std::array<int, 1>{{1}}};
 
   ASSERT_FALSE(cq.empty());
   ASSERT_EQ(1, cq.size());
@@ -350,11 +350,11 @@ TEST(CircularQueueTest, MovePushElementTrivialWhenNonEmpty) {
 }
 
 TEST(CircularQueueTest, MovePushElementWhenNonEmpty) {
-  cq_tc<2> cq((std::array<TestClass, 1>()));
+  cq_tc<2> cq{std::array<TestClass, 1>{}};
 
   ASSERT_FALSE(cq.empty());
 
-  cq.push(std::move(TestClass()));
+  cq.push(std::move(TestClass{}));
 
   EXPECT_FALSE(cq.empty());
   EXPECT_EQ(2, cq.size());
@@ -363,7 +363,7 @@ TEST(CircularQueueTest, MovePushElementWhenNonEmpty) {
 }
 
 TEST(CircularQueueTest, CopyPushElementTrivialWhenFull) {
-  cq_int<1> cq(std::array<int, 1>{1});
+  cq_int<1> cq{std::array<int, 1>{{1}}};
 
   ASSERT_FALSE(cq.empty());
   ASSERT_EQ(1, cq.size());
@@ -378,12 +378,12 @@ TEST(CircularQueueTest, CopyPushElementTrivialWhenFull) {
 }
 
 TEST(CircularQueueTest, CopyPushElementWhenFull) {
-  cq_tc<1> cq((std::array<TestClass, 1>()));
+  cq_tc<1> cq{std::array<TestClass, 1>{}};
 
   ASSERT_FALSE(cq.empty());
   ASSERT_EQ(1, cq.size());
 
-  ASSERT_THROW(cq.push(static_cast<const TestClass&>(TestClass())), std::length_error);
+  ASSERT_THROW(cq.push(static_cast<const TestClass&>(TestClass{})), std::length_error);
 
   EXPECT_FALSE(cq.empty());
   EXPECT_EQ(1, cq.size());
@@ -391,7 +391,7 @@ TEST(CircularQueueTest, CopyPushElementWhenFull) {
 }
 
 TEST(CircularQueueTest, MovePushElementTrivialFull) {
-  cq_int<1> cq(std::array<int, 1>{1});
+  cq_int<1> cq{std::array<int, 1>{{1}}};
 
   ASSERT_FALSE(cq.empty());
   ASSERT_EQ(1, cq.size());
@@ -406,12 +406,12 @@ TEST(CircularQueueTest, MovePushElementTrivialFull) {
 }
 
 TEST(CircularQueueTest, MovePushElementFull) {
-  cq_tc<1> cq((std::array<TestClass, 1>()));
+  cq_tc<1> cq{std::array<TestClass, 1>{}};
 
   ASSERT_FALSE(cq.empty());
   ASSERT_EQ(1, cq.size());
 
-  ASSERT_THROW(cq.push(std::move(TestClass())), std::length_error);
+  ASSERT_THROW(cq.push(std::move(TestClass{})), std::length_error);
 
   EXPECT_FALSE(cq.empty());
   EXPECT_EQ(1, cq.size());
