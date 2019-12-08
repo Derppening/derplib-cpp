@@ -10,9 +10,7 @@ set(LIBRARY_SOURCES
         src/config_file.cpp
         src/heap_pool_allocator/simple_pool_allocator.cpp)
 set(TEST_SOURCES
-        tests/cli-test.cpp
-        tests/config_file-test.cpp
-        tests/ref_count_pointer-test.cpp)
+        tests/heap_pool_allocator/simple_pool_allocator.cpp)
 
 derplib_add_library(experimental
         HEADERS ${LIBRARY_HEADERS}

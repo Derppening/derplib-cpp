@@ -8,9 +8,7 @@ set(LIBRARY_SOURCES
         src/stopwatch.cpp)
 set(TEST_SOURCES
         tests/log-test.cpp
-        tests/semver-test.cpp
-        tests/stopwatch-test.cpp
-        tests/timer-test.cpp)
+        tests/semver-test.cpp)
 
 derplib_add_library(base
         HEADERS ${LIBRARY_HEADERS}
