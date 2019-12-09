@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <array>
+#include <sstream>
 
 namespace derplib {
 inline namespace base {
@@ -68,17 +69,17 @@ std::string _parse_prerelease(const std::vector<std::string>& tokens) {
  * \throws semver::format_error if the SemVer label is malformed.
  */
 std::array<int, 3> _parse_version(const std::string& version_string) {
-  const auto is_digit_char{[](const std::string& s) {
-    // TODO: Move the nested lambda into its own variable
-    // TODO: Why isn't this constexpr? Can it not be constexpr or something?
-    return std::all_of(s.begin(), s.end(), [](const unsigned char c) { return std::isdigit(c); });
+  const auto is_digit_string{[](const std::string& s) {
+    const auto is_digit_char{[](const unsigned char c) { return std::isdigit(c); }};
+
+    return std::all_of(s.begin(), s.end(), is_digit_char);
   }};
 
   const std::vector<std::string> versions{stdext::split_string(version_string, '.')};
   if (versions.size() != 3) {
     throw semver::format_error{"Release section does not contain 3 fields"};
   }
-  if (!std::all_of(versions.begin(), versions.end(), is_digit_char)) {
+  if (!std::all_of(versions.begin(), versions.end(), is_digit_string)) {
     throw semver::format_error{"Release section contains non-digit characters"};
   }
 
@@ -101,16 +102,17 @@ semver::semver(int major, int minor, int patch, std::string prerelease, std::str
     _major_{major}, _minor_{minor}, _patch_{patch}, _prerelease_{std::move(prerelease)}, _build_{std::move(build)} {}
 
 semver::operator std::string() const {
-  // TODO: ostringostream
-  std::string s{std::to_string(_major_) + "." + std::to_string(_minor_) + "." + std::to_string(_patch_)};
+  std::ostringstream oss{};
+  oss << _major_ << '.' << _minor_ << '.' << _patch_;
+
   if (!_prerelease_.empty()) {
-    s += ("-" + _prerelease_);
+    oss << '-' << _prerelease_;
   }
   if (!_build_.empty()) {
-    s += ("+" + _build_);
+    oss << '+' << _build_;
   }
 
-  return s;
+  return oss.str();
 }
 
 bool semver::operator<(const semver& other) const noexcept {

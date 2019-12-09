@@ -147,8 +147,8 @@ $(document).ready(function(){initNavTree('base__heap__pool_8h_source.html','');}
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> AllocStrategy, <span class="keywordtype">bool</span> ThrowIfError&gt;</div>
 <div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classderplib_1_1experimental_1_1base__heap__pool.html#abf7eac8981fa4564d2ac6279803b99a1">  118</a></span>&#160;<a class="code" href="classderplib_1_1experimental_1_1base__heap__pool.html#abf7eac8981fa4564d2ac6279803b99a1">base_heap_pool&lt;AllocStrategy, ThrowIfError&gt;::~base_heap_pool</a>() {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="comment">// TODO: const auto the end iterator</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> it{_entries_.begin()}; it != _entries_.end();) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span> end{_entries_.end()};</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> it{_entries_.begin()}; it != end;) {</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    it-&gt;second._destructor(_allocator_, it-&gt;first);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    allocator_traits::deallocate(_allocator_, it-&gt;first, 0);</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    it = _entries_.erase(it);</div>

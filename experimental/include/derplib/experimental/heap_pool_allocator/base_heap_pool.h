@@ -116,8 +116,8 @@ base_heap_pool<AllocStrategy, ThrowIfError>::base_heap_pool(std::size_t size,
 
 template<typename AllocStrategy, bool ThrowIfError>
 base_heap_pool<AllocStrategy, ThrowIfError>::~base_heap_pool() {
-  // TODO: const auto the end iterator
-  for (auto it{_entries_.begin()}; it != _entries_.end();) {
+  const auto end{_entries_.end()};
+  for (auto it{_entries_.begin()}; it != end;) {
     it->second._destructor(_allocator_, it->first);
     allocator_traits::deallocate(_allocator_, it->first, 0);
     it = _entries_.erase(it);

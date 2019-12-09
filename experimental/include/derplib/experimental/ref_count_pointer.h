@@ -54,8 +54,7 @@ class ref_count_pointer {
   ref_count_pointer(ref_count_pointer<U, E>&& u) noexcept : _u_{std::move(u._u_)}, _v_{std::move(u._v_)} {}
 
   ~ref_count_pointer() {
-    // TODO: We don't need the reference capture right?
-    std::for_each(_v_.begin(), _v_.end(), [&](observer*& o) {
+    std::for_each(_v_.begin(), _v_.end(), [](observer*& o) {
       o->_p_ = nullptr;
       o->_rcp_ = nullptr;
     });
@@ -89,14 +88,12 @@ class ref_count_pointer {
   void reset(pointer ptr = pointer()) noexcept {
     _u_.reset(ptr);
 
-    // TODO: We don't need to lambda capture right?
-    std::for_each(_v_.begin(), _v_.end(), [&](observer*& p) { p->_p_ = nullptr; });
+    std::for_each(_v_.begin(), _v_.end(), [](observer*& p) { p->_p_ = nullptr; });
     _v_.clear();
   }
 
   observer get() noexcept {
-    // TODO: auto-init
-    observer p = observer{_u_.get(), this};
+    auto p = observer{_u_.get(), this};
     _v_.push_back(&p);
     return p;
   }

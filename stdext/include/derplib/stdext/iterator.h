@@ -23,9 +23,7 @@ inline namespace stdext {
 // TODO: std::enable_if<...>
 template<class InputIt, class BinaryFunction>
 BinaryFunction for_each_indexed(InputIt first, InputIt last, BinaryFunction f) {
-  // TODO: Why isn't index inlined into the loop body?
-  std::size_t index{0};
-  for (; first != last; ++first, ++index) {
+  for (std::size_t index{0}; first != last; ++first, ++index) {
     f(index, *first);
   }
   return f;

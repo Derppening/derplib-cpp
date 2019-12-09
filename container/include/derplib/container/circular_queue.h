@@ -344,8 +344,7 @@ typename circular_queue<T, N>::reference circular_queue<T, N>::back() {
 template<typename T, std::size_t N>
 typename circular_queue<T, N>::const_reference circular_queue<T, N>::back() const {
   if (empty()) {
-    // TODO: back(): no element
-    throw std::runtime_error{"front(): no element"};
+    throw std::runtime_error{"back(): no element"};
   }
 
   return _end_[-1];

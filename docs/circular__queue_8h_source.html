@@ -276,128 +276,127 @@ $(document).ready(function(){initNavTree('circular__queue_8h_source.html','');})
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
 <div class="line"><a name="l00345"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1circular__queue.html#a3acf3f28e7aed466a54feafdf56f285d">  345</a></span>&#160;<span class="keyword">typename</span> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#aa66f75aaae8e08ddc05721e7075f187e">circular_queue&lt;T, N&gt;::const_reference</a> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#a59860888c3f6704b7b5544c2ccabaece">circular_queue&lt;T, N&gt;::back</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">empty</a>()) {</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="comment">// TODO: back(): no element</span></div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keywordflow">throw</span> std::runtime_error{<span class="stringliteral">&quot;front(): no element&quot;</span>};</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  }</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;  <span class="keywordflow">return</span> _end_[-1];</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;}</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00355"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">  355</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">circular_queue&lt;T, N&gt;::empty</a>() const noexcept {</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;  <span class="keywordflow">return</span> _size_ == 0;</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;}</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00360"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1circular__queue.html#a64bdcb959789492324dcc92699a2af72">  360</a></span>&#160;<span class="keyword">typename</span> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#ab30285ea276bfd9925d68ed8199d4984">circular_queue&lt;T, N&gt;::size_type</a> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#a64bdcb959789492324dcc92699a2af72">circular_queue&lt;T, N&gt;::size</a>() const noexcept {</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;  <span class="keywordflow">return</span> _size_;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;}</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00365"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1circular__queue.html#af8ec3ce5120e1263aa6e9da5dc93119e">  365</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#af8ec3ce5120e1263aa6e9da5dc93119e">circular_queue&lt;T, N&gt;::push</a>(<span class="keyword">const</span> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#a116ec7e5f3004552b27b2935cc11c5ff">value_type</a>&amp; value) {</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a64bdcb959789492324dcc92699a2af72">size</a>() == N) {</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="keywordflow">throw</span> std::length_error{<span class="stringliteral">&quot;push(): max elements alloc&#39;d&quot;</span>};</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  }</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160; </div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">empty</a>() || _end_ == _data_.end()) {</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    _end_ = _data_.begin();</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  }</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;  *_end_++ = value;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;  ++_size_;</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;}</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00379"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1circular__queue.html#a1cd0e96e0582ac5e17fa3a737e6fe8d2">  379</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#af8ec3ce5120e1263aa6e9da5dc93119e">circular_queue&lt;T, N&gt;::push</a>(<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a116ec7e5f3004552b27b2935cc11c5ff">value_type</a>&amp;&amp; value) {</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a64bdcb959789492324dcc92699a2af72">size</a>() == N) {</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="keywordflow">throw</span> std::length_error{<span class="stringliteral">&quot;push(): max elements alloc&#39;d&quot;</span>};</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;  }</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">empty</a>() || _end_ == _data_.end()) {</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    _end_ = _data_.begin();</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;  }</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;  *_end_++ = std::move(value);</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  ++_size_;</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;}</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="preprocessor">#if defined(DERPLIB_HAS_CPP17_SUPPORT)</span></div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;decltype(<span class="keyword">auto</span>) <a class="code" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a>&lt;T, N&gt;::<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a049d812d06bf4e44695b64419b4f16e4">emplace</a>(Args&amp;&amp;... args) {</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a64bdcb959789492324dcc92699a2af72">size</a>() == N) {</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <span class="keywordflow">throw</span> std::length_error{<span class="stringliteral">&quot;push(): max elements alloc&#39;d&quot;</span>};</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;  }</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">empty</a>() || _end_ == _data_.end()) {</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    _end_ = _data_.begin();</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;  }</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;  *_end_++ = T{std::forward&lt;Args&gt;(args)...};</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;  ++_size_;</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160; </div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#a59860888c3f6704b7b5544c2ccabaece">back</a>();</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;}</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00412"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1circular__queue.html#a2c5079d4dbefdb90d2ec0372a0292f15">  412</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#a049d812d06bf4e44695b64419b4f16e4">circular_queue&lt;T, N&gt;::emplace</a>(Args&amp;&amp;... args) {</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a64bdcb959789492324dcc92699a2af72">size</a>() == N) {</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <span class="keywordflow">throw</span> std::length_error{<span class="stringliteral">&quot;push(): max elements alloc&#39;d&quot;</span>};</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;  }</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; </div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">empty</a>() || _end_ == _data_.end()) {</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    _end_ = _data_.begin();</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;  }</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160; </div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;  *_end_++ = T{std::forward&lt;Args&gt;(args)...};</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;  ++_size_;</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;}</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="preprocessor">#endif  // defined(DERPLIB_HAS_CPP17_SUPPORT)</span></div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00427"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1circular__queue.html#a7947df4c9959f0a75e270b3f80706a47">  427</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#a7947df4c9959f0a75e270b3f80706a47">circular_queue&lt;T, N&gt;::pop</a>() noexcept(std::is_nothrow_default_constructible&lt;T&gt;::value) {</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">empty</a>()) {</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;  }</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160; </div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;  *_begin_ = T{};</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;  ++_begin_;</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;  --_size_;</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">empty</a>() || _begin_ == _data_.end()) {</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    _begin_ = _data_.begin();</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;  }</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">empty</a>()) {</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    _end_ = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;  }</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;}</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160; </div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00445"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1circular__queue.html#a7f10cac6853f999cd8c903a3e56d0586">  445</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#a7f10cac6853f999cd8c903a3e56d0586">circular_queue&lt;T, N&gt;::swap</a>(<a class="code" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a>&amp; other) noexcept(<a class="code" href="namespacederplib_1_1stdext.html#a73de9673fed509ce3779f40ca8f85fd7">stdext::is_nothrow_swappable&lt;container_type&gt;::value</a>) {</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;  <a class="code" href="namespacederplib_1_1container.html#a2c14266bc30ba0f4b155bf13c7ff73be">std::swap</a>(this-&gt;_data_, other._data_);</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;  <a class="code" href="namespacederplib_1_1container.html#a2c14266bc30ba0f4b155bf13c7ff73be">std::swap</a>(this-&gt;_begin_, other._begin_);</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;  <a class="code" href="namespacederplib_1_1container.html#a2c14266bc30ba0f4b155bf13c7ff73be">std::swap</a>(this-&gt;_end_, other._end_);</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;  <a class="code" href="namespacederplib_1_1container.html#a2c14266bc30ba0f4b155bf13c7ff73be">std::swap</a>(this-&gt;_size_, other._size_);</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;}</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160; </div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="common__macros__end_8h.html">derplib/internal/common_macros_end.h</a>&gt;</span></div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160; </div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;}  <span class="comment">// namespace container</span></div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;}  <span class="comment">// namespace derplib</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="keywordflow">throw</span> std::runtime_error{<span class="stringliteral">&quot;back(): no element&quot;</span>};</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;  }</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;  <span class="keywordflow">return</span> _end_[-1];</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;}</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00354"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">  354</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">circular_queue&lt;T, N&gt;::empty</a>() const noexcept {</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;  <span class="keywordflow">return</span> _size_ == 0;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;}</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00359"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1circular__queue.html#a64bdcb959789492324dcc92699a2af72">  359</a></span>&#160;<span class="keyword">typename</span> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#ab30285ea276bfd9925d68ed8199d4984">circular_queue&lt;T, N&gt;::size_type</a> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#a64bdcb959789492324dcc92699a2af72">circular_queue&lt;T, N&gt;::size</a>() const noexcept {</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;  <span class="keywordflow">return</span> _size_;</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;}</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00364"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1circular__queue.html#af8ec3ce5120e1263aa6e9da5dc93119e">  364</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#af8ec3ce5120e1263aa6e9da5dc93119e">circular_queue&lt;T, N&gt;::push</a>(<span class="keyword">const</span> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#a116ec7e5f3004552b27b2935cc11c5ff">value_type</a>&amp; value) {</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a64bdcb959789492324dcc92699a2af72">size</a>() == N) {</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keywordflow">throw</span> std::length_error{<span class="stringliteral">&quot;push(): max elements alloc&#39;d&quot;</span>};</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  }</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">empty</a>() || _end_ == _data_.end()) {</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    _end_ = _data_.begin();</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  }</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  *_end_++ = value;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;  ++_size_;</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;}</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00378"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1circular__queue.html#a1cd0e96e0582ac5e17fa3a737e6fe8d2">  378</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#af8ec3ce5120e1263aa6e9da5dc93119e">circular_queue&lt;T, N&gt;::push</a>(<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a116ec7e5f3004552b27b2935cc11c5ff">value_type</a>&amp;&amp; value) {</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a64bdcb959789492324dcc92699a2af72">size</a>() == N) {</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="keywordflow">throw</span> std::length_error{<span class="stringliteral">&quot;push(): max elements alloc&#39;d&quot;</span>};</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;  }</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">empty</a>() || _end_ == _data_.end()) {</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    _end_ = _data_.begin();</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;  }</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  *_end_++ = std::move(value);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;  ++_size_;</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;}</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="preprocessor">#if defined(DERPLIB_HAS_CPP17_SUPPORT)</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;decltype(<span class="keyword">auto</span>) <a class="code" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a>&lt;T, N&gt;::<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a049d812d06bf4e44695b64419b4f16e4">emplace</a>(Args&amp;&amp;... args) {</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a64bdcb959789492324dcc92699a2af72">size</a>() == N) {</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keywordflow">throw</span> std::length_error{<span class="stringliteral">&quot;push(): max elements alloc&#39;d&quot;</span>};</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;  }</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">empty</a>() || _end_ == _data_.end()) {</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    _end_ = _data_.begin();</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;  }</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;  *_end_++ = T{std::forward&lt;Args&gt;(args)...};</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;  ++_size_;</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#a59860888c3f6704b7b5544c2ccabaece">back</a>();</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;}</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00411"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1circular__queue.html#a2c5079d4dbefdb90d2ec0372a0292f15">  411</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#a049d812d06bf4e44695b64419b4f16e4">circular_queue&lt;T, N&gt;::emplace</a>(Args&amp;&amp;... args) {</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a64bdcb959789492324dcc92699a2af72">size</a>() == N) {</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="keywordflow">throw</span> std::length_error{<span class="stringliteral">&quot;push(): max elements alloc&#39;d&quot;</span>};</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;  }</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">empty</a>() || _end_ == _data_.end()) {</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    _end_ = _data_.begin();</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;  }</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; </div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;  *_end_++ = T{std::forward&lt;Args&gt;(args)...};</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;  ++_size_;</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;}</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;<span class="preprocessor">#endif  // defined(DERPLIB_HAS_CPP17_SUPPORT)</span></div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160; </div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00426"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1circular__queue.html#a7947df4c9959f0a75e270b3f80706a47">  426</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#a7947df4c9959f0a75e270b3f80706a47">circular_queue&lt;T, N&gt;::pop</a>() noexcept(std::is_nothrow_default_constructible&lt;T&gt;::value) {</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">empty</a>()) {</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;  }</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;  *_begin_ = T{};</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;  ++_begin_;</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;  --_size_;</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">empty</a>() || _begin_ == _data_.end()) {</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    _begin_ = _data_.begin();</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;  }</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">empty</a>()) {</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    _end_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;  }</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;}</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00444"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1circular__queue.html#a7f10cac6853f999cd8c903a3e56d0586">  444</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classderplib_1_1container_1_1circular__queue.html#a7f10cac6853f999cd8c903a3e56d0586">circular_queue&lt;T, N&gt;::swap</a>(<a class="code" href="classderplib_1_1container_1_1circular__queue.html">circular_queue</a>&amp; other) noexcept(<a class="code" href="namespacederplib_1_1stdext.html#a73de9673fed509ce3779f40ca8f85fd7">stdext::is_nothrow_swappable&lt;container_type&gt;::value</a>) {</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;  <a class="code" href="namespacederplib_1_1container.html#a2c14266bc30ba0f4b155bf13c7ff73be">std::swap</a>(this-&gt;_data_, other._data_);</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;  <a class="code" href="namespacederplib_1_1container.html#a2c14266bc30ba0f4b155bf13c7ff73be">std::swap</a>(this-&gt;_begin_, other._begin_);</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;  <a class="code" href="namespacederplib_1_1container.html#a2c14266bc30ba0f4b155bf13c7ff73be">std::swap</a>(this-&gt;_end_, other._end_);</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;  <a class="code" href="namespacederplib_1_1container.html#a2c14266bc30ba0f4b155bf13c7ff73be">std::swap</a>(this-&gt;_size_, other._size_);</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;}</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160; </div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="common__macros__end_8h.html">derplib/internal/common_macros_end.h</a>&gt;</span></div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; </div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;}  <span class="comment">// namespace container</span></div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;}  <span class="comment">// namespace derplib</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="anamespacederplib_1_1container_html_a2c14266bc30ba0f4b155bf13c7ff73be"><div class="ttname"><a href="namespacederplib_1_1container.html#a2c14266bc30ba0f4b155bf13c7ff73be">derplib::container::swap</a></div><div class="ttdeci">void swap(circular_queue&lt; T, N &gt; &amp;lhs, circular_queue&lt; T, N &gt; &amp;rhs) noexcept(stdext::is_nothrow_swappable&lt; typename circular_queue&lt; T, N &gt;::container_type &gt;::value)</div><div class="ttdoc">Specialization of std::swap algorithm.</div><div class="ttdef"><b>Definition:</b> circular_queue.h:247</div></div>
 <div class="ttc" id="anamespacederplib_1_1stdext_html_a73de9673fed509ce3779f40ca8f85fd7"><div class="ttname"><a href="namespacederplib_1_1stdext.html#a73de9673fed509ce3779f40ca8f85fd7">derplib::stdext::is_nothrow_swappable</a></div><div class="ttdeci">typename std::is_nothrow_swappable&lt; T &gt; is_nothrow_swappable</div><div class="ttdef"><b>Definition:</b> type_traits.h:10</div></div>
 <div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html_a87a07acd2319cc20df9aa8ef569c3627"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html#a87a07acd2319cc20df9aa8ef569c3627">derplib::container::circular_queue::circular_queue</a></div><div class="ttdeci">circular_queue() noexcept</div><div class="ttdef"><b>Definition:</b> circular_queue.h:50</div></div>
-<div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html_a64bdcb959789492324dcc92699a2af72"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html#a64bdcb959789492324dcc92699a2af72">derplib::container::circular_queue::size</a></div><div class="ttdeci">size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements.</div><div class="ttdef"><b>Definition:</b> circular_queue.h:360</div></div>
+<div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html_a64bdcb959789492324dcc92699a2af72"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html#a64bdcb959789492324dcc92699a2af72">derplib::container::circular_queue::size</a></div><div class="ttdeci">size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements.</div><div class="ttdef"><b>Definition:</b> circular_queue.h:359</div></div>
 <div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html_a049d812d06bf4e44695b64419b4f16e4"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html#a049d812d06bf4e44695b64419b4f16e4">derplib::container::circular_queue::emplace</a></div><div class="ttdeci">decltype(auto) emplace(Args &amp;&amp;... args)</div><div class="ttdoc">Pushes a new element to the end of the queue, which will be constructed in-place.</div></div>
 <div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html_a116ec7e5f3004552b27b2935cc11c5ff"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html#a116ec7e5f3004552b27b2935cc11c5ff">derplib::container::circular_queue::value_type</a></div><div class="ttdeci">typename container_type::value_type value_type</div><div class="ttdoc">Type of the stored elements. Equivalent to T.</div><div class="ttdef"><b>Definition:</b> circular_queue.h:33</div></div>
 <div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html">derplib::container::circular_queue</a></div><div class="ttdef"><b>Definition:</b> circular_queue.h:22</div></div>
 <div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html_aa66f75aaae8e08ddc05721e7075f187e"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html#aa66f75aaae8e08ddc05721e7075f187e">derplib::container::circular_queue::const_reference</a></div><div class="ttdeci">typename container_type::const_reference const_reference</div><div class="ttdoc">Constant reference type for the stored elements. Equivalent to const T&amp;.</div><div class="ttdef"><b>Definition:</b> circular_queue.h:45</div></div>
 <div class="ttc" id="aversion_8h_html"><div class="ttname"><a href="version_8h.html">version.h</a></div></div>
 <div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html_affbc0f8166bcfd0fb2c2c434844757a3"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html#affbc0f8166bcfd0fb2c2c434844757a3">derplib::container::circular_queue::reference</a></div><div class="ttdeci">typename container_type::reference reference</div><div class="ttdoc">Reference type for the stored elements. Equivalent to T&amp;.</div><div class="ttdef"><b>Definition:</b> circular_queue.h:41</div></div>
-<div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html_af8ec3ce5120e1263aa6e9da5dc93119e"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html#af8ec3ce5120e1263aa6e9da5dc93119e">derplib::container::circular_queue::push</a></div><div class="ttdeci">void push(const value_type &amp;value)</div><div class="ttdoc">Pushes the given element value to the end of the queue.</div><div class="ttdef"><b>Definition:</b> circular_queue.h:365</div></div>
+<div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html_af8ec3ce5120e1263aa6e9da5dc93119e"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html#af8ec3ce5120e1263aa6e9da5dc93119e">derplib::container::circular_queue::push</a></div><div class="ttdeci">void push(const value_type &amp;value)</div><div class="ttdoc">Pushes the given element value to the end of the queue.</div><div class="ttdef"><b>Definition:</b> circular_queue.h:364</div></div>
 <div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html_a5f42808d50e43658c7e6d7506e072144"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html#a5f42808d50e43658c7e6d7506e072144">derplib::container::circular_queue::front</a></div><div class="ttdeci">reference front()</div><div class="ttdoc">Returns a reference to the first element.</div><div class="ttdef"><b>Definition:</b> circular_queue.h:318</div></div>
 <div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html_a59860888c3f6704b7b5544c2ccabaece"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html#a59860888c3f6704b7b5544c2ccabaece">derplib::container::circular_queue::back</a></div><div class="ttdeci">reference back()</div><div class="ttdoc">Returns a reference to the last element.</div><div class="ttdef"><b>Definition:</b> circular_queue.h:336</div></div>
 <div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html_ac0c21a66200ab816e220a2d146fe42c0"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html#ac0c21a66200ab816e220a2d146fe42c0">derplib::container::circular_queue::container_type</a></div><div class="ttdeci">std::array&lt; T, N &gt; container_type</div><div class="ttdoc">Type of the underlying container.</div><div class="ttdef"><b>Definition:</b> circular_queue.h:29</div></div>
@@ -406,9 +405,9 @@ $(document).ready(function(){initNavTree('circular__queue_8h_source.html','');})
 <div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html_ab30285ea276bfd9925d68ed8199d4984"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html#ab30285ea276bfd9925d68ed8199d4984">derplib::container::circular_queue::size_type</a></div><div class="ttdeci">typename container_type::size_type size_type</div><div class="ttdoc">Type used to represent sizes and indices.</div><div class="ttdef"><b>Definition:</b> circular_queue.h:37</div></div>
 <div class="ttc" id="atype__traits_8h_html"><div class="ttname"><a href="type__traits_8h.html">type_traits.h</a></div></div>
 <div class="ttc" id="anamespacederplib_html"><div class="ttname"><a href="namespacederplib.html">derplib</a></div><div class="ttdef"><b>Definition:</b> log.h:14</div></div>
-<div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html_a8a72f0630f14b5fecb3a24f3657da911"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">derplib::container::circular_queue::empty</a></div><div class="ttdeci">DERPLIB_NODISCARD bool empty() const noexcept</div><div class="ttdoc">Checks if the underlying container has no elements.</div><div class="ttdef"><b>Definition:</b> circular_queue.h:355</div></div>
-<div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html_a7947df4c9959f0a75e270b3f80706a47"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html#a7947df4c9959f0a75e270b3f80706a47">derplib::container::circular_queue::pop</a></div><div class="ttdeci">void pop() noexcept(std::is_nothrow_default_constructible&lt; T &gt;::value)</div><div class="ttdoc">Removes an element from the top of the queue.</div><div class="ttdef"><b>Definition:</b> circular_queue.h:427</div></div>
-<div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html_a7f10cac6853f999cd8c903a3e56d0586"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html#a7f10cac6853f999cd8c903a3e56d0586">derplib::container::circular_queue::swap</a></div><div class="ttdeci">void swap(circular_queue &amp;other) noexcept(stdext::is_nothrow_swappable&lt; container_type &gt;::value)</div><div class="ttdoc">Exchanges the contents of this object with other.</div><div class="ttdef"><b>Definition:</b> circular_queue.h:445</div></div>
+<div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html_a8a72f0630f14b5fecb3a24f3657da911"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911">derplib::container::circular_queue::empty</a></div><div class="ttdeci">DERPLIB_NODISCARD bool empty() const noexcept</div><div class="ttdoc">Checks if the underlying container has no elements.</div><div class="ttdef"><b>Definition:</b> circular_queue.h:354</div></div>
+<div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html_a7947df4c9959f0a75e270b3f80706a47"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html#a7947df4c9959f0a75e270b3f80706a47">derplib::container::circular_queue::pop</a></div><div class="ttdeci">void pop() noexcept(std::is_nothrow_default_constructible&lt; T &gt;::value)</div><div class="ttdoc">Removes an element from the top of the queue.</div><div class="ttdef"><b>Definition:</b> circular_queue.h:426</div></div>
+<div class="ttc" id="aclassderplib_1_1container_1_1circular__queue_html_a7f10cac6853f999cd8c903a3e56d0586"><div class="ttname"><a href="classderplib_1_1container_1_1circular__queue.html#a7f10cac6853f999cd8c903a3e56d0586">derplib::container::circular_queue::swap</a></div><div class="ttdeci">void swap(circular_queue &amp;other) noexcept(stdext::is_nothrow_swappable&lt; container_type &gt;::value)</div><div class="ttdoc">Exchanges the contents of this object with other.</div><div class="ttdef"><b>Definition:</b> circular_queue.h:444</div></div>
 <div class="ttc" id="acommon__macros__end_8h_html"><div class="ttname"><a href="common__macros__end_8h.html">common_macros_end.h</a></div></div>
 <div class="ttc" id="acommon__macros__begin_8h_html"><div class="ttname"><a href="common__macros__begin_8h.html">common_macros_begin.h</a></div></div>
 <!-- start footer part -->

@@ -142,28 +142,8 @@ cfq_parallel_consumer<InT, ConsumerT>::~cfq_parallel_consumer() {
 
 template<typename InT, typename ConsumerT>
 void cfq_parallel_consumer<InT, ConsumerT>::push(const stdext::decay_t<InT>& value) {
-  std::size_t n{std::numeric_limits<std::size_t>::max()};
   std::size_t it{std::numeric_limits<std::size_t>::max()};
 
-  for (std::size_t i{0}; i < _buffers_.size(); ++i) {
-    std::size_t size{_buffers_[i].size()};
-    if (n > size) {
-      it = i;
-      n = size;
-    }
-  }
-
-  std::lock_guard<std::mutex> lk{_mutexes_[it]};
-  _buffers_[it].push_back(value);
-
-  // TODO: BUG - Does not notify cv
-}
-
-template<typename InT, typename ConsumerT>
-void cfq_parallel_consumer<InT, ConsumerT>::push(stdext::decay_t<InT>&& value) {
-  std::size_t it{std::numeric_limits<std::size_t>::max()};
-
-  // TODO: Why is this different from the others?
   for (std::size_t i{0}, n{std::numeric_limits<std::size_t>::max()}; i < _buffers_.size(); ++i) {
     std::size_t size{_buffers_[i].size()};
     if (n > size) {
@@ -172,21 +152,19 @@ void cfq_parallel_consumer<InT, ConsumerT>::push(stdext::decay_t<InT>&& value) {
     }
   }
 
-  // TODO: RAII Pattern
-  std::unique_lock<std::mutex> lk{_mutexes_[it]};
-  _buffers_[it].push_back(value);
+  {
+    std::lock_guard<std::mutex> lk{_mutexes_[it]};
+    _buffers_[it].push_back(value);
+  }
 
-  lk.unlock();
   _cvs_[it].notify_one();
 }
 
 template<typename InT, typename ConsumerT>
-template<typename... Args>
-void cfq_parallel_consumer<InT, ConsumerT>::emplace(Args&&... args) {
-  std::size_t n{std::numeric_limits<std::size_t>::max()};
+void cfq_parallel_consumer<InT, ConsumerT>::push(stdext::decay_t<InT>&& value) {
   std::size_t it{std::numeric_limits<std::size_t>::max()};
 
-  for (std::size_t i{0}; i < _buffers_.size(); ++i) {
+  for (std::size_t i{0}, n{std::numeric_limits<std::size_t>::max()}; i < _buffers_.size(); ++i) {
     std::size_t size{_buffers_[i].size()};
     if (n > size) {
       it = i;
@@ -194,27 +172,50 @@ void cfq_parallel_consumer<InT, ConsumerT>::emplace(Args&&... args) {
     }
   }
 
-  std::lock_guard<std::mutex> lk{_mutexes_[it]};
-  _buffers_[it].emplace_back(std::forward<Args>(args)...);
+  {
+    std::unique_lock<std::mutex> lk{_mutexes_[it]};
+    _buffers_[it].push_back(value);
+  }
 
-  // TODO: BUG - Does not notify cv
+  _cvs_[it].notify_one();
+}
+
+template<typename InT, typename ConsumerT>
+template<typename... Args>
+void cfq_parallel_consumer<InT, ConsumerT>::emplace(Args&&... args) {
+  std::size_t it{std::numeric_limits<std::size_t>::max()};
+
+  for (std::size_t i{0}, n{std::numeric_limits<std::size_t>::max()}; i < _buffers_.size(); ++i) {
+    std::size_t size{_buffers_[i].size()};
+    if (n > size) {
+      it = i;
+      n = size;
+    }
+  }
+
+  {
+    std::lock_guard<std::mutex> lk{_mutexes_[it]};
+    _buffers_[it].emplace_back(std::forward<Args>(args)...);
+  }
+
+  _cvs_[it].notify_one();
 }
 
 template<typename InT, typename ConsumerT>
 void cfq_parallel_consumer<InT, ConsumerT>::_daemon(size_t i) {
   while (_keep_alive_ || !_buffers_[i].empty()) {
-    // TODO: RAII Pattern
-    std::unique_lock<std::mutex> lk{_mutexes_[i]};
-    _cvs_[i].wait(lk, [&] { return !_keep_alive_ || !_buffers_[i].empty(); });
+    {
+      std::unique_lock<std::mutex> lk{_mutexes_[i]};
+      _cvs_[i].wait(lk, [&] { return !_keep_alive_ || !_buffers_[i].empty(); });
 
-    if (!_keep_alive_ && _buffers_[i].empty()) {
-      break;
+      if (!_keep_alive_ && _buffers_[i].empty()) {
+        break;
+      }
+
+      _consumer_(_buffers_[i].front());
+      _buffers_[i].pop_front();
     }
 
-    _consumer_(_buffers_[i].front());
-    _buffers_[i].pop_front();
-
-    lk.unlock();
     _cvs_[i].notify_one();
   }
 }

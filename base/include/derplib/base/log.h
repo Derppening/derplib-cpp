@@ -199,13 +199,11 @@ template<typename CharT>
 std::basic_string<CharT> basic_logger<CharT>::_fmt_time() {
   // https://stackoverflow.com/questions/24686846/get-current-time-in-milliseconds-or-hhmmssmmm-format
 
-  // TODO: Verify const-ness of locals
+  const auto now{std::chrono::system_clock::now()};
+  const auto ms{std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()) % 1000};
 
-  auto now{std::chrono::system_clock::now()};
-  auto ms{std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()) % 1000};
-
-  auto time{std::chrono::system_clock::to_time_t(now)};
-  std::tm tm{*std::localtime(&time)};
+  const auto time{std::chrono::system_clock::to_time_t(now)};
+  const std::tm tm{*std::localtime(&time)};
 
   basic_logger::ostringstream ss{};
   ss << std::put_time(&tm, "%m-%d %H:%M:%S") << '.' << std::setfill('0') << std::setw(3) << ms.count();

@@ -119,8 +119,7 @@ void simple_pool_allocator::heap_dump(std::ostream& os) const noexcept {
     } else {
       ++entry_it;
 
-      // TODO: const
-      std::ptrdiff_t blank_space{static_cast<unsigned char*>(entry_it->first) - current_ptr};
+      const std::ptrdiff_t blank_space{static_cast<unsigned char*>(entry_it->first) - current_ptr};
 
       if (entry_it != _entries_.end() && blank_space != 0) {
         os << std::showbase << std::setiosflags(std::ios::internal) << std::setfill('0') << std::setw(RegionTextPadding)
