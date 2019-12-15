@@ -1,5 +1,7 @@
 #pragma once
 
+#include <functional>
+
 namespace derplib {
 inline namespace stdext {
 
