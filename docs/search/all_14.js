@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['v_190',['v',['../classderplib_1_1base_1_1basic__logger.html#a9cba4774cb5c64f77d01c708aae5c932',1,'derplib::base::basic_logger']]],
-  ['value_5ftype_191',['value_type',['../classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#acb0662d1c2c1ff75bcd4cdc01eeddbd7',1,'derplib::container::cfq_parallel_consumer&lt; InT, ConsumerT &gt;::value_type()'],['../classderplib_1_1container_1_1circular__queue.html#a116ec7e5f3004552b27b2935cc11c5ff',1,'derplib::container::circular_queue::value_type()'],['../classderplib_1_1experimental_1_1__heap__entry__iterator.html#a9e89b52473d9d4cc9e49408a4c381a87',1,'derplib::experimental::_heap_entry_iterator::value_type()'],['../classderplib_1_1experimental_1_1simple__pool__allocator.html#af72cb242b70c171f690f4740a4e410c8',1,'derplib::experimental::simple_pool_allocator::value_type()']]],
-  ['verbose_192',['verbose',['../classderplib_1_1base_1_1basic__logger.html#ae403f82c113c5d37353af61578b75f33a2c7aea4237e25b4f8ee3b0bf77d6fed0',1,'derplib::base::basic_logger']]],
-  ['version_2eh_193',['version.h',['../version_8h.html',1,'']]]
+  ['w_186',['w',['../classderplib_1_1base_1_1basic__logger.html#a9f204e373b4f23c8ad9332dea31e93ba',1,'derplib::base::basic_logger']]],
+  ['warn_187',['warn',['../classderplib_1_1base_1_1basic__logger.html#ae403f82c113c5d37353af61578b75f33a1ea4c3ab05ee0c6d4de30740443769cb',1,'derplib::base::basic_logger']]],
+  ['with_5fdistribution_188',['with_distribution',['../classderplib_1_1stdext_1_1random.html#a676ea236d81fa03ca710985826600529',1,'derplib::stdext::random::with_distribution(DistributionT distribution)'],['../classderplib_1_1stdext_1_1random.html#a1d5fda4f96a5a18c5b0abb8826cc3a84',1,'derplib::stdext::random::with_distribution(std::size_t n, DistributionT distribution)']]],
+  ['wlogger_189',['wlogger',['../namespacederplib_1_1base.html#a67c60d9fa38ea8d96a0d9e2af635927c',1,'derplib::wlogger()'],['../namespacederplib_1_1base.html#a67c60d9fa38ea8d96a0d9e2af635927c',1,'derplib::base::wlogger()']]]
 ];

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['semver_229',['semver',['../classderplib_1_1base_1_1semver.html',1,'derplib::base::semver'],['../classderplib_1_1base_1_1semver.html',1,'derplib::base::semver']]],
-  ['simple_5fpool_5fallocator_230',['simple_pool_allocator',['../classderplib_1_1experimental_1_1simple__pool__allocator.html',1,'derplib::experimental']]],
-  ['stopwatch_231',['stopwatch',['../classderplib_1_1base_1_1stopwatch.html',1,'derplib::base::stopwatch'],['../classderplib_1_1base_1_1stopwatch.html',1,'derplib::base::stopwatch']]]
+  ['timer_223',['timer',['../classderplib_1_1base_1_1timer.html',1,'derplib::base::timer&lt; Func, typename &gt;'],['../classderplib_1_1base_1_1timer.html',1,'derplib::base::timer&lt; Func, typename &gt;']]],
+  ['timer_3c_20func_20_3e_224',['timer&lt; Func &gt;',['../classderplib_1_1base_1_1timer_3_01Func_01_4.html',1,'derplib::base::timer&lt; Func &gt;'],['../classderplib_1_1base_1_1timer_3_01Func_01_4.html',1,'derplib::base::timer&lt; Func &gt;']]]
 ];

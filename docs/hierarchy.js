@@ -1,6 +1,5 @@
 var hierarchy =
 [
-    [ "derplib::experimental::_heap_entry_iterator< T >", "classderplib_1_1experimental_1_1__heap__entry__iterator.html", null ],
     [ "derplib::experimental::base_heap_pool< AllocStrategy, ThrowIfError >", "classderplib_1_1experimental_1_1base__heap__pool.html", null ],
     [ "derplib::experimental::basic_cli< CharT, Func, typename >", "classderplib_1_1experimental_1_1basic__cli.html", null ],
     [ "derplib::experimental::basic_cli< char >", "classderplib_1_1experimental_1_1basic__cli.html", [

@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['base_5fheap_5fpool_212',['base_heap_pool',['../classderplib_1_1experimental_1_1base__heap__pool.html',1,'derplib::experimental']]],
-  ['basic_5fcli_213',['basic_cli',['../classderplib_1_1experimental_1_1basic__cli.html',1,'derplib::experimental']]],
-  ['basic_5fcli_3c_20char_20_3e_214',['basic_cli&lt; char &gt;',['../classderplib_1_1experimental_1_1basic__cli.html',1,'derplib::experimental']]],
-  ['basic_5flogger_215',['basic_logger',['../classderplib_1_1base_1_1basic__logger.html',1,'derplib::base::basic_logger&lt; CharT &gt;'],['../classderplib_1_1base_1_1basic__logger.html',1,'derplib::base::basic_logger&lt; CharT &gt;']]]
+  ['cfq_5fparallel_5fconsumer_207',['cfq_parallel_consumer',['../classderplib_1_1container_1_1cfq__parallel__consumer.html',1,'derplib::container::cfq_parallel_consumer&lt; InT, ConsumerT, typename &gt;'],['../classderplib_1_1container_1_1cfq__parallel__consumer.html',1,'derplib::container::cfq_parallel_consumer&lt; InT, ConsumerT, typename &gt;']]],
+  ['cfq_5fparallel_5fconsumer_3c_20int_2c_20consumert_20_3e_208',['cfq_parallel_consumer&lt; InT, ConsumerT &gt;',['../classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html',1,'derplib::container::cfq_parallel_consumer&lt; InT, ConsumerT &gt;'],['../classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html',1,'derplib::container::cfq_parallel_consumer&lt; InT, ConsumerT &gt;']]],
+  ['circular_5fqueue_209',['circular_queue',['../classderplib_1_1container_1_1circular__queue.html',1,'derplib::container::circular_queue&lt; T, N &gt;'],['../classderplib_1_1container_1_1circular__queue.html',1,'derplib::container::circular_queue&lt; T, N &gt;']]],
+  ['cli_210',['cli',['../classderplib_1_1experimental_1_1cli.html',1,'derplib::experimental']]],
+  ['config_211',['config',['../structderplib_1_1experimental_1_1simple__pool__allocator_1_1config.html',1,'derplib::experimental::simple_pool_allocator']]],
+  ['config_5ffile_212',['config_file',['../classderplib_1_1experimental_1_1config__file.html',1,'derplib::experimental']]]
 ];

@@ -3,7 +3,6 @@ set(LIBRARY_HEADERS
         include/derplib/experimental/cli.h
         include/derplib/experimental/ref_count_pointer.h
         include/derplib/experimental/heap_pool_allocator/base_heap_pool.h
-        include/derplib/experimental/heap_pool_allocator/heap_entry_iterator.h
         include/derplib/experimental/heap_pool_allocator/simple_pool_allocator.h)
 set(LIBRARY_SOURCES
         src/cli.cpp

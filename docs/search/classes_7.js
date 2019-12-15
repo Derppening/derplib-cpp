@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['random_226',['random',['../classderplib_1_1stdext_1_1random.html',1,'derplib::stdext::random&lt; RandEngine &gt;'],['../classderplib_1_1stdext_1_1random.html',1,'derplib::stdext::random&lt; RandEngine &gt;']]],
-  ['ref_5fcount_5fpointer_227',['ref_count_pointer',['../classderplib_1_1ref__count__pointer.html',1,'derplib']]],
-  ['ref_5fcount_5fpointer_3c_20t_20_3e_228',['ref_count_pointer&lt; T &gt;',['../classderplib_1_1ref__count__pointer.html',1,'derplib']]]
+  ['semver_220',['semver',['../classderplib_1_1base_1_1semver.html',1,'derplib::base::semver'],['../classderplib_1_1base_1_1semver.html',1,'derplib::base::semver']]],
+  ['simple_5fpool_5fallocator_221',['simple_pool_allocator',['../classderplib_1_1experimental_1_1simple__pool__allocator.html',1,'derplib::experimental']]],
+  ['stopwatch_222',['stopwatch',['../classderplib_1_1base_1_1stopwatch.html',1,'derplib::base::stopwatch'],['../classderplib_1_1base_1_1stopwatch.html',1,'derplib::base::stopwatch']]]
 ];

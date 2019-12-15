@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['format_5ferror_223',['format_error',['../classderplib_1_1base_1_1semver_1_1format__error.html',1,'derplib::base::semver']]]
+  ['invalid_5fstate_215',['invalid_state',['../classderplib_1_1base_1_1basic__logger_1_1invalid__state.html',1,'derplib::base::basic_logger']]]
 ];

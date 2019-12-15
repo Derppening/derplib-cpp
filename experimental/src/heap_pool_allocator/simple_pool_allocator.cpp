@@ -1,5 +1,7 @@
 #include "derplib/experimental/heap_pool_allocator/simple_pool_allocator.h"
 
+#include <cassert>
+#include <algorithm>
 #include <iomanip>
 #include <iostream>
 
@@ -172,29 +174,33 @@ void* simple_pool_allocator::try_alloc_nominal(simple_pool_allocator::_entry e) 
     return nullptr;
   }
 
-  heap_entry_iterator iterator{_entries_, lower_bound};
-
-  for (; iterator.current() != upper_bound; ++iterator) {
-    const auto last_it{iterator.prev()};
-
-    void* aligned_extent{static_cast<unsigned char*>(last_it->first) + last_it->second._extent};
+  void* aligned_extent{nullptr};
+  std::size_t extent_size{0};
+  const auto has_enough_space{[e, aligned_extent, extent_size](const std::pair<void*, _entry> prev, const std::pair<void*, _entry> curr) mutable {
+    aligned_extent = static_cast<unsigned char*>(prev.first) + prev.second._extent;
     const auto* const extent_begin{static_cast<unsigned char*>(aligned_extent)};
-    const auto* const extent_end{static_cast<unsigned char*>(iterator->first)};
-    auto extent_size{static_cast<std::size_t>(extent_end - extent_begin)};
+    const auto* const extent_end{static_cast<unsigned char*>(curr.first)};
+    extent_size = static_cast<std::size_t>(extent_end - extent_begin);
 
-    if (std::align(e._alignment, e._extent, aligned_extent, extent_size) != nullptr) {
-      _entries_.emplace(std::make_pair(aligned_extent, e));
+    return std::align(e._alignment, e._extent, aligned_extent, extent_size) != nullptr;
+  }};
 
-      auto* const alloc_end{static_cast<unsigned char*>(aligned_extent) + e._extent};
-      if (_alloc_bounds_.first < alloc_end) {
-        _alloc_bounds_.first = alloc_end;
-      }
-      if (_alloc_bounds_.second == alloc_end) {
-        _alloc_bounds_.second = aligned_extent;
-      }
+  if (std::adjacent_find(lower_bound, upper_bound, has_enough_space) != upper_bound) {
+    // TODO: Use Expects
+    assert(aligned_extent != nullptr);
+    assert(extent_size != 0);
 
-      return aligned_extent;
+    _entries_.emplace(std::make_pair(aligned_extent, e));
+
+    auto* const alloc_end{static_cast<unsigned char*>(aligned_extent) + e._extent};
+    if (_alloc_bounds_.first < alloc_end) {
+      _alloc_bounds_.first = alloc_end;
     }
+    if (_alloc_bounds_.second == alloc_end) {
+      _alloc_bounds_.second = aligned_extent;
+    }
+
+    return aligned_extent;
   }
 
   return nullptr;

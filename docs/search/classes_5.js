@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['invalid_5fstate_224',['invalid_state',['../classderplib_1_1base_1_1basic__logger_1_1invalid__state.html',1,'derplib::base::basic_logger']]]
+  ['observer_216',['observer',['../classderplib_1_1ref__count__pointer_1_1observer.html',1,'derplib::ref_count_pointer']]]
 ];

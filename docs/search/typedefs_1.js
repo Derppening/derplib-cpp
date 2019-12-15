@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['char_5ftype_399',['char_type',['../classderplib_1_1base_1_1basic__logger.html#afc4afc104e793d9d405be66ca14c6952',1,'derplib::base::basic_logger']]],
-  ['const_5freference_400',['const_reference',['../classderplib_1_1container_1_1circular__queue.html#aa66f75aaae8e08ddc05721e7075f187e',1,'derplib::container::circular_queue']]],
-  ['consumer_5ftype_401',['consumer_type',['../classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#a9f9168e58da7e0bc1dcae9e42849aebf',1,'derplib::container::cfq_parallel_consumer&lt; InT, ConsumerT &gt;']]],
-  ['container_5ftype_402',['container_type',['../classderplib_1_1container_1_1circular__queue.html#ac0c21a66200ab816e220a2d146fe42c0',1,'derplib::container::circular_queue::container_type()'],['../classderplib_1_1experimental_1_1__heap__entry__iterator.html#a17347bd40c46555490d8bc8904e61357',1,'derplib::experimental::_heap_entry_iterator::container_type()']]]
+  ['decay_5ft_388',['decay_t',['../namespacederplib_1_1stdext.html#a4493c5a7a4f22a2791dcd1c7ef84c0b1',1,'derplib::decay_t()'],['../namespacederplib_1_1stdext.html#a4493c5a7a4f22a2791dcd1c7ef84c0b1',1,'derplib::stdext::decay_t()']]],
+  ['deleter_5ftype_389',['deleter_type',['../classderplib_1_1ref__count__pointer.html#a345597199b69b38cc49e3a723b9c42d4',1,'derplib::ref_count_pointer']]]
 ];

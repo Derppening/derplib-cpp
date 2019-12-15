@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['major_103',['major',['../classderplib_1_1base_1_1semver.html#a0331a79fbaea22b46aa268cc32d82366',1,'derplib::base::semver']]],
-  ['make_5fdefault_104',['make_default',['../classderplib_1_1base_1_1basic__logger.html#ad40866748a3061ff7110399e034af9f8',1,'derplib::base::basic_logger']]],
-  ['make_5funique_105',['make_unique',['../namespacederplib_1_1stdext.html#a12a3c0a78cd88e3b55a6cededf89998d',1,'derplib::make_unique()'],['../namespacederplib_1_1stdext.html#a12a3c0a78cd88e3b55a6cededf89998d',1,'derplib::stdext::make_unique()'],['../namespacederplib_1_1stdext.html#aa6d38d043225c1388f335dae2c00d168',1,'derplib::make_unique()'],['../namespacederplib_1_1stdext.html#aa6d38d043225c1388f335dae2c00d168',1,'derplib::stdext::make_unique()'],['../namespacederplib_1_1stdext.html#a0f2a770e89bdf9e678ca39ac43bcdb98',1,'derplib::make_unique()'],['../namespacederplib_1_1stdext.html#a0f2a770e89bdf9e678ca39ac43bcdb98',1,'derplib::stdext::make_unique()']]],
-  ['max_5fsize_106',['max_size',['../classderplib_1_1experimental_1_1base__heap__pool.html#a2db2801a234c6abe1dab3430464d5df1',1,'derplib::experimental::base_heap_pool::max_size()'],['../classderplib_1_1experimental_1_1simple__pool__allocator.html#ab2e66690fe223632cfa805428b7a177d',1,'derplib::experimental::simple_pool_allocator::max_size()']]],
-  ['memory_2eh_107',['memory.h',['../memory_8h.html',1,'(Global Namespace)'],['../newlib_2memory_8h.html',1,'(Global Namespace)']]],
-  ['minor_108',['minor',['../classderplib_1_1base_1_1semver.html#afce120e5ad01467e98d41292e11ada0f',1,'derplib::base::semver']]]
+  ['no_5fop_103',['no_op',['../classderplib_1_1experimental_1_1basic__cli.html#a2f632a0a4bfc5d0a8849d3ab893d35f4a787cd10c290e6ff37378a3f4ed050024',1,'derplib::experimental::basic_cli']]],
+  ['none_104',['none',['../classderplib_1_1experimental_1_1basic__cli.html#a980f67f305f8614967783f0521c6bb29a334c4a4c42fdb79d7ebc3e73b517e6f8',1,'derplib::experimental::basic_cli']]]
 ];

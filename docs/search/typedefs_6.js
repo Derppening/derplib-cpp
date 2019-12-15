@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logger_412',['logger',['../namespacederplib_1_1base.html#ac419b0d7caa186d629e992282b65cd74',1,'derplib::base::logger()'],['../namespacederplib_1_1base.html#ac419b0d7caa186d629e992282b65cd74',1,'derplib::logger()']]]
+  ['ostream_396',['ostream',['../classderplib_1_1base_1_1basic__logger.html#a4c3c4d3ae7b8f7d2ff351716d38d720e',1,'derplib::base::basic_logger']]]
 ];

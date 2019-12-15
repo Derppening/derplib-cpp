@@ -4,8 +4,6 @@
 #include <map>
 #include <memory>
 
-#include "derplib/experimental/heap_pool_allocator/heap_entry_iterator.h"
-
 namespace derplib {
 namespace experimental {
 
@@ -92,8 +90,6 @@ class simple_pool_allocator final {
   DERPLIB_NODISCARD std::size_t max_size() const noexcept;
 
  private:
-  using heap_entry_iterator = _heap_entry_iterator<_entry>;
-
   static constexpr const int RegionTextPadding = 18;
   static constexpr const int SizeTextPadding = 12;
   static constexpr const int AlignTextPadding = 4;
