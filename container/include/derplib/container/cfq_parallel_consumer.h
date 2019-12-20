@@ -49,6 +49,12 @@ class cfq_parallel_consumer<InT, ConsumerT> {
    */
   cfq_parallel_consumer(std::size_t concurrency, consumer_type&& consumer);
 
+  cfq_parallel_consumer(const cfq_parallel_consumer&) = delete;
+  cfq_parallel_consumer(cfq_parallel_consumer&&) noexcept = delete;
+
+  cfq_parallel_consumer& operator=(const cfq_parallel_consumer&) = delete;
+  cfq_parallel_consumer& operator=(cfq_parallel_consumer&&) noexcept = delete;
+
   ~cfq_parallel_consumer();
 
   /**

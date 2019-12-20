@@ -43,6 +43,7 @@ class semver {
    * \param build build tag. Empty string represents this field does not exist.
    */
   explicit semver(int major, int minor = 0, int patch = 0, std::string prerelease = "", std::string build = "");
+  ~semver() = default;
 
   semver(const semver& other) = default;
   semver(semver&& other) noexcept = default;

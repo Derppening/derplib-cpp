@@ -116,6 +116,7 @@ inline T*& ptr_array_new(T*& ptr,
 template<typename T>
 inline T*& ptr_array_delete(T*& ptr, const char* file, const char* func, std::size_t line, const char* var);
 
+// TODO(Derppening): Move to .cpp file
 void ptr_assert_null(void* ptr, const char* file, const char* func, std::size_t line, const char* var) {
   if (ptr == nullptr) {
     std::cerr << file << ": In function " << func << '\n'

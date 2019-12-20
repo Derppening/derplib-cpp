@@ -9,6 +9,7 @@ var searchData=
   ['_7eformat_5ferror_198',['~format_error',['../classderplib_1_1base_1_1semver_1_1format__error.html#ae7c9fd3a57aa22ed4ed55d9af7b7f54d',1,'derplib::base::semver::format_error']]],
   ['_7eobserver_199',['~observer',['../classderplib_1_1ref__count__pointer_1_1observer.html#ae020c6fea156f281f96de290380cae63',1,'derplib::ref_count_pointer::observer']]],
   ['_7eref_5fcount_5fpointer_200',['~ref_count_pointer',['../classderplib_1_1ref__count__pointer.html#aa0ca5a17df8a6c37299fa7e876edaf06',1,'derplib::ref_count_pointer']]],
-  ['_7esimple_5fpool_5fallocator_201',['~simple_pool_allocator',['../classderplib_1_1experimental_1_1simple__pool__allocator.html#af8bf7a4de609053403d82ee31587bf7d',1,'derplib::experimental::simple_pool_allocator']]],
-  ['_7etimer_202',['~timer',['../classderplib_1_1base_1_1timer_3_01Func_01_4.html#ace1ab7130ca298274417692a65157613',1,'derplib::base::timer&lt; Func &gt;']]]
+  ['_7esemver_201',['~semver',['../classderplib_1_1base_1_1semver.html#aca40e2376f981c98f32b2df9cfbf6eb6',1,'derplib::base::semver']]],
+  ['_7esimple_5fpool_5fallocator_202',['~simple_pool_allocator',['../classderplib_1_1experimental_1_1simple__pool__allocator.html#af8bf7a4de609053403d82ee31587bf7d',1,'derplib::experimental::simple_pool_allocator']]],
+  ['_7etimer_203',['~timer',['../classderplib_1_1base_1_1timer_3_01Func_01_4.html#ace1ab7130ca298274417692a65157613',1,'derplib::base::timer&lt; Func &gt;']]]
 ];

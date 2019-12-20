@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include <memory>
 #include <string>
 #include <cxxabi.h>
 
@@ -44,14 +45,16 @@ std::string type_name(DERPLIB_MAYBE_UNUSED const T& var, bool legacy_naming = fa
 
 template<typename T>
 std::string type_name(bool legacy_naming) {
+  constexpr auto deleter = [](char* const ptr) { std::free(ptr); };
+
   int status{};
   std::string tname{};
-  char* const demangled_name = abi::__cxa_demangle(typeid(T).name(), nullptr, nullptr, &status);
-  if (status == 0) {
-    tname = demangled_name;
-  }
-  if (demangled_name != nullptr) {
-    std::free(demangled_name);
+  {
+    const auto demangled_name = std::unique_ptr<char[], decltype(deleter)>(
+        abi::__cxa_demangle(typeid(T).name(), nullptr, nullptr, &status), deleter);
+    if (status == 0) {
+      tname = demangled_name.get();
+    }
   }
 
   if (!legacy_naming) {

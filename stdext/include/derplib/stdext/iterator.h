@@ -20,7 +20,7 @@ inline namespace stdext {
  * \param f Function to be applied to [first,last)
  * \return \c f
  */
-// TODO: std::enable_if<...>
+// TODO(Derppening): std::enable_if<...>
 template<class InputIt, class BinaryFunction>
 BinaryFunction for_each_indexed(InputIt first, InputIt last, BinaryFunction f) {
   for (std::size_t index{0}; first != last; ++first, ++index) {
@@ -29,7 +29,7 @@ BinaryFunction for_each_indexed(InputIt first, InputIt last, BinaryFunction f) {
   return f;
 }
 
-// TODO: Introduced in C++14
+// TODO(Derppening): Introduced in C++14
 // using std::rbegin;
 // using std::rend;
 

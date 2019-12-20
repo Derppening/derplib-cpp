@@ -2,6 +2,7 @@ var classderplib_1_1base_1_1semver =
 [
     [ "format_error", "classderplib_1_1base_1_1semver_1_1format__error.html", "classderplib_1_1base_1_1semver_1_1format__error" ],
     [ "semver", "classderplib_1_1base_1_1semver.html#aded39d18ee00eeba3ab06fcd52173015", null ],
+    [ "~semver", "classderplib_1_1base_1_1semver.html#aca40e2376f981c98f32b2df9cfbf6eb6", null ],
     [ "semver", "classderplib_1_1base_1_1semver.html#aa189ee5d4576e898caf9ca6d3897b2dc", null ],
     [ "semver", "classderplib_1_1base_1_1semver.html#a58d57de60f0123645352129414242280", null ],
     [ "build", "classderplib_1_1base_1_1semver.html#ae7a301aa404d7133a12114400f5bd2c9", null ],

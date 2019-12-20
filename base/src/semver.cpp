@@ -12,7 +12,7 @@ namespace {
  */
 inline bool _is_valid_identifier(const char c) noexcept {
   const auto uc{static_cast<unsigned char>(c)};
-  return std::isalpha(uc) || std::isdigit(uc) || uc == '-' || uc == '.';
+  return std::isalpha(uc) != 0 || std::isdigit(uc) != 0 || uc == '-' || uc == '.';
 }
 
 /**

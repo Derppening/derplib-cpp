@@ -110,7 +110,9 @@ void simple_pool_allocator::heap_dump(std::ostream& os) const noexcept {
          << static_cast<ptr_t>(current_ptr) << "  " << std::setw(RegionTextPadding) << static_cast<ptr_t>(end_ptr)
          << "  Free  " << std::setfill(' ') << std::setw(SizeTextPadding) << end_ptr - current_ptr << " B\n";
       break;
-    } else if (entry_it->first == current_ptr) {
+    }
+
+    if (entry_it->first == current_ptr) {
       os << std::showbase << std::setiosflags(std::ios::internal) << std::setfill('0') << std::setw(RegionTextPadding)
          << static_cast<ptr_t>(current_ptr) << "  " << std::setw(RegionTextPadding)
          << static_cast<ptr_t>(current_ptr + entry_it->second._extent) << "  Used  " << std::setfill(' ')
@@ -186,7 +188,7 @@ void* simple_pool_allocator::try_alloc_nominal(simple_pool_allocator::_entry e) 
   }};
 
   if (std::adjacent_find(lower_bound, upper_bound, has_enough_space) != upper_bound) {
-    // TODO: Use Expects
+    // TODO(Derppening): Use Expects
     assert(aligned_extent != nullptr);
     assert(extent_size != 0);
 

@@ -20,7 +20,7 @@ namespace experimental {
  * Configuration can be used within the application, as well as export/import to a savefile.
  */
 class config_file {
-  // TODO: Rewrite this
+  // TODO(Derppening): Rewrite this
 
   /**
    * Type definition for the container storing key-value pairs of one section.

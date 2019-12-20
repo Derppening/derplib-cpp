@@ -118,160 +118,166 @@ $(document).ready(function(){initNavTree('cfq__parallel__consumer_8h_source.html
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer</a>(std::size_t concurrency, <a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#a9f9168e58da7e0bc1dcae9e42849aebf">consumer_type</a>&amp;&amp; consumer);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  ~<a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">void</span> push(<span class="keyword">const</span> <a class="code" href="namespacederplib_1_1stdext.html#a4493c5a7a4f22a2791dcd1c7ef84c0b1">stdext::decay_t&lt;InT&gt;</a>&amp; value);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">void</span> push(<a class="code" href="namespacederplib_1_1stdext.html#a4493c5a7a4f22a2791dcd1c7ef84c0b1">stdext::decay_t&lt;InT&gt;</a>&amp;&amp; value);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">void</span> emplace(Args&amp;&amp;... args);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">void</span> _daemon(std::size_t i);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#a9f9168e58da7e0bc1dcae9e42849aebf">consumer_type</a> _consumer_ = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  std::atomic_bool _keep_alive_;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  std::vector&lt;std::deque&lt;stdext::decay_t&lt;InT&gt;&gt;&gt; _buffers_;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  std::vector&lt;std::thread&gt; _threads_;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  std::vector&lt;std::mutex&gt; _mutexes_;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  std::vector&lt;std::condition_variable&gt; _cvs_;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer</a>(<span class="keyword">const</span> <a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer</a>(<a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer</a>&amp;&amp;) noexcept = delete;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer</a>&amp; operator=(const <a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer</a>&amp;) = delete;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer</a>&amp; operator=(<a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer</a>&amp;&amp;) noexcept = delete;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  ~<a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">void</span> push(const stdext::<a class="code" href="namespacederplib_1_1stdext.html#a4493c5a7a4f22a2791dcd1c7ef84c0b1">decay_t</a>&lt;InT&gt;&amp; value);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">void</span> push(stdext::<a class="code" href="namespacederplib_1_1stdext.html#a4493c5a7a4f22a2791dcd1c7ef84c0b1">decay_t</a>&lt;InT&gt;&amp;&amp; value);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  template&lt;typename... Args&gt;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordtype">void</span> emplace(Args&amp;&amp;... args);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; private:</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordtype">void</span> _daemon(std::<span class="keywordtype">size_t</span> i);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#a9f9168e58da7e0bc1dcae9e42849aebf">consumer_type</a> _consumer_ = <span class="keywordtype">nullptr</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  std::atomic_bool _keep_alive_;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> InT, <span class="keyword">typename</span> ConsumerT&gt;</div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#ad481a7ef450a0a0bb71d6455ffb7e94a">  102</a></span>&#160;<a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer&lt;InT, ConsumerT&gt;::cfq_parallel_consumer</a>(<span class="keyword">const</span> std::size_t concurrency,</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                                             <span class="keyword">const</span> <a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#a9f9168e58da7e0bc1dcae9e42849aebf">consumer_type</a>&amp; consumer) :</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    _consumer_(consumer),</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    _keep_alive_{<span class="keyword">true</span>},</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    _buffers_{concurrency},</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    _threads_{concurrency},</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    _mutexes_{concurrency},</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    _cvs_{concurrency} {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keywordflow">for</span> (std::size_t i{0}; i &lt; _threads_.size(); ++i) {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    _threads_[i] = std::thread{&amp;cfq_parallel_consumer::_daemon, <span class="keyword">this</span>, i};</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> InT, <span class="keyword">typename</span> ConsumerT&gt;</div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#aac4dd67a6d654e2f00307e6a97a4e141">  116</a></span>&#160;<a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer&lt;InT, ConsumerT&gt;::cfq_parallel_consumer</a>(<span class="keyword">const</span> std::size_t concurrency, <a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#a9f9168e58da7e0bc1dcae9e42849aebf">consumer_type</a>&amp;&amp; consumer) :</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    _consumer_(consumer),</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    _keep_alive_{<span class="keyword">true</span>},</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    _buffers_{concurrency},</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    _threads_{concurrency},</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    _mutexes_{concurrency},</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    _cvs_{concurrency} {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keywordflow">for</span> (std::size_t i{0}; i &lt; _threads_.size(); ++i) {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    _threads_[i] = std::thread{&amp;cfq_parallel_consumer::_daemon, <span class="keyword">this</span>, i};</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> InT, <span class="keyword">typename</span> ConsumerT&gt;</div>
-<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#a8e6c835d70fd16f97ca1fa8cd5bd5c69">  129</a></span>&#160;<a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer&lt;InT, ConsumerT&gt;::~cfq_parallel_consumer</a>() {</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  _keep_alive_ = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; cv : _cvs_) {</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    cv.notify_all();</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; thread : _threads_) {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">if</span> (thread.joinable()) {</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      thread.join();</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  std::vector&lt;std::deque&lt;stdext::<a class="code" href="namespacederplib_1_1stdext.html#a4493c5a7a4f22a2791dcd1c7ef84c0b1">decay_t</a>&lt;InT&gt;&gt;&gt; _buffers_;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  std::vector&lt;std::thread&gt; _threads_;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  std::vector&lt;std::mutex&gt; _mutexes_;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  std::vector&lt;std::condition_variable&gt; _cvs_;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;};</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;template&lt;typename InT, typename ConsumerT&gt;</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#ad481a7ef450a0a0bb71d6455ffb7e94a">  108</a></span>&#160;<a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer</a>&lt;InT, ConsumerT&gt;::<a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer</a>(const std::<span class="keywordtype">size_t</span> concurrency,</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                                                             const <a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#a9f9168e58da7e0bc1dcae9e42849aebf">consumer_type</a>&amp; consumer) :</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    _consumer_(consumer),</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    _keep_alive_{<span class="keyword">true</span>},</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    _buffers_{concurrency},</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    _threads_{concurrency},</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    _mutexes_{concurrency},</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    _cvs_{concurrency} {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keywordflow">for</span> (std::size_t i{0}; i &lt; _threads_.size(); ++i) {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    _threads_[i] = std::thread{&amp;cfq_parallel_consumer::_daemon, <span class="keyword">this</span>, i};</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> InT, <span class="keyword">typename</span> ConsumerT&gt;</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#aac4dd67a6d654e2f00307e6a97a4e141">  122</a></span>&#160;<a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer&lt;InT, ConsumerT&gt;::cfq_parallel_consumer</a>(<span class="keyword">const</span> std::size_t concurrency, <a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#a9f9168e58da7e0bc1dcae9e42849aebf">consumer_type</a>&amp;&amp; consumer) :</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    _consumer_(consumer),</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    _keep_alive_{<span class="keyword">true</span>},</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    _buffers_{concurrency},</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    _threads_{concurrency},</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    _mutexes_{concurrency},</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    _cvs_{concurrency} {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keywordflow">for</span> (std::size_t i{0}; i &lt; _threads_.size(); ++i) {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    _threads_[i] = std::thread{&amp;cfq_parallel_consumer::_daemon, <span class="keyword">this</span>, i};</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> InT, <span class="keyword">typename</span> ConsumerT&gt;</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#a8e6c835d70fd16f97ca1fa8cd5bd5c69">  135</a></span>&#160;<a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer&lt;InT, ConsumerT&gt;::~cfq_parallel_consumer</a>() {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  _keep_alive_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; cv : _cvs_) {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    cv.notify_all();</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  }</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> InT, <span class="keyword">typename</span> ConsumerT&gt;</div>
-<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#af6b196d0d7504c806ad2653312d6fedc">  144</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer&lt;InT, ConsumerT&gt;::push</a>(<span class="keyword">const</span> <a class="code" href="namespacederplib_1_1stdext.html#a4493c5a7a4f22a2791dcd1c7ef84c0b1">stdext::decay_t&lt;InT&gt;</a>&amp; value) {</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  std::size_t it{std::numeric_limits&lt;std::size_t&gt;::max()};</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="keywordflow">for</span> (std::size_t i{0}, n{std::numeric_limits&lt;std::size_t&gt;::max()}; i &lt; _buffers_.size(); ++i) {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    std::size_t <a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>{_buffers_[i].size()};</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">if</span> (n &gt; <a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>) {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;      it = i;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      n = <a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  }</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    std::lock_guard&lt;std::mutex&gt; lk{_mutexes_[it]};</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    _buffers_[it].push_back(value);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  }</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  _cvs_[it].notify_one();</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> InT, <span class="keyword">typename</span> ConsumerT&gt;</div>
-<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#a64b48eb496d0caf615241f85fb81015e">  164</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer&lt;InT, ConsumerT&gt;::push</a>(<a class="code" href="namespacederplib_1_1stdext.html#a4493c5a7a4f22a2791dcd1c7ef84c0b1">stdext::decay_t&lt;InT&gt;</a>&amp;&amp; value) {</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  std::size_t it{std::numeric_limits&lt;std::size_t&gt;::max()};</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="keywordflow">for</span> (std::size_t i{0}, n{std::numeric_limits&lt;std::size_t&gt;::max()}; i &lt; _buffers_.size(); ++i) {</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    std::size_t <a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>{_buffers_[i].size()};</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">if</span> (n &gt; <a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>) {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;      it = i;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;      n = <a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  }</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  {</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    std::unique_lock&lt;std::mutex&gt; lk{_mutexes_[it]};</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    _buffers_[it].push_back(value);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  }</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  _cvs_[it].notify_one();</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> InT, <span class="keyword">typename</span> ConsumerT&gt;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#a049ceb0eed1f90db1acc98e3858129f2">  185</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer&lt;InT, ConsumerT&gt;::emplace</a>(Args&amp;&amp;... args) {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  std::size_t it{std::numeric_limits&lt;std::size_t&gt;::max()};</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <span class="keywordflow">for</span> (std::size_t i{0}, n{std::numeric_limits&lt;std::size_t&gt;::max()}; i &lt; _buffers_.size(); ++i) {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    std::size_t <a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>{_buffers_[i].size()};</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">if</span> (n &gt; <a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>) {</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;      it = i;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;      n = <a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    }</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  }</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  {</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    std::lock_guard&lt;std::mutex&gt; lk{_mutexes_[it]};</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    _buffers_[it].emplace_back(std::forward&lt;Args&gt;(args)...);</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  }</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  _cvs_[it].notify_one();</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> InT, <span class="keyword">typename</span> ConsumerT&gt;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer&lt;InT, ConsumerT&gt;::_daemon</a>(<span class="keywordtype">size_t</span> i) {</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="keywordflow">while</span> (_keep_alive_ || !_buffers_[i].empty()) {</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    {</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;      std::unique_lock&lt;std::mutex&gt; lk{_mutexes_[i]};</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;      _cvs_[i].wait(lk, [&amp;] { <span class="keywordflow">return</span> !_keep_alive_ || !_buffers_[i].empty(); });</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;      <span class="keywordflow">if</span> (!_keep_alive_ &amp;&amp; _buffers_[i].empty()) {</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;      }</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      _consumer_(_buffers_[i].front());</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;      _buffers_[i].pop_front();</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    }</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    _cvs_[i].notify_one();</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  }</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;}</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;}  <span class="comment">// namespace container</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;}  <span class="comment">// namespace derplib</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; thread : _threads_) {</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">if</span> (thread.joinable()) {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;      thread.join();</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    }</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> InT, <span class="keyword">typename</span> ConsumerT&gt;</div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#af6b196d0d7504c806ad2653312d6fedc">  150</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer&lt;InT, ConsumerT&gt;::push</a>(<span class="keyword">const</span> <a class="code" href="namespacederplib_1_1stdext.html#a4493c5a7a4f22a2791dcd1c7ef84c0b1">stdext::decay_t&lt;InT&gt;</a>&amp; value) {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  std::size_t it{std::numeric_limits&lt;std::size_t&gt;::max()};</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="keywordflow">for</span> (std::size_t i{0}, n{std::numeric_limits&lt;std::size_t&gt;::max()}; i &lt; _buffers_.size(); ++i) {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    std::size_t <a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>{_buffers_[i].size()};</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">if</span> (n &gt; <a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>) {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;      it = i;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;      n = <a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    std::lock_guard&lt;std::mutex&gt; lk{_mutexes_[it]};</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    _buffers_[it].push_back(value);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  _cvs_[it].notify_one();</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> InT, <span class="keyword">typename</span> ConsumerT&gt;</div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#a64b48eb496d0caf615241f85fb81015e">  170</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer&lt;InT, ConsumerT&gt;::push</a>(<a class="code" href="namespacederplib_1_1stdext.html#a4493c5a7a4f22a2791dcd1c7ef84c0b1">stdext::decay_t&lt;InT&gt;</a>&amp;&amp; value) {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  std::size_t it{std::numeric_limits&lt;std::size_t&gt;::max()};</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="keywordflow">for</span> (std::size_t i{0}, n{std::numeric_limits&lt;std::size_t&gt;::max()}; i &lt; _buffers_.size(); ++i) {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    std::size_t <a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>{_buffers_[i].size()};</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">if</span> (n &gt; <a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>) {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;      it = i;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;      n = <a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    std::unique_lock&lt;std::mutex&gt; lk{_mutexes_[it]};</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    _buffers_[it].push_back(value);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  _cvs_[it].notify_one();</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> InT, <span class="keyword">typename</span> ConsumerT&gt;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#a049ceb0eed1f90db1acc98e3858129f2">  191</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer&lt;InT, ConsumerT&gt;::emplace</a>(Args&amp;&amp;... args) {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  std::size_t it{std::numeric_limits&lt;std::size_t&gt;::max()};</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="keywordflow">for</span> (std::size_t i{0}, n{std::numeric_limits&lt;std::size_t&gt;::max()}; i &lt; _buffers_.size(); ++i) {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    std::size_t <a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>{_buffers_[i].size()};</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordflow">if</span> (n &gt; <a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>) {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;      it = i;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;      n = <a class="code" href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">size</a>;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    }</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  }</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  {</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    std::lock_guard&lt;std::mutex&gt; lk{_mutexes_[it]};</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    _buffers_[it].emplace_back(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  _cvs_[it].notify_one();</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> InT, <span class="keyword">typename</span> ConsumerT&gt;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classderplib_1_1container_1_1cfq__parallel__consumer.html">cfq_parallel_consumer&lt;InT, ConsumerT&gt;::_daemon</a>(<span class="keywordtype">size_t</span> i) {</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  <span class="keywordflow">while</span> (_keep_alive_ || !_buffers_[i].empty()) {</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    {</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;      std::unique_lock&lt;std::mutex&gt; lk{_mutexes_[i]};</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      _cvs_[i].wait(lk, [&amp;] { <span class="keywordflow">return</span> !_keep_alive_ || !_buffers_[i].empty(); });</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;      <span class="keywordflow">if</span> (!_keep_alive_ &amp;&amp; _buffers_[i].empty()) {</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;      }</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;      _consumer_(_buffers_[i].front());</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;      _buffers_[i].pop_front();</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    }</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    _cvs_[i].notify_one();</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  }</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;}</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;}  <span class="comment">// namespace container</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;}  <span class="comment">// namespace derplib</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4_html_a9f9168e58da7e0bc1dcae9e42849aebf"><div class="ttname"><a href="classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#a9f9168e58da7e0bc1dcae9e42849aebf">derplib::container::cfq_parallel_consumer&lt; InT, ConsumerT &gt;::consumer_type</a></div><div class="ttdeci">ConsumerT consumer_type</div><div class="ttdoc">Type of functor.</div><div class="ttdef"><b>Definition:</b> cfq_parallel_consumer.h:38</div></div>
 <div class="ttc" id="aclassderplib_1_1base_1_1semver_html"><div class="ttname"><a href="classderplib_1_1base_1_1semver.html">derplib::base::semver</a></div><div class="ttdef"><b>Definition:</b> semver.h:15</div></div>
 <div class="ttc" id="aclassderplib_1_1base_1_1semver_1_1format__error_html"><div class="ttname"><a href="classderplib_1_1base_1_1semver_1_1format__error.html">derplib::base::semver::format_error</a></div><div class="ttdoc">Reports errors that are caused by parsing a malformed version string.</div><div class="ttdef"><b>Definition:</b> semver.h:22</div></div>
-<div class="ttc" id="aclassderplib_1_1base_1_1semver_html_a0331a79fbaea22b46aa268cc32d82366"><div class="ttname"><a href="classderplib_1_1base_1_1semver.html#a0331a79fbaea22b46aa268cc32d82366">derplib::base::semver::major</a></div><div class="ttdeci">DERPLIB_NODISCARD int major() const</div><div class="ttdef"><b>Definition:</b> semver.h:58</div></div>
-<div class="ttc" id="aclassderplib_1_1base_1_1semver_html_a61b7d8dcb805f75bd39500f3efc60d23"><div class="ttname"><a href="classderplib_1_1base_1_1semver.html#a61b7d8dcb805f75bd39500f3efc60d23">derplib::base::semver::patch</a></div><div class="ttdeci">DERPLIB_NODISCARD int patch() const</div><div class="ttdef"><b>Definition:</b> semver.h:60</div></div>
-<div class="ttc" id="aclassderplib_1_1base_1_1semver_html_afce120e5ad01467e98d41292e11ada0f"><div class="ttname"><a href="classderplib_1_1base_1_1semver.html#afce120e5ad01467e98d41292e11ada0f">derplib::base::semver::minor</a></div><div class="ttdeci">DERPLIB_NODISCARD int minor() const</div><div class="ttdef"><b>Definition:</b> semver.h:59</div></div>
+<div class="ttc" id="aclassderplib_1_1base_1_1semver_html_a0331a79fbaea22b46aa268cc32d82366"><div class="ttname"><a href="classderplib_1_1base_1_1semver.html#a0331a79fbaea22b46aa268cc32d82366">derplib::base::semver::major</a></div><div class="ttdeci">DERPLIB_NODISCARD int major() const</div><div class="ttdef"><b>Definition:</b> semver.h:59</div></div>
+<div class="ttc" id="aclassderplib_1_1base_1_1semver_html_a61b7d8dcb805f75bd39500f3efc60d23"><div class="ttname"><a href="classderplib_1_1base_1_1semver.html#a61b7d8dcb805f75bd39500f3efc60d23">derplib::base::semver::patch</a></div><div class="ttdeci">DERPLIB_NODISCARD int patch() const</div><div class="ttdef"><b>Definition:</b> semver.h:61</div></div>
+<div class="ttc" id="aclassderplib_1_1base_1_1semver_html_afce120e5ad01467e98d41292e11ada0f"><div class="ttname"><a href="classderplib_1_1base_1_1semver.html#afce120e5ad01467e98d41292e11ada0f">derplib::base::semver::minor</a></div><div class="ttdeci">DERPLIB_NODISCARD int minor() const</div><div class="ttdef"><b>Definition:</b> semver.h:60</div></div>
 <div class="ttc" id="aclassderplib_1_1base_1_1semver_html_a58e4c6565e683e6ba4680cc9880cf691"><div class="ttname"><a href="classderplib_1_1base_1_1semver.html#a58e4c6565e683e6ba4680cc9880cf691">derplib::base::semver::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const semver &amp;other) const noexcept</div><div class="ttdef"><b>Definition:</b> semver.cpp:118</div></div>
 <div class="ttc" id="anamespacederplib_1_1stdext_html_a5a299345b0ba0ade72b8ff6b345dfb8c"><div class="ttname"><a href="namespacederplib_1_1stdext.html#a5a299345b0ba0ade72b8ff6b345dfb8c">derplib::stdext::size</a></div><div class="ttdeci">constexpr std::size_t size(DERPLIB_MAYBE_UNUSED T(&amp;arr)[N])</div><div class="ttdef"><b>Definition:</b> array.h:46</div></div>
 <div class="ttc" id="aclassderplib_1_1container_1_1cfq__parallel__consumer_html"><div class="ttname"><a href="classderplib_1_1container_1_1cfq__parallel__consumer.html">derplib::container::cfq_parallel_consumer</a></div><div class="ttdoc">A buffered consumer with parallel execution support.</div><div class="ttdef"><b>Definition:</b> cfq_parallel_consumer.h:26</div></div>
@@ -285,10 +291,10 @@ $(document).ready(function(){initNavTree('cfq__parallel__consumer_8h_source.html
 <div class="ttc" id="aclassderplib_1_1base_1_1semver_html_aabcbe724876db8c304c6dc94d99deba9"><div class="ttname"><a href="classderplib_1_1base_1_1semver.html#aabcbe724876db8c304c6dc94d99deba9">derplib::base::semver::operator==</a></div><div class="ttdeci">bool operator==(const semver &amp;other) const noexcept</div><div class="ttdef"><b>Definition:</b> semver.cpp:149</div></div>
 <div class="ttc" id="aclassderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4_html_acb0662d1c2c1ff75bcd4cdc01eeddbd7"><div class="ttname"><a href="classderplib_1_1container_1_1cfq__parallel__consumer_3_01InT_00_01ConsumerT_01_4.html#acb0662d1c2c1ff75bcd4cdc01eeddbd7">derplib::container::cfq_parallel_consumer&lt; InT, ConsumerT &gt;::value_type</a></div><div class="ttdeci">InT value_type</div><div class="ttdoc">Type of elements.</div><div class="ttdef"><b>Definition:</b> cfq_parallel_consumer.h:34</div></div>
 <div class="ttc" id="asemver_8h_html"><div class="ttname"><a href="semver_8h.html">semver.h</a></div></div>
-<div class="ttc" id="aclassderplib_1_1base_1_1semver_html_ae7a301aa404d7133a12114400f5bd2c9"><div class="ttname"><a href="classderplib_1_1base_1_1semver.html#ae7a301aa404d7133a12114400f5bd2c9">derplib::base::semver::build</a></div><div class="ttdeci">const DERPLIB_NODISCARD std::string &amp; build() const &amp;</div><div class="ttdef"><b>Definition:</b> semver.h:62</div></div>
+<div class="ttc" id="aclassderplib_1_1base_1_1semver_html_ae7a301aa404d7133a12114400f5bd2c9"><div class="ttname"><a href="classderplib_1_1base_1_1semver.html#ae7a301aa404d7133a12114400f5bd2c9">derplib::base::semver::build</a></div><div class="ttdeci">const DERPLIB_NODISCARD std::string &amp; build() const &amp;</div><div class="ttdef"><b>Definition:</b> semver.h:63</div></div>
 <div class="ttc" id="aclassderplib_1_1base_1_1semver_html_acba56351ddaa44b7e2c33ef4545679e6"><div class="ttname"><a href="classderplib_1_1base_1_1semver.html#acba56351ddaa44b7e2c33ef4545679e6">derplib::base::semver::from_string</a></div><div class="ttdeci">static DERPLIB_NODISCARD semver from_string(const std::string &amp;str)</div><div class="ttdoc">Constructs a semver object from a version string.</div><div class="ttdef"><b>Definition:</b> semver.cpp:154</div></div>
 <div class="ttc" id="aclassderplib_1_1base_1_1stopwatch_html_aa014aacf1a47b55763465f711010ade8"><div class="ttname"><a href="classderplib_1_1base_1_1stopwatch.html#aa014aacf1a47b55763465f711010ade8">derplib::base::stopwatch::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Stops the stopwatch.</div><div class="ttdef"><b>Definition:</b> stopwatch.cpp:12</div></div>
-<div class="ttc" id="aclassderplib_1_1base_1_1semver_html_a0a9b4f4e7fb9c6c7cfdc5aec0b86543c"><div class="ttname"><a href="classderplib_1_1base_1_1semver.html#a0a9b4f4e7fb9c6c7cfdc5aec0b86543c">derplib::base::semver::prerelease</a></div><div class="ttdeci">const DERPLIB_NODISCARD std::string &amp; prerelease() const &amp;</div><div class="ttdef"><b>Definition:</b> semver.h:61</div></div>
+<div class="ttc" id="aclassderplib_1_1base_1_1semver_html_a0a9b4f4e7fb9c6c7cfdc5aec0b86543c"><div class="ttname"><a href="classderplib_1_1base_1_1semver.html#a0a9b4f4e7fb9c6c7cfdc5aec0b86543c">derplib::base::semver::prerelease</a></div><div class="ttdeci">const DERPLIB_NODISCARD std::string &amp; prerelease() const &amp;</div><div class="ttdef"><b>Definition:</b> semver.h:62</div></div>
 <div class="ttc" id="astopwatch_8h_html"><div class="ttname"><a href="stopwatch_8h.html">stopwatch.h</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

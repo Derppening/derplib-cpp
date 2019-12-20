@@ -131,9 +131,8 @@ T* base_heap_pool<AllocStrategy, ThrowIfError>::allocate(Args&&... args) {
   if (ptr == nullptr) {
     if (ThrowIfError) {
       throw std::bad_alloc{};
-    } else {
-      return nullptr;
     }
+    return nullptr;
   }
 
   constexpr auto dtor = [](AllocStrategy& allocator, const void* pobj) {

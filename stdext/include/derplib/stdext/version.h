@@ -29,7 +29,7 @@
 #endif
 #endif
 
-// TODO: Temporary C++20 checks
+// TODO(Derppening): Temporary C++20 checks
 #if __cplusplus > DERPLIB_CPP17
 #define DERPLIB_HAS_CPP2A_SUPPORT 1
 #endif

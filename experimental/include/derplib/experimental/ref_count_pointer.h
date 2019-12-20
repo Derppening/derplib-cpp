@@ -47,7 +47,7 @@ class ref_count_pointer {
 
   explicit ref_count_pointer(pointer p) noexcept : _u_{p}, _v_{} {}
 
-  // TODO: Overload 3, 4 for unique_ptr
+  // TODO(Derppening): Overload 3, 4 for unique_ptr
   ref_count_pointer(ref_count_pointer&& rc) noexcept : _u_{std::move(rc._u_)}, _v_{std::move(rc._v_)} {}
 
   template<typename U, typename E>
