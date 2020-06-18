@@ -20,15 +20,20 @@ set(CMAKE_CXX_EXTENSIONS NO)
 # Flags that enable sanitization
 set(INSTRUMENTATION_FLAGS -fsanitize=address,leak,undefined -fstack-check -fstack-protector-all -fno-omit-frame-pointer)
 
+# Common flags for GNU-compatible compilers
+set(COMMON_WARN_FLAGS
+        ${COMMON_WARN_FLAGS}
+        -pedantic-errors
+        -Werror=pedantic
+        -Werror=all
+        -Werror=extra)
+
 if ("${CMAKE_C_COMPILER_ID}" STREQUAL "GNU" OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
     message(STATUS "Detected compiler: GNU")
 
     # Flags that apply to both C and C++
     set(COMMON_WARN_FLAGS
             ${COMMON_WARN_FLAGS}
-            -pedantic
-            -Wall
-            -Wextra
             -Wcast-align
             -Wcast-qual
             -Wconversion
@@ -94,8 +99,7 @@ elseif ("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" 
         set(CXX_WARN_FLAGS
                 ${CXX_WARN_FLAGS}
                 -Wno-exit-time-destructors
-                -Wno-global-constructors
-                -Wno-padded)
+                -Wno-global-constructors)
     endif (NOT ${STRICT_WARN_MODE})
 
 elseif ("${CMAKE_C_COMPILER_ID}" STREQUAL "MSVC" OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
