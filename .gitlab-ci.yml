@@ -1,0 +1,30 @@
+image: archlinux/base:latest
+
+stages:
+  - test
+  - docs
+
+test:
+  stage: test
+  script:
+    - pacman -Sy --noconfirm cmake gcc git make
+    - mkdir build && cd build
+    - cmake -DDERPLIB_BUILD_DOCS=OFF -DDERPLIB_RUN_TESTS=ON .. && cmake --build .
+    - GTEST_OUTPUT=xml:gtest.xml make test
+  artifacts:
+    reports:
+      junit: build/**/*.xml
+
+pages:
+  stage: docs
+  script:
+    - pacman -Sy --noconfirm cmake doxygen gcc graphviz make xdot
+    - mkdir build && cd build
+    - cmake -DDERPLIB_BUILD_DOCS=ON -DDERPLIB_RUN_TESTS=OFF .. && cmake --build . --target derplib_doxygen
+    - cd ..
+    - mv docs/ public/
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
