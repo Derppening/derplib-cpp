@@ -1,4 +1,0 @@
-<map id="derplib::container::circular_queue::pop" name="derplib::container::circular_queue::pop">
-<area shape="rect" id="node1" title="Removes an element from the top of the queue." alt="" coords="5,5,163,47"/>
-<area shape="rect" id="node2" href="$classderplib_1_1container_1_1circular__queue.html#a8a72f0630f14b5fecb3a24f3657da911" title="Checks if the underlying container has no elements." alt="" coords="211,5,385,47"/>
-</map>

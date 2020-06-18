@@ -1,4 +1,0 @@
-<map id="derplib::container::circular_queue::swap" name="derplib::container::circular_queue::swap">
-<area shape="rect" id="node1" title="Exchanges the contents of this object with other." alt="" coords="5,5,172,47"/>
-<area shape="rect" id="node2" href="$namespacederplib_1_1container.html#a2c14266bc30ba0f4b155bf13c7ff73be" title="Specialization of std::swap algorithm." alt="" coords="220,5,356,47"/>
-</map>

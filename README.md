@@ -1,6 +1,6 @@
 # derplib
 
-[Documentation](https://derppening.github.io/derplib-cpp/)
+[Documentation](https://derppening.gitlab.io/derplib-cpp/)
 
 Derplib is a collection of utility functions and classes written for C++.
 
@@ -38,7 +38,7 @@ Link these libraries to your project using `target_link_libraries(<your_project>
 Clone this repository, and configure this project like any other CMake project.
 
 ```
-git clone https://github.com/Derppening/derplib-cpp.git
+git clone https://gitlab.com/Derppening/derplib-cpp.git
 cd derplib-cpp
 mkdir build
 cmake ..
